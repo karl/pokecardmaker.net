@@ -1,4 +1,5 @@
-# Pokécardmaker
+# Pokécardmaker.net
+Create your own custom Pokémon cards in the Sword and Shield format!
 
 ## Setup
 - run `npm i`

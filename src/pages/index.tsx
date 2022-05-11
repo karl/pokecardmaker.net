@@ -1,5 +1,6 @@
 import { SEO } from '@components';
 import { FC } from 'react';
+import CssExample from 'src/components/CssExample';
 
 const Home: FC = () => (
   <>
@@ -7,7 +8,7 @@ const Home: FC = () => (
       title="Creator"
       description="Create your own custom Pokémon cards in the Sword and Shield format!"
     />
-    test
+    <CssExample />
   </>
 );
 

@@ -1,0 +1,169 @@
+import { Type, TypeLogic } from '../../types/cardOptions/type';
+import { energy, pokemon, trainer } from './supertypes';
+
+const pokemonTypeLogic: TypeLogic = {
+  hasSubtypes: true,
+  isSubtypeRequired: true,
+  isPokemonType: true,
+  isAttackCostType: true,
+};
+
+const pokemonTypeSupertypes: number[] = [pokemon.id];
+
+export const grass: Type = {
+  id: 1,
+  slug: 'grass',
+  displayName: 'Grass',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const fire: Type = {
+  id: 2,
+  slug: 'fire',
+  displayName: 'Fire',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const water: Type = {
+  id: 3,
+  slug: 'water',
+  displayName: 'Water',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const lightning: Type = {
+  id: 4,
+  slug: 'lightning',
+  displayName: 'Lightning',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const psychic: Type = {
+  id: 5,
+  slug: 'psychic',
+  displayName: 'Psychic',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const fighting: Type = {
+  id: 6,
+  slug: 'fighting',
+  displayName: 'Fighting',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const dark: Type = {
+  id: 7,
+  slug: 'dark',
+  displayName: 'Dark',
+  logic: pokemonTypeLogic,
+  styles: {
+    hpOutline: 'white',
+    nameOutline: 'white',
+    movesOutline: 'white',
+    cardInfoOutline: 'white',
+    rarityIconColor: 'white',
+  },
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const metal: Type = {
+  id: 8,
+  slug: 'metal',
+  displayName: 'Metal',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const colorless: Type = {
+  id: 9,
+  slug: 'colorless',
+  displayName: 'Colorless',
+  logic: pokemonTypeLogic,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const item: Type = {
+  id: 10,
+  slug: 'item',
+  displayName: 'Item',
+  logic: {
+    hasSubtypes: true,
+  },
+  supertypes: [trainer.id],
+  rarities: [],
+};
+
+export const supporter: Type = {
+  id: 11,
+  slug: 'supporter',
+  displayName: 'Supporter',
+  logic: {
+    hasSubname: true,
+    hasDescription: true,
+  },
+  supertypes: [trainer.id],
+  rarities: [5],
+};
+
+export const base: Type = {
+  id: 12,
+  slug: 'base',
+  displayName: 'Base',
+  logic: {
+    hasName: false,
+  },
+  styles: {
+    hasCardInfo: false,
+    hasDexEntry: false,
+    hasDexStats: false,
+    hasIllustratorName: false,
+  },
+  supertypes: [energy.id],
+  rarities: [],
+};
+
+export const special: Type = {
+  id: 13,
+  slug: 'special',
+  displayName: 'Special',
+  logic: {
+    hasTypeImage: true,
+    hasDescription: true,
+  },
+  supertypes: [energy.id],
+  rarities: [],
+};
+
+const types: Type[] = [
+  grass,
+  fire,
+  water,
+  lightning,
+  psychic,
+  fighting,
+  dark,
+  metal,
+  colorless,
+  item,
+  supporter,
+  base,
+  special,
+];
+
+export default types;
