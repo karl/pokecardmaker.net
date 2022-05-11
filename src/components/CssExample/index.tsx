@@ -37,14 +37,17 @@ const CssExample: FC = () => {
   );
 
   const makeImage = async (): Promise<HTMLCanvasElement | undefined> => {
-    const body = document.querySelector('#body') as HTMLElement;
+    const tempDiv = document.querySelector('#temp') as HTMLElement | null;
+    const body = document.querySelector('#body') as HTMLElement | null;
+    const originalDiv = document.querySelector('#card') as HTMLElement | null;
+    if (!tempDiv || !body || !originalDiv) return undefined;
+
     body.querySelectorAll('canvas')?.forEach(c => c.remove());
-    const div = document.querySelector('#card') as HTMLElement;
-    if (!div) return undefined;
+    const div = originalDiv.cloneNode(true) as HTMLCanvasElement;
+    tempDiv.append(div);
+
     // const desiredHeight = 1038;
     const desiredWidth = 747;
-    const originalWidth = div.style.width;
-    const originalFontSize = div.style.fontSize;
     div.style.width = `${desiredWidth}px`;
     div.style.fontSize = '16px';
     const scale = 1 + (desiredWidth - div.clientWidth) / div.clientWidth;
@@ -57,8 +60,8 @@ const CssExample: FC = () => {
       windowHeight: div.clientHeight,
       windowWidth: div.clientWidth,
     });
-    div.style.width = originalWidth;
-    div.style.fontSize = originalFontSize;
+
+    div.remove();
     canvas.style.width = '50%';
     canvas.style.height = 'unset';
     body.append(canvas);
@@ -91,6 +94,7 @@ const CssExample: FC = () => {
 
   return (
     <>
+      <div id="temp" style={{ overflow: 'hidden', height: 0 }} />
       <div id="body" style={{ width: '70%', display: 'flex' }}>
         <div
           id="card"
