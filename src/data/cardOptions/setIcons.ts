@@ -1,4 +1,4 @@
-import { SetIcon } from '../../types/cardOptions/setIcon';
+import { SetIcon } from '@interfaces/cardOptions/setIcon';
 import { swordAndShield as ssBaseSet } from './baseSets';
 
 export const swordAndShield: SetIcon = {

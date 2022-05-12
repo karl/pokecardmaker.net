@@ -1,4 +1,4 @@
-import { BaseSet } from '../../types/cardOptions/baseSet';
+import { BaseSet } from '@interfaces/cardOptions/baseSet';
 
 export const swordAndShield: BaseSet = {
   id: 1,

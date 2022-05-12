@@ -1,4 +1,4 @@
-import { Rarity } from '../../types/cardOptions/rarity';
+import { Rarity } from '@interfaces/cardOptions/rarity';
 
 export const promo: Rarity = {
   id: 1,

@@ -1,4 +1,4 @@
-import { Variation } from '../../types/cardOptions/variation';
+import { Variation } from '@interfaces/cardOptions/variation';
 import { rainbow } from './rarities';
 import { vmax } from './subtypes';
 

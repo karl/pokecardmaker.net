@@ -1,5 +1,5 @@
-import { Subtype } from '../../types/cardOptions/subtype';
-import { CardStyles } from '../../types/cardOptions/cardStyles';
+import { Subtype } from '@interfaces/cardOptions/subtype';
+import { CardStyles } from '@interfaces/cardOptions/cardStyles';
 import { fullArt, goldStar, goldenFullArt, promo } from './rarities';
 import { pokemon, trainer } from './supertypes';
 import {

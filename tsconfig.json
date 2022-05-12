@@ -13,8 +13,8 @@
       "@utils": ["src/utils"],
       "@data": ["src/data"],
       "@css": ["src/css"],
-      "@types": ["src/types"],
-      "@types/*": ["src/types/*"]
+      "@interfaces": ["src/interfaces"],
+      "@interfaces/*": ["src/interfaces/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -36,11 +36,13 @@
     "incremental": true
   },
   "include": [
-    "src",
-    "next.config.js"
+    "next-env-custom.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "**/*.js"
   ]
 }

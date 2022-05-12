@@ -1,4 +1,4 @@
-import { RarityIcon } from '../../types/cardOptions/rarityIcon';
+import { RarityIcon } from '@interfaces/cardOptions/rarityIcon';
 
 export const common: RarityIcon = {
   id: 1,

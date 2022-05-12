@@ -1,4 +1,4 @@
-import { CardOptions } from '../../types/cardOptions';
+import { CardOptions } from '@interfaces/cardOptions';
 import baseSets from './baseSets';
 import rarities from './rarities';
 import rarityIcons from './rarityIcons';

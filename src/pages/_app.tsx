@@ -3,7 +3,8 @@ import { CssBaseline } from '@mui/material';
 import { AppProps as NextAppProps } from 'next/app';
 import { FC } from 'react';
 import { Footer, Header } from '@components';
-import { createEmotionCache, theme } from '@utils';
+import { theme } from '@utils';
+import { createEmotionCache } from '@css';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;

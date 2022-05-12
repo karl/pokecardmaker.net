@@ -1,4 +1,4 @@
-import { Type, TypeLogic } from '../../types/cardOptions/type';
+import { Type, TypeLogic } from '@interfaces/cardOptions/type';
 import { energy, pokemon, trainer } from './supertypes';
 
 const pokemonTypeLogic: TypeLogic = {

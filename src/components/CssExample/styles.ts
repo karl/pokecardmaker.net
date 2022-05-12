@@ -1,4 +1,4 @@
-import styled, { css } from '@css';
+import { css, styled } from '@css';
 
 export const NameText = styled('p')<{ $pokemon?: boolean }>`
   color: black;
