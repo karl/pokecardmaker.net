@@ -14,7 +14,7 @@
       "@data": ["src/data"],
       "@css": ["src/css"],
       "@types": ["src/types"],
-      "@types/*": ["src/types/*"],
+      "@types/*": ["src/types/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -36,8 +36,9 @@
     "incremental": true
   },
   "include": [
-    "src"
-, "next.config.js", "next.config.js"  ],
+    "src",
+    "next.config.js"
+  ],
   "exclude": [
     "node_modules",
     "dist"
