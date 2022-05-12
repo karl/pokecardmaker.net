@@ -1,4 +1,4 @@
-import { css, styled } from '@mui/material';
+import styled, { css } from '@css';
 
 export const NameText = styled('p')<{ $pokemon?: boolean }>`
   color: black;

@@ -33,6 +33,8 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.4.4",
     "@mui/material": "^5.4.4",
+    "@mui/styled-engine": "^5.7.0",
+    "@mui/system": "^5.7.0",
     "html2canvas": "^1.4.1",
     "next": "^12.1.4",
     "react": "^17.0.2",

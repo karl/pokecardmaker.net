@@ -12,6 +12,7 @@
       "@hooks": ["src/hooks"],
       "@utils": ["src/utils"],
       "@data": ["src/data"],
+      "@css": ["src/css"],
       "@types": ["src/types"],
       "@types/*": ["src/types/*"],
     },
