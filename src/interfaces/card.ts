@@ -28,12 +28,12 @@ export type AbilityMove = BaseMove;
 export interface CardInterface {
   name?: string;
   subname?: string;
-  backgroundImageSrc?: string;
-  imageLayer1Src?: string;
-  imageLayer2Src?: string;
+  backgroundImgSrc?: string;
+  imgLayer1Src?: string;
+  imgLayer2Src?: string;
   customSetIconSrc?: string;
-  typeImageSrc?: string;
-  typeImageAmount?: number;
+  typeImgSrc?: string;
+  typeImgAmount?: number;
   cardNumber?: string;
   totalInSet?: string;
   hitpoints?: number;

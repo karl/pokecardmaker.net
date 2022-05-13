@@ -1,15 +1,15 @@
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
+import useCardOptions from './useCardOptions';
 import useType from './useType';
 
 const useResistanceType = () => {
   const {
     state: { resistanceTypeId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
   const { attackCostTypes } = useType();
 
   const resistanceType = useMemo<RelationsInterface['resistanceType']>(
@@ -19,7 +19,7 @@ const useResistanceType = () => {
         resistanceTypeId,
         defaultRelations.resistanceType,
       ),
-    [resistanceTypeId],
+    [attackCostTypes, resistanceTypeId],
   );
 
   const setResistanceType = useCallback(

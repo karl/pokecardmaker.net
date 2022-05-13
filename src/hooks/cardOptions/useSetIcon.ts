@@ -1,15 +1,15 @@
 import setIcons from '@data/cardOptions/setIcons';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
+import useCardOptions from './useCardOptions';
 
 const useSetIcon = () => {
   const {
     state: { setIconId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
 
   const setIcon = useMemo<RelationsInterface['setIcon']>(
     () => findById(setIcons, setIconId, defaultRelations.setIcon),

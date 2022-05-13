@@ -1,16 +1,16 @@
 import types from '@data/cardOptions/types';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
 import findById from '@utils/findById';
 import { Type } from '@interfaces/cardOptions/type';
+import useCardOptions from './useCardOptions';
 
 const useType = () => {
   const {
     state: { typeId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
 
   const pokemonTypes = useMemo<Type[]>(
     () => types.filter(t => t.logic?.isPokemonType),

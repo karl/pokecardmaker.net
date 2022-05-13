@@ -1,15 +1,15 @@
 import rarities from '@data/cardOptions/rarities';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
+import useCardOptions from './useCardOptions';
 
 const useRarity = () => {
   const {
     state: { rarityId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
 
   const rarity = useMemo<RelationsInterface['rarity']>(
     () => findById(rarities, rarityId, defaultRelations.rarity),

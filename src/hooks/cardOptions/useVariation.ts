@@ -1,15 +1,15 @@
 import variations from '@data/cardOptions/variations';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
+import useCardOptions from './useCardOptions';
 
 const useVariation = () => {
   const {
     state: { variationId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
 
   const variation = useMemo<RelationsInterface['variation']>(
     () => findById(variations, variationId, defaultRelations.variation),

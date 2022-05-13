@@ -1,15 +1,15 @@
 import supertypes from '@data/cardOptions/supertypes';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { useCallback, useMemo } from 'react';
 import { defaultRelations } from 'src/defaults/cardOptions';
+import useCardOptions from './useCardOptions';
 
 const useSupertype = () => {
   const {
     state: { supertypeId },
     setState,
-  } = useContext(CardCreatorContext);
+  } = useCardOptions();
 
   const supertype = useMemo<RelationsInterface['supertype']>(
     () => findById(supertypes, supertypeId, defaultRelations.supertype),
