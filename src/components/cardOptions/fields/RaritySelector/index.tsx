@@ -1,14 +1,9 @@
+import ControlledSelector from '@components/ControlledSelector';
 import useRarity from '@hooks/cardOptions/useRarity';
 import useSubtype from '@hooks/cardOptions/useSubtype';
 import useType from '@hooks/cardOptions/useType';
 import useVariation from '@hooks/cardOptions/useVariation';
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const RaritySelector: FC = () => {
@@ -29,31 +24,24 @@ const RaritySelector: FC = () => {
     return null;
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="rarity-label" shrink>
-        Rarity
-      </InputLabel>
-      <Select
-        labelId="rarity-label"
-        id="rarity"
-        value={rarity?.id.toString() ?? ''}
-        label="Rarity"
-        onChange={handleChange}
-        displayEmpty
-      >
-        <MenuItem value="">None</MenuItem>
-        {rarities.map(
-          r =>
-            (type.rarities.includes(r.id) ||
-              subtype?.rarities.includes(r.id) ||
-              variation?.rarities.includes(r.id)) && (
-              <MenuItem key={r.slug} value={r.id}>
-                {r.displayName}
-              </MenuItem>
-            ),
-        )}
-      </Select>
-    </FormControl>
+    <ControlledSelector
+      value={rarity?.id}
+      displayName="Rarity"
+      slug="rarity"
+      onChange={handleChange}
+    >
+      <MenuItem value="">None</MenuItem>
+      {rarities.map(
+        r =>
+          (type.rarities.includes(r.id) ||
+            subtype?.rarities.includes(r.id) ||
+            variation?.rarities.includes(r.id)) && (
+            <MenuItem key={r.slug} value={r.id}>
+              {r.displayName}
+            </MenuItem>
+          ),
+      )}
+    </ControlledSelector>
   );
 };
 

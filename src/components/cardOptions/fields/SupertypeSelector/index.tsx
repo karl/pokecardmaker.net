@@ -1,11 +1,6 @@
+import ControlledSelector from '@components/ControlledSelector';
 import useSupertype from '@hooks/cardOptions/useSupertype';
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const SupertypeSelector: FC = () => {
@@ -16,22 +11,18 @@ const SupertypeSelector: FC = () => {
   };
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="supertype-label">Supertype</InputLabel>
-      <Select
-        labelId="supertype-label"
-        id="supertype"
-        value={supertype.id.toString()}
-        label="Supertype"
-        onChange={handleChange}
-      >
-        {supertypes.map(st => (
-          <MenuItem key={st.slug} value={st.id}>
-            {st.displayName}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
+    <ControlledSelector
+      value={supertype.id}
+      displayName="Supertype"
+      slug="supertype"
+      onChange={handleChange}
+    >
+      {supertypes.map(st => (
+        <MenuItem key={st.slug} value={st.id}>
+          {st.displayName}
+        </MenuItem>
+      ))}
+    </ControlledSelector>
   );
 };
 

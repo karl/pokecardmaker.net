@@ -1,13 +1,8 @@
 import useSubtype from '@hooks/cardOptions/useSubtype';
 import useType from '@hooks/cardOptions/useType';
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
+import ControlledSelector from '@components/ControlledSelector';
 
 const SubtypeSelector: FC = () => {
   const { type } = useType();
@@ -20,29 +15,22 @@ const SubtypeSelector: FC = () => {
   if (!type.logic?.hasSubtypes) return null;
 
   return (
-    <FormControl fullWidth>
-      <InputLabel id="subtype-label" shrink>
-        Subtype
-      </InputLabel>
-      <Select
-        labelId="subtype-label"
-        id="subtype"
-        value={subtype?.id.toString() ?? ''}
-        label="Subtype"
-        onChange={handleChange}
-        displayEmpty
-      >
-        {!type.logic.isSubtypeRequired && <MenuItem value="">None</MenuItem>}
-        {subtypes.map(
-          st =>
-            st.types.includes(type.id) && (
-              <MenuItem key={st.slug} value={st.id}>
-                {st.displayName}
-              </MenuItem>
-            ),
-        )}
-      </Select>
-    </FormControl>
+    <ControlledSelector
+      value={subtype?.id}
+      displayName="Subtype"
+      slug="subtype"
+      onChange={handleChange}
+    >
+      {!type.logic.isSubtypeRequired && <MenuItem value="">None</MenuItem>}
+      {subtypes.map(
+        st =>
+          st.types.includes(type.id) && (
+            <MenuItem key={st.slug} value={st.id}>
+              {st.displayName}
+            </MenuItem>
+          ),
+      )}
+    </ControlledSelector>
   );
 };
 
