@@ -26,8 +26,7 @@ const useSubtype = () => {
   );
 
   useEffect(() => {
-    if (!subtype) return;
-    if (!subtype.types.includes(type.id)) {
+    if (!subtype || !subtype.types.includes(type.id)) {
       setSubtype(defaultTypeSubtypes[type.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
