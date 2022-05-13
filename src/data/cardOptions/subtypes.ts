@@ -1,7 +1,6 @@
 import { Subtype } from '@interfaces/cardOptions/subtype';
 import { CardStyles } from '@interfaces/cardOptions/cardStyles';
 import { fullArt, goldStar, goldenFullArt, promo } from './rarities';
-import { pokemon, trainer } from './supertypes';
 import {
   colorless,
   dark,
@@ -27,8 +26,6 @@ const pokemonTypeTypes: number[] = [
   colorless.id,
 ];
 
-const pokemonTypeSupertypes: number[] = [pokemon.id];
-
 export const basic: Subtype = {
   id: 1,
   slug: 'basic',
@@ -40,7 +37,6 @@ export const basic: Subtype = {
   styles: {
     hasDexStats: true,
   },
-  supertypes: pokemonTypeSupertypes,
   types: pokemonTypeTypes,
   rarities: [promo.id, goldStar.id],
 };
@@ -56,7 +52,6 @@ export const stage1: Subtype = {
   styles: {
     hasDexStats: true,
   },
-  supertypes: pokemonTypeSupertypes,
   types: pokemonTypeTypes,
   rarities: [],
 };
@@ -72,7 +67,6 @@ export const stage2: Subtype = {
   styles: {
     hasDexStats: true,
   },
-  supertypes: pokemonTypeSupertypes,
   types: pokemonTypeTypes,
   rarities: [],
 };
@@ -101,7 +95,6 @@ export const v: Subtype = {
     ...vStyles,
     nameSymbol: 'v',
   },
-  supertypes: pokemonTypeSupertypes,
   types: pokemonTypeTypes,
   rarities: [fullArt.id, goldenFullArt.id],
 };
@@ -121,7 +114,6 @@ export const vmax: Subtype = {
     hpOutline: 'black',
     nameSymbol: 'vmax',
   },
-  supertypes: pokemonTypeSupertypes,
   types: pokemonTypeTypes,
   rarities: [],
 };
@@ -133,7 +125,6 @@ export const tool: Subtype = {
   logic: {
     hasVariations: false,
   },
-  supertypes: [trainer.id],
   types: [item.id],
   rarities: [],
 };

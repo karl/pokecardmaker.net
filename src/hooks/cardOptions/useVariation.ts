@@ -1,15 +1,20 @@
 import variations from '@data/cardOptions/variations';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
-import { defaultRelations } from 'src/defaults/cardOptions';
+import { useCallback, useEffect, useMemo } from 'react';
+import {
+  defaultRelations,
+  defaultSubtypeVariations,
+} from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
+import useSubtype from './useSubtype';
 
 const useVariation = () => {
   const {
     state: { variationId },
     setState,
   } = useCardOptions();
+  const { subtype } = useSubtype();
 
   const variation = useMemo<RelationsInterface['variation']>(
     () => findById(variations, variationId, defaultRelations.variation),
@@ -22,6 +27,12 @@ const useVariation = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
+
+  useEffect(() => {
+    if (!subtype) return;
+    setVariation(defaultSubtypeVariations[subtype.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setVariation, subtype]);
 
   return {
     variations,

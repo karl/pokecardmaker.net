@@ -5,7 +5,7 @@ import React, {
   createContext,
   useState,
 } from 'react';
-import { defaultCardOptions } from 'src/defaults/cardOptions';
+import { defaultCardOptions } from '@defaults/cardOptions';
 
 export type CardCreatorState = CardInterface;
 

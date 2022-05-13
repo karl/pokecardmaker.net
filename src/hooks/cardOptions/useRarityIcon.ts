@@ -2,7 +2,7 @@ import rarityIcons from '@data/cardOptions/rarityIcons';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
 import { useCallback, useMemo } from 'react';
-import { defaultRelations } from 'src/defaults/cardOptions';
+import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useRarityIcon = () => {

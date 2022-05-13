@@ -4,12 +4,34 @@ import { SubtypeLogic } from '@interfaces/cardOptions/subtype';
 import { TypeLogic } from '@interfaces/cardOptions/type';
 import { RequiredIsh } from '@interfaces/utils';
 import { swordAndShield } from '@data/cardOptions/baseSets';
-import { pokemon } from '@data/cardOptions/supertypes';
-import { grass, water } from '@data/cardOptions/types';
-import { basic } from '@data/cardOptions/subtypes';
+import { energy, pokemon, trainer } from '@data/cardOptions/supertypes';
+import {
+  base,
+  colorless,
+  dark,
+  fighting,
+  fire,
+  grass,
+  item,
+  lightning,
+  metal,
+  psychic,
+  special,
+  supporter,
+  water,
+} from '@data/cardOptions/types';
+import {
+  basic,
+  stage1,
+  stage2,
+  tool,
+  v,
+  vmax,
+} from '@data/cardOptions/subtypes';
 import { promo } from '@data/cardOptions/setIcons';
 import { d } from '@data/cardOptions/rotationIcons';
 import { common } from '@data/cardOptions/rarityIcons';
+import { dynamax } from '@data/cardOptions/variations';
 
 export const defaultTypeLogic: Required<TypeLogic> = {
   hasDescription: false,
@@ -97,4 +119,43 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   setIconId: defaultRelations.setIcon?.id,
   rotationIconId: defaultRelations.rotationIcon?.id,
   rarityIconId: defaultRelations.rarityIcon?.id,
+};
+
+export const defaultSupertypeTypes: {
+  [supertypeId: number]: number;
+} = {
+  [pokemon.id]: grass.id,
+  [trainer.id]: supporter.id,
+  [energy.id]: base.id,
+};
+
+const defaultPokemonTypeSubtype = basic.id;
+
+export const defaultTypeSubtypes: {
+  [typeId: number]: number | undefined;
+} = {
+  [grass.id]: defaultPokemonTypeSubtype,
+  [fire.id]: defaultPokemonTypeSubtype,
+  [water.id]: defaultPokemonTypeSubtype,
+  [lightning.id]: defaultPokemonTypeSubtype,
+  [psychic.id]: defaultPokemonTypeSubtype,
+  [fighting.id]: defaultPokemonTypeSubtype,
+  [dark.id]: defaultPokemonTypeSubtype,
+  [metal.id]: defaultPokemonTypeSubtype,
+  [colorless.id]: defaultPokemonTypeSubtype,
+  [item.id]: undefined,
+  [supporter.id]: undefined,
+  [base.id]: undefined,
+  [special.id]: undefined,
+};
+
+export const defaultSubtypeVariations: {
+  [subtypeId: number]: number | undefined;
+} = {
+  [basic.id]: undefined,
+  [stage1.id]: undefined,
+  [stage2.id]: undefined,
+  [v.id]: undefined,
+  [vmax.id]: dynamax.id,
+  [tool.id]: undefined,
 };

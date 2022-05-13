@@ -14,7 +14,7 @@ export interface IdentifierInfo {
    */
   id: number;
   /**
-   * Used for selector elements
+   * Used for React keys and dynamic image retrieval
    */
   slug: string;
   /**

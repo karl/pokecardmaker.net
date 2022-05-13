@@ -9,6 +9,7 @@
     "paths": {
       "@components": ["src/components"],
       "@sections": ["src/sections"],
+      "@defaults/*": ["src/defaults/*"],
       "@hooks": ["src/hooks"],
       "@hooks/*": ["src/hooks/*"],
       "@utils": ["src/utils"],

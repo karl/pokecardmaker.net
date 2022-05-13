@@ -1,16 +1,18 @@
 import types from '@data/cardOptions/types';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
-import { useCallback, useMemo } from 'react';
-import { defaultRelations } from 'src/defaults/cardOptions';
+import { useCallback, useEffect, useMemo } from 'react';
+import { defaultRelations, defaultSupertypeTypes } from '@defaults/cardOptions';
 import findById from '@utils/findById';
 import { Type } from '@interfaces/cardOptions/type';
 import useCardOptions from './useCardOptions';
+import useSupertype from './useSupertype';
 
 const useType = () => {
   const {
     state: { typeId },
     setState,
   } = useCardOptions();
+  const { supertype } = useSupertype();
 
   const pokemonTypes = useMemo<Type[]>(
     () => types.filter(t => t.logic?.isPokemonType),
@@ -33,6 +35,10 @@ const useType = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [],
   );
+
+  useEffect(() => {
+    setType(defaultSupertypeTypes[supertype.id]);
+  }, [setType, supertype]);
 
   return {
     attackCostTypes,

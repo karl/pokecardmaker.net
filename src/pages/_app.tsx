@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { Footer, Header } from '@components';
 import { theme } from '@utils';
 import { createEmotionCache } from '@css';
+import { CardCreatorProvider } from 'src/context/CardCreatorContext';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;
@@ -19,13 +20,15 @@ const App: FC<AppProps> = ({
 }) => (
   <CacheProvider value={emotionCache}>
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header />
-      {/* TODO: Remove this style */}
-      <main style={{ minHeight: 'calc(100vh - 143px)' }}>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <CardCreatorProvider>
+        <CssBaseline />
+        <Header />
+        {/* TODO: Remove this style */}
+        <main style={{ minHeight: 'calc(100vh - 143px)' }}>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </CardCreatorProvider>
     </ThemeProvider>
   </CacheProvider>
 );

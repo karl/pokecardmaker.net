@@ -1,6 +1,6 @@
 import { SEO } from '@components';
 import { FC } from 'react';
-import CssExample from 'src/components/CssExample';
+import CardOptionsForm from 'src/components/cardOptions/CardOptionsForm';
 
 const Home: FC = () => (
   <>
@@ -8,7 +8,8 @@ const Home: FC = () => (
       title="Creator"
       description="Create your own custom Pokémon cards in the Sword and Shield format!"
     />
-    <CssExample />
+    {/* <CssExample /> */}
+    <CardOptionsForm />
   </>
 );
 

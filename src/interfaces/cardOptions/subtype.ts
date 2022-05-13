@@ -14,7 +14,6 @@ export interface SubtypeLogic {
 
 // Basic/Stage1/V/VMax
 export interface Subtype extends IdentifierInfo {
-  supertypes: number[];
   types: number[];
   rarities: number[];
   styles?: CardStyles;
