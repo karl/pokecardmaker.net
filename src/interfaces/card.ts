@@ -1,3 +1,13 @@
+import { Type } from './cardOptions/type';
+import { BaseSet } from './cardOptions/baseSet';
+import { Rarity } from './cardOptions/rarity';
+import { RarityIcon } from './cardOptions/rarityIcon';
+import { RotationIcon } from './cardOptions/rotationIcon';
+import { SetIcon } from './cardOptions/setIcon';
+import { Subtype } from './cardOptions/subtype';
+import { Supertype } from './cardOptions/supertype';
+import { Variation } from './cardOptions/variation';
+
 interface BaseMove {
   name: string;
   description: string;
@@ -15,7 +25,7 @@ export interface AttackMove extends BaseMove {
 
 export type AbilityMove = BaseMove;
 
-export interface Card {
+export interface CardInterface {
   name?: string;
   subname?: string;
   backgroundImageSrc?: string;
@@ -39,10 +49,10 @@ export interface Card {
   move1?: AttackMove;
   move2?: AttackMove;
   // Relations
-  baseSetId?: number;
-  supertypeId?: number;
-  typeId?: number;
-  subtypeId?: number;
+  baseSetId: number;
+  supertypeId: number;
+  typeId: number;
+  subtypeId: number;
   rarityId?: number;
   variationId?: number;
   weaknessTypeId?: number;
@@ -50,4 +60,21 @@ export interface Card {
   setIconId?: number;
   rotationIconId?: number;
   rarityIconId?: number;
+}
+
+/**
+ * Optionalities hould align with the relations in CardInterface
+ */
+export interface RelationsInterface {
+  baseSet: BaseSet;
+  supertype: Supertype;
+  type: Type;
+  subtype: Subtype;
+  rarity?: Rarity;
+  variation?: Variation;
+  weaknessType?: Type;
+  resistanceType?: Type;
+  setIcon?: SetIcon;
+  rotationIcon?: RotationIcon;
+  rarityIcon?: RarityIcon;
 }

@@ -10,9 +10,12 @@
       "@components": ["src/components"],
       "@sections": ["src/sections"],
       "@hooks": ["src/hooks"],
+      "@hooks/*": ["src/hooks/*"],
       "@utils": ["src/utils"],
-      "@data": ["src/data"],
+      "@utils/*": ["src/utils/*"],
+      "@data/*": ["src/data/*"],
       "@css": ["src/css"],
+      "@context": ["src/context"],
       "@interfaces": ["src/interfaces"],
       "@interfaces/*": ["src/interfaces/*"]
     },
