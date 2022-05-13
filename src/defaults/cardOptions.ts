@@ -28,7 +28,7 @@ import {
   v,
   vmax,
 } from '@data/cardOptions/subtypes';
-import { promo } from '@data/cardOptions/setIcons';
+import { swordAndShield as baseSet } from '@data/cardOptions/setIcons';
 import { d } from '@data/cardOptions/rotationIcons';
 import { common } from '@data/cardOptions/rarityIcons';
 import { dynamax } from '@data/cardOptions/variations';
@@ -79,7 +79,7 @@ export const defaultRelations: RelationsInterface = {
   variation: undefined,
   weaknessType: water,
   resistanceType: undefined,
-  setIcon: promo,
+  setIcon: baseSet,
   rotationIcon: d,
   rarityIcon: common,
 };
