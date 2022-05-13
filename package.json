@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "next dev",
+    "dev": "npm run start",
     "build": "next build && next export",
     "lint": "eslint --ext .ts,.tsx src",
-    "lint:fix": "eslint --ext .ts,.tsx src --fix"
+    "lint:fix": "eslint --ext .ts,.tsx src --fix",
+    "typecheck": "npx tsc"
   },
   "eslintConfig": {
     "extends": [

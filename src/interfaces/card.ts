@@ -52,7 +52,7 @@ export interface CardInterface {
   baseSetId: number;
   supertypeId: number;
   typeId: number;
-  subtypeId: number;
+  subtypeId?: number;
   rarityId?: number;
   variationId?: number;
   weaknessTypeId?: number;
@@ -69,7 +69,7 @@ export interface RelationsInterface {
   baseSet: BaseSet;
   supertype: Supertype;
   type: Type;
-  subtype: Subtype;
+  subtype?: Subtype;
   rarity?: Rarity;
   variation?: Variation;
   weaknessType?: Type;

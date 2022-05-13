@@ -36,7 +36,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
-    "incremental": true
+    "incremental": false
   },
   "include": [
     "next-env-custom.d.ts",

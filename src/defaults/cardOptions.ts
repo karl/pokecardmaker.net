@@ -89,7 +89,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
   typeId: defaultRelations.type.id,
-  subtypeId: defaultRelations.subtype.id,
+  subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
   weaknessTypeId: defaultRelations.weaknessType?.id,
