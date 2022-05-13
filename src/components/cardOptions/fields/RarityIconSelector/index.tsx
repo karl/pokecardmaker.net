@@ -1,6 +1,6 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useRarityIcon from '@hooks/cardOptions/useRarityIcon';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const RarityIconSelector: FC = () => {
@@ -20,7 +20,10 @@ const RarityIconSelector: FC = () => {
       <MenuItem value="">None</MenuItem>
       {rarityIcons.map(ri => (
         <MenuItem key={ri.slug} value={ri.id}>
-          {ri.displayName}
+          <ListItemIcon>
+            <img src="https://pokecardmaker.net/assets/icons_symbols/sets/91_SetIcon_VividVolt.png" alt="" />
+          </ListItemIcon>
+          <ListItemText primary={ri.displayName} />
         </MenuItem>
       ))}
     </ControlledSelector>
