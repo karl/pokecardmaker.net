@@ -8,11 +8,11 @@ import SubtypeSelector from '../fields/SubtypeSelector';
 import SupertypeSelector from '../fields/SupertypeSelector';
 import TypeSelector from '../fields/TypeSelector';
 import VariationSelector from '../fields/VariationSelector';
-import { BoxForm } from './styles';
+import { Form } from './styles';
 
 const CardOptionsForm: FC = () => {
   return (
-    <BoxForm as="form">
+    <Form as="form">
       <BaseSetSelector />
       <SupertypeSelector />
       <TypeSelector />
@@ -22,7 +22,7 @@ const CardOptionsForm: FC = () => {
       <RotationIconSelector />
       <RarityIconSelector />
       <SetIconSelector />
-    </BoxForm>
+    </Form>
   );
 };
 

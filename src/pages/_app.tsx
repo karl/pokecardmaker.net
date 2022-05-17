@@ -6,7 +6,7 @@ import { Footer, Header } from '@components';
 import { theme } from '@utils';
 import { createEmotionCache } from '@css';
 import { CardCreatorProvider } from 'src/context/CardCreatorContext';
-import { MainContainer } from './styles';
+import { Background, MainContainer } from './styles';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;
@@ -23,11 +23,13 @@ const App: FC<AppProps> = ({
     <ThemeProvider theme={theme}>
       <CardCreatorProvider>
         <CssBaseline />
-        <Header />
-        <MainContainer as="main">
-          <Component {...pageProps} />
-        </MainContainer>
-        <Footer />
+        <Background>
+          <Header />
+          <MainContainer as="main">
+            <Component {...pageProps} />
+          </MainContainer>
+          <Footer />
+        </Background>
       </CardCreatorProvider>
     </ThemeProvider>
   </CacheProvider>
