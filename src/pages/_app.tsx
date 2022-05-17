@@ -6,6 +6,7 @@ import { Footer, Header } from '@components';
 import { theme } from '@utils';
 import { createEmotionCache } from '@css';
 import { CardCreatorProvider } from 'src/context/CardCreatorContext';
+import { MainContainer } from './styles';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;
@@ -23,10 +24,9 @@ const App: FC<AppProps> = ({
       <CardCreatorProvider>
         <CssBaseline />
         <Header />
-        {/* TODO: Remove this style */}
-        <main style={{ minHeight: 'calc(100vh - 143px)' }}>
+        <MainContainer as="main">
           <Component {...pageProps} />
-        </main>
+        </MainContainer>
         <Footer />
       </CardCreatorProvider>
     </ThemeProvider>

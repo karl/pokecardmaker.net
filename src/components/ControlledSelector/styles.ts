@@ -5,7 +5,7 @@ export const StyledSelect = styled(Select)`
   .MuiSelect-select {
     display: flex;
     align-items: center;
-    // Same as it's padding-left of the select
-    gap: ${({ theme }) => theme.spacing(1.75)};
+    // Same as the padding-left of the select, doesn't scale with spacing
+    gap: 14px;
   }
 `;

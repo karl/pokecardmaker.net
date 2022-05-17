@@ -8,7 +8,7 @@ import { DefaultAppBar, InvisibleHeading } from './styles';
 const Header: FC = () => (
   <>
     <InvisibleHeading>Pokécardmaker.net</InvisibleHeading>
-    <DefaultAppBar position="relative">
+    <DefaultAppBar position="relative" color="primary">
       <Toolbar>
         <Link href="/" passHref>
           <Typography variant="h4">Pokécardmaker.net</Typography>

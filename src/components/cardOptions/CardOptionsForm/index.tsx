@@ -1,4 +1,3 @@
-import { Box } from '@mui/system';
 import { FC } from 'react';
 import BaseSetSelector from '../fields/BaseSetSelector';
 import RarityIconSelector from '../fields/RarityIconSelector';
@@ -9,20 +8,11 @@ import SubtypeSelector from '../fields/SubtypeSelector';
 import SupertypeSelector from '../fields/SupertypeSelector';
 import TypeSelector from '../fields/TypeSelector';
 import VariationSelector from '../fields/VariationSelector';
+import { BoxForm } from './styles';
 
 const CardOptionsForm: FC = () => {
   return (
-    <Box
-      component="form"
-      noValidate
-      autoComplete="off"
-      sx={{
-        maxWidth: 300,
-        '& > *': {
-          m: 1,
-        },
-      }}
-    >
+    <BoxForm as="form">
       <BaseSetSelector />
       <SupertypeSelector />
       <TypeSelector />
@@ -32,7 +22,7 @@ const CardOptionsForm: FC = () => {
       <RotationIconSelector />
       <RarityIconSelector />
       <SetIconSelector />
-    </Box>
+    </BoxForm>
   );
 };
 

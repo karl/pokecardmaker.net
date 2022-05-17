@@ -1,7 +1,6 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
 
 interface CustomThemeProps {
-  headerHeight: number;
   space: (n: number) => number;
   backgroundGradient: string;
 }
@@ -15,26 +14,22 @@ declare module '@mui/material/styles' {
   }
 }
 
-const spacingAmount = 8;
+const spacingAmount = 4;
 
 let theme = createTheme({
   spacing: spacingAmount,
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
-      main: '#e72582',
+      main: '#d35337',
     },
     secondary: {
       main: '#AC67AA',
     },
     divider: '#524749',
-    text: {
-      primary: '#ffffff',
-      secondary: '#adadad',
-    },
     background: {
-      default: '#231F20',
-      paper: '#231F20',
+      default: '#e8e8e8',
+      paper: '#e0e0e0',
     },
   },
   typography: {
@@ -84,7 +79,6 @@ let theme = createTheme({
 
 theme = createTheme(theme, {
   custom: {
-    headerHeight: 74,
     space: (n: number) => n * spacingAmount,
     backgroundGradient: `repeating-linear-gradient(
       -70deg,
@@ -98,25 +92,13 @@ theme = createTheme(theme, {
   components: {
     MuiAppBar: {
       defaultProps: {
-        elevation: 0,
+        color: 'primary',
       },
       styleOverrides: {
         root: {
-          height: 75,
+          height: 65,
           display: 'flex',
           justifyContent: 'center',
-          borderBottom: `1px solid ${theme.palette.divider}`,
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        outlined: {
-          color: theme.palette.text.primary,
-          borderWidth: 3,
-          '&:hover': {
-            borderWidth: 3,
-          },
         },
       },
     },
