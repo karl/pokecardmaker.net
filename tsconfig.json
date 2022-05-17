@@ -19,6 +19,7 @@
       "@css": ["src/css"],
       "@context": ["src/context"],
       "@routes": ["src/routes"],
+      "@constants": ["src/constants"],
       "@interfaces": ["src/interfaces"],
       "@interfaces/*": ["src/interfaces/*"]
     },

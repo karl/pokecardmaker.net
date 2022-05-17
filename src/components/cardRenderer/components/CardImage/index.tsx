@@ -16,6 +16,7 @@ const CardImage: FC = () => {
   const { rarity } = useRarity();
   const { variation } = useVariation();
 
+  // TODO: base64
   const cardImageSrc = useMemo<string>(() => {
     let path = `${Routes.Assets.Cards}/baseSets/${baseSet.slug}/supertypes/${supertype.slug}/types/${type.slug}`;
     if (subtype) path += `/subtypes/${subtype.slug}`;

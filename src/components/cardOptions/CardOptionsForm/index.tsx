@@ -1,3 +1,4 @@
+import CardDownloader from '@components/CardDownloader';
 import { FC } from 'react';
 import BaseSetSelector from '../fields/BaseSetSelector';
 import RarityIconSelector from '../fields/RarityIconSelector';
@@ -13,6 +14,7 @@ import { Form } from './styles';
 const CardOptionsForm: FC = () => {
   return (
     <Form as="form">
+      <CardDownloader />
       <BaseSetSelector />
       <SupertypeSelector />
       <TypeSelector />
