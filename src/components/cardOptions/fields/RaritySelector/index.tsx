@@ -26,7 +26,7 @@ const RaritySelector: FC = () => {
   return (
     <ControlledSelector
       value={rarity?.id}
-      displayName="Rarity Icon"
+      displayName="Rarity"
       slug="rarity"
       onChange={handleChange}
     >
