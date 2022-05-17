@@ -1,7 +1,7 @@
 import { SEO } from '@components';
-import CardDisplay from '@components/CardDisplay';
 import { FC } from 'react';
-import CardOptionsForm from 'src/components/cardOptions/CardOptionsForm';
+import CardOptionsForm from '@components/cardOptions/CardOptionsForm';
+import CardDisplay from '@components/cardRenderer/CardDisplay';
 
 const Home: FC = () => (
   <>

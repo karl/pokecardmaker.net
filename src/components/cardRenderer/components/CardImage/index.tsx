@@ -8,7 +8,7 @@ import Routes from '@routes';
 import Image from 'next/image';
 import { FC, useMemo } from 'react';
 
-const CardDisplay: FC = () => {
+const CardImage: FC = () => {
   const { baseSet } = useBaseSet();
   const { supertype } = useSupertype();
   const { type } = useType();
@@ -26,11 +26,7 @@ const CardDisplay: FC = () => {
     return path;
   }, [baseSet, supertype, type, subtype, variation, rarity]);
 
-  return (
-    <div>
-      <Image src={cardImageSrc} height={600} width={430} />
-    </div>
-  );
+  return <Image src={cardImageSrc} layout="fill" />;
 };
 
-export default CardDisplay;
+export default CardImage;
