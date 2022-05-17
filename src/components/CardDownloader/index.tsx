@@ -1,28 +1,28 @@
-import { cardImgWidth } from '@constants';
+import { baseFontSize, cardImgHeight, cardImgWidth } from '@constants';
 import { Button } from '@mui/material';
 import html2canvas from 'html2canvas';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { TempDiv } from './styles';
-
-interface CardDownloaderProps {
-  cardId?: string;
-}
+import { CardDownloaderProps } from './types';
 
 const CardDownloader: FC<CardDownloaderProps> = ({ cardId = 'card' }) => {
-  const makeImage = async (): Promise<HTMLCanvasElement | undefined> => {
+  const makeCanvas = useCallback(async (): Promise<
+    HTMLCanvasElement | undefined
+  > => {
     const tempDiv = document.querySelector('#temp') as HTMLElement | null;
-    const originalDiv = document.querySelector(`#${cardId}`) as HTMLElement | null;
+    const originalDiv = document.querySelector(
+      `#${cardId}`,
+    ) as HTMLElement | null;
     if (!tempDiv || !originalDiv) return undefined;
 
     const div = originalDiv.cloneNode(true) as HTMLCanvasElement;
     tempDiv.append(div);
 
     div.style.width = `${cardImgWidth}px`;
-    div.style.fontSize = '16px';
-    const scale = 1 + (cardImgWidth - div.clientWidth) / div.clientWidth;
+    div.style.height = `${cardImgHeight}px`;
+    div.style.fontSize = `${baseFontSize}px`;
     const canvas = await html2canvas(div, {
       backgroundColor: 'transparent',
-      scale: scale * 1,
       foreignObjectRendering: true,
       scrollY: -div.offsetTop,
       scrollX: -div.offsetLeft,
@@ -32,15 +32,14 @@ const CardDownloader: FC<CardDownloaderProps> = ({ cardId = 'card' }) => {
 
     div.remove();
     return canvas;
-  };
+  }, [cardId]);
 
-  const downloadCanvas = (canvas?: HTMLCanvasElement) => {
-    if (!canvas) return;
-
+  const downloadCanvas = useCallback((canvas: HTMLCanvasElement) => {
     const pngUrl = canvas.toDataURL('image/png', 1);
 
     const link = document.createElement('a');
     link.href = pngUrl;
+    // TODO: Name of the card here
     link.download = 'abc.png';
     document.body.appendChild(link);
     link.dispatchEvent(
@@ -51,14 +50,22 @@ const CardDownloader: FC<CardDownloaderProps> = ({ cardId = 'card' }) => {
       }),
     );
     document.body.removeChild(link);
-  };
+  }, []);
+
+  const handleDownload = useCallback(async () => {
+    const canvas = await makeCanvas();
+    if (!canvas) return;
+    downloadCanvas(canvas);
+  }, [downloadCanvas, makeCanvas]);
 
   return (
     <div>
       <TempDiv id="temp" />
-      <Button fullWidth variant="contained" onClick={async () => downloadCanvas(await makeImage())}>Download</Button>
+      <Button fullWidth variant="contained" onClick={handleDownload}>
+        Download
+      </Button>
     </div>
   );
-}
+};
 
 export default CardDownloader;

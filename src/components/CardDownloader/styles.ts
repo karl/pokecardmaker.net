@@ -1,4 +1,4 @@
-import { styled } from "@css";
+import { styled } from '@css';
 
 export const TempDiv = styled('div')`
   overflow: hidden;
