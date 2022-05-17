@@ -1,7 +1,10 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useRarityIcon from '@hooks/cardOptions/useRarityIcon';
-import { ListItemIcon, ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
+import Routes from '@routes';
+import Image from 'next/image';
+import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const RarityIconSelector: FC = () => {
   const { rarityIcons, rarityIcon, setRarityIcon } = useRarityIcon();
@@ -17,14 +20,21 @@ const RarityIconSelector: FC = () => {
       slug="rarityIcon"
       onChange={handleChange}
     >
-      <MenuItem value="">None</MenuItem>
+      <MenuItem value="">
+        <ListItemText primary="None" />
+      </MenuItem>
       {rarityIcons.map(ri => (
-        <MenuItem key={ri.slug} value={ri.id}>
-          <ListItemIcon>
-            <img src="https://pokecardmaker.net/assets/icons_symbols/sets/91_SetIcon_VividVolt.png" alt="" />
-          </ListItemIcon>
+        <StyledMenuItem key={ri.slug} value={ri.id}>
+          <StyledListItemIcon>
+            <Image
+              src={Routes.Assets.Icons.Rarity(ri.slug)}
+              height={13}
+              width={13}
+              alt=""
+            />
+          </StyledListItemIcon>
           <ListItemText primary={ri.displayName} />
-        </MenuItem>
+        </StyledMenuItem>
       ))}
     </ControlledSelector>
   );

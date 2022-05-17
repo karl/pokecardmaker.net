@@ -3,7 +3,7 @@ import useRarity from '@hooks/cardOptions/useRarity';
 import useSubtype from '@hooks/cardOptions/useSubtype';
 import useType from '@hooks/cardOptions/useType';
 import useVariation from '@hooks/cardOptions/useVariation';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const RaritySelector: FC = () => {
@@ -26,18 +26,20 @@ const RaritySelector: FC = () => {
   return (
     <ControlledSelector
       value={rarity?.id}
-      displayName="Rarity"
+      displayName="Rarity Icon"
       slug="rarity"
       onChange={handleChange}
     >
-      <MenuItem value="">None</MenuItem>
+      <MenuItem value="">
+        <ListItemText primary="None" />
+      </MenuItem>
       {rarities.map(
         r =>
           (type.rarities.includes(r.id) ||
             subtype?.rarities.includes(r.id) ||
             variation?.rarities.includes(r.id)) && (
             <MenuItem key={r.slug} value={r.id}>
-              {r.displayName}
+              <ListItemText primary={r.displayName} />
             </MenuItem>
           ),
       )}

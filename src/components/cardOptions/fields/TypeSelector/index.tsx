@@ -1,7 +1,7 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useSupertype from '@hooks/cardOptions/useSupertype';
 import useType from '@hooks/cardOptions/useType';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const TypeSelector: FC = () => {
@@ -23,7 +23,7 @@ const TypeSelector: FC = () => {
         t =>
           t.supertypes.includes(supertype.id) && (
             <MenuItem key={t.slug} value={t.id}>
-              {t.displayName}
+              <ListItemText primary={t.displayName} />
             </MenuItem>
           ),
       )}

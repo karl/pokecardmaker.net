@@ -1,7 +1,10 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useRotationIcon from '@hooks/cardOptions/useRotationIcon';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
+import Routes from '@routes';
+import Image from 'next/image';
+import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const RotationIconSelector: FC = () => {
   const { rotationIcons, rotationIcon, setRotationIcon } = useRotationIcon();
@@ -18,9 +21,17 @@ const RotationIconSelector: FC = () => {
       onChange={handleChange}
     >
       {rotationIcons.map(ri => (
-        <MenuItem key={ri.slug} value={ri.id}>
-          {ri.displayName}
-        </MenuItem>
+        <StyledMenuItem key={ri.slug} value={ri.id}>
+          <StyledListItemIcon>
+            <Image
+              src={Routes.Assets.Icons.Rotation(ri.slug)}
+              width={19}
+              height={28}
+              alt=""
+            />
+          </StyledListItemIcon>
+          <ListItemText primary={ri.displayName} />
+        </StyledMenuItem>
       ))}
     </ControlledSelector>
   );

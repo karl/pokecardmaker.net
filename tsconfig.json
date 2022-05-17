@@ -18,6 +18,7 @@
       "@data/*": ["src/data/*"],
       "@css": ["src/css"],
       "@context": ["src/context"],
+      "@routes": ["src/routes"],
       "@interfaces": ["src/interfaces"],
       "@interfaces/*": ["src/interfaces/*"]
     },

@@ -1,6 +1,6 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useSupertype from '@hooks/cardOptions/useSupertype';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const SupertypeSelector: FC = () => {
@@ -19,7 +19,7 @@ const SupertypeSelector: FC = () => {
     >
       {supertypes.map(st => (
         <MenuItem key={st.slug} value={st.id}>
-          {st.displayName}
+          <ListItemText primary={st.displayName} />
         </MenuItem>
       ))}
     </ControlledSelector>

@@ -2,7 +2,7 @@ import ControlledSelector from '@components/ControlledSelector';
 import useRarity from '@hooks/cardOptions/useRarity';
 import useSubtype from '@hooks/cardOptions/useSubtype';
 import useVariation from '@hooks/cardOptions/useVariation';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const VariationSelector: FC = () => {
@@ -28,7 +28,7 @@ const VariationSelector: FC = () => {
           (v.subtypes.includes(subtype.id) ||
             v.rarities.includes(rarity?.id ?? 0)) && (
             <MenuItem key={v.slug} value={v.id}>
-              {v.displayName}
+              <ListItemText primary={v.displayName} />
             </MenuItem>
           ),
       )}

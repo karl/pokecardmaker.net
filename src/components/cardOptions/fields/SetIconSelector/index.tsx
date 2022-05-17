@@ -1,7 +1,13 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useSetIcon from '@hooks/cardOptions/useSetIcon';
-import { MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
+import Routes from '@routes';
+import Image from 'next/image';
+import {
+  StyledListItemIcon,
+  StyledMenuItem,
+} from '@components/cardOptions/fields/styles';
 
 const SetIconSelector: FC = () => {
   const { setIcons, setIcon, setSetIcon } = useSetIcon();
@@ -18,9 +24,17 @@ const SetIconSelector: FC = () => {
       onChange={handleChange}
     >
       {setIcons.map(si => (
-        <MenuItem key={si.slug} value={si.id}>
-          {si.displayName}
-        </MenuItem>
+        <StyledMenuItem key={si.slug} value={si.id}>
+          <StyledListItemIcon>
+            <Image
+              src={Routes.Assets.Icons.Set(si.slug)}
+              width={36}
+              height={36}
+              alt=""
+            />
+          </StyledListItemIcon>
+          <ListItemText primary={si.displayName} />
+        </StyledMenuItem>
       ))}
     </ControlledSelector>
   );
