@@ -29,8 +29,8 @@ const useVariation = () => {
   );
 
   useEffect(() => {
-    if (!subtype) return;
-    setVariation(defaultSubtypeVariations[subtype.id]);
+    if (!subtype) setVariation(undefined);
+    else setVariation(defaultSubtypeVariations[subtype.id]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setVariation, subtype]);
 

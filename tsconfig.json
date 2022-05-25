@@ -21,7 +21,8 @@
       "@routes": ["src/routes"],
       "@constants": ["src/constants"],
       "@interfaces": ["src/interfaces"],
-      "@interfaces/*": ["src/interfaces/*"]
+      "@interfaces/*": ["src/interfaces/*"],
+      "@assets/*": ["public/assets/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
