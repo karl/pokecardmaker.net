@@ -6,79 +6,79 @@ export interface CardStyles {
   /**
    * Default: none
    */
-  nameOutline?: TextColor;
+  nameOutline: TextColor | undefined;
   /**
    * Default: none
    */
-  hpOutline?: TextColor;
+  hpOutline: TextColor | undefined;
   /**
    * Default: none
    */
-  movesOutline?: TextColor;
+  movesOutline: TextColor | undefined;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon\
    * Default: none
    */
-  cardInfoOutline?: TextColor;
+  cardInfoOutline: TextColor | undefined;
   /**
    * Default: black
    */
-  nameTextColor?: TextColor;
+  nameTextColor: TextColor;
   /**
    * Default: black
    */
-  hpTextColor?: TextColor;
+  hpTextColor: TextColor;
   /**
    * Default: black
    */
-  movesTextColor?: TextColor;
+  movesTextColor: TextColor;
   /**
    * The bar that shows weakness & resistance\
    * Default: black
    */
-  typeBarTextColor?: TextColor;
+  typeBarTextColor: TextColor;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon\
    * Default: black
    */
-  cardInfoTextColor?: TextColor;
+  cardInfoTextColor: TextColor;
   /**
    * Default: black
    */
-  rarityIconColor?: TextColor;
+  rarityIconColor: TextColor;
   /**
    * Default: none
    */
-  nameSymbol?: NameSymbol;
+  nameSymbol: NameSymbol | undefined;
   /**
    * Default: false
    */
-  alignMovesBottom?: boolean;
+  alignMovesBottom: boolean;
   /**
    * The middle bar that shows weight etc.\
    * Default: true
    */
-  hasDexStats?: boolean;
+  hasDexStats: boolean;
   /**
    * The bottom-right Pokédex entry text\
    * Default: true
    */
-  hasDexEntry?: boolean;
+  hasDexEntry: boolean;
   /**
    * Default: 'sm'
    */
-  hpSize?: 'sm' | 'lg';
+  hpSize: 'sm' | 'lg';
   /**
    * Default: none
    */
-  abilitySymbol?: AbilitySymbol;
+  abilitySymbol: AbilitySymbol | undefined;
   /**
    * Set icon, rotation icon, card number, rarity icon\
    * Default: true
    */
-  hasCardInfo?: boolean;
+  hasCardInfo: boolean;
   /**
    * Default: true
    */
-  hasIllustratorName?: boolean;
+  hasIllustratorName: boolean;
 }

@@ -1,7 +1,4 @@
 import { CardInterface, RelationsInterface } from '@interfaces/card';
-import { CardStyles } from '@interfaces/cardOptions/cardStyles';
-import { SubtypeLogic } from '@interfaces/cardOptions/subtype';
-import { TypeLogic } from '@interfaces/cardOptions/type';
 import { RequiredIsh } from '@interfaces/utils';
 import { swordAndShield } from '@data/cardOptions/baseSets';
 import { energy, pokemon, trainer } from '@data/cardOptions/supertypes';
@@ -32,43 +29,6 @@ import { swordAndShield as baseSet } from '@data/cardOptions/setIcons';
 import { d } from '@data/cardOptions/rotationIcons';
 import { common } from '@data/cardOptions/rarityIcons';
 import { dynamax } from '@data/cardOptions/variations';
-
-export const defaultTypeLogic: Required<TypeLogic> = {
-  hasDescription: false,
-  hasName: true,
-  hasSubname: false,
-  hasSubtypes: false,
-  hasTypeImage: false,
-  isAttackCostType: false,
-  isPokemonType: false,
-  isSubtypeRequired: false,
-};
-
-export const defaultSubtypeLogic: Required<SubtypeLogic> = {
-  hasPrevolve: false,
-  hasVariations: false,
-};
-
-export const defaultCardStyles: RequiredIsh<CardStyles> = {
-  nameTextColor: 'black',
-  hpTextColor: 'black',
-  movesTextColor: 'black',
-  typeBarTextColor: 'black',
-  cardInfoTextColor: 'black',
-  rarityIconColor: 'black',
-  nameOutline: undefined,
-  hpOutline: undefined,
-  movesOutline: undefined,
-  cardInfoOutline: undefined,
-  abilitySymbol: undefined,
-  nameSymbol: undefined,
-  hpSize: 'sm',
-  hasCardInfo: true,
-  hasDexEntry: true,
-  hasDexStats: true,
-  hasIllustratorName: true,
-  alignMovesBottom: false,
-};
 
 export const defaultRelations: RelationsInterface = {
   baseSet: swordAndShield,

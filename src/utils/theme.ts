@@ -103,6 +103,28 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius,
+          background: theme.palette.background.default,
+          '::before': {
+            display: 'none',
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          padding: theme.spacing(0, 4),
+          minHeight: '48px !important',
+        },
+        content: {
+          margin: `${theme.spacing(3, 0)} !important`,
+        },
+      },
+    },
   },
 });
 

@@ -5,17 +5,17 @@ export interface SubtypeLogic {
   /**
    * Default: false
    */
-  hasVariations?: boolean;
+  hasVariations: boolean;
   /**
    * Default: false
    */
-  hasPrevolve?: boolean;
+  hasPrevolve: boolean;
 }
 
 // Basic/Stage1/V/VMax
 export interface Subtype extends IdentifierInfo {
   types: number[];
   rarities: number[];
-  styles?: CardStyles;
-  logic?: SubtypeLogic;
+  styles: CardStyles;
+  logic: SubtypeLogic;
 }
