@@ -33,6 +33,7 @@ const Home: FC<CardImageProps> = ({ cardImgObj }) => {
   );
 };
 
+// TODO: Maybe don't do this per page but just once at build-time
 export const getStaticProps: GetStaticProps<CardImageProps> = async () => {
   return {
     props: {
