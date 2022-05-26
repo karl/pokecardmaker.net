@@ -9,6 +9,7 @@ const Routes = {
       Rotation: (slug: string) => `${icons}/rotations/${slug}.png`,
       Rarity: (slug: string) => `${icons}/rarities/${slug}.png`,
     },
+    Symbol: (slug: string) => `${assets}/symbols/${slug}.png`,
   },
 };
 

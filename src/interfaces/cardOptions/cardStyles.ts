@@ -1,25 +1,26 @@
 export type AbilitySymbol = 'normal' | 'v';
 export type NameSymbol = 'vmax' | 'v' | 'star';
 export type TextColor = 'white' | 'black';
+export type Size = 'sm' | 'lg';
 
 export interface CardStyles {
   /**
    * Default: none
    */
-  nameOutline: TextColor | undefined;
+  nameOutline?: TextColor;
   /**
    * Default: none
    */
-  hpOutline: TextColor | undefined;
+  hpOutline?: TextColor;
   /**
    * Default: none
    */
-  movesOutline: TextColor | undefined;
+  movesOutline?: TextColor;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon\
    * Default: none
    */
-  cardInfoOutline: TextColor | undefined;
+  cardInfoOutline?: TextColor;
   /**
    * Default: black
    */
@@ -49,7 +50,7 @@ export interface CardStyles {
   /**
    * Default: none
    */
-  nameSymbol: NameSymbol | undefined;
+  nameSymbol?: NameSymbol;
   /**
    * Default: false
    */
@@ -67,11 +68,11 @@ export interface CardStyles {
   /**
    * Default: 'sm'
    */
-  hpSize: 'sm' | 'lg';
+  hpSize: Size;
   /**
    * Default: none
    */
-  abilitySymbol: AbilitySymbol | undefined;
+  abilitySymbol?: AbilitySymbol;
   /**
    * Set icon, rotation icon, card number, rarity icon\
    * Default: true

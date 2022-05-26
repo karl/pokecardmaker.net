@@ -16,6 +16,6 @@ export interface SubtypeLogic {
 export interface Subtype extends IdentifierInfo {
   types: number[];
   rarities: number[];
-  styles: CardStyles;
+  styles?: Partial<CardStyles>;
   logic: SubtypeLogic;
 }

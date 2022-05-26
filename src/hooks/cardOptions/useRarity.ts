@@ -29,19 +29,14 @@ const useRarity = () => {
 
   useEffect(() => {
     if (!rarityId) return;
-    if (!type.rarities.includes(rarityId)) {
+    if (
+      !type.rarities.includes(rarityId) &&
+      (!subtype || !subtype.rarities.includes(rarityId))
+    ) {
       setRarity(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setRarity, type]);
-
-  useEffect(() => {
-    if (!rarityId) return;
-    if (!subtype || !subtype.rarities.includes(rarityId)) {
-      setRarity(undefined);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setRarity, subtype]);
+  }, [setRarity, subtype, type]);
 
   return {
     rarities,

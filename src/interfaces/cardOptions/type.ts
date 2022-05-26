@@ -44,6 +44,6 @@ export interface TypeLogic {
 export interface Type extends IdentifierInfo {
   supertypes: number[];
   rarities: number[];
-  styles: CardStyles;
+  styles?: Partial<CardStyles>;
   logic: TypeLogic;
 }

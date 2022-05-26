@@ -1,7 +1,6 @@
 import { Subtype } from '@interfaces/cardOptions/subtype';
 import { CardStyles } from '@interfaces/cardOptions/cardStyles';
 import { defaultSubtypeLogic } from '@defaults/subtypes';
-import { defaultCardStyles } from '@defaults/cardStyles';
 import { fullArt, goldStar, goldenFullArt, promo } from './rarities';
 import {
   colorless,
@@ -37,7 +36,6 @@ export const basic: Subtype = {
     hasPrevolve: false,
   },
   styles: {
-    ...defaultCardStyles,
     hasDexStats: true,
   },
   types: pokemonTypeTypes,
@@ -53,7 +51,6 @@ export const stage1: Subtype = {
     hasPrevolve: true,
   },
   styles: {
-    ...defaultCardStyles,
     hasDexStats: true,
   },
   types: pokemonTypeTypes,
@@ -69,7 +66,6 @@ export const stage2: Subtype = {
     hasPrevolve: true,
   },
   styles: {
-    ...defaultCardStyles,
     hasDexStats: true,
   },
   types: pokemonTypeTypes,
@@ -97,7 +93,6 @@ export const v: Subtype = {
     hasPrevolve: false,
   },
   styles: {
-    ...defaultCardStyles,
     ...vStyles,
     nameSymbol: 'v',
   },
@@ -114,7 +109,6 @@ export const vmax: Subtype = {
     hasPrevolve: false,
   },
   styles: {
-    ...defaultCardStyles,
     ...vStyles,
     nameOutline: 'white',
     cardInfoOutline: 'white',
@@ -133,7 +127,6 @@ export const tool: Subtype = {
     ...defaultSubtypeLogic,
     hasVariations: false,
   },
-  styles: defaultCardStyles,
   types: [item.id],
   rarities: [],
 };

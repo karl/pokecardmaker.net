@@ -1,4 +1,3 @@
-import { defaultCardStyles } from '@defaults/cardStyles';
 import { Rarity } from '@interfaces/cardOptions/rarity';
 
 export const promo: Rarity = {
@@ -6,7 +5,6 @@ export const promo: Rarity = {
   slug: 'promo',
   displayName: 'Promo',
   styles: {
-    ...defaultCardStyles,
     nameOutline: 'white',
     hpOutline: 'white',
     movesOutline: 'white',
@@ -23,7 +21,6 @@ export const fullArt: Rarity = {
   slug: 'fullArt',
   displayName: 'Full Art',
   styles: {
-    ...defaultCardStyles,
     nameOutline: 'white',
     cardInfoOutline: 'white',
   },
@@ -34,7 +31,6 @@ export const goldenFullArt: Rarity = {
   slug: 'goldenFullArt',
   displayName: 'Golden Full Art',
   styles: {
-    ...defaultCardStyles,
     nameOutline: 'white',
     cardInfoOutline: 'white',
     hpOutline: 'black',
@@ -46,7 +42,6 @@ export const rainbow: Rarity = {
   id: 4,
   slug: 'rainbow',
   displayName: 'Rainbow',
-  styles: defaultCardStyles,
 };
 
 export const supporterFullArt: Rarity = {
@@ -54,7 +49,6 @@ export const supporterFullArt: Rarity = {
   slug: 'supporterFullArt',
   displayName: 'Full Art',
   styles: {
-    ...defaultCardStyles,
     movesOutline: 'white',
     cardInfoOutline: 'white',
     rarityIconColor: 'white',
@@ -66,7 +60,6 @@ export const goldStar: Rarity = {
   slug: 'goldStar',
   displayName: 'Gold Star',
   styles: {
-    ...defaultCardStyles,
     nameSymbol: 'star',
     hasDexEntry: false,
   },

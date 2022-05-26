@@ -1,4 +1,3 @@
-import { defaultCardStyles } from '@defaults/cardStyles';
 import { defaultTypeLogic } from '@defaults/types';
 import { Type, TypeLogic } from '@interfaces/cardOptions/type';
 import { energy, pokemon, trainer } from './supertypes';
@@ -18,7 +17,6 @@ export const grass: Type = {
   slug: 'grass',
   displayName: 'Grass',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -28,7 +26,6 @@ export const fire: Type = {
   slug: 'fire',
   displayName: 'Fire',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -38,7 +35,6 @@ export const water: Type = {
   slug: 'water',
   displayName: 'Water',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -48,7 +44,6 @@ export const lightning: Type = {
   slug: 'lightning',
   displayName: 'Lightning',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -58,7 +53,6 @@ export const psychic: Type = {
   slug: 'psychic',
   displayName: 'Psychic',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -68,7 +62,6 @@ export const fighting: Type = {
   slug: 'fighting',
   displayName: 'Fighting',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -79,7 +72,6 @@ export const dark: Type = {
   displayName: 'Dark',
   logic: pokemonTypeLogic,
   styles: {
-    ...defaultCardStyles,
     hpTextColor: 'white',
     nameTextColor: 'white',
     movesTextColor: 'white',
@@ -95,7 +87,6 @@ export const metal: Type = {
   slug: 'metal',
   displayName: 'Metal',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -105,7 +96,6 @@ export const colorless: Type = {
   slug: 'colorless',
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
-  styles: defaultCardStyles,
   supertypes: pokemonTypeSupertypes,
   rarities: [],
 };
@@ -118,7 +108,6 @@ export const item: Type = {
     ...defaultTypeLogic,
     hasSubtypes: true,
   },
-  styles: defaultCardStyles,
   supertypes: [trainer.id],
   rarities: [],
 };
@@ -132,7 +121,6 @@ export const supporter: Type = {
     hasSubname: true,
     hasDescription: true,
   },
-  styles: defaultCardStyles,
   supertypes: [trainer.id],
   rarities: [5],
 };
@@ -146,7 +134,6 @@ export const base: Type = {
     hasName: false,
   },
   styles: {
-    ...defaultCardStyles,
     hasCardInfo: false,
     hasDexEntry: false,
     hasDexStats: false,
@@ -165,7 +152,6 @@ export const special: Type = {
     hasTypeImage: true,
     hasDescription: true,
   },
-  styles: defaultCardStyles,
   supertypes: [energy.id],
   rarities: [],
 };

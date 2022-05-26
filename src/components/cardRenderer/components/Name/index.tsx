@@ -1,7 +1,5 @@
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useRarity from '@hooks/cardOptions/useRarity';
-import useSubtype from '@hooks/cardOptions/useSubtype';
-import useType from '@hooks/cardOptions/useType';
+import useCardStyles from '@hooks/cardOptions/useCardStyles';
 import { FC } from 'react';
 import { NameText } from './styles';
 
@@ -9,25 +7,14 @@ const Name: FC = () => {
   const {
     state: { name },
   } = useCardOptions();
-  // Should come from above hook
-  const { type } = useType();
-  const { subtype } = useSubtype();
-  const { rarity } = useRarity();
+  const { cardStyles } = useCardStyles();
 
   if (!name) return null;
 
   return (
     <NameText
-      $outline={
-        rarity?.styles.nameOutline ||
-        subtype?.styles.nameOutline ||
-        type.styles.nameOutline
-      }
-      $color={
-        rarity?.styles.nameTextColor ||
-        type?.styles.nameTextColor ||
-        type.styles.nameTextColor
-      }
+      $outline={cardStyles.nameOutline}
+      $color={cardStyles.nameTextColor}
     >
       {name}
     </NameText>
