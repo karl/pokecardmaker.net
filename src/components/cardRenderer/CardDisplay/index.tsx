@@ -2,6 +2,8 @@ import { baseFontSize, cardImgAspect, cardImgWidth } from '@constants';
 import { FC, useMemo } from 'react';
 import { useElementSize } from 'usehooks-ts';
 import CardImage from '../components/CardImage';
+import Name from '../components/Name';
+import SvgHelpers from '../components/SvgHelpers';
 import { CardContainer } from './styles';
 
 const CardDisplay: FC = () => {
@@ -24,6 +26,8 @@ const CardDisplay: FC = () => {
       $height={height}
       ref={squareRef}
     >
+      <SvgHelpers />
+      <Name />
       <CardImage />
     </CardContainer>
   );

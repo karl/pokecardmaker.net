@@ -88,7 +88,16 @@ theme = createTheme(theme, {
           padding: `${theme.spacing(1.5)} 32px ${theme.spacing(
             1.5,
           )} ${theme.spacing(3)} !important`,
-          background: theme.palette.background.default,
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          transform: `translate(14px, 6px) scale(1)`,
+        },
+        shrink: {
+          transform: `translate(14px, -9px) scale(0.75)`,
         },
       },
     },
