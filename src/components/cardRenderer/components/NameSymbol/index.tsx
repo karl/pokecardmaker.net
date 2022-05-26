@@ -11,7 +11,7 @@ const NameSymbol: FC = () => {
     cardStyles.nameSymbol && Routes.Assets.Symbol(cardStyles.nameSymbol),
   );
 
-  if (!cardStyles.nameSymbol) return null;
+  if (!cardStyles.nameSymbol || !imgSrc) return null;
 
   return (
     <Wrapper>
