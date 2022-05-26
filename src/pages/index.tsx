@@ -7,15 +7,14 @@ import { constructCardImgObj } from '@utils/constructCardImageObj';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
 
 interface CardImageProps {
-  // An object of images structured like a directory
-  cardImgObj: object;
+  cardImgObj: object | null;
 }
 
 const Home: FC<CardImageProps> = ({ cardImgObj }) => {
   const { setCardImgObj } = useCardOptions();
 
   useEffect(() => {
-    setCardImgObj(cardImgObj);
+    setCardImgObj(cardImgObj || undefined);
   }, [cardImgObj, setCardImgObj]);
 
   return (
@@ -35,9 +34,12 @@ const Home: FC<CardImageProps> = ({ cardImgObj }) => {
 
 // TODO: Maybe don't do this per page but just once at build-time
 export const getStaticProps: GetStaticProps<CardImageProps> = async () => {
+  // In development each refresh triggers this, and that takes too long
+  const cardImgObj =
+    process.env.NODE_ENV !== 'development' ? await constructCardImgObj() : null;
   return {
     props: {
-      cardImgObj: await constructCardImgObj(),
+      cardImgObj,
     },
   };
 };

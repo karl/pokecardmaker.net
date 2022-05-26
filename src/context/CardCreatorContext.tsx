@@ -13,7 +13,7 @@ interface CardCreatorContextInterface {
   state: CardCreatorState;
   setState: Dispatch<SetStateAction<CardInterface>>;
   cardImgObj?: object;
-  setCardImgObj: (obj: object) => void;
+  setCardImgObj: (obj?: object) => void;
 }
 
 const initialState: CardCreatorState = defaultCardOptions;

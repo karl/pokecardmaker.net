@@ -92,6 +92,17 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        startIcon: {
+          position: 'absolute',
+          left: theme.spacing(4),
+          top: '50%',
+          transform: 'translateY(-50%)',
+          margin: 'unset',
+        },
+      },
+    },
   },
 });
 
