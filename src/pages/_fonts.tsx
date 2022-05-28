@@ -1,66 +1,55 @@
 import { FC } from 'react';
 import { GlobalStyles, css } from '@css';
 
-const getFormatName = (format: string) => {
-  switch (format) {
-    case 'ttf':
-      return 'truetype';
-    case 'otf':
-      return 'opentype';
-    default:
-      throw new Error(`Define new font format: ${format}`);
-  }
-};
-
 interface FontFace {
   fileName: string;
-  format: string;
+  fontName: string;
 }
 
 const fonts: FontFace[] = [
   {
-    fileName: 'Frutiger LT 55 Roman',
-    format: 'ttf',
+    fontName: 'Frutiger LT 55 Roman',
+    fileName: 'FrutigerLT-Roman',
   },
   {
-    fileName: 'Frutiger LT 66 Bold Italic',
-    format: 'ttf',
+    fontName: 'Frutiger LT 66 Bold Italic',
+    fileName: 'FrutigerLT-BoldItalic',
   },
   {
-    fileName: 'Futura LT Medium Bold',
-    format: 'ttf',
+    fontName: 'Futura LT Medium Bold',
+    fileName: 'FuturaLT-Heavy',
   },
   {
-    fileName: 'Futura Std Bold Oblique',
-    format: 'otf',
+    fontName: 'Futura Std Bold Oblique',
+    fileName: 'FuturaStd-BoldOblique',
   },
   {
-    fileName: 'Futura Std Heavy',
-    format: 'otf',
+    fontName: 'Futura Std Heavy',
+    fileName: 'FuturaStd-Heavy',
   },
   {
-    fileName: 'Gill Sans Std Bold Condensed',
-    format: 'ttf',
+    fontName: 'Gill Sans Std Bold Condensed',
+    fileName: 'GillSans-CondensedBold',
   },
   {
-    fileName: 'Gill Sans Std Regular Bold',
-    format: 'ttf',
+    fontName: 'Gill Sans Std Regular Bold',
+    fileName: 'GillSans-Bold',
   },
   {
-    fileName: 'Gill Sans Std Regular Italic',
-    format: 'ttf',
+    fontName: 'Gill Sans Std Regular Italic',
+    fileName: 'GillSans-Italic',
   },
   {
-    fileName: 'Gill Sans Std Regular',
-    format: 'ttf',
+    fontName: 'Gill Sans Std Regular',
+    fileName: 'GillSans',
   },
   {
-    fileName: 'Gill Sans Std Ultra Bold',
-    format: 'ttf',
+    fontName: 'Gill Sans Std Ultra Bold',
+    fileName: 'GillSans-ExtraBoldDisplay',
   },
   {
-    fileName: 'Optima Medium',
-    format: 'ttf',
+    fontName: 'Optima Medium',
+    fileName: 'Optima-Medium',
   },
 ];
 
@@ -68,12 +57,13 @@ const fontFaces = css`
   ${fonts.map(
     font => css`
       @font-face {
-        font-family: '${font.fileName}';
-        src: url('/fonts/${font.fileName}.${font.format}')
-          format('${getFormatName(font.format)}');
-        font-style: normal;
+        font-family: '${font.fontName}';
+        src: url('/fonts/${font.fileName}.woff2') format('woff2'),
+          url('/fonts/${font.fileName}.woff') format('woff'),
+          url('/fonts/${font.fileName}.ttf') format('truetype');
         font-weight: normal;
-        font-stetch: normal;
+        font-style: normal;
+        font-display: swap;
       }
     `,
   )}
@@ -82,14 +72,32 @@ const fontFaces = css`
 const Fonts: FC = () => (
   <>
     {fonts.map(font => (
-      <link
-        key={font.fileName}
-        rel="preload"
-        href={`/fonts/${font.fileName}.${font.format}`}
-        as="font"
-        type={`font/${font.format}`}
-        crossOrigin=""
-      />
+      <>
+        <link
+          key={font.fileName}
+          rel="preload"
+          href={`/fonts/${font.fileName}.woff2`}
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          key={font.fileName}
+          rel="preload"
+          href={`/fonts/${font.fileName}.woff`}
+          as="font"
+          type="font/woff"
+          crossOrigin=""
+        />
+        <link
+          key={font.fileName}
+          rel="preload"
+          href={`/fonts/${font.fileName}.ttf`}
+          as="font"
+          type="font/ttf"
+          crossOrigin=""
+        />
+      </>
     ))}
     <GlobalStyles styles={fontFaces} />
   </>

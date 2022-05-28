@@ -1,4 +1,5 @@
 import AccordionForm from '@components/AccordionForm';
+import HitpointsInput from '@components/cardOptions/fields/HitpointsInput';
 import NameInput from '@components/cardOptions/fields/NameInput';
 import useType from '@hooks/cardOptions/useType';
 import { FC } from 'react';
@@ -11,6 +12,7 @@ const BasicsForm: FC = () => {
   return (
     <AccordionForm id="basicsForm" header="Basics">
       <NameInput />
+      <HitpointsInput />
     </AccordionForm>
   );
 };

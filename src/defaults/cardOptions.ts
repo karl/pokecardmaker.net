@@ -56,7 +56,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   typeImgAmount: 1,
   cardNumber: '100',
   totalInSet: '112',
-  hitpoints: 100,
+  hitpoints: 220,
   illustrator: '',
   weaknessAmount: 2,
   resistanceAmount: 30,
