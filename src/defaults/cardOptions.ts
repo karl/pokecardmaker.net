@@ -45,7 +45,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: '',
+  name: 'Garbodor',
   subname: '',
   backgroundImgSrc: undefined,
   imgLayer1Src: undefined,
@@ -70,8 +70,10 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
-  typeId: defaultRelations.type.id,
-  subtypeId: defaultRelations.subtype?.id,
+  typeId: dark.id,
+  // typeId: defaultRelations.type.id,
+  subtypeId: stage1.id,
+  // subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
   weaknessTypeId: defaultRelations.weaknessType?.id,

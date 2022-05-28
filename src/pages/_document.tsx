@@ -3,6 +3,7 @@ import createEmotionServer from '@emotion/server/create-instance';
 import React from 'react';
 import { theme } from '@utils';
 import { createEmotionCache } from '@css';
+import Fonts from './_fonts';
 
 export default class MyDocument extends Document {
   render() {
@@ -15,6 +16,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
           />
+          <Fonts />
         </Head>
         <body>
           <Main />

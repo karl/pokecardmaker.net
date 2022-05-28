@@ -21,5 +21,5 @@ tags.forEach(tag => {
   (styled as any)[tag] = styled(tag as any);
 });
 
-export { css } from '@mui/material';
+export { css, GlobalStyles } from '@mui/material';
 export default styled;
