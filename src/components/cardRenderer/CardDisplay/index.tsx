@@ -3,6 +3,7 @@ import { FC, useMemo } from 'react';
 import { useElementSize } from 'usehooks-ts';
 import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
+import DebugImage from '../components/DebugImage';
 import Hitpoints from '../components/Hitpoints';
 import SvgHelpers from '../components/SvgHelpers';
 import { CardContainer } from './styles';
@@ -31,6 +32,7 @@ const CardDisplay: FC = () => {
       <NameBar />
       <Hitpoints />
       <CardImage />
+      <DebugImage />
     </CardContainer>
   );
 };

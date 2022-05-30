@@ -1,4 +1,4 @@
-import { CardText } from '@components/CardText';
+import { CardText } from '@components/cardRenderer/CardText';
 import { styled } from '@css';
 
 export const NameText = styled(CardText)`

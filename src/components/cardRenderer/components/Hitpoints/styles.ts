@@ -1,4 +1,4 @@
-import { CardText } from '@components/CardText';
+import { CardText } from '@components/cardRenderer/CardText';
 import { css, styled } from '@css';
 import { Size } from '@interfaces/cardOptions/cardStyles';
 
