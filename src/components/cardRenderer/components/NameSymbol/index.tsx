@@ -19,6 +19,7 @@ const NameSymbol: FC = () => {
         layout="fill"
         objectFit="contain"
         objectPosition="left"
+        alt=""
         src={imgSrc}
       />
     </Wrapper>

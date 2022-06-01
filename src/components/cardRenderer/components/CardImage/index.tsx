@@ -10,7 +10,8 @@ import fallbackCard from '@assets/fallbackCard.png';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import dot from 'dot-object';
 import { getCardPath } from '@utils/getCardPath';
-import { StyledImage, Wrapper } from './styles';
+import Image from 'next/image';
+import { Wrapper } from './styles';
 
 const CardImage: FC = () => {
   const { baseSet } = useBaseSet();
@@ -43,8 +44,9 @@ const CardImage: FC = () => {
   if (!imgSrc) return null;
   return (
     <Wrapper>
-      <StyledImage
+      <Image
         src={imgSrc}
+        alt=""
         layout="fill"
         placeholder="blur"
         blurDataURL={fallbackCard.src}

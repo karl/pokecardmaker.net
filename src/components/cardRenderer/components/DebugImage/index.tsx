@@ -14,7 +14,9 @@ const DebugImage: FC = () => {
   )
     return null;
 
-  return <StyledImage $opacity={overlayOpacity / 100} src={overlayImgSrc} />;
+  return (
+    <StyledImage $opacity={overlayOpacity / 100} src={overlayImgSrc} alt="" />
+  );
 };
 
 export default DebugImage;

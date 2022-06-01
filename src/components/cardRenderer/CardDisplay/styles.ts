@@ -25,5 +25,6 @@ export const CardContainer = styled('div')<{
     height: calc(100% - 8px);
     top: 4px;
     left: 4px;
+    pointer-events: none;
   }
 `;
