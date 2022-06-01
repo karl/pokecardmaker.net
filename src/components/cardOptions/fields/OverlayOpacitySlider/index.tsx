@@ -1,12 +1,17 @@
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import { Slider, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 const OverlayOpacitySlider: FC = () => {
   const {
     debug: { overlayOpacity, setOverlayOpacity },
   } = useCardOptions();
+  const [opacity, setOpacity] = useState(overlayOpacity);
+
+  useEffect(() => {
+    setOpacity(overlayOpacity);
+  }, [overlayOpacity]);
 
   return (
     <Box>
@@ -17,8 +22,9 @@ const OverlayOpacitySlider: FC = () => {
         step={1}
         min={0}
         max={100}
-        value={overlayOpacity}
-        onChange={(_, value) => setOverlayOpacity(value as number)}
+        value={opacity}
+        onChange={(_, value) => setOpacity(value as number)}
+        onChangeCommitted={(_, value) => setOverlayOpacity(value as number)}
       />
     </Box>
   );

@@ -45,9 +45,9 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
   const [state, setState] = useState<CardCreatorState>(initialState);
   const [cardImgObj, setCardImgObj] = useState<{}>();
   const [showCardOverlay, setShowCardOverlay] = useState<boolean>(true);
-  const [overlayOpacity, setOverlayOpacity] = useState<number>(5);
+  const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
-    'https://pokemonkaartenverkopen.nl/wp-content/themes/versatile-child/modules/pokemon-tcg/assets/cards/hi-rillaboom-v-SWSH014-sword-shield-swsh-black-star-promos.png?ezimgfmt=ng%3Awebp%2Fngcb1%2Frs%3Adevice%2Frscb1-2',
+    'https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH2/SWSH2_EN_118.png',
   );
 
   return (

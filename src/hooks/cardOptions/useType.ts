@@ -37,7 +37,10 @@ const useType = () => {
   );
 
   useEffect(() => {
-    setType(defaultSupertypeTypes[supertype.id]);
+    if (!type.supertypes.includes(supertype.id)) {
+      setType(defaultSupertypeTypes[supertype.id]);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setType, supertype]);
 
   return {

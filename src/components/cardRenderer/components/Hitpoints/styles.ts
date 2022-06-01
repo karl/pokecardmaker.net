@@ -10,12 +10,12 @@ export const Wrapper = styled(CardText)<{ $size: Size }>`
   ${({ $size }) =>
     $size === 'sm'
       ? css`
-          top: 3.3%;
-          right: 13%;
+          top: 3.5%;
+          right: 13.2%;
         `
       : css`
           top: 2.5%;
-          right: 13.6%;
+          right: 13.8%;
         `};
 `;
 
@@ -43,7 +43,7 @@ export const HPNumbers = styled('span')<{ $size: Size }>`
   ${({ $size }) =>
     $size === 'sm'
       ? css`
-          font-size: 2.7875em;
+          font-size: 2.7em;
         `
       : css`
           font-size: 3.55em;

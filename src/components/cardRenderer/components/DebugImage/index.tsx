@@ -1,13 +1,6 @@
-import { styled } from '@css';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import { FC } from 'react';
-
-const StyledImage = styled('img')<{ $opacity: number }>`
-  z-index: 999;
-  height: 100%;
-  width: 100%;
-  opacity: ${({ $opacity }) => $opacity};
-`;
+import { StyledImage } from './styles';
 
 const DebugImage: FC = () => {
   const {

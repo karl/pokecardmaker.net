@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import { GlobalStyles, css } from '@css';
 
 interface FontFace {
@@ -71,10 +71,10 @@ const fontFaces = css`
 
 const Fonts: FC = () => (
   <>
+    {/* TODO: We probably don't need to load all different types */}
     {fonts.map(font => (
-      <>
+      <Fragment key={font.fileName}>
         <link
-          key={font.fileName}
           rel="preload"
           href={`/fonts/${font.fileName}.woff2`}
           as="font"
@@ -82,7 +82,6 @@ const Fonts: FC = () => (
           crossOrigin=""
         />
         <link
-          key={font.fileName}
           rel="preload"
           href={`/fonts/${font.fileName}.woff`}
           as="font"
@@ -90,14 +89,13 @@ const Fonts: FC = () => (
           crossOrigin=""
         />
         <link
-          key={font.fileName}
           rel="preload"
           href={`/fonts/${font.fileName}.ttf`}
           as="font"
           type="font/ttf"
           crossOrigin=""
         />
-      </>
+      </Fragment>
     ))}
     <GlobalStyles styles={fontFaces} />
   </>
