@@ -3,39 +3,39 @@ import { CardStyles } from './cardStyles';
 
 export interface TypeLogic {
   /**
-   * Default: false
+   * @default false
    */
   hasSubtypes: boolean;
   /**
-   * Default: false
+   * @default false
    */
   isSubtypeRequired: boolean;
   /**
-   * Default: false
+   * @default false
    */
   hasSubname: boolean;
   /**
    * Whether this type is a type that a Pokémon can have (Grass/Water)\
-   * Default: false
+   * @default false
    */
   isPokemonType: boolean;
   /**
    * Whether the type (Grass/Water) can be used as an attack cost type\
-   * Default: false
+   * @default false
    */
   isAttackCostType: boolean;
   /**
    * The special energy image at the top right\
-   * Default: false
+   * @default false
    */
   hasTypeImage: boolean;
   /**
    * Whether the type has a description text (Supporter/Special energy text)\
-   * Default: false
+   * @default false
    */
   hasDescription: boolean;
   /**
-   * Default: true
+   * @default true
    */
   hasName: boolean;
 }

@@ -1,9 +1,9 @@
 import { baseFontSize, cardImgAspect, cardImgWidth } from '@constants';
 import { FC, useMemo } from 'react';
-import { useElementSize } from 'usehooks-ts';
+import { useDebounce, useElementSize } from 'usehooks-ts';
+import Debug from '../blocks/Debug';
 import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
-import DebugImage from '../components/DebugImage';
 import Hitpoints from '../components/Hitpoints';
 import PrevolveName from '../components/PrevolveName';
 import SvgHelpers from '../components/SvgHelpers';
@@ -11,16 +11,20 @@ import { CardContainer } from './styles';
 
 const CardDisplay: FC = () => {
   const [squareRef, { width }] = useElementSize();
+  const debouncedWidth = useDebounce<number>(width, 250);
 
-  // TODO: This crashes often when resizing, maybe make a new useElementSize hook
-  // TODO: Debounce this
   const fontSize = useMemo<number>(
-    () => (width ? width / (cardImgWidth / baseFontSize) : baseFontSize),
-    [width],
+    () =>
+      debouncedWidth
+        ? debouncedWidth / (cardImgWidth / baseFontSize)
+        : baseFontSize,
+    [debouncedWidth],
   );
 
-  // TODO: Debounce this
-  const height = useMemo<number>(() => width * cardImgAspect, [width]);
+  const height = useMemo<number>(
+    () => debouncedWidth * cardImgAspect,
+    [debouncedWidth],
+  );
 
   return (
     <CardContainer
@@ -29,12 +33,12 @@ const CardDisplay: FC = () => {
       $height={height}
       ref={squareRef}
     >
+      <Debug />
       <SvgHelpers />
       <NameBar />
       <Hitpoints />
       <PrevolveName />
       <CardImage />
-      <DebugImage />
     </CardContainer>
   );
 };

@@ -1,18 +1,23 @@
-import { Box, Divider, Typography } from '@mui/material';
+import { GitHub as GitHubIcon } from '@mui/icons-material';
+import { Box, Divider, IconButton, Typography } from '@mui/material';
 import { FC } from 'react';
 
+// TODO: Add privacy policy
 const Footer: FC = () => (
-  <Box component="footer" display="flex" justifyContent="center" p={2.5}>
+  <Box component="footer" display="flex" justifyContent="center" p={1}>
     <Typography variant="h6" align="center" alignSelf="center">
       © {new Date().getFullYear()} Pokécardmaker.net
     </Typography>
-    <Box mx={2.5} py={0.5}>
+    <Box ml={2.5} mr={1} py={1}>
       <Divider orientation="vertical" color="light" />
     </Box>
-    <Typography variant="h6" align="center" alignSelf="center">
-      Shinebrothers
-    </Typography>
-    {/* TODO: Add github logo and privacy policy */}
+    <IconButton
+      color="inherit"
+      target="_blank"
+      href="https://github.com/lvandernoll/pokecardmaker.net"
+    >
+      <GitHubIcon />
+    </IconButton>
   </Box>
 );
 

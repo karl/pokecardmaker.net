@@ -1,7 +1,7 @@
 import subtypes from '@data/cardOptions/subtypes';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { defaultRelations, defaultTypeSubtypes } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 import useType from './useType';
@@ -9,7 +9,7 @@ import useType from './useType';
 const useSubtype = () => {
   const {
     state: { subtypeId },
-    setState,
+    stateSetter,
   } = useCardOptions();
   const { type } = useType();
 
@@ -18,11 +18,9 @@ const useSubtype = () => {
     [subtypeId],
   );
 
-  const setSubtype = useCallback(
-    (id: CardInterface['subtypeId']) =>
-      setState(prev => ({ ...prev, subtypeId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setSubtype = useMemo(
+    () => stateSetter<CardInterface['subtypeId']>('subtypeId'),
+    [stateSetter],
   );
 
   useEffect(() => {

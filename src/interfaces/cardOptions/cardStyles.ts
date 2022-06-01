@@ -5,81 +5,81 @@ export type Size = 'sm' | 'lg';
 
 export interface CardStyles {
   /**
-   * Default: none
+   * @default none
    */
   nameOutline?: TextColor;
   /**
-   * Default: none
+   * @default none
    */
   hpOutline?: TextColor;
   /**
-   * Default: none
+   * @default none
    */
   movesOutline?: TextColor;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon\
-   * Default: none
+   * @default none
    */
   cardInfoOutline?: TextColor;
   /**
-   * Default: black
+   * @default black
    */
   nameTextColor: TextColor;
   /**
-   * Default: black
+   * @default black
    */
   hpTextColor: TextColor;
   /**
-   * Default: black
+   * @default black
    */
   movesTextColor: TextColor;
   /**
    * The bar that shows weakness & resistance\
-   * Default: black
+   * @default black
    */
   typeBarTextColor: TextColor;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon\
-   * Default: black
+   * @default black
    */
   cardInfoTextColor: TextColor;
   /**
-   * Default: black
+   * @default black
    */
   rarityIconColor: TextColor;
   /**
-   * Default: none
+   * @default none
    */
   nameSymbol?: NameSymbol;
   /**
-   * Default: false
+   * @default false
    */
   alignMovesBottom: boolean;
   /**
    * The middle bar that shows weight etc.\
-   * Default: true
+   * @default true
    */
   hasDexStats: boolean;
   /**
    * The bottom-right Pokédex entry text\
-   * Default: true
+   * @default true
    */
   hasDexEntry: boolean;
   /**
-   * Default: 'sm'
+   * @default 'sm'
    */
   hpSize: Size;
   /**
-   * Default: none
+   * @default none
    */
   abilitySymbol?: AbilitySymbol;
   /**
    * Set icon, rotation icon, card number, rarity icon\
-   * Default: true
+   * @default true
    */
   hasCardInfo: boolean;
   /**
-   * Default: true
+   * @default true
    */
   hasIllustratorName: boolean;
 }

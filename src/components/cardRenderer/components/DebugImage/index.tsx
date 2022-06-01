@@ -7,12 +7,7 @@ const DebugImage: FC = () => {
     debug: { showCardOverlay, overlayOpacity, overlayImgSrc },
   } = useCardOptions();
 
-  if (
-    !showCardOverlay ||
-    !overlayImgSrc ||
-    process.env.NODE_ENV !== 'development'
-  )
-    return null;
+  if (!showCardOverlay || !overlayImgSrc) return null;
 
   return (
     <StyledImage $opacity={overlayOpacity / 100} src={overlayImgSrc} alt="" />

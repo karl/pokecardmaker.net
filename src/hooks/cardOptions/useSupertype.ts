@@ -1,14 +1,14 @@
 import supertypes from '@data/cardOptions/supertypes';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useSupertype = () => {
   const {
     state: { supertypeId },
-    setState,
+    stateSetter,
   } = useCardOptions();
 
   const supertype = useMemo<RelationsInterface['supertype']>(
@@ -16,12 +16,9 @@ const useSupertype = () => {
     [supertypeId],
   );
 
-  // TODO: Replace this and in other hooks with useCardOptions' stateSetter
-  const setSupertype = useCallback(
-    (id: CardInterface['supertypeId']) =>
-      setState(prev => ({ ...prev, supertypeId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setSupertype = useMemo(
+    () => stateSetter<CardInterface['supertypeId']>('supertypeId'),
+    [stateSetter],
   );
 
   return {

@@ -22,8 +22,7 @@ const HitpointsInput: FC = () => {
     [setHitpoints],
   );
 
-  // TODO: Add to supetype definition
-  if (supertype.slug !== 'pokemon') return null;
+  if (!supertype.logic.hasHitpoints) return null;
 
   return (
     <TextField

@@ -1,6 +1,6 @@
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 import useType from './useType';
@@ -8,7 +8,7 @@ import useType from './useType';
 const useWeaknessType = () => {
   const {
     state: { weaknessTypeId },
-    setState,
+    stateSetter,
   } = useCardOptions();
   const { attackCostTypes } = useType();
 
@@ -18,11 +18,9 @@ const useWeaknessType = () => {
     [attackCostTypes, weaknessTypeId],
   );
 
-  const setWeaknessType = useCallback(
-    (id: CardInterface['weaknessTypeId']) =>
-      setState(prev => ({ ...prev, weaknessTypeId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setWeaknessType = useMemo(
+    () => stateSetter<CardInterface['weaknessTypeId']>('weaknessTypeId'),
+    [stateSetter],
   );
 
   return {

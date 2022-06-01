@@ -1,14 +1,14 @@
 import setIcons from '@data/cardOptions/setIcons';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useSetIcon = () => {
   const {
     state: { setIconId },
-    setState,
+    stateSetter,
   } = useCardOptions();
 
   const setIcon = useMemo<RelationsInterface['setIcon']>(
@@ -16,11 +16,9 @@ const useSetIcon = () => {
     [setIconId],
   );
 
-  const setSetIcon = useCallback(
-    (id: CardInterface['setIconId']) =>
-      setState(prev => ({ ...prev, setIconId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setSetIcon = useMemo(
+    () => stateSetter<CardInterface['setIconId']>('setIconId'),
+    [stateSetter],
   );
 
   return {

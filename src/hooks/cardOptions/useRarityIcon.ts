@@ -1,14 +1,14 @@
 import rarityIcons from '@data/cardOptions/rarityIcons';
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useRarityIcon = () => {
   const {
     state: { rarityIconId },
-    setState,
+    stateSetter,
   } = useCardOptions();
 
   const rarityIcon = useMemo<RelationsInterface['rarityIcon']>(
@@ -16,11 +16,9 @@ const useRarityIcon = () => {
     [rarityIconId],
   );
 
-  const setRarityIcon = useCallback(
-    (id: CardInterface['rarityIconId']) =>
-      setState(prev => ({ ...prev, rarityIconId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setRarityIcon = useMemo(
+    () => stateSetter<CardInterface['rarityIconId']>('rarityIconId'),
+    [stateSetter],
   );
 
   return {

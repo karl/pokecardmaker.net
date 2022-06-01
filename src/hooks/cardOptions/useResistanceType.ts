@@ -1,6 +1,6 @@
 import { CardInterface, RelationsInterface } from '@interfaces/card';
 import findById from '@utils/findById';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 import useType from './useType';
@@ -8,7 +8,7 @@ import useType from './useType';
 const useResistanceType = () => {
   const {
     state: { resistanceTypeId },
-    setState,
+    stateSetter,
   } = useCardOptions();
   const { attackCostTypes } = useType();
 
@@ -22,11 +22,9 @@ const useResistanceType = () => {
     [attackCostTypes, resistanceTypeId],
   );
 
-  const setResistanceType = useCallback(
-    (id: CardInterface['resistanceTypeId']) =>
-      setState(prev => ({ ...prev, resistanceTypeId: id })),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+  const setResistanceType = useMemo(
+    () => stateSetter<CardInterface['resistanceTypeId']>('resistanceTypeId'),
+    [stateSetter],
   );
 
   return {

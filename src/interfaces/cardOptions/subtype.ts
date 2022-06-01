@@ -3,11 +3,11 @@ import { CardStyles } from './cardStyles';
 
 export interface SubtypeLogic {
   /**
-   * Default: false
+   * @default false
    */
   hasVariations: boolean;
   /**
-   * Default: false
+   * @default false
    */
   hasPrevolve: boolean;
 }

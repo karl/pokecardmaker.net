@@ -106,6 +106,7 @@ const useCardOptions = () => {
   return {
     state,
     setState,
+    stateSetter,
     setName,
     setSubname,
     setBackgroundImgSrc,
