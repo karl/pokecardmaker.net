@@ -106,7 +106,7 @@ export const vmax: Subtype = {
   displayName: 'VMax',
   logic: {
     hasVariations: true,
-    hasPrevolve: false,
+    hasPrevolve: true,
   },
   styles: {
     ...vStyles,

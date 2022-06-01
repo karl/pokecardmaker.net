@@ -5,6 +5,8 @@ import CardDisplay from '@components/cardRenderer/CardDisplay';
 import { GetStaticProps } from 'next';
 import { constructCardImgObj } from '@utils/constructCardImageObj';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import { Box } from '@mui/system';
+import { CardWrapper } from './styles';
 
 interface CardImageProps {
   cardImgObj: object | null;
@@ -23,11 +25,12 @@ const Home: FC<CardImageProps> = ({ cardImgObj }) => {
         title="Creator"
         description="Create your own custom Pokémon cards in the Sword and Shield format!"
       />
-      {/* <CssExample /> */}
-      <div style={{ display: 'flex' }}>
+      <Box display="flex" gap={4}>
         <CardOptionsForm />
-        <CardDisplay />
-      </div>
+        <CardWrapper>
+          <CardDisplay />
+        </CardWrapper>
+      </Box>
     </>
   );
 };

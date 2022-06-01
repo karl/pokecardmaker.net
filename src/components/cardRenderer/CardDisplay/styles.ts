@@ -5,13 +5,10 @@ export const CardContainer = styled('div')<{
   $height: number;
 }>`
   position: relative;
-  width: 40%;
-  /* TODO: Fix all fonts */
-  font-family: 'Futura LT';
+  width: 70%;
   z-index: 1;
   font-size: ${({ $fontSize }) => `${$fontSize}px`};
   height: ${({ $height }) => `${$height}px`};
-  /* background:blue; */
 
   &::before {
     /* Simple white background so the card isn't transparent */

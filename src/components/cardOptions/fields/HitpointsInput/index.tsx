@@ -34,7 +34,7 @@ const HitpointsInput: FC = () => {
         inputMode: 'numeric',
         pattern: '[0-9]*',
       }}
-      label="Name"
+      label="Hitpoints"
       value={hitpoints}
       type="number"
       onChange={handleChange}

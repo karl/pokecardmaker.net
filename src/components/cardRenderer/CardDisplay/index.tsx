@@ -5,6 +5,7 @@ import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
 import DebugImage from '../components/DebugImage';
 import Hitpoints from '../components/Hitpoints';
+import PrevolveName from '../components/PrevolveName';
 import SvgHelpers from '../components/SvgHelpers';
 import { CardContainer } from './styles';
 
@@ -31,6 +32,7 @@ const CardDisplay: FC = () => {
       <SvgHelpers />
       <NameBar />
       <Hitpoints />
+      <PrevolveName />
       <CardImage />
       <DebugImage />
     </CardContainer>

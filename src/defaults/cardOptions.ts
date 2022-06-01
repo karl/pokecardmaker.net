@@ -61,7 +61,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   weaknessAmount: 2,
   resistanceAmount: 30,
   retreatCost: 1,
-  prevolveName: '',
+  prevolveName: 'Trubbish',
   pokedexEntry: '',
   description: '',
   ability: undefined,

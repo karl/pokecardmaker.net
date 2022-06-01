@@ -7,7 +7,11 @@ export const Background = styled('div')`
 
 export const MainContainer = styled(Container)`
   padding: ${({ theme }) => theme.spacing(5, 3, 3)};
+`;
 
-  /* TODO: Remove this style */
-  min-height: calc(100vh - 133px);
+export const CardWrapper = styled('div')`
+  position: sticky;
+  top: ${({ theme }) => theme.spacing(2)};
+  height: fit-content;
+  width: 100%;
 `;
