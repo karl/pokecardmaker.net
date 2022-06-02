@@ -18,7 +18,8 @@ const useBase64Img = (src?: string) => {
               }
             };
             reader.readAsDataURL(blob);
-          });
+          })
+          .catch(console.error);
       })();
     }
   }, [src]);

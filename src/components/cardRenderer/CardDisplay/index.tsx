@@ -5,6 +5,7 @@ import Debug from '../blocks/Debug';
 import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
 import Hitpoints from '../components/Hitpoints';
+import PrevolveImg from '../components/PrevolveImg';
 import PrevolveName from '../components/PrevolveName';
 import SvgHelpers from '../components/SvgHelpers';
 import { CardContainer } from './styles';
@@ -38,6 +39,7 @@ const CardDisplay: FC = () => {
       <NameBar />
       <Hitpoints />
       <PrevolveName />
+      <PrevolveImg />
       <CardImage />
     </CardContainer>
   );
