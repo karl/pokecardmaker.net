@@ -1,7 +1,10 @@
 import ControlledSelector from '@components/ControlledSelector';
 import useBaseSet from '@hooks/cardOptions/useBaseSet';
-import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
+import { ListItemText, SelectChangeEvent } from '@mui/material';
+import Routes from '@routes';
+import Image from 'next/image';
 import { FC } from 'react';
+import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const BaseSetSelector: FC = () => {
   const { baseSets, baseSet, setBaseSet } = useBaseSet();
@@ -18,9 +21,17 @@ const BaseSetSelector: FC = () => {
       onChange={handleChange}
     >
       {baseSets.map(bs => (
-        <MenuItem key={bs.slug} value={bs.id}>
+        <StyledMenuItem key={bs.slug} value={bs.id}>
+          <StyledListItemIcon>
+            <Image
+              src={Routes.Assets.Icons.Set(bs.slug)}
+              width={36}
+              height={36}
+              alt=""
+            />
+          </StyledListItemIcon>
           <ListItemText primary={bs.displayName} />
-        </MenuItem>
+        </StyledMenuItem>
       ))}
     </ControlledSelector>
   );
