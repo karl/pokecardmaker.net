@@ -21,6 +21,8 @@ interface CardCreatorContextInterface {
     setOverlayOpacity: Dispatch<SetStateAction<number>>;
     overlayImgSrc?: string;
     setOverlayImgSrc: Dispatch<SetStateAction<string | undefined>>;
+    prevolveImgSrc?: string;
+    setPrevolveImgSrc: Dispatch<SetStateAction<string | undefined>>;
   };
 }
 
@@ -38,6 +40,8 @@ export const CardCreatorContext = createContext<CardCreatorContextInterface>({
     setOverlayOpacity: () => null,
     overlayImgSrc: undefined,
     setOverlayImgSrc: () => null,
+    prevolveImgSrc: undefined,
+    setPrevolveImgSrc: () => null,
   },
 });
 
@@ -48,6 +52,9 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
   const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
     'https://assets.pokemon.com/assets/cms2/img/cards/web/SWSH2/SWSH2_EN_118.png',
+  );
+  const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>(
+    'https://64.media.tumblr.com/57fd7a6ad04b7bf1538e83474a2222a7/b6be2ee655897623-63/s1280x1920/6dd2fef19a466174889f6c65f4ab39b0263176a6.png',
   );
 
   return (
@@ -64,6 +71,8 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
           setOverlayOpacity,
           overlayImgSrc,
           setOverlayImgSrc,
+          prevolveImgSrc,
+          setPrevolveImgSrc,
         },
       }}
     >

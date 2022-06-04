@@ -94,6 +94,7 @@ theme = createTheme(theme, {
     MuiInputLabel: {
       styleOverrides: {
         root: {
+          background: theme.palette.background.default,
           transform: `translate(14px, 6px) scale(1)`,
         },
         shrink: {

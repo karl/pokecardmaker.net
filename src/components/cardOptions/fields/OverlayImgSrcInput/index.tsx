@@ -2,7 +2,7 @@ import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
-const OverlayImgSrcFileUploader: FC = () => {
+const OverlayImgSrcInput: FC = () => {
   const {
     debug: { overlayImgSrc, setOverlayImgSrc },
   } = useCardOptions();
@@ -19,4 +19,4 @@ const OverlayImgSrcFileUploader: FC = () => {
   );
 };
 
-export default OverlayImgSrcFileUploader;
+export default OverlayImgSrcInput;

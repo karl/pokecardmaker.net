@@ -9,4 +9,5 @@ export const StyledMenuItem = styled(MenuItem)`
 export const StyledListItemIcon = styled(ListItemIcon)`
   justify-content: center;
   min-width: 36px;
+  z-index: 99;
 `;

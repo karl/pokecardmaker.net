@@ -8,8 +8,9 @@ const PrevolveImg: FC = () => {
   const { subtype } = useSubtype();
   const {
     state: { prevolveImgSrc },
+    debug: { prevolveImgSrc: debugImgSrc },
   } = useCardOptions();
-  const src = useBase64Img(prevolveImgSrc);
+  const src = useBase64Img(prevolveImgSrc ?? debugImgSrc);
 
   if (!subtype?.logic.hasPrevolve || !src) return null;
 

@@ -51,9 +51,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   imgLayer1Src: undefined,
   imgLayer2Src: undefined,
   customSetIconSrc: undefined,
-  // prevolveImgSrc: undefined,
-  prevolveImgSrc:
-    'https://64.media.tumblr.com/57fd7a6ad04b7bf1538e83474a2222a7/b6be2ee655897623-63/s1280x1920/6dd2fef19a466174889f6c65f4ab39b0263176a6.png',
+  prevolveImgSrc: undefined,
   typeImgSrc: undefined,
   typeImgAmount: 1,
   cardNumber: '100',
