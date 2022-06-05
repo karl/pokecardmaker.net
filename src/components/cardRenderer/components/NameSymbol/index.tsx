@@ -6,12 +6,10 @@ import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const NameSymbol: FC = () => {
-  const { cardStyles } = useCardStyles();
-  const imgSrc = useBase64Img(
-    cardStyles.nameSymbol && Routes.Assets.Symbol(cardStyles.nameSymbol),
-  );
+  const { nameSymbol } = useCardStyles();
+  const imgSrc = useBase64Img(nameSymbol && Routes.Assets.Symbol(nameSymbol));
 
-  if (!cardStyles.nameSymbol || !imgSrc) return null;
+  if (!imgSrc) return null;
 
   return (
     <Wrapper>

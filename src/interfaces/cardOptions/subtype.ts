@@ -1,7 +1,7 @@
-import { IdentifierInfo } from '.';
+import { IdentifierInfo, SharedLogic } from '.';
 import { CardStyles } from './cardStyles';
 
-export interface SubtypeLogic {
+export interface SubtypeLogic extends SharedLogic {
   /**
    * @default false
    */

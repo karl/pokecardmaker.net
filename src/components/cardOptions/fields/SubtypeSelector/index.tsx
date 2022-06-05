@@ -3,16 +3,18 @@ import useType from '@hooks/cardOptions/useType';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import ControlledSelector from '@components/ControlledSelector';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 
 const SubtypeSelector: FC = () => {
   const { type } = useType();
+  const { hasSubtypes, isSubtypeRequired } = useCardLogic();
   const { subtypes, subtype, setSubtype } = useSubtype();
 
   const handleChange = (event: SelectChangeEvent) => {
     setSubtype(Number(event.target.value) ?? undefined);
   };
 
-  if (!type.logic?.hasSubtypes) return null;
+  if (!hasSubtypes) return null;
 
   return (
     <ControlledSelector
@@ -21,7 +23,7 @@ const SubtypeSelector: FC = () => {
       slug="subtype"
       onChange={handleChange}
     >
-      {!type.logic.isSubtypeRequired && (
+      {!isSubtypeRequired && (
         <MenuItem value="">
           <ListItemText primary="None" />
         </MenuItem>

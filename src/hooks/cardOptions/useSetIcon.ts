@@ -6,10 +6,7 @@ import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useSetIcon = () => {
-  const {
-    state: { setIconId },
-    stateSetter,
-  } = useCardOptions();
+  const { setIconId, stateSetter } = useCardOptions();
 
   const setIcon = useMemo<RelationsInterface['setIcon']>(
     () => findById(setIcons, setIconId, defaultRelations.setIcon),

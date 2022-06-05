@@ -8,10 +8,7 @@ import useSubtype from './useSubtype';
 import useType from './useType';
 
 const useRarity = () => {
-  const {
-    state: { rarityId },
-    stateSetter,
-  } = useCardOptions();
+  const { rarityId, stateSetter } = useCardOptions();
   const { type } = useType();
   const { subtype } = useSubtype();
 

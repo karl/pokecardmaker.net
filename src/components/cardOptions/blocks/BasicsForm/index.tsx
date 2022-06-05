@@ -1,15 +1,16 @@
 import AccordionForm from '@components/AccordionForm';
+import DexStatsInput from '@components/cardOptions/fields/DexStatsInput';
 import HitpointsInput from '@components/cardOptions/fields/HitpointsInput';
 import NameInput from '@components/cardOptions/fields/NameInput';
 import PrevolveImgSrcFileUploader from '@components/cardOptions/fields/PrevolveImgSrcFileUploader';
 import PrevolveNameInput from '@components/cardOptions/fields/PrevolveNameInput';
-import useType from '@hooks/cardOptions/useType';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import { FC } from 'react';
 
 const BasicsForm: FC = () => {
-  const { type } = useType();
+  const { hasName } = useCardLogic();
 
-  if (!type.logic.hasName) return null;
+  if (!hasName) return null;
 
   return (
     <AccordionForm id="basicsForm" header="Basics">
@@ -17,6 +18,7 @@ const BasicsForm: FC = () => {
       <HitpointsInput />
       <PrevolveNameInput />
       <PrevolveImgSrcFileUploader />
+      <DexStatsInput />
     </AccordionForm>
   );
 };

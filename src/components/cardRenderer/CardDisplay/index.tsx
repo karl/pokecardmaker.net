@@ -4,6 +4,7 @@ import { useDebounce, useElementSize } from 'usehooks-ts';
 import Debug from '../blocks/Debug';
 import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
+import DexStats from '../components/DexStats';
 import Hitpoints from '../components/Hitpoints';
 import PrevolveImg from '../components/PrevolveImg';
 import PrevolveName from '../components/PrevolveName';
@@ -40,6 +41,7 @@ const CardDisplay: FC = () => {
       <Hitpoints />
       <PrevolveName />
       <PrevolveImg />
+      <DexStats />
       <CardImage />
     </CardContainer>
   );

@@ -32,10 +32,7 @@ export const basic: Subtype = {
   slug: 'basic',
   displayName: 'Basic',
   logic: {
-    hasVariations: false,
-    hasPrevolve: false,
-  },
-  styles: {
+    ...defaultSubtypeLogic,
     hasDexStats: true,
   },
   types: pokemonTypeTypes,
@@ -47,11 +44,10 @@ export const stage1: Subtype = {
   slug: 'stage1',
   displayName: 'Stage 1',
   logic: {
-    hasVariations: false,
+    ...defaultSubtypeLogic,
     hasPrevolve: true,
-  },
-  styles: {
     hasDexStats: true,
+    hasDexEntry: true,
   },
   types: pokemonTypeTypes,
   rarities: [],
@@ -62,19 +58,16 @@ export const stage2: Subtype = {
   slug: 'stage2',
   displayName: 'Stage 2',
   logic: {
-    hasVariations: false,
+    ...defaultSubtypeLogic,
     hasPrevolve: true,
-  },
-  styles: {
     hasDexStats: true,
+    hasDexEntry: true,
   },
   types: pokemonTypeTypes,
   rarities: [],
 };
 
 const vStyles: Partial<CardStyles> = {
-  hasDexEntry: false,
-  hasDexStats: false,
   hpTextColor: 'white',
   movesOutline: 'white',
   typeBarTextColor: 'white',
@@ -88,10 +81,7 @@ export const v: Subtype = {
   id: 4,
   slug: 'v',
   displayName: 'V',
-  logic: {
-    hasVariations: false,
-    hasPrevolve: false,
-  },
+  logic: defaultSubtypeLogic,
   styles: {
     ...vStyles,
     nameSymbol: 'v',
@@ -105,8 +95,12 @@ export const vmax: Subtype = {
   slug: 'vmax',
   displayName: 'VMax',
   logic: {
+    ...defaultSubtypeLogic,
     hasVariations: true,
     hasPrevolve: true,
+    hasDexStats: false,
+    hasCardInfo: true,
+    hasDexEntry: false,
   },
   styles: {
     ...vStyles,
@@ -123,10 +117,7 @@ export const tool: Subtype = {
   id: 6,
   slug: 'tool',
   displayName: 'Tool',
-  logic: {
-    ...defaultSubtypeLogic,
-    hasVariations: false,
-  },
+  logic: defaultSubtypeLogic,
   types: [item.id],
   rarities: [],
 };

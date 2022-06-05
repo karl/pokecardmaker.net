@@ -1,4 +1,5 @@
 import { TypeLogic } from '@interfaces/cardOptions/type';
+import { defaultSharedLogic } from '.';
 
 export const defaultTypeLogic: Required<TypeLogic> = {
   hasDescription: false,
@@ -9,4 +10,5 @@ export const defaultTypeLogic: Required<TypeLogic> = {
   isAttackCostType: false,
   isPokemonType: false,
   isSubtypeRequired: false,
+  ...defaultSharedLogic,
 };

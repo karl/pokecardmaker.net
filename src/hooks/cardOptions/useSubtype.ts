@@ -7,10 +7,7 @@ import useCardOptions from './useCardOptions';
 import useType from './useType';
 
 const useSubtype = () => {
-  const {
-    state: { subtypeId },
-    stateSetter,
-  } = useCardOptions();
+  const { subtypeId, stateSetter } = useCardOptions();
   const { type } = useType();
 
   const subtype = useMemo<RelationsInterface['subtype']>(

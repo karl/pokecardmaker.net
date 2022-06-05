@@ -1,7 +1,7 @@
-import { IdentifierInfo } from '.';
+import { IdentifierInfo, SharedLogic } from '.';
 import { CardStyles } from './cardStyles';
 
-export interface TypeLogic {
+export interface TypeLogic extends SharedLogic {
   /**
    * @default false
    */
@@ -15,22 +15,22 @@ export interface TypeLogic {
    */
   hasSubname: boolean;
   /**
-   * Whether this type is a type that a Pokémon can have (Grass/Water)\
+   * Whether this type is a type that a Pokémon can have (Grass/Water)
    * @default false
    */
   isPokemonType: boolean;
   /**
-   * Whether the type (Grass/Water) can be used as an attack cost type\
+   * Whether the type (Grass/Water) can be used as an attack cost type
    * @default false
    */
   isAttackCostType: boolean;
   /**
-   * The special energy image at the top right\
+   * The special energy image at the top right
    * @default false
    */
   hasTypeImage: boolean;
   /**
-   * Whether the type has a description text (Supporter/Special energy text)\
+   * Whether the type has a description text (Supporter/Special energy text)
    * @default false
    */
   hasDescription: boolean;

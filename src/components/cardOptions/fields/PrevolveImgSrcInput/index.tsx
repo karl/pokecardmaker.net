@@ -1,15 +1,15 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSubtype from '@hooks/cardOptions/useSubtype';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const PrevolveImgSrcInput: FC = () => {
-  const { subtype } = useSubtype();
+  const { hasPrevolve } = useCardLogic();
   const {
     debug: { prevolveImgSrc, setPrevolveImgSrc },
   } = useCardOptions();
 
-  if (!subtype?.logic.hasPrevolve) return null;
+  if (!hasPrevolve) return null;
 
   return (
     <TextField

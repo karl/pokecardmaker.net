@@ -1,4 +1,5 @@
 import ControlledSelector from '@components/ControlledSelector';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useSupertype from '@hooks/cardOptions/useSupertype';
 import useType from '@hooks/cardOptions/useType';
 import { Type } from '@interfaces/cardOptions/type';
@@ -9,6 +10,7 @@ import { FC, useCallback } from 'react';
 import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const TypeSelector: FC = () => {
+  const { isPokemonType } = useCardLogic();
   const { supertype } = useSupertype();
   const { types, type, setType } = useType();
 
@@ -18,7 +20,7 @@ const TypeSelector: FC = () => {
 
   const makeMenuItem = useCallback(
     (item: Type) => {
-      if (type.logic.isPokemonType) {
+      if (isPokemonType) {
         return (
           <StyledMenuItem value={item.id} key={item.slug}>
             <StyledListItemIcon>
@@ -39,7 +41,7 @@ const TypeSelector: FC = () => {
         </MenuItem>
       );
     },
-    [type],
+    [isPokemonType],
   );
 
   return (

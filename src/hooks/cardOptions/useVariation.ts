@@ -10,10 +10,7 @@ import useCardOptions from './useCardOptions';
 import useSubtype from './useSubtype';
 
 const useVariation = () => {
-  const {
-    state: { variationId },
-    stateSetter,
-  } = useCardOptions();
+  const { variationId, stateSetter } = useCardOptions();
   const { subtype } = useSubtype();
 
   const variation = useMemo<RelationsInterface['variation']>(

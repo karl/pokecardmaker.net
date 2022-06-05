@@ -4,18 +4,13 @@ import { FC } from 'react';
 import { NameText } from './styles';
 
 const Name: FC = () => {
-  const {
-    state: { name },
-  } = useCardOptions();
-  const { cardStyles } = useCardStyles();
+  const { name } = useCardOptions();
+  const { nameOutline, nameTextColor } = useCardStyles();
 
   if (!name) return null;
 
   return (
-    <NameText
-      $outline={cardStyles.nameOutline}
-      $color={cardStyles.nameTextColor}
-    >
+    <NameText $outline={nameOutline} $color={nameTextColor}>
       {name}
     </NameText>
   );

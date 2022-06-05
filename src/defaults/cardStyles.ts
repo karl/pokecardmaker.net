@@ -15,9 +15,5 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
   abilitySymbol: undefined,
   nameSymbol: undefined,
   hpSize: 'sm',
-  hasCardInfo: true,
-  hasDexEntry: true,
-  hasDexStats: true,
-  hasIllustratorName: true,
   alignMovesBottom: false,
 };

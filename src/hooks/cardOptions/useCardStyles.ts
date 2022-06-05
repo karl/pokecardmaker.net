@@ -23,9 +23,7 @@ const useCardStyles = () => {
     [type, subtype, rarity],
   );
 
-  return {
-    cardStyles,
-  };
+  return cardStyles;
 };
 
 export default useCardStyles;

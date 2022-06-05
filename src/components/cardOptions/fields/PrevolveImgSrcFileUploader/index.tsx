@@ -1,13 +1,13 @@
 import FileUploader from '@components/FileUploader';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSubtype from '@hooks/cardOptions/useSubtype';
 import { FC } from 'react';
 
 const PrevolveImgSrcFileUploader: FC = () => {
-  const { subtype } = useSubtype();
+  const { hasPrevolve } = useCardLogic();
   const { setPrevolveImgSrc } = useCardOptions();
 
-  if (!subtype?.logic.hasPrevolve) return null;
+  if (!hasPrevolve) return null;
 
   return (
     <FileUploader

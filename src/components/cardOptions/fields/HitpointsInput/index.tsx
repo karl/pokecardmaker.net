@@ -1,14 +1,11 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSupertype from '@hooks/cardOptions/useSupertype';
 import { TextField } from '@mui/material';
 import { ChangeEvent, FC, useCallback } from 'react';
 
 const HitpointsInput: FC = () => {
-  const { supertype } = useSupertype();
-  const {
-    state: { hitpoints },
-    setHitpoints,
-  } = useCardOptions();
+  const { hasHitpoints } = useCardLogic();
+  const { hitpoints, setHitpoints } = useCardOptions();
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +19,7 @@ const HitpointsInput: FC = () => {
     [setHitpoints],
   );
 
-  if (!supertype.logic.hasHitpoints) return null;
+  if (!hasHitpoints) return null;
 
   return (
     <TextField

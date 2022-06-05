@@ -16,6 +16,8 @@ declare module '@mui/material/styles' {
 
 const spacingAmount = 4;
 
+// TODO: Change input styling. Current label doesn't look good on the small inputs.
+// Maybe just add the label above the input instead of inside
 let theme = createTheme({
   spacing: spacingAmount,
   palette: {

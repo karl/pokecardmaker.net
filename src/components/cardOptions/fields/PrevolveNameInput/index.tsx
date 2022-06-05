@@ -1,16 +1,13 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSubtype from '@hooks/cardOptions/useSubtype';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const PrevolveNameInput: FC = () => {
-  const { subtype } = useSubtype();
-  const {
-    state: { prevolveName },
-    setPrevolveName,
-  } = useCardOptions();
+  const { hasPrevolve } = useCardLogic();
+  const { prevolveName, setPrevolveName } = useCardOptions();
 
-  if (!subtype?.logic.hasPrevolve) return null;
+  if (!hasPrevolve) return null;
 
   return (
     <TextField

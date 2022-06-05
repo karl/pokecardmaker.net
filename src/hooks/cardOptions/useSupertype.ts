@@ -6,10 +6,7 @@ import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useSupertype = () => {
-  const {
-    state: { supertypeId },
-    stateSetter,
-  } = useCardOptions();
+  const { supertypeId, stateSetter } = useCardOptions();
 
   const supertype = useMemo<RelationsInterface['supertype']>(
     () => findById(supertypes, supertypeId, defaultRelations.supertype),

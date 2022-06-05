@@ -6,10 +6,7 @@ import useCardOptions from './useCardOptions';
 import useType from './useType';
 
 const useWeaknessType = () => {
-  const {
-    state: { weaknessTypeId },
-    stateSetter,
-  } = useCardOptions();
+  const { weaknessTypeId, stateSetter } = useCardOptions();
   const { attackCostTypes } = useType();
 
   const weaknessType = useMemo<RelationsInterface['weaknessType']>(

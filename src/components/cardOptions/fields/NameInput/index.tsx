@@ -1,16 +1,13 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useType from '@hooks/cardOptions/useType';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const NameInput: FC = () => {
-  const { type } = useType();
-  const {
-    state: { name },
-    setName,
-  } = useCardOptions();
+  const { hasName } = useCardLogic();
+  const { name, setName } = useCardOptions();
 
-  if (!type.logic.hasName) return null;
+  if (!hasName) return null;
 
   return (
     <TextField

@@ -1,5 +1,6 @@
 import { defaultTypeLogic } from '@defaults/types';
 import { Type, TypeLogic } from '@interfaces/cardOptions/type';
+import { supporterFullArt } from './rarities';
 import { energy, pokemon, trainer } from './supertypes';
 
 const pokemonTypeLogic: TypeLogic = {
@@ -122,7 +123,7 @@ export const supporter: Type = {
     hasDescription: true,
   },
   supertypes: [trainer.id],
-  rarities: [5],
+  rarities: [supporterFullArt.id],
 };
 
 export const base: Type = {
@@ -132,12 +133,7 @@ export const base: Type = {
   logic: {
     ...defaultTypeLogic,
     hasName: false,
-  },
-  styles: {
     hasCardInfo: false,
-    hasDexEntry: false,
-    hasDexStats: false,
-    hasIllustratorName: false,
   },
   supertypes: [energy.id],
   rarities: [],

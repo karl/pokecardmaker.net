@@ -8,6 +8,28 @@ import { Supertype } from './supertype';
 import { Type } from './type';
 import { Variation } from './variation';
 
+export interface SharedLogic {
+  /**
+   * Whether the subtype has the dexStats bar in the middle of a Pokémon card
+   * @default false
+   */
+  hasDexStats: boolean;
+  /**
+   * Whether the subtype should display set icon, rotation icon, card number and rarity icon
+   * @default true
+   */
+  hasCardInfo: boolean;
+  /**
+   * @default true
+   */
+  hasIllustratorName: boolean;
+  /**
+   * Whether the subtype has the bottom-right Pokédex entry text
+   * @default false
+   */
+  hasDexEntry: boolean;
+}
+
 export interface IdentifierInfo {
   /**
    * Used for finding and identifying objects

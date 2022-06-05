@@ -6,10 +6,7 @@ import baseSets from '@data/cardOptions/baseSets';
 import useCardOptions from './useCardOptions';
 
 const useBaseSet = () => {
-  const {
-    state: { baseSetId },
-    stateSetter,
-  } = useCardOptions();
+  const { baseSetId, stateSetter } = useCardOptions();
 
   const baseSet = useMemo<RelationsInterface['baseSet']>(
     () => findById(baseSets, baseSetId, defaultRelations.baseSet),

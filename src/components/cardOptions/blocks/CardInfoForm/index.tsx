@@ -2,13 +2,11 @@ import AccordionForm from '@components/AccordionForm';
 import RarityIconSelector from '@components/cardOptions/fields/RarityIconSelector';
 import RotationIconSelector from '@components/cardOptions/fields/RotationIconSelector';
 import SetIconSelector from '@components/cardOptions/fields/SetIconSelector';
-import useCardStyles from '@hooks/cardOptions/useCardStyles';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import { FC } from 'react';
 
 const CardInfoForm: FC = () => {
-  const {
-    cardStyles: { hasCardInfo },
-  } = useCardStyles();
+  const { hasCardInfo } = useCardLogic();
 
   if (!hasCardInfo) return null;
 

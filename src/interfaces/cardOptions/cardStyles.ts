@@ -56,16 +56,6 @@ export interface CardStyles {
    */
   alignMovesBottom: boolean;
   /**
-   * The middle bar that shows weight etc.\
-   * @default true
-   */
-  hasDexStats: boolean;
-  /**
-   * The bottom-right Pokédex entry text\
-   * @default true
-   */
-  hasDexEntry: boolean;
-  /**
    * @default 'sm'
    */
   hpSize: Size;
@@ -73,13 +63,4 @@ export interface CardStyles {
    * @default none
    */
   abilitySymbol?: AbilitySymbol;
-  /**
-   * Set icon, rotation icon, card number, rarity icon\
-   * @default true
-   */
-  hasCardInfo: boolean;
-  /**
-   * @default true
-   */
-  hasIllustratorName: boolean;
 }

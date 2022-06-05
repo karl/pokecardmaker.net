@@ -6,10 +6,7 @@ import useCardOptions from './useCardOptions';
 import useType from './useType';
 
 const useResistanceType = () => {
-  const {
-    state: { resistanceTypeId },
-    stateSetter,
-  } = useCardOptions();
+  const { resistanceTypeId, stateSetter } = useCardOptions();
   const { attackCostTypes } = useType();
 
   const resistanceType = useMemo<RelationsInterface['resistanceType']>(

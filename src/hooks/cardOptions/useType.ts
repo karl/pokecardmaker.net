@@ -8,10 +8,7 @@ import useCardOptions from './useCardOptions';
 import useSupertype from './useSupertype';
 
 const useType = () => {
-  const {
-    state: { typeId },
-    stateSetter,
-  } = useCardOptions();
+  const { typeId, stateSetter } = useCardOptions();
   const { supertype } = useSupertype();
 
   const pokemonTypes = useMemo<Type[]>(

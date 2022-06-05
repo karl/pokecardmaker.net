@@ -1,4 +1,5 @@
 import ControlledSelector from '@components/ControlledSelector';
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useRarity from '@hooks/cardOptions/useRarity';
 import useSubtype from '@hooks/cardOptions/useSubtype';
 import useVariation from '@hooks/cardOptions/useVariation';
@@ -6,6 +7,7 @@ import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 
 const VariationSelector: FC = () => {
+  const { hasVariations } = useCardLogic();
   const { subtype } = useSubtype();
   const { rarity } = useRarity();
   const { variations, variation, setVariation } = useVariation();
@@ -14,7 +16,7 @@ const VariationSelector: FC = () => {
     setVariation(Number(event.target.value));
   };
 
-  if (!subtype?.logic?.hasVariations) return null;
+  if (!subtype || !hasVariations) return null;
 
   return (
     <ControlledSelector

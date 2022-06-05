@@ -43,7 +43,8 @@ export interface CardInterface {
   retreatCost?: number;
   prevolveName?: string;
   prevolveImgSrc?: string;
-  pokedexEntry?: string;
+  dexStats?: string;
+  dexEntry?: string;
   description?: string;
   ability?: AbilityMove;
   move1?: AttackMove;

@@ -1,18 +1,18 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSubtype from '@hooks/cardOptions/useSubtype';
 import useBase64Img from '@hooks/useBase64Img';
 import { FC } from 'react';
 import { StyledImg, Wrapper } from './styles';
 
 const PrevolveImg: FC = () => {
-  const { subtype } = useSubtype();
+  const { hasPrevolve } = useCardLogic();
   const {
-    state: { prevolveImgSrc },
+    prevolveImgSrc,
     debug: { prevolveImgSrc: debugImgSrc },
   } = useCardOptions();
   const src = useBase64Img(prevolveImgSrc ?? debugImgSrc);
 
-  if (!subtype?.logic.hasPrevolve || !src) return null;
+  if (!hasPrevolve || !src) return null;
 
   return (
     <Wrapper>

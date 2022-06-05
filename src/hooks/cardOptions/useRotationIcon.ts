@@ -6,10 +6,7 @@ import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useRotationIcon = () => {
-  const {
-    state: { rotationIconId },
-    stateSetter,
-  } = useCardOptions();
+  const { rotationIconId, stateSetter } = useCardOptions();
 
   const rotationIcon = useMemo<RelationsInterface['rotationIcon']>(
     () =>

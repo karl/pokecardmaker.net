@@ -22,6 +22,10 @@ const useCardOptions = () => {
     () => stateSetter<CardInterface['subname']>('subname'),
     [stateSetter],
   );
+  const setDexStats = useMemo(
+    () => stateSetter<CardInterface['dexStats']>('dexStats'),
+    [stateSetter],
+  );
   const setBackgroundImgSrc = useMemo(
     () => stateSetter<CardInterface['backgroundImgSrc']>('backgroundImgSrc'),
     [stateSetter],
@@ -82,8 +86,8 @@ const useCardOptions = () => {
     () => stateSetter<CardInterface['prevolveName']>('prevolveName'),
     [stateSetter],
   );
-  const setPokedexEntry = useMemo(
-    () => stateSetter<CardInterface['pokedexEntry']>('pokedexEntry'),
+  const setDexEntry = useMemo(
+    () => stateSetter<CardInterface['dexEntry']>('dexEntry'),
     [stateSetter],
   );
   const setDescription = useMemo(
@@ -104,11 +108,11 @@ const useCardOptions = () => {
   );
 
   return {
-    state,
-    setState,
+    ...state,
     stateSetter,
     setName,
     setSubname,
+    setDexStats,
     setBackgroundImgSrc,
     setImgLayer1Src,
     setImgLayer2Src,
@@ -124,7 +128,7 @@ const useCardOptions = () => {
     setResistanceAmount,
     setRetreatCost,
     setPrevolveName,
-    setPokedexEntry,
+    setDexEntry,
     setDescription,
     setAbility,
     setMove1,

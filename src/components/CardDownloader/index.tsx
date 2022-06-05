@@ -8,9 +8,7 @@ import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
 const CardDownloader: FC<CardDownloaderProps> = ({ cardId = 'card' }) => {
-  const {
-    state: { name },
-  } = useCardOptions();
+  const { name } = useCardOptions();
 
   const makeCanvas = useCallback(async (): Promise<
     HTMLCanvasElement | undefined

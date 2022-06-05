@@ -1,15 +1,13 @@
+import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useSubtype from '@hooks/cardOptions/useSubtype';
 import { FC } from 'react';
 import { StyledText } from './styles';
 
 const PrevolveName: FC = () => {
-  const {
-    state: { prevolveName },
-  } = useCardOptions();
-  const { subtype } = useSubtype();
+  const { prevolveName } = useCardOptions();
+  const { hasPrevolve } = useCardLogic();
 
-  if (!subtype?.logic.hasPrevolve || !prevolveName) return null;
+  if (!hasPrevolve || !prevolveName) return null;
 
   return <StyledText>Evolves from {prevolveName}</StyledText>;
 };

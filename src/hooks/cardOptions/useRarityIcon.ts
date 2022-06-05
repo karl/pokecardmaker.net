@@ -6,10 +6,7 @@ import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
 
 const useRarityIcon = () => {
-  const {
-    state: { rarityIconId },
-    stateSetter,
-  } = useCardOptions();
+  const { rarityIconId, stateSetter } = useCardOptions();
 
   const rarityIcon = useMemo<RelationsInterface['rarityIcon']>(
     () => findById(rarityIcons, rarityIconId, defaultRelations.rarityIcon),
