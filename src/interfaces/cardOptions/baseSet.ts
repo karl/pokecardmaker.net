@@ -1,4 +1,5 @@
-import { IdentifierInfo } from '.';
+import { CardTypeHelpers, IdentifierInfo } from '.';
 
 // Sword & Shield
-export type BaseSet = IdentifierInfo;
+
+export type BaseSet = IdentifierInfo & CardTypeHelpers;

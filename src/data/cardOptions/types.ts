@@ -1,10 +1,9 @@
-import { defaultTypeLogic } from '@defaults/types';
-import { Type, TypeLogic } from '@interfaces/cardOptions/type';
+import { CardLogic } from '@interfaces/cardOptions/cardLogic';
+import { Type } from '@interfaces/cardOptions/type';
 import { supporterFullArt } from './rarities';
 import { energy, pokemon, trainer } from './supertypes';
 
-const pokemonTypeLogic: TypeLogic = {
-  ...defaultTypeLogic,
+const pokemonTypeLogic: Partial<CardLogic> = {
   hasSubtypes: true,
   isSubtypeRequired: true,
   isPokemonType: true,
@@ -106,7 +105,6 @@ export const item: Type = {
   slug: 'item',
   displayName: 'Item',
   logic: {
-    ...defaultTypeLogic,
     hasSubtypes: true,
   },
   supertypes: [trainer.id],
@@ -118,7 +116,6 @@ export const supporter: Type = {
   slug: 'supporter',
   displayName: 'Supporter',
   logic: {
-    ...defaultTypeLogic,
     hasSubname: true,
     hasDescription: true,
   },
@@ -131,7 +128,6 @@ export const base: Type = {
   slug: 'base',
   displayName: 'Base',
   logic: {
-    ...defaultTypeLogic,
     hasName: false,
     hasCardInfo: false,
   },
@@ -144,7 +140,6 @@ export const special: Type = {
   slug: 'special',
   displayName: 'Special',
   logic: {
-    ...defaultTypeLogic,
     hasTypeImage: true,
     hasDescription: true,
   },

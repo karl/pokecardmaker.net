@@ -1,4 +1,3 @@
-import { defaultSupertypeLogic } from '@defaults/supertypes';
 import { Supertype } from '@interfaces/cardOptions/supertype';
 
 export const pokemon: Supertype = {
@@ -15,14 +14,12 @@ export const trainer: Supertype = {
   id: 2,
   slug: 'trainer',
   displayName: 'Trainer',
-  logic: defaultSupertypeLogic,
 };
 
 export const energy: Supertype = {
   id: 3,
   slug: 'energy',
   displayName: 'Energy',
-  logic: defaultSupertypeLogic,
 };
 
 const supertypes: Supertype[] = [pokemon, trainer, energy];

@@ -1,4 +1,6 @@
 import { BaseSet } from './baseSet';
+import { CardLogic } from './cardLogic';
+import { CardStyles } from './cardStyles';
 import { Rarity } from './rarity';
 import { RarityIcon } from './rarityIcon';
 import { RotationIcon } from './rotationIcon';
@@ -8,26 +10,9 @@ import { Supertype } from './supertype';
 import { Type } from './type';
 import { Variation } from './variation';
 
-export interface SharedLogic {
-  /**
-   * Whether the subtype has the dexStats bar in the middle of a Pokémon card
-   * @default false
-   */
-  hasDexStats: boolean;
-  /**
-   * Whether the subtype should display set icon, rotation icon, card number and rarity icon
-   * @default true
-   */
-  hasCardInfo: boolean;
-  /**
-   * @default true
-   */
-  hasIllustratorName: boolean;
-  /**
-   * Whether the subtype has the bottom-right Pokédex entry text
-   * @default false
-   */
-  hasDexEntry: boolean;
+export interface CardTypeHelpers {
+  styles?: Partial<CardStyles>;
+  logic?: Partial<CardLogic>;
 }
 
 export interface IdentifierInfo {

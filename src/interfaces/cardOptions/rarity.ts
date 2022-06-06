@@ -1,10 +1,4 @@
-import { IdentifierInfo, SharedLogic } from '.';
-import { CardStyles } from './cardStyles';
-
-export type RarityLogic = SharedLogic;
+import { CardTypeHelpers, IdentifierInfo } from '.';
 
 // None/Promo/Gold Star/Full Art/Golden Full Art
-export interface Rarity extends IdentifierInfo {
-  styles?: Partial<CardStyles>;
-  logic: RarityLogic;
-}
+export type Rarity = IdentifierInfo & CardTypeHelpers;
