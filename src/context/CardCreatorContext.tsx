@@ -1,4 +1,4 @@
-import { CardInterface } from '@interfaces/card';
+import { CardInterface, RelationsInterface } from '@interfaces/card';
 import React, {
   Dispatch,
   SetStateAction,
@@ -6,25 +6,27 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { defaultCardOptions } from '@defaults/cardOptions';
+import types from '@data/cardOptions/types';
+import { defaultCardOptions, defaultRelations } from '@defaults/cardOptions';
 import { defaultCardLogic } from '@defaults/cardLogic';
-import useBaseSet from '@hooks/cardOptions/useBaseSet';
-import useRarity from '@hooks/cardOptions/useRarity';
-import useSubtype from '@hooks/cardOptions/useSubtype';
-import useSupertype from '@hooks/cardOptions/useSupertype';
-import useType from '@hooks/cardOptions/useType';
-import useVariation from '@hooks/cardOptions/useVariation';
 import { CardLogic } from '@interfaces/cardOptions/cardLogic';
 import merge from 'lodash.merge';
 import { defaultCardStyles } from '@defaults/cardStyles';
 import { CardStyles } from '@interfaces/cardOptions/cardStyles';
 import { RequiredIsh } from '@interfaces/utils';
+import findById from '@utils/findById';
+import baseSets from '@data/cardOptions/baseSets';
+import rarities from '@data/cardOptions/rarities';
+import subtypes from '@data/cardOptions/subtypes';
+import supertypes from '@data/cardOptions/supertypes';
+import variations from '@data/cardOptions/variations';
 
 export type CardCreatorState = CardInterface;
 
 interface CardCreatorContextInterface {
   state: CardCreatorState;
-  setState: Dispatch<SetStateAction<CardInterface>>;
+  setState: Dispatch<SetStateAction<CardCreatorState>>;
+  relations: RelationsInterface;
   cardImgObj?: object;
   setCardImgObj: (obj?: object) => void;
   cardLogic: Required<CardLogic>;
@@ -46,6 +48,7 @@ const initialState: CardCreatorState = defaultCardOptions;
 export const CardCreatorContext = createContext<CardCreatorContextInterface>({
   state: initialState,
   setState: () => null,
+  relations: defaultRelations,
   cardImgObj: undefined,
   setCardImgObj: () => null,
   cardLogic: defaultCardLogic,
@@ -73,12 +76,36 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>(
     'https://64.media.tumblr.com/57fd7a6ad04b7bf1538e83474a2222a7/b6be2ee655897623-63/s1280x1920/6dd2fef19a466174889f6c65f4ab39b0263176a6.png',
   );
-  const { baseSet } = useBaseSet();
-  const { supertype } = useSupertype();
-  const { type } = useType();
-  const { subtype } = useSubtype();
-  const { variation } = useVariation();
-  const { rarity } = useRarity();
+
+  const baseSet = useMemo<RelationsInterface['baseSet']>(
+    () => findById(baseSets, state.baseSetId, defaultRelations.baseSet),
+    [state.baseSetId],
+  );
+
+  const supertype = useMemo<RelationsInterface['supertype']>(
+    () => findById(supertypes, state.supertypeId, defaultRelations.supertype),
+    [state.supertypeId],
+  );
+
+  const type = useMemo<RelationsInterface['type']>(
+    () => findById(types, state.typeId, defaultRelations.type),
+    [state.typeId],
+  );
+
+  const subtype = useMemo<RelationsInterface['subtype']>(
+    () => findById(subtypes, state.subtypeId, defaultRelations.subtype),
+    [state.subtypeId],
+  );
+
+  const variation = useMemo<RelationsInterface['variation']>(
+    () => findById(variations, state.variationId, defaultRelations.variation),
+    [state.variationId],
+  );
+
+  const rarity = useMemo<RelationsInterface['rarity']>(
+    () => findById(rarities, state.rarityId, defaultRelations.rarity),
+    [state.rarityId],
+  );
 
   const cardLogic = useMemo<Required<CardLogic>>(
     () =>
@@ -100,11 +127,14 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
       merge(
         {},
         defaultCardStyles,
+        baseSet.styles,
+        supertype.styles,
         type.styles,
         subtype?.styles,
+        variation?.styles,
         rarity?.styles,
       ),
-    [type, subtype, rarity],
+    [baseSet, supertype, type, subtype, variation, rarity],
   );
 
   return (
@@ -112,6 +142,14 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
       value={{
         state,
         setState,
+        relations: {
+          baseSet,
+          supertype,
+          type,
+          subtype,
+          variation,
+          rarity,
+        },
         cardImgObj,
         setCardImgObj,
         cardLogic,

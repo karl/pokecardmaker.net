@@ -1,9 +1,3 @@
-import useBaseSet from '@hooks/cardOptions/useBaseSet';
-import useRarity from '@hooks/cardOptions/useRarity';
-import useSubtype from '@hooks/cardOptions/useSubtype';
-import useSupertype from '@hooks/cardOptions/useSupertype';
-import useType from '@hooks/cardOptions/useType';
-import useVariation from '@hooks/cardOptions/useVariation';
 import Routes from '@routes';
 import { FC, useMemo } from 'react';
 import fallbackCard from '@assets/fallbackCard.png';
@@ -11,15 +5,12 @@ import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import dot from 'dot-object';
 import { getCardPath } from '@utils/getCardPath';
 import Image from 'next/image';
+import useCardRelations from '@hooks/cardOptions/useCardRelations';
 import { Wrapper } from './styles';
 
 const CardImage: FC = () => {
-  const { baseSet } = useBaseSet();
-  const { supertype } = useSupertype();
-  const { type } = useType();
-  const { subtype } = useSubtype();
-  const { variation } = useVariation();
-  const { rarity } = useRarity();
+  const { baseSet, supertype, type, subtype, variation, rarity } =
+    useCardRelations();
   const { cardImgObj } = useCardOptions();
 
   const imgSrc = useMemo<string>(() => {

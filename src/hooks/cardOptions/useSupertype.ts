@@ -1,17 +1,12 @@
 import supertypes from '@data/cardOptions/supertypes';
-import { CardInterface, RelationsInterface } from '@interfaces/card';
-import findById from '@utils/findById';
+import { CardInterface } from '@interfaces/card';
 import { useMemo } from 'react';
-import { defaultRelations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
+import useCardRelations from './useCardRelations';
 
 const useSupertype = () => {
-  const { supertypeId, stateSetter } = useCardOptions();
-
-  const supertype = useMemo<RelationsInterface['supertype']>(
-    () => findById(supertypes, supertypeId, defaultRelations.supertype),
-    [supertypeId],
-  );
+  const { stateSetter } = useCardOptions();
+  const { supertype } = useCardRelations();
 
   const setSupertype = useMemo(
     () => stateSetter<CardInterface['supertypeId']>('supertypeId'),

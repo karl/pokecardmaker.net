@@ -1,15 +1,14 @@
 import types from '@data/cardOptions/types';
-import { CardInterface, RelationsInterface } from '@interfaces/card';
+import { CardInterface } from '@interfaces/card';
 import { useEffect, useMemo } from 'react';
-import { defaultRelations, defaultSupertypeTypes } from '@defaults/cardOptions';
-import findById from '@utils/findById';
+import { defaultSupertypeTypes } from '@defaults/cardOptions';
 import { Type } from '@interfaces/cardOptions/type';
 import useCardOptions from './useCardOptions';
-import useSupertype from './useSupertype';
+import useCardRelations from './useCardRelations';
 
 const useType = () => {
-  const { typeId, stateSetter } = useCardOptions();
-  const { supertype } = useSupertype();
+  const { stateSetter } = useCardOptions();
+  const { supertype, type } = useCardRelations();
 
   const pokemonTypes = useMemo<Type[]>(
     () => types.filter(t => t.logic?.isPokemonType),
@@ -19,11 +18,6 @@ const useType = () => {
   const attackCostTypes = useMemo<Type[]>(
     () => types.filter(t => t.logic?.isAttackCostType),
     [],
-  );
-
-  const type = useMemo<RelationsInterface['type']>(
-    () => findById(types, typeId, defaultRelations.type),
-    [typeId],
   );
 
   const setType = useMemo(

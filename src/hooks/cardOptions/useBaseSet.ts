@@ -1,17 +1,12 @@
-import { CardInterface, RelationsInterface } from '@interfaces/card';
-import findById from '@utils/findById';
+import { CardInterface } from '@interfaces/card';
 import { useMemo } from 'react';
-import { defaultRelations } from '@defaults/cardOptions';
 import baseSets from '@data/cardOptions/baseSets';
 import useCardOptions from './useCardOptions';
+import useCardRelations from './useCardRelations';
 
 const useBaseSet = () => {
-  const { baseSetId, stateSetter } = useCardOptions();
-
-  const baseSet = useMemo<RelationsInterface['baseSet']>(
-    () => findById(baseSets, baseSetId, defaultRelations.baseSet),
-    [baseSetId],
-  );
+  const { stateSetter } = useCardOptions();
+  const { baseSet } = useCardRelations();
 
   const setBaseSet = useMemo(
     () => stateSetter<CardInterface['baseSetId']>('baseSetId'),

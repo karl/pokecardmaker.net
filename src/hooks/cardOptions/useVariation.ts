@@ -1,22 +1,13 @@
 import variations from '@data/cardOptions/variations';
-import { CardInterface, RelationsInterface } from '@interfaces/card';
-import findById from '@utils/findById';
+import { CardInterface } from '@interfaces/card';
 import { useEffect, useMemo } from 'react';
-import {
-  defaultRelations,
-  defaultSubtypeVariations,
-} from '@defaults/cardOptions';
+import { defaultSubtypeVariations } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
-import useSubtype from './useSubtype';
+import useCardRelations from './useCardRelations';
 
 const useVariation = () => {
-  const { variationId, stateSetter } = useCardOptions();
-  const { subtype } = useSubtype();
-
-  const variation = useMemo<RelationsInterface['variation']>(
-    () => findById(variations, variationId, defaultRelations.variation),
-    [variationId],
-  );
+  const { stateSetter } = useCardOptions();
+  const { variation, subtype } = useCardRelations();
 
   const setVariation = useMemo(
     () => stateSetter<CardInterface['variationId']>('variationId'),

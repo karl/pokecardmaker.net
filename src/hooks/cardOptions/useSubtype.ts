@@ -1,19 +1,13 @@
 import subtypes from '@data/cardOptions/subtypes';
-import { CardInterface, RelationsInterface } from '@interfaces/card';
-import findById from '@utils/findById';
+import { CardInterface } from '@interfaces/card';
 import { useEffect, useMemo } from 'react';
-import { defaultRelations, defaultTypeSubtypes } from '@defaults/cardOptions';
+import { defaultTypeSubtypes } from '@defaults/cardOptions';
 import useCardOptions from './useCardOptions';
-import useType from './useType';
+import useCardRelations from './useCardRelations';
 
 const useSubtype = () => {
-  const { subtypeId, stateSetter } = useCardOptions();
-  const { type } = useType();
-
-  const subtype = useMemo<RelationsInterface['subtype']>(
-    () => findById(subtypes, subtypeId, defaultRelations.subtype),
-    [subtypeId],
-  );
+  const { stateSetter } = useCardOptions();
+  const { type, subtype } = useCardRelations();
 
   const setSubtype = useMemo(
     () => stateSetter<CardInterface['subtypeId']>('subtypeId'),
