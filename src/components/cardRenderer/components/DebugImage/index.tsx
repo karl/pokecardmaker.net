@@ -1,11 +1,9 @@
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { FC } from 'react';
 import { StyledImage } from './styles';
 
 const DebugImage: FC = () => {
-  const {
-    debug: { showCardOverlay, overlayOpacity, overlayImgSrc },
-  } = useCardOptions();
+  const { showCardOverlay, overlayOpacity, overlayImgSrc } = useCardDebug();
 
   if (!showCardOverlay || !overlayImgSrc) return null;
 

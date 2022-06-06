@@ -1,11 +1,9 @@
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { FC } from 'react';
 
 const ShowCardOverlayCheckbox: FC = () => {
-  const {
-    debug: { showCardOverlay, setShowCardOverlay },
-  } = useCardOptions();
+  const { showCardOverlay, setShowCardOverlay } = useCardDebug();
 
   return (
     <FormControlLabel

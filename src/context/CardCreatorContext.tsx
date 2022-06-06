@@ -3,9 +3,22 @@ import React, {
   Dispatch,
   SetStateAction,
   createContext,
+  useMemo,
   useState,
 } from 'react';
 import { defaultCardOptions } from '@defaults/cardOptions';
+import { defaultCardLogic } from '@defaults/cardLogic';
+import useBaseSet from '@hooks/cardOptions/useBaseSet';
+import useRarity from '@hooks/cardOptions/useRarity';
+import useSubtype from '@hooks/cardOptions/useSubtype';
+import useSupertype from '@hooks/cardOptions/useSupertype';
+import useType from '@hooks/cardOptions/useType';
+import useVariation from '@hooks/cardOptions/useVariation';
+import { CardLogic } from '@interfaces/cardOptions/cardLogic';
+import merge from 'lodash.merge';
+import { defaultCardStyles } from '@defaults/cardStyles';
+import { CardStyles } from '@interfaces/cardOptions/cardStyles';
+import { RequiredIsh } from '@interfaces/utils';
 
 export type CardCreatorState = CardInterface;
 
@@ -14,6 +27,8 @@ interface CardCreatorContextInterface {
   setState: Dispatch<SetStateAction<CardInterface>>;
   cardImgObj?: object;
   setCardImgObj: (obj?: object) => void;
+  cardLogic: Required<CardLogic>;
+  cardStyles: RequiredIsh<CardStyles>;
   debug: {
     showCardOverlay: boolean;
     setShowCardOverlay: Dispatch<SetStateAction<boolean>>;
@@ -33,6 +48,8 @@ export const CardCreatorContext = createContext<CardCreatorContextInterface>({
   setState: () => null,
   cardImgObj: undefined,
   setCardImgObj: () => null,
+  cardLogic: defaultCardLogic,
+  cardStyles: defaultCardStyles,
   debug: {
     showCardOverlay: true,
     setShowCardOverlay: () => null,
@@ -56,6 +73,39 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>(
     'https://64.media.tumblr.com/57fd7a6ad04b7bf1538e83474a2222a7/b6be2ee655897623-63/s1280x1920/6dd2fef19a466174889f6c65f4ab39b0263176a6.png',
   );
+  const { baseSet } = useBaseSet();
+  const { supertype } = useSupertype();
+  const { type } = useType();
+  const { subtype } = useSubtype();
+  const { variation } = useVariation();
+  const { rarity } = useRarity();
+
+  const cardLogic = useMemo<Required<CardLogic>>(
+    () =>
+      merge(
+        {},
+        defaultCardLogic,
+        baseSet.logic,
+        supertype.logic,
+        type.logic,
+        subtype?.logic,
+        variation?.logic,
+        rarity?.logic,
+      ),
+    [baseSet, supertype, type, subtype, variation, rarity],
+  );
+
+  const cardStyles = useMemo<RequiredIsh<CardStyles>>(
+    () =>
+      merge(
+        {},
+        defaultCardStyles,
+        type.styles,
+        subtype?.styles,
+        rarity?.styles,
+      ),
+    [type, subtype, rarity],
+  );
 
   return (
     <CardCreatorContext.Provider
@@ -64,6 +114,8 @@ export const CardCreatorProvider: React.FC = ({ children }) => {
         setState,
         cardImgObj,
         setCardImgObj,
+        cardLogic,
+        cardStyles,
         debug: {
           showCardOverlay,
           setShowCardOverlay,

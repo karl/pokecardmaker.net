@@ -1,28 +1,8 @@
-import { useMemo } from 'react';
-import { CardStyles } from '@interfaces/cardOptions/cardStyles';
-import merge from 'lodash.merge';
-import { defaultCardStyles } from '@defaults/cardStyles';
-import useType from './useType';
-import useSubtype from './useSubtype';
-import useRarity from './useRarity';
+import { useContext } from 'react';
+import { CardCreatorContext } from 'src/context/CardCreatorContext';
 
 const useCardStyles = () => {
-  const { type } = useType();
-  const { subtype } = useSubtype();
-  const { rarity } = useRarity();
-
-  const cardStyles = useMemo<CardStyles>(
-    () =>
-      merge(
-        {},
-        defaultCardStyles,
-        type.styles,
-        subtype?.styles,
-        rarity?.styles,
-      ),
-    [type, subtype, rarity],
-  );
-
+  const { cardStyles } = useContext(CardCreatorContext);
   return cardStyles;
 };
 

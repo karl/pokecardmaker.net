@@ -1,13 +1,11 @@
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const PrevolveImgSrcInput: FC = () => {
   const { hasPrevolve } = useCardLogic();
-  const {
-    debug: { prevolveImgSrc, setPrevolveImgSrc },
-  } = useCardOptions();
+  const { prevolveImgSrc, setPrevolveImgSrc } = useCardDebug();
 
   if (!hasPrevolve) return null;
 

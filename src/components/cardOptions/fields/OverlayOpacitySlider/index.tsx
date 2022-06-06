@@ -1,12 +1,10 @@
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { Slider, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { FC, useEffect, useState } from 'react';
 
 const OverlayOpacitySlider: FC = () => {
-  const {
-    debug: { overlayOpacity, setOverlayOpacity },
-  } = useCardOptions();
+  const { overlayOpacity, setOverlayOpacity } = useCardDebug();
   const [opacity, setOpacity] = useState(overlayOpacity);
 
   useEffect(() => {

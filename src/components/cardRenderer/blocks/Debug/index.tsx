@@ -1,8 +1,11 @@
 import DebugImage from '@components/cardRenderer/components/DebugImage';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { FC } from 'react';
 
 const Debug: FC = () => {
-  if (process.env.NODE_ENV !== 'development') return null;
+  const { showDebug } = useCardDebug();
+
+  if (!showDebug) return null;
 
   return (
     <>

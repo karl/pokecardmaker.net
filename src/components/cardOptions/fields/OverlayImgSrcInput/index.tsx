@@ -1,11 +1,9 @@
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const OverlayImgSrcInput: FC = () => {
-  const {
-    debug: { overlayImgSrc, setOverlayImgSrc },
-  } = useCardOptions();
+  const { overlayImgSrc, setOverlayImgSrc } = useCardDebug();
 
   return (
     <TextField

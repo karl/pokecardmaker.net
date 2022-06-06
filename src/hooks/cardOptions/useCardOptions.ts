@@ -3,7 +3,7 @@ import { useCallback, useContext, useMemo } from 'react';
 import { CardCreatorContext } from 'src/context/CardCreatorContext';
 
 const useCardOptions = () => {
-  const { state, setState, setCardImgObj, cardImgObj, debug } =
+  const { state, setState, setCardImgObj, cardImgObj } =
     useContext(CardCreatorContext);
 
   const stateSetter = useCallback(
@@ -135,7 +135,6 @@ const useCardOptions = () => {
     setMove2,
     cardImgObj,
     setCardImgObj,
-    debug,
   };
 };
 

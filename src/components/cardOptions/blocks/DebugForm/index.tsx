@@ -3,10 +3,13 @@ import OverlayImgSrcInput from '@components/cardOptions/fields/OverlayImgSrcInpu
 import OverlayOpacitySlider from '@components/cardOptions/fields/OverlayOpacitySlider';
 import PrevolveImgSrcInput from '@components/cardOptions/fields/PrevolveImgSrcInput';
 import ShowCardOverlayCheckbox from '@components/cardOptions/fields/ShowCardOverlayCheckbox';
+import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { FC } from 'react';
 
 const DebugForm: FC = () => {
-  if (process.env.NODE_ENV !== 'development') return null;
+  const { showDebug } = useCardDebug();
+
+  if (!showDebug) return null;
 
   return (
     <AccordionForm id="debugForm" header="Debug">

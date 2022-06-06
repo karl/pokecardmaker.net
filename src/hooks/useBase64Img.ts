@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import useCardDebug from './cardOptions/useCardDebug';
 
 const useBase64Img = (src?: string) => {
-  const [imgSrc, setImgSrc] = useState(src ?? '');
+  const { showDebug } = useCardDebug();
+  // TODO?: Maybe show loader instead of nothing, maybe remove the `showDebug` ternary
+  const [imgSrc, setImgSrc] = useState(showDebug ? src ?? '' : '');
 
   useEffect(() => {
-    setImgSrc(src ?? '');
+    setImgSrc(showDebug ? src ?? '' : '');
 
     if (src) {
       (async () => {
@@ -22,7 +25,7 @@ const useBase64Img = (src?: string) => {
           .catch(console.error);
       })();
     }
-  }, [src]);
+  }, [showDebug, src]);
 
   return imgSrc;
 };
