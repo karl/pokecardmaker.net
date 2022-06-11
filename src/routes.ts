@@ -1,5 +1,8 @@
+import { AbilitySymbol, NameSymbol } from '@interfaces/cardOptions/cardStyles';
+
 const assets = '/assets';
 const icons = `${assets}/icons`;
+const symbols = `${assets}/symbols`;
 
 const Routes = {
   Assets: {
@@ -11,7 +14,10 @@ const Routes = {
       Type: (slug: string) => `${icons}/types/${slug}.png`,
       TypeBorder: (slug: string) => `${icons}/types/border/${slug}.png`,
     },
-    Symbol: (slug: string) => `${assets}/symbols/${slug}.png`,
+    Symbols: {
+      Name: (slug: NameSymbol) => `${symbols}/name/${slug}.png`,
+      Ability: (slug: AbilitySymbol) => `${symbols}/ability/${slug}.png`,
+    },
   },
 };
 

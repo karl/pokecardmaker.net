@@ -65,9 +65,25 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   dexStats: 'NO. 569  Trash Heap Pokémon  HT: 6\'3" WT:  236.6 lbs.',
   dexEntry: '',
   description: '',
-  ability: undefined,
-  move1: undefined,
-  move2: undefined,
+  hasAbility: true,
+  ability: {
+    name: 'Poisonous Puddle',
+    description:
+      "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
+  },
+  move1: {
+    name: '',
+    description: '',
+    damageAmount: '',
+    energyCost: [],
+  },
+  hasMove2: false,
+  move2: {
+    name: '',
+    description: '',
+    damageAmount: '',
+    energyCost: [],
+  },
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,

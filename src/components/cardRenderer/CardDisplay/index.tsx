@@ -2,6 +2,7 @@ import { baseFontSize, cardImgAspect, cardImgWidth } from '@constants';
 import { FC, useMemo } from 'react';
 import { useDebounce, useElementSize } from 'usehooks-ts';
 import Debug from '../blocks/Debug';
+import Moves from '../blocks/Moves';
 import NameBar from '../blocks/NameBar';
 import CardImage from '../components/CardImage';
 import DexStats from '../components/DexStats';
@@ -42,6 +43,7 @@ const CardDisplay: FC = () => {
       <PrevolveName />
       <PrevolveImg />
       <DexStats />
+      <Moves />
       <CardImage />
     </CardContainer>
   );

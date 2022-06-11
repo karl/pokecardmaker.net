@@ -7,6 +7,7 @@ const ShowCardOverlayCheckbox: FC = () => {
 
   return (
     <FormControlLabel
+      sx={{ px: 2 }}
       label="Show Card Overlay"
       control={
         <Checkbox

@@ -8,7 +8,7 @@ import { Subtype } from './cardOptions/subtype';
 import { Supertype } from './cardOptions/supertype';
 import { Variation } from './cardOptions/variation';
 
-interface BaseMove {
+export interface BaseMove {
   name: string;
   description: string;
 }
@@ -46,8 +46,10 @@ export interface CardInterface {
   dexStats?: string;
   dexEntry?: string;
   description?: string;
+  hasAbility: boolean;
   ability?: AbilityMove;
   move1?: AttackMove;
+  hasMove2: boolean;
   move2?: AttackMove;
   // Relations
   baseSetId: number;

@@ -4,6 +4,7 @@ import BasicsForm from '../blocks/BasicsForm';
 import CardImageForm from '../blocks/CardImageForm';
 import CardInfoForm from '../blocks/CardInfoForm';
 import DebugForm from '../blocks/DebugForm';
+import MovesForm from '../blocks/MovesForm';
 import { Form } from './styles';
 
 const CardOptionsForm: FC = () => {
@@ -14,6 +15,7 @@ const CardOptionsForm: FC = () => {
       <CardImageForm />
       <BasicsForm />
       <CardInfoForm />
+      <MovesForm />
     </Form>
   );
 };

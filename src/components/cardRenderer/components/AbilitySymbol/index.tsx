@@ -5,25 +5,19 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { Wrapper } from './styles';
 
-const NameSymbol: FC = () => {
-  const { nameSymbol } = useCardStyles();
+const AbilitySymbol: FC = () => {
+  const { abilitySymbol } = useCardStyles();
   const imgSrc = useBase64Img(
-    nameSymbol && Routes.Assets.Symbols.Name(nameSymbol),
+    abilitySymbol && Routes.Assets.Symbols.Ability(abilitySymbol),
   );
 
   if (!imgSrc) return null;
 
   return (
     <Wrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <Image layout="fill" objectFit="contain" alt="" src={imgSrc} />
     </Wrapper>
   );
 };
 
-export default NameSymbol;
+export default AbilitySymbol;

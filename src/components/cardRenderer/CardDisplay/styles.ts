@@ -9,6 +9,7 @@ export const CardContainer = styled('div')<{
   z-index: 1;
   font-size: ${({ $fontSize }) => `${$fontSize}px`};
   height: ${({ $height }) => `${$height}px`};
+  transition: all 0.15s ease-out;
 
   &::before {
     /* Simple white background so the card isn't transparent */
