@@ -50,17 +50,17 @@ const BonusMoveRadio: FC = () => {
         <FormControlLabel
           value={BonusMoveRadioValue.None}
           label="None"
-          control={<Radio />}
+          control={<Radio size="small" />}
         />
         <FormControlLabel
           value={BonusMoveRadioValue.HasAbility}
           label="Ability"
-          control={<Radio />}
+          control={<Radio size="small" />}
         />
         <FormControlLabel
           value={BonusMoveRadioValue.HasMove2}
           label="Second move"
-          control={<Radio />}
+          control={<Radio size="small" />}
         />
       </RadioGroup>
     </FormControl>

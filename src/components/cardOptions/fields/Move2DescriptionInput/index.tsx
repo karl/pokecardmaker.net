@@ -2,11 +2,10 @@ import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import { TextField } from '@mui/material';
 import { FC } from 'react';
 
-// TODO: Make textarea
-const AbilityDescriptionInput: FC = () => {
-  const { ability, setAbility } = useCardOptions();
+const Move2DescriptionInput: FC = () => {
+  const { move2, setMove2 } = useCardOptions();
 
-  if (!ability) return null;
+  if (!move2) return null;
 
   return (
     <TextField
@@ -15,10 +14,10 @@ const AbilityDescriptionInput: FC = () => {
       }}
       multiline
       label="Description"
-      value={ability.description}
+      value={move2.description}
       onChange={e =>
-        setAbility({
-          ...ability,
+        setMove2({
+          ...move2,
           description: e.currentTarget.value,
         })
       }
@@ -26,4 +25,4 @@ const AbilityDescriptionInput: FC = () => {
   );
 };
 
-export default AbilityDescriptionInput;
+export default Move2DescriptionInput;

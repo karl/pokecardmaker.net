@@ -13,6 +13,7 @@ const ShowCardOverlayCheckbox: FC = () => {
         <Checkbox
           checked={showCardOverlay}
           onChange={e => setShowCardOverlay(e.currentTarget.checked)}
+          size="small"
         />
       }
     />

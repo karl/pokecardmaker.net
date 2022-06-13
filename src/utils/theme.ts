@@ -91,6 +91,9 @@ theme = createTheme(theme, {
             1.5,
           )} ${theme.spacing(3)} !important`,
         },
+        multiline: {
+          padding: '0 !important',
+        },
       },
     },
     MuiInputLabel: {
