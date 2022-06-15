@@ -1,8 +1,8 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
-import AbilityDescription from '@components/cardRenderer/components/AbilityDescription';
-import AbilityName from '@components/cardRenderer/components/AbilityName';
-import AbilitySymbol from '@components/cardRenderer/components/AbilitySymbol';
 import { FC } from 'react';
+import AbilityDescription from './fields/AbilityDescription';
+import AbilityName from './fields/AbilityName';
+import AbilitySymbol from './fields/AbilitySymbol';
 import { TextContainer, TitleBar, Wrapper } from './styles';
 
 const Ability: FC = () => {

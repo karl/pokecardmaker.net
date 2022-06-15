@@ -2,13 +2,13 @@ import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { AppProps as NextAppProps } from 'next/app';
 import { FC } from 'react';
-import { Footer, Header } from '@components/layout';
 import theme from '@utils/theme';
 import { createEmotionCache } from '@css';
 import { CardOptionsProvider } from '@cardEditor/cardOptions';
 import { CardStylesProvider } from '@cardEditor/cardStyles';
 import { CardLogicProvider } from '@cardEditor/cardLogic';
 import { CardDebugProvider } from '@cardEditor/cardDebug';
+import { Footer, Header } from '@layout';
 import { Background, MainContainer } from './styles';
 
 interface AppProps extends NextAppProps {

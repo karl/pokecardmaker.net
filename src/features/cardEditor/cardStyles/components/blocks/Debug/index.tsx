@@ -1,6 +1,6 @@
 import { useCardDebug } from '@cardEditor/cardDebug';
-import DebugImage from '@components/cardRenderer/components/DebugImage';
 import { FC } from 'react';
+import DebugImage from './fields/DebugImage';
 
 const Debug: FC = () => {
   const { showDebug } = useCardDebug();

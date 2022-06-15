@@ -1,7 +1,7 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
-import Name from '@components/cardRenderer/components/Name';
-import NameSymbol from '@components/cardRenderer/components/NameSymbol';
 import { FC } from 'react';
+import Name from './fields/Name';
+import NameSymbol from './fields/NameSymbol';
 import { Block } from './styles';
 
 const NameBar: FC = () => {

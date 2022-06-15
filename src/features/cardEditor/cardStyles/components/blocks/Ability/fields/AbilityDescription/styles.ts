@@ -1,4 +1,4 @@
-import { CardText } from '@components/cardRenderer/CardText';
+import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
 import { styled } from '@css';
 
 export const AbilityDescriptionText = styled(CardText)`

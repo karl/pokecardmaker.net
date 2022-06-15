@@ -1,6 +1,6 @@
-import { CardText } from '@components/cardRenderer/CardText';
 import { css, styled } from '@css';
 import { Size } from '@cardEditor/cardStyles';
+import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
 
 export const Wrapper = styled(CardText)<{ $size: Size }>`
   display: block;

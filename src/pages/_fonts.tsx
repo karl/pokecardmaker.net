@@ -6,6 +6,8 @@ interface FontFace {
   fontName: string;
 }
 
+// TODO: Make enums out of the font names like:
+// Font.Name = "Gill Sans Std Regular Bold",
 const fonts: FontFace[] = [
   {
     fontName: 'Frutiger LT 55 Roman',

@@ -15,8 +15,8 @@
       "@utils/*": ["src/utils/*"],
       "@css": ["src/css"],
       "@routes": ["src/routes"],
-      "@constants": ["src/constants"],
       "@interfaces/*": ["src/interfaces/*"],
+      "@layout": ["src/layout"],
       "@assets/*": ["public/assets/*"]
     },
     "allowJs": true,

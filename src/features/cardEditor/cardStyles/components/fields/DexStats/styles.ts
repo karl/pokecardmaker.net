@@ -1,5 +1,5 @@
-import { CardText } from '@components/cardRenderer/CardText';
 import { styled } from '@css';
+import { CardText } from '../../atoms/CardText';
 
 export const DexStatsText = styled(CardText)`
   position: absolute;

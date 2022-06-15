@@ -1,13 +1,16 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
-import { baseFontSize, cardImgHeight, cardImgWidth } from '@constants';
+import { cardId as defaultCardId } from '@cardEditor/cardStyles';
 import { Download as DownloadIcon } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import html2canvas from 'html2canvas';
 import { FC, useCallback } from 'react';
+import { baseFontSize, cardImgHeight, cardImgWidth } from 'src/constants';
 import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
-const CardDownloader: FC<CardDownloaderProps> = ({ cardId = 'card' }) => {
+const CardDownloader: FC<CardDownloaderProps> = ({
+  cardId = defaultCardId,
+}) => {
   const { name } = useCardOptions();
 
   const makeCanvas = useCallback(async (): Promise<

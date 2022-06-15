@@ -1,11 +1,11 @@
-import { SEO } from '@components/layout';
 import { FC, useEffect } from 'react';
-import CardDisplay from '@components/cardRenderer/CardDisplay';
 import { GetStaticProps } from 'next';
 import { constructCardImgObj } from '@utils/constructCardImageObj';
 import { Box } from '@mui/system';
 import { useCardStyles } from '@cardEditor/cardStyles';
 import CardOptionsForm from '@cardEditor/cardOptions/components/CardOptionsForm';
+import CardDisplay from '@cardEditor/cardStyles/components/CardDisplay';
+import { SEO } from '@layout';
 import { CardWrapper } from './styles';
 
 interface CardImageProps {
