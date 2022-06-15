@@ -19,7 +19,7 @@ const FileUploader: FC<FileUploaderProps> = ({ slug, label, onChange }) => {
 
   return (
     <FormControl>
-      <InputLabel shrink htmlFor={slug}>
+      <InputLabel shrink htmlFor={`${slug}-input`}>
         {label}
       </InputLabel>
       <Button
@@ -34,7 +34,7 @@ const FileUploader: FC<FileUploaderProps> = ({ slug, label, onChange }) => {
       >
         <ButtonLabel>{fileName ?? <>&nbsp;</>}</ButtonLabel>
         <input
-          id={slug}
+          id={`${slug}-input`}
           accept="image/*"
           type="file"
           hidden

@@ -8,7 +8,7 @@ import TypeSelector from './fields/TypeSelector';
 import VariationSelector from './fields/VariationSelector';
 
 const CardTypeForm: FC = () => (
-  <AccordionForm id="cardImageForm" header="Card Type">
+  <AccordionForm slug="cardImageForm" header="Card Type">
     <BaseSetSelector />
     <SupertypeSelector />
     <TypeSelector />

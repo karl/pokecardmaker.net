@@ -10,25 +10,23 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
   onChange,
   children,
   ...props
-}) => {
-  return (
-    <FormControl fullWidth {...props}>
-      <InputLabel id={`${slug}-label`} shrink>
-        {displayName}
-      </InputLabel>
-      <StyledSelect
-        labelId={`${slug}-label`}
-        id={slug}
-        value={value?.toString() ?? ''}
-        label={displayName}
-        // @ts-expect-error - Emotion bug
-        onChange={onChange}
-        displayEmpty
-      >
-        {children}
-      </StyledSelect>
-    </FormControl>
-  );
-};
+}) => (
+  <FormControl fullWidth {...props}>
+    <InputLabel id={`${slug}-label`} shrink>
+      {displayName}
+    </InputLabel>
+    <StyledSelect
+      labelId={`${slug}-label`}
+      id={`${slug}-input`}
+      value={value?.toString() ?? ''}
+      label={displayName}
+      // @ts-expect-error - Emotion bug
+      onChange={onChange}
+      displayEmpty
+    >
+      {children}
+    </StyledSelect>
+  </FormControl>
+);
 
 export default ControlledSelector;

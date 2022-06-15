@@ -12,7 +12,7 @@ const ControlledSlider: FC<ControlledSliderProps> = ({
     label={label}
     control={
       <Slider
-        id={slug}
+        id={`${slug}-input`}
         aria-label={label}
         valueLabelDisplay="auto"
         size="small"

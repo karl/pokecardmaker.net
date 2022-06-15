@@ -9,7 +9,7 @@ const TextAreaInput: FC<TextAreaInputProps> = ({
   onChange,
 }) => (
   <TextField
-    id={slug}
+    id={`${slug}-input`}
     InputLabelProps={{
       shrink: true,
     }}

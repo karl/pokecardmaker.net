@@ -13,7 +13,7 @@ const BasicsForm: FC = () => {
   if (!hasName) return null;
 
   return (
-    <AccordionForm id="basicsForm" header="Basics">
+    <AccordionForm slug="basicsForm" header="Basics">
       <NameInput />
       <HitpointsInput />
       <PrevolveNameInput />

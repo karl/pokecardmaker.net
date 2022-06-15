@@ -11,7 +11,7 @@ const CardInfoForm: FC = () => {
   if (!hasCardInfo) return null;
 
   return (
-    <AccordionForm id="cardInfoForm" header="Card Info">
+    <AccordionForm slug="cardInfoForm" header="Card Info">
       <SetIconSelector />
       <RotationIconSelector />
       <RarityIconSelector />

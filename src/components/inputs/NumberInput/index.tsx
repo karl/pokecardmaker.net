@@ -9,7 +9,7 @@ const NumberInput: FC<NumberInputProps> = ({
   onChange,
 }) => (
   <TextField
-    id={slug}
+    id={`${slug}-input`}
     InputLabelProps={{
       shrink: true,
     }}

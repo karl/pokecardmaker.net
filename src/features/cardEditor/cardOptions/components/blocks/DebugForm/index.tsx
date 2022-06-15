@@ -12,7 +12,7 @@ const DebugForm: FC = () => {
   if (!showDebug) return null;
 
   return (
-    <AccordionForm id="debugForm" header="Debug">
+    <AccordionForm slug="debugForm" header="Debug">
       <ShowCardOverlayCheckbox />
       <OverlayOpacitySlider />
       <OverlayImgSrcInput />

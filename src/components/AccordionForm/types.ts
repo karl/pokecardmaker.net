@@ -1,4 +1,4 @@
 export interface AccordionFormProps {
-  id: string;
+  slug: string;
   header: string;
 }

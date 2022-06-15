@@ -12,7 +12,7 @@ const AllMovesForm: FC = () => {
   if (!hasMoves) return null;
 
   return (
-    <AccordionForm id="movesForm" header="Moves">
+    <AccordionForm slug="movesForm" header="Moves">
       <Move1Form />
       <BonusMoveRadio />
       <AbilityForm />

@@ -4,7 +4,7 @@ import { TextInputProps } from './types';
 
 const TextInput: FC<TextInputProps> = ({ label, slug, value, onChange }) => (
   <TextField
-    id={slug}
+    id={`${slug}-input`}
     InputLabelProps={{
       shrink: true,
     }}

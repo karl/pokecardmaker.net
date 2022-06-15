@@ -4,12 +4,12 @@ import { ExpandMore as ExpandMoreIcon } from '@mui/icons-material';
 import { StyledAccordion } from './styles';
 import { AccordionFormProps } from './types';
 
-const AccordionForm: FC<AccordionFormProps> = ({ id, header, children }) => (
+const AccordionForm: FC<AccordionFormProps> = ({ slug, header, children }) => (
   <Accordion defaultExpanded disableGutters>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
-      aria-controls={`${id}-content`}
-      id={`${id}-header`}
+      aria-controls={`${slug}-content`}
+      id={`${slug}-header`}
     >
       <Typography fontWeight={700}>{header}</Typography>
     </AccordionSummary>
