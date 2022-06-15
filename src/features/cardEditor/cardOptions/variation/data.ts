@@ -1,6 +1,6 @@
-import { Variation } from '@cardEditor/cardOptions/variation/types';
-import { rainbow } from '../rarity/data';
-import { vmax } from '../subtype/data';
+import { Variation } from '@cardEditor/cardOptions/variation';
+import { rainbow } from '../rarity';
+import { vmax } from '../subtype';
 
 export const dynamax: Variation = {
   id: 1,

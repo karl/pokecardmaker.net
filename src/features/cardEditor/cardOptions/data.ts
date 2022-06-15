@@ -1,4 +1,4 @@
-import { CardOptions } from '@cardEditor/cardOptions/types';
+import { CardOptions } from '@cardEditor/cardOptions';
 import { baseSets } from './baseSet';
 import { rarities } from './rarity';
 import { rarityIcons } from './rarityIcon';

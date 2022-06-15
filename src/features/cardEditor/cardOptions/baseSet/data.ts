@@ -1,4 +1,4 @@
-import { BaseSet } from '@cardEditor/cardOptions/baseSet/types';
+import { BaseSet } from '@cardEditor/cardOptions/baseSet';
 
 export const swordAndShield: BaseSet = {
   id: 1,

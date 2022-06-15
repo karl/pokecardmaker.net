@@ -1,8 +1,8 @@
-import { CardLogic } from '@cardEditor/cardLogic/types';
-import { CardStyles } from '@cardEditor/cardStyles/types';
-import { Type } from '@cardEditor/cardOptions/type/types';
-import { supporterFullArt } from '../rarity/data';
-import { energy, pokemon, trainer } from '../supertype/data';
+import { CardLogic } from '@cardEditor/cardLogic';
+import { CardStyles } from '@cardEditor/cardStyles';
+import { Type } from '@cardEditor/cardOptions/type';
+import { supporterFullArt } from '../rarity';
+import { energy, pokemon, trainer } from '../supertype';
 
 const pokemonTypeLogic: Partial<CardLogic> = {
   hasSubtypes: true,

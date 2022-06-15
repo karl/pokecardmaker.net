@@ -1,12 +1,12 @@
-import { Type } from './cardOptions/type/types';
-import { BaseSet } from './cardOptions/baseSet/types';
-import { Rarity } from './cardOptions/rarity/types';
-import { RarityIcon } from './cardOptions/rarityIcon/types';
-import { RotationIcon } from './cardOptions/rotationIcon/types';
-import { SetIcon } from './cardOptions/setIcon/types';
-import { Subtype } from './cardOptions/subtype/types';
-import { Supertype } from './cardOptions/supertype/types';
-import { Variation } from './cardOptions/variation/types';
+import { Type } from './cardOptions/type';
+import { BaseSet } from './cardOptions/baseSet';
+import { Rarity } from './cardOptions/rarity';
+import { RarityIcon } from './cardOptions/rarityIcon';
+import { RotationIcon } from './cardOptions/rotationIcon';
+import { SetIcon } from './cardOptions/setIcon';
+import { Subtype } from './cardOptions/subtype';
+import { Supertype } from './cardOptions/supertype';
+import { Variation } from './cardOptions/variation';
 
 export interface BaseMove {
   name: string;

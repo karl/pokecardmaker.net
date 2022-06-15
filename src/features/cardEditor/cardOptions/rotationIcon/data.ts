@@ -1,4 +1,4 @@
-import { RotationIcon } from '@cardEditor/cardOptions/rotationIcon/types';
+import { RotationIcon } from '@cardEditor/cardOptions/rotationIcon';
 
 export const d: RotationIcon = {
   id: 1,

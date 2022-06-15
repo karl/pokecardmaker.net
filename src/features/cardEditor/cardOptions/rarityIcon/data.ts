@@ -1,4 +1,4 @@
-import { RarityIcon } from '@cardEditor/cardOptions/rarityIcon/types';
+import { RarityIcon } from '@cardEditor/cardOptions/rarityIcon';
 
 export const common: RarityIcon = {
   id: 1,

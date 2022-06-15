@@ -1,5 +1,5 @@
 import { css, styled } from '@css';
-import { TextColor } from '@cardEditor/cardStyles/types';
+import { TextColor } from '@cardEditor/cardStyles';
 
 export const CardText = styled('p')<{
   $outline?: TextColor;

@@ -1,6 +1,6 @@
-import { Subtype } from '@cardEditor/cardOptions/subtype/types';
-import { CardStyles } from '@cardEditor/cardStyles/types';
-import { fullArt, goldStar, goldenFullArt, promo } from '../rarity/data';
+import { Subtype } from '@cardEditor/cardOptions/subtype';
+import { CardStyles } from '@cardEditor/cardStyles';
+import { fullArt, goldStar, goldenFullArt, promo } from '../rarity';
 import {
   colorless,
   dark,
@@ -12,7 +12,7 @@ import {
   metal,
   psychic,
   water,
-} from '../type/data';
+} from '../type';
 
 const pokemonTypeTypes: number[] = [
   grass.id,

@@ -1,5 +1,5 @@
-import { SetIcon } from '@cardEditor/cardOptions/setIcon/types';
-import { swordAndShield as ssBaseSet } from '../baseSet/data';
+import { SetIcon } from '@cardEditor/cardOptions/setIcon';
+import { swordAndShield as ssBaseSet } from '../baseSet';
 
 export const swordAndShield: SetIcon = {
   id: 1,

@@ -1,4 +1,4 @@
-import { CardLogic } from '@cardEditor/cardLogic/types';
+import { CardLogic } from '@cardEditor/cardLogic';
 
 export const defaultCardLogic: Required<CardLogic> = {
   hasHitpoints: false,

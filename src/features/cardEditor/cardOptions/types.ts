@@ -1,14 +1,14 @@
-import { BaseSet } from './baseSet/types';
-import { CardLogic } from '../cardLogic/types';
-import { CardStyles } from '../cardStyles/types';
-import { Rarity } from './rarity/types';
-import { RarityIcon } from './rarityIcon/types';
-import { RotationIcon } from './rotationIcon/types';
-import { SetIcon } from './setIcon/types';
-import { Subtype } from './subtype/types';
-import { Supertype } from './supertype/types';
-import { Type } from './type/types';
-import { Variation } from './variation/types';
+import { BaseSet } from './baseSet';
+import { CardLogic } from '../cardLogic';
+import { CardStyles } from '../cardStyles';
+import { Rarity } from './rarity';
+import { RarityIcon } from './rarityIcon';
+import { RotationIcon } from './rotationIcon';
+import { SetIcon } from './setIcon';
+import { Subtype } from './subtype';
+import { Supertype } from './supertype';
+import { Type } from './type';
+import { Variation } from './variation';
 
 export interface CardTypeHelpers {
   styles?: Partial<CardStyles>;

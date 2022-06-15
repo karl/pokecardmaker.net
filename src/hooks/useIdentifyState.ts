@@ -1,4 +1,4 @@
-import { IdentifierInfo } from '@cardEditor/cardOptions/types';
+import { IdentifierInfo } from '@cardEditor/cardOptions';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 /**

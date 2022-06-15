@@ -1,4 +1,4 @@
-import { Supertype } from '@cardEditor/cardOptions/supertype/types';
+import { Supertype } from '@cardEditor/cardOptions/supertype';
 
 export const pokemon: Supertype = {
   id: 1,
