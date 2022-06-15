@@ -1,5 +1,5 @@
 import TextInput from '@components/inputs/TextInput';
-import useCardDebug from '@hooks/cardOptions/useCardDebug';
+import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { FC } from 'react';
 
 const OverlayImgSrcInput: FC = () => {

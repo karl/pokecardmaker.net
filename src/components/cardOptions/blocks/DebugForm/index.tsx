@@ -3,7 +3,7 @@ import OverlayImgSrcInput from '@components/cardOptions/fields/OverlayImgSrcInpu
 import OverlayOpacitySlider from '@components/cardOptions/fields/OverlayOpacitySlider';
 import PrevolveImgSrcInput from '@components/cardOptions/fields/PrevolveImgSrcInput';
 import ShowCardOverlayCheckbox from '@components/cardOptions/fields/ShowCardOverlayCheckbox';
-import useCardDebug from '@hooks/cardOptions/useCardDebug';
+import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { FC } from 'react';
 
 const DebugForm: FC = () => {

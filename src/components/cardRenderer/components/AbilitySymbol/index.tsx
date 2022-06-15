@@ -1,4 +1,4 @@
-import useCardStyles from '@hooks/cardOptions/useCardStyles';
+import useCardStyles from 'src/features/cardEditor/cardStyles/useCardStyles';
 import useBase64Img from '@hooks/useBase64Img';
 import Routes from '@routes';
 import Image from 'next/image';

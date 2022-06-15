@@ -1,11 +1,11 @@
 import Routes from '@routes';
 import { FC, useMemo } from 'react';
 import fallbackCard from '@assets/fallbackCard.png';
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import dot from 'dot-object';
 import { getCardPath } from '@utils/getCardPath';
 import Image from 'next/image';
-import useCardRelations from '@hooks/cardOptions/useCardRelations';
+import useCardRelations from 'src/features/cardEditor/cardOptions/hooks/useCardRelations';
 import { Wrapper } from './styles';
 
 const CardImage: FC = () => {

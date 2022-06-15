@@ -1,9 +1,9 @@
-import { BaseSet } from '@interfaces/cardOptions/baseSet';
-import { Rarity } from '@interfaces/cardOptions/rarity';
-import { Subtype } from '@interfaces/cardOptions/subtype';
-import { Supertype } from '@interfaces/cardOptions/supertype';
-import { Type } from '@interfaces/cardOptions/type';
-import { Variation } from '@interfaces/cardOptions/variation';
+import { BaseSet } from 'src/features/cardEditor/cardOptions/baseSet/types';
+import { Rarity } from 'src/features/cardEditor/cardOptions/rarity/types';
+import { Subtype } from 'src/features/cardEditor/cardOptions/subtype/types';
+import { Supertype } from 'src/features/cardEditor/cardOptions/supertype/types';
+import { Type } from 'src/features/cardEditor/cardOptions/type/types';
+import { Variation } from 'src/features/cardEditor/cardOptions/variation/types';
 
 export const getCardPath = (
   baseSet: BaseSet,

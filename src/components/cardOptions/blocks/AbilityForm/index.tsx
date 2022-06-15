@@ -1,7 +1,7 @@
 import MoveForm from '@components/cardOptions/components/MoveForm';
 import AbilityDescriptionInput from '@components/cardOptions/fields/AbilityDescriptionInput';
 import AbilityNameInput from '@components/cardOptions/fields/AbilityNameInput';
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
 
 const AbilityForm: FC = () => {

@@ -1,5 +1,5 @@
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import useCardStyles from '@hooks/cardOptions/useCardStyles';
+import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
+import useCardStyles from 'src/features/cardEditor/cardStyles/useCardStyles';
 import { FC } from 'react';
 import { AbilityDescriptionText } from './styles';
 

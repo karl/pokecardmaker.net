@@ -1,4 +1,4 @@
-import { IdentifierInfo } from '@interfaces/cardOptions';
+import { IdentifierInfo } from 'src/features/cardEditor/cardOptions/types';
 
 /**
  * Finds an object in an array based on their id

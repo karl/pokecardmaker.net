@@ -1,7 +1,7 @@
 import MoveForm from '@components/cardOptions/components/MoveForm';
 import Move2DescriptionInput from '@components/cardOptions/fields/Move2DescriptionInput';
 import Move2NameInput from '@components/cardOptions/fields/Move2NameInput';
-import useCardOptions from '@hooks/cardOptions/useCardOptions';
+import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
 
 const Move2Form: FC = () => {

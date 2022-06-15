@@ -1,5 +1,5 @@
 import ControlledSelector from '@components/inputs/ControlledSelector';
-import useBaseSet from '@hooks/cardOptions/useBaseSet';
+import useBaseSet from 'src/features/cardEditor/cardOptions/baseSet/hooks/useBaseSet';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';
 import Image from 'next/image';

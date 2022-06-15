@@ -1,4 +1,4 @@
-import { CardInterface, RelationsInterface } from '@interfaces/card';
+import { CardInterface, RelationsInterface } from 'src/features/cardEditor/types';
 import React, {
   Dispatch,
   SetStateAction,
@@ -6,20 +6,20 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import types from '@data/cardOptions/types';
-import { defaultCardOptions, defaultRelations } from '@defaults/cardOptions';
-import { defaultCardLogic } from '@defaults/cardLogic';
-import { CardLogic } from '@interfaces/cardOptions/cardLogic';
+import types from 'src/features/cardEditor/cardOptions/type/data';
+import { defaultCardLogic } from 'src/features/cardEditor/cardLogic/defaults';
+import { CardLogic } from 'src/features/cardEditor/cardLogic/types';
 import merge from 'lodash.merge';
-import { defaultCardStyles } from '@defaults/cardStyles';
-import { CardStyles } from '@interfaces/cardOptions/cardStyles';
+import { defaultCardStyles } from 'src/features/cardEditor/cardStyles/defaults';
+import { CardStyles } from 'src/features/cardEditor/cardStyles/types';
 import { RequiredIsh } from '@interfaces/utils';
 import findById from '@utils/findById';
-import baseSets from '@data/cardOptions/baseSets';
-import rarities from '@data/cardOptions/rarities';
-import subtypes from '@data/cardOptions/subtypes';
-import supertypes from '@data/cardOptions/supertypes';
-import variations from '@data/cardOptions/variations';
+import baseSets from 'src/features/cardEditor/cardOptions/baseSet/data';
+import rarities from 'src/features/cardEditor/cardOptions/rarity/data';
+import subtypes from 'src/features/cardEditor/cardOptions/subtype/data';
+import supertypes from 'src/features/cardEditor/cardOptions/supertype/data';
+import variations from 'src/features/cardEditor/cardOptions/variation/data';
+import { defaultCardOptions, defaultRelations } from 'src/features/cardEditor/cardOptions';
 
 export type CardCreatorState = CardInterface;
 

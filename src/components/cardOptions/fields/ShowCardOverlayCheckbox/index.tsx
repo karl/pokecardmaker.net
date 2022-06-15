@@ -1,4 +1,4 @@
-import useCardDebug from '@hooks/cardOptions/useCardDebug';
+import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { FC } from 'react';
 

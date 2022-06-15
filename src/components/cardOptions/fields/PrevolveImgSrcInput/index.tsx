@@ -1,5 +1,5 @@
-import useCardLogic from '@hooks/cardOptions/useCardLogic';
-import useCardDebug from '@hooks/cardOptions/useCardDebug';
+import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
+import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { FC } from 'react';
 import TextInput from '@components/inputs/TextInput';
 

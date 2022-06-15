@@ -1,4 +1,4 @@
-import useSetIcon from '@hooks/cardOptions/useSetIcon';
+import useSetIcon from 'src/features/cardEditor/cardOptions/setIcon/hooks/useSetIcon';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';

@@ -1,4 +1,4 @@
-import useCardLogic from '@hooks/cardOptions/useCardLogic';
+import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
 import { FC } from 'react';
 import Ability from '../Ability';
 import { Wrapper } from './styles';

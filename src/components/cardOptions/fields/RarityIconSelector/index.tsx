@@ -1,4 +1,4 @@
-import useRarityIcon from '@hooks/cardOptions/useRarityIcon';
+import useRarityIcon from 'src/features/cardEditor/cardOptions/rarityIcon/hooks/useRarityIcon';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';

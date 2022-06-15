@@ -1,4 +1,4 @@
-import useRotationIcon from '@hooks/cardOptions/useRotationIcon';
+import useRotationIcon from 'src/features/cardEditor/cardOptions/rotationIcon/hooks/useRotationIcon';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';

@@ -1,5 +1,5 @@
 import ControlledSlider from '@components/inputs/ControlledSlider';
-import useCardDebug from '@hooks/cardOptions/useCardDebug';
+import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { FC, useEffect, useState } from 'react';
 
 const OverlayOpacitySlider: FC = () => {

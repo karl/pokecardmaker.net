@@ -1,4 +1,4 @@
-import { AbilitySymbol, NameSymbol } from '@interfaces/cardOptions/cardStyles';
+import { AbilitySymbol, NameSymbol } from 'src/features/cardEditor/cardStyles/types';
 
 const assets = '/assets';
 const icons = `${assets}/icons`;
