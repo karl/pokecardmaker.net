@@ -1,6 +1,6 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
-import MoveForm from '../../general/MoveForm';
+import MoveForm from '../../atoms/MoveForm';
 import AbilityDescriptionInput from './fields/AbilityDescriptionInput';
 import AbilityNameInput from './fields/AbilityNameInput';
 

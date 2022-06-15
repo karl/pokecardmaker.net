@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import MoveForm from '../../general/MoveForm';
+import MoveForm from '../../atoms/MoveForm';
 import Move1DescriptionInput from './fields/Move1DescriptionInput';
 import Move1NameInput from './fields/Move1NameInput';
 
