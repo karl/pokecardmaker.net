@@ -1,4 +1,4 @@
-import ControlledSlider from '@components/ControlledSlider';
+import ControlledSlider from '@components/inputs/ControlledSlider';
 import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { FC, useEffect, useState } from 'react';
 
@@ -12,6 +12,7 @@ const OverlayOpacitySlider: FC = () => {
 
   return (
     <ControlledSlider
+      slug="overlayOpacity"
       label="Overlay Opacity"
       step={1}
       min={0}

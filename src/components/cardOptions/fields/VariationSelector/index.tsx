@@ -1,4 +1,4 @@
-import ControlledSelector from '@components/ControlledSelector';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useRarity from '@hooks/cardOptions/useRarity';
 import useSubtype from '@hooks/cardOptions/useSubtype';

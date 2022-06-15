@@ -1,5 +1,5 @@
+import TextAreaInput from '@components/inputs/TextAreaInput';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const Move2DescriptionInput: FC = () => {
@@ -8,17 +8,14 @@ const Move2DescriptionInput: FC = () => {
   if (!move2) return null;
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
-      multiline
+    <TextAreaInput
+      slug="move2Description"
       label="Description"
       value={move2.description}
-      onChange={e =>
+      onChange={value =>
         setMove2({
           ...move2,
-          description: e.currentTarget.value,
+          description: value,
         })
       }
     />

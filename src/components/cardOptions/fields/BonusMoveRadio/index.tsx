@@ -9,6 +9,7 @@ import {
 import { ChangeEvent, FC, useCallback, useMemo } from 'react';
 import { BonusMoveRadioValue } from './types';
 
+// TODO: Make generic radio input
 const BonusMoveRadio: FC = () => {
   const { hasAbility, hasMove2, setHasAbility, setHasMove2 } = useCardOptions();
 

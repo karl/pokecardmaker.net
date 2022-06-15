@@ -4,7 +4,7 @@ import { ChangeEvent, FC, useCallback, useState } from 'react';
 import { ButtonLabel } from './styles';
 import { FileUploaderProps } from './types';
 
-const FileUploader: FC<FileUploaderProps> = ({ id, label, onChange }) => {
+const FileUploader: FC<FileUploaderProps> = ({ slug, label, onChange }) => {
   const [fileName, setFileName] = useState<string>();
 
   const onUpload = useCallback(
@@ -19,7 +19,7 @@ const FileUploader: FC<FileUploaderProps> = ({ id, label, onChange }) => {
 
   return (
     <FormControl>
-      <InputLabel shrink htmlFor={id}>
+      <InputLabel shrink htmlFor={slug}>
         {label}
       </InputLabel>
       <Button
@@ -34,7 +34,7 @@ const FileUploader: FC<FileUploaderProps> = ({ id, label, onChange }) => {
       >
         <ButtonLabel>{fileName ?? <>&nbsp;</>}</ButtonLabel>
         <input
-          id={id}
+          id={slug}
           accept="image/*"
           type="file"
           hidden

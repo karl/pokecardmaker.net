@@ -34,10 +34,10 @@ let theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Barlow Condensed, sans-serif',
-    fontSize: 18,
+    fontFamily: 'Atkinson Hyperlegible, sans-serif',
+    fontSize: 16,
     h6: {
-      fontSize: 17,
+      fontSize: 15,
     },
   },
   shape: {

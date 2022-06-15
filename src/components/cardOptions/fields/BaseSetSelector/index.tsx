@@ -1,4 +1,4 @@
-import ControlledSelector from '@components/ControlledSelector';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 import useBaseSet from '@hooks/cardOptions/useBaseSet';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';

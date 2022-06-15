@@ -1,4 +1,4 @@
-import ControlledSelector from '@components/ControlledSelector';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 import useSupertype from '@hooks/cardOptions/useSupertype';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';

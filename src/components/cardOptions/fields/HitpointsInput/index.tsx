@@ -1,15 +1,14 @@
+import NumberInput from '@components/inputs/NumberInput';
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import { TextField } from '@mui/material';
-import { ChangeEvent, FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 
 const HitpointsInput: FC = () => {
   const { hasHitpoints } = useCardLogic();
   const { hitpoints, setHitpoints } = useCardOptions();
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const { value } = e.currentTarget;
+    (value: number | '') => {
       if (value === '') {
         setHitpoints(undefined);
       } else {
@@ -22,17 +21,10 @@ const HitpointsInput: FC = () => {
   if (!hasHitpoints) return null;
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
-      inputProps={{
-        inputMode: 'numeric',
-        pattern: '[0-9]*',
-      }}
+    <NumberInput
+      slug="hitpoints"
       label="Hitpoints"
       value={hitpoints}
-      type="number"
       onChange={handleChange}
     />
   );

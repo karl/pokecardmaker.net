@@ -1,6 +1,6 @@
+import TextInput from '@components/inputs/TextInput';
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const PrevolveNameInput: FC = () => {
@@ -10,13 +10,11 @@ const PrevolveNameInput: FC = () => {
   if (!hasPrevolve) return null;
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
+    <TextInput
+      slug="prevolveName"
       label="Prevolve Name"
       value={prevolveName}
-      onChange={e => setPrevolveName(e.currentTarget.value)}
+      onChange={setPrevolveName}
     />
   );
 };

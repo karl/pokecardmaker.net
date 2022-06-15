@@ -2,8 +2,8 @@ import useSubtype from '@hooks/cardOptions/useSubtype';
 import useType from '@hooks/cardOptions/useType';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
-import ControlledSelector from '@components/ControlledSelector';
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 
 const SubtypeSelector: FC = () => {
   const { type } = useType();

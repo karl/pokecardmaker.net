@@ -1,9 +1,9 @@
-import ControlledSelector from '@components/ControlledSelector';
 import useRotationIcon from '@hooks/cardOptions/useRotationIcon';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';
 import Image from 'next/image';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const RotationIconSelector: FC = () => {

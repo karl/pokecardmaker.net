@@ -1,4 +1,3 @@
-import ControlledSelector from '@components/ControlledSelector';
 import useSetIcon from '@hooks/cardOptions/useSetIcon';
 import { ListItemText, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
@@ -8,6 +7,7 @@ import {
   StyledListItemIcon,
   StyledMenuItem,
 } from '@components/cardOptions/fields/styles';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 
 const SetIconSelector: FC = () => {
   const { setIcons, setIcon, setSetIcon } = useSetIcon();

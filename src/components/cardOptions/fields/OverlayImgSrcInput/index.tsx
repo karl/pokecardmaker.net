@@ -1,18 +1,16 @@
+import TextInput from '@components/inputs/TextInput';
 import useCardDebug from '@hooks/cardOptions/useCardDebug';
-import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const OverlayImgSrcInput: FC = () => {
   const { overlayImgSrc, setOverlayImgSrc } = useCardDebug();
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
+    <TextInput
+      slug="overlayImgSrc"
       label="Overlay Image Source"
       value={overlayImgSrc}
-      onChange={e => setOverlayImgSrc(e.currentTarget.value)}
+      onChange={setOverlayImgSrc}
     />
   );
 };

@@ -1,5 +1,5 @@
+import TextAreaInput from '@components/inputs/TextAreaInput';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const AbilityDescriptionInput: FC = () => {
@@ -8,17 +8,14 @@ const AbilityDescriptionInput: FC = () => {
   if (!ability) return null;
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
-      multiline
+    <TextAreaInput
+      slug="abilityDescription"
       label="Description"
       value={ability.description}
-      onChange={e =>
+      onChange={value =>
         setAbility({
           ...ability,
-          description: e.currentTarget.value,
+          description: value,
         })
       }
     />

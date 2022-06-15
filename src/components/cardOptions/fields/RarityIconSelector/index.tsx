@@ -1,9 +1,9 @@
-import ControlledSelector from '@components/ControlledSelector';
 import useRarityIcon from '@hooks/cardOptions/useRarityIcon';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';
 import Image from 'next/image';
+import ControlledSelector from '@components/inputs/ControlledSelector';
 import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const RarityIconSelector: FC = () => {

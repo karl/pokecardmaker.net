@@ -11,7 +11,7 @@ const AccordionForm: FC<AccordionFormProps> = ({ id, header, children }) => (
       aria-controls={`${id}-content`}
       id={`${id}-header`}
     >
-      <Typography fontWeight={500}>{header}</Typography>
+      <Typography fontWeight={700}>{header}</Typography>
     </AccordionSummary>
     <StyledAccordion>{children}</StyledAccordion>
   </Accordion>

@@ -3,11 +3,16 @@ import { FC } from 'react';
 import { StyledFormControlLabel } from './styles';
 import { ControlledSliderProps } from './types';
 
-const ControlledSlider: FC<ControlledSliderProps> = ({ label, ...props }) => (
+const ControlledSlider: FC<ControlledSliderProps> = ({
+  label,
+  slug,
+  ...props
+}) => (
   <StyledFormControlLabel
     label={label}
     control={
       <Slider
+        id={slug}
         aria-label={label}
         valueLabelDisplay="auto"
         size="small"

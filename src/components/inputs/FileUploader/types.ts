@@ -1,5 +1,5 @@
 export interface FileUploaderProps {
-  id: string;
+  slug: string;
   label: string;
   onChange: (src: string) => void;
 }

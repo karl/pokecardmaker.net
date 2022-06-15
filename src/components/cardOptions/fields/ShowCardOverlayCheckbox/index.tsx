@@ -2,6 +2,7 @@ import useCardDebug from '@hooks/cardOptions/useCardDebug';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import { FC } from 'react';
 
+// TODO: Make generic checkbox component
 const ShowCardOverlayCheckbox: FC = () => {
   const { showCardOverlay, setShowCardOverlay } = useCardDebug();
 

@@ -4,7 +4,7 @@ import { MoveFormProps } from './types';
 
 const MoveForm: FC<MoveFormProps> = ({ label, children }) => (
   <>
-    <Typography fontWeight={500} px={2}>
+    <Typography fontWeight={700} px={2}>
       {label}
     </Typography>
     {children}

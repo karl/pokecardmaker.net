@@ -1,5 +1,5 @@
+import TextInput from '@components/inputs/TextInput';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
-import { TextField } from '@mui/material';
 import { FC } from 'react';
 
 const Move2NameInput: FC = () => {
@@ -8,16 +8,14 @@ const Move2NameInput: FC = () => {
   if (!move2) return null;
 
   return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
+    <TextInput
+      slug="move2Name"
       label="Name"
       value={move2.name}
-      onChange={e =>
+      onChange={value =>
         setMove2({
           ...move2,
-          name: e.currentTarget.value,
+          name: value,
         })
       }
     />

@@ -1,4 +1,4 @@
-import FileUploader from '@components/FileUploader';
+import FileUploader from '@components/inputs/FileUploader';
 import useCardLogic from '@hooks/cardOptions/useCardLogic';
 import useCardOptions from '@hooks/cardOptions/useCardOptions';
 import { FC } from 'react';
@@ -11,7 +11,7 @@ const PrevolveImgSrcFileUploader: FC = () => {
 
   return (
     <FileUploader
-      id="prevolveImg"
+      slug="prevolveImg"
       label="Prevolve Image"
       onChange={setPrevolveImgSrc}
     />

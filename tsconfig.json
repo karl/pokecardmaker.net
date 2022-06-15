@@ -47,7 +47,7 @@
     "next-env-custom.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/TextAreaInput/asd"  ],
   "exclude": [
     "node_modules",
     "dist",
