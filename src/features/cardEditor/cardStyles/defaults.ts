@@ -1,4 +1,4 @@
-import { CardStyles } from 'src/features/cardEditor/cardStyles/types';
+import { CardStyles } from '@cardEditor/cardStyles/types';
 import { RequiredIsh } from '@interfaces/utils';
 
 export const defaultCardStyles: RequiredIsh<CardStyles> = {

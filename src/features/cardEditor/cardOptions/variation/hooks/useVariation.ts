@@ -1,9 +1,11 @@
-import variations from 'src/features/cardEditor/cardOptions/variation/data';
-import { CardInterface } from 'src/features/cardEditor/types';
+import { CardInterface } from '@cardEditor';
 import { useEffect, useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
-import { defaultSubtypeVariations } from 'src/features/cardEditor/cardOptions';
+import {
+  defaultSubtypeVariations,
+  useCardOptions,
+  useCardRelations,
+} from '@cardEditor/cardOptions';
+import { variations } from '../data';
 
 const useVariation = () => {
   const { stateSetter } = useCardOptions();

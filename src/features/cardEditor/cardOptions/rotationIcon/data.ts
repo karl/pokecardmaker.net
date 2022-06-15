@@ -1,4 +1,4 @@
-import { RotationIcon } from 'src/features/cardEditor/cardOptions/rotationIcon/types';
+import { RotationIcon } from '@cardEditor/cardOptions/rotationIcon/types';
 
 export const d: RotationIcon = {
   id: 1,
@@ -21,6 +21,4 @@ export const f: RotationIcon = {
   imgSrc: '',
 };
 
-const rotationIcons: RotationIcon[] = [d, e, f];
-
-export default rotationIcons;
+export const rotationIcons: RotationIcon[] = [d, e, f];

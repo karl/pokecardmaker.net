@@ -1,1 +1,1 @@
-export * from './useRotationIcon';
+export { default as useRotationIcon } from './useRotationIcon';

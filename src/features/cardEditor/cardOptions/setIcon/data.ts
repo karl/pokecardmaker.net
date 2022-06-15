@@ -1,4 +1,4 @@
-import { SetIcon } from 'src/features/cardEditor/cardOptions/setIcon/types';
+import { SetIcon } from '@cardEditor/cardOptions/setIcon/types';
 import { swordAndShield as ssBaseSet } from '../baseSet/data';
 
 export const swordAndShield: SetIcon = {
@@ -97,7 +97,7 @@ export const promo: SetIcon = {
   baseSet: ssBaseSet.id,
 };
 
-const setIcons: SetIcon[] = [
+export const setIcons: SetIcon[] = [
   swordAndShield,
   rebelClash,
   darknessAblaze,
@@ -111,5 +111,3 @@ const setIcons: SetIcon[] = [
   brilliantStars,
   promo,
 ];
-
-export default setIcons;

@@ -1,1 +1,1 @@
-export * from './useVariation';
+export { default as useVariation } from './useVariation';

@@ -1,4 +1,4 @@
-import { Supertype } from 'src/features/cardEditor/cardOptions/supertype/types';
+import { Supertype } from '@cardEditor/cardOptions/supertype/types';
 
 export const pokemon: Supertype = {
   id: 1,
@@ -22,6 +22,4 @@ export const energy: Supertype = {
   displayName: 'Energy',
 };
 
-const supertypes: Supertype[] = [pokemon, trainer, energy];
-
-export default supertypes;
+export const supertypes: Supertype[] = [pokemon, trainer, energy];

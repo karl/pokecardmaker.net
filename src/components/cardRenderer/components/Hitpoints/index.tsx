@@ -1,6 +1,6 @@
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
-import useCardStyles from 'src/features/cardEditor/cardStyles/useCardStyles';
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardOptions } from '@cardEditor/cardOptions';
+import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
 import { HPNumbers, HPText, Wrapper } from './styles';
 

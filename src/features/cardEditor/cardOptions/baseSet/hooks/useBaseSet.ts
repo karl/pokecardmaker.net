@@ -1,8 +1,7 @@
-import { CardInterface } from 'src/features/cardEditor/types';
+import { CardInterface } from '@cardEditor';
 import { useMemo } from 'react';
-import baseSets from 'src/features/cardEditor/cardOptions/baseSet/data';
-import useCardOptions from '../../hooks/useCardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
+import { useCardOptions, useCardRelations } from '@cardEditor/cardOptions';
+import { baseSets } from '../data';
 
 const useBaseSet = () => {
   const { stateSetter } = useCardOptions();

@@ -1,15 +1,15 @@
-import { CardOptions } from 'src/features/cardEditor/cardOptions/types';
-import baseSets from './baseSet/data';
-import rarities from './rarity/data';
-import rarityIcons from './rarityIcon/data';
-import rotationIcons from './rotationIcon/data';
-import setIcons from './setIcon/data';
-import subtypes from './subtype/data';
-import supertypes from './supertype/data';
-import types from './type/data';
-import variations from './variation/data';
+import { CardOptions } from '@cardEditor/cardOptions/types';
+import { baseSets } from './baseSet';
+import { rarities } from './rarity';
+import { rarityIcons } from './rarityIcon';
+import { rotationIcons } from './rotationIcon';
+import { setIcons } from './setIcon';
+import { subtypes } from './subtype';
+import { supertypes } from './supertype';
+import { types } from './type';
+import { variations } from './variation';
 
-const cardOptions: CardOptions = {
+export const cardOptions: CardOptions = {
   baseSets,
   supertypes,
   types,
@@ -20,5 +20,3 @@ const cardOptions: CardOptions = {
   rotationIcons,
   rarityIcons,
 };
-
-export default cardOptions;

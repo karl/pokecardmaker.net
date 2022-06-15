@@ -1,5 +1,5 @@
+import { useCardOptions } from '@cardEditor/cardOptions';
 import TextAreaInput from '@components/inputs/TextAreaInput';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
 
 const AbilityDescriptionInput: FC = () => {

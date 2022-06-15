@@ -1,13 +1,12 @@
 import ControlledSelector from '@components/inputs/ControlledSelector';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useSupertype from 'src/features/cardEditor/cardOptions/supertype/hooks/useSupertype';
-import { Type } from 'src/features/cardEditor/cardOptions/type/types';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';
 import Image from 'next/image';
 import { FC, useCallback } from 'react';
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useSupertype } from '@cardEditor/cardOptions/supertype';
+import { Type, useType } from '@cardEditor/cardOptions/type';
 import { StyledListItemIcon, StyledMenuItem } from '../styles';
-import useType from 'src/features/cardEditor/cardOptions/type/hooks/useType';
 
 const TypeSelector: FC = () => {
   const { isPokemonType } = useCardLogic();

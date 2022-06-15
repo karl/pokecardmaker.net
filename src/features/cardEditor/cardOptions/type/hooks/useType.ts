@@ -1,10 +1,12 @@
-import types from 'src/features/cardEditor/cardOptions/type/data';
-import { CardInterface } from 'src/features/cardEditor/types';
+import { CardInterface } from '@cardEditor';
 import { useEffect, useMemo } from 'react';
-import { Type } from 'src/features/cardEditor/cardOptions/type/types';
-import { defaultSupertypeTypes } from 'src/features/cardEditor/cardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
-import useCardOptions from '../../hooks/useCardOptions';
+import {
+  defaultSupertypeTypes,
+  useCardOptions,
+  useCardRelations,
+} from '@cardEditor/cardOptions';
+import { Type } from '../types';
+import { types } from '../data';
 
 const useType = () => {
   const { stateSetter } = useCardOptions();

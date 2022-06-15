@@ -1,7 +1,7 @@
+import { useCardOptions } from '@cardEditor/cardOptions';
 import AbilityDescription from '@components/cardRenderer/components/AbilityDescription';
 import AbilityName from '@components/cardRenderer/components/AbilityName';
 import AbilitySymbol from '@components/cardRenderer/components/AbilitySymbol';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
 import { TextContainer, TitleBar, Wrapper } from './styles';
 

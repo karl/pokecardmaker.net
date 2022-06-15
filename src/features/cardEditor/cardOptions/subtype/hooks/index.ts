@@ -1,1 +1,1 @@
-export * from './useSubtype';
+export { default as useSubtype } from './useSubtype';

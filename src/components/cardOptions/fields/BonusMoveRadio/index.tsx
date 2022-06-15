@@ -1,4 +1,4 @@
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import {
   FormControl,
   FormControlLabel,

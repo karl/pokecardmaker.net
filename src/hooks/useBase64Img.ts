@@ -1,5 +1,5 @@
+import { useCardDebug } from '@cardEditor/cardDebug';
 import { useEffect, useState } from 'react';
-import useCardDebug from '../features/cardEditor/debug/hooks/useCardDebug';
 
 const useBase64Img = (src?: string) => {
   const { showDebug } = useCardDebug();

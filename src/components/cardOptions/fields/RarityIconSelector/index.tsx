@@ -1,9 +1,9 @@
-import useRarityIcon from 'src/features/cardEditor/cardOptions/rarityIcon/hooks/useRarityIcon';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 import Routes from '@routes';
 import Image from 'next/image';
 import ControlledSelector from '@components/inputs/ControlledSelector';
+import { useRarityIcon } from '@cardEditor/cardOptions/rarityIcon';
 import { StyledListItemIcon, StyledMenuItem } from '../styles';
 
 const RarityIconSelector: FC = () => {

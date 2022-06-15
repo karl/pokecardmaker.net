@@ -1,4 +1,4 @@
-import { Rarity } from 'src/features/cardEditor/cardOptions/rarity/types';
+import { Rarity } from '@cardEditor/cardOptions/rarity/types';
 
 export const promo: Rarity = {
   id: 1,
@@ -64,7 +64,7 @@ export const goldStar: Rarity = {
   },
 };
 
-const rarities: Rarity[] = [
+export const rarities: Rarity[] = [
   promo,
   fullArt,
   goldenFullArt,
@@ -72,5 +72,3 @@ const rarities: Rarity[] = [
   supporterFullArt,
   goldStar,
 ];
-
-export default rarities;

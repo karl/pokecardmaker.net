@@ -1,5 +1,5 @@
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
 import { DexStatsText } from './styles';
 

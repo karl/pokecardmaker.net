@@ -1,6 +1,6 @@
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
-import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
+import { useCardDebug } from '@cardEditor/cardDebug';
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import useBase64Img from '@hooks/useBase64Img';
 import { FC } from 'react';
 import { StyledImg, Wrapper } from './styles';

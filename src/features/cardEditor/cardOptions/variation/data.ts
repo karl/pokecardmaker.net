@@ -1,4 +1,4 @@
-import { Variation } from 'src/features/cardEditor/cardOptions/variation/types';
+import { Variation } from '@cardEditor/cardOptions/variation/types';
 import { rainbow } from '../rarity/data';
 import { vmax } from '../subtype/data';
 
@@ -18,6 +18,4 @@ export const gigantamax: Variation = {
   rarities: [rainbow.id],
 };
 
-const variations: Variation[] = [dynamax, gigantamax];
-
-export default variations;
+export const variations: Variation[] = [dynamax, gigantamax];

@@ -1,1 +1,1 @@
-export * from './useSupertype';
+export { default as useSupertype } from './useSupertype';

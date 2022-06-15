@@ -1,1 +1,1 @@
-export * from './useSetIcon';
+export { default as useSetIcon } from './useSetIcon';

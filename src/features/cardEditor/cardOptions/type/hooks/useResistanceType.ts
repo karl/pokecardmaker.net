@@ -1,9 +1,8 @@
-import { CardInterface, RelationsInterface } from 'src/features/cardEditor/types';
+import { CardInterface, RelationsInterface } from '@cardEditor';
 import findById from '@utils/findById';
 import { useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
+import { defaultRelations, useCardOptions } from '@cardEditor/cardOptions';
 import useType from './useType';
-import { defaultRelations } from 'src/features/cardEditor/cardOptions';
 
 const useResistanceType = () => {
   const { resistanceTypeId, stateSetter } = useCardOptions();

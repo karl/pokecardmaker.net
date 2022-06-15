@@ -1,9 +1,8 @@
-import { CardInterface, RelationsInterface } from 'src/features/cardEditor/types';
+import { CardInterface, RelationsInterface } from '@cardEditor';
 import findById from '@utils/findById';
 import { useMemo } from 'react';
+import { defaultRelations, useCardOptions } from '@cardEditor/cardOptions';
 import useType from './useType';
-import { defaultRelations } from 'src/features/cardEditor/cardOptions';
-import useCardOptions from '../../hooks/useCardOptions';
 
 const useWeaknessType = () => {
   const { weaknessTypeId, stateSetter } = useCardOptions();

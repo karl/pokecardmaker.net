@@ -7,15 +7,15 @@
       "esnext"
     ],
     "paths": {
+      "@cardEditor": ["src/features/cardEditor"],
+      "@cardEditor/*": ["src/features/cardEditor/*"],
+      "@features/*": ["src/features/*"],
       "@components": ["src/components"],
       "@components/*": ["src/components/*"],
-      "@sections": ["src/sections"],
-      "@defaults/*": ["src/defaults/*"],
       "@hooks": ["src/hooks"],
       "@hooks/*": ["src/hooks/*"],
       "@utils": ["src/utils"],
       "@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"],
       "@css": ["src/css"],
       "@context": ["src/context"],
       "@routes": ["src/routes"],

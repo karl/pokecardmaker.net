@@ -1,6 +1,6 @@
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import TextInput from '@components/inputs/TextInput';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
 
 const PrevolveNameInput: FC = () => {

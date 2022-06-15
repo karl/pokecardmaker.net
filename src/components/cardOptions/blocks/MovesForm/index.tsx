@@ -1,6 +1,6 @@
+import { useCardLogic } from '@cardEditor/cardLogic';
 import AccordionForm from '@components/AccordionForm';
 import BonusMoveRadio from '@components/cardOptions/fields/BonusMoveRadio';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
 import { FC } from 'react';
 import AbilityForm from '../AbilityForm';
 import Move1Form from '../Move1Form';

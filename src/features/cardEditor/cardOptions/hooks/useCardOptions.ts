@@ -1,4 +1,4 @@
-import { CardInterface } from 'src/features/cardEditor/types';
+import { CardInterface } from '@cardEditor';
 import { useCallback, useContext, useMemo } from 'react';
 import { CardCreatorContext } from 'src/context/CardCreatorContext';
 

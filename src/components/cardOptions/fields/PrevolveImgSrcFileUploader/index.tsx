@@ -1,7 +1,7 @@
 import FileUploader from '@components/inputs/FileUploader';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC } from 'react';
+import { useCardOptions } from '@cardEditor/cardOptions';
+import { useCardLogic } from '@cardEditor/cardLogic';
 
 const PrevolveImgSrcFileUploader: FC = () => {
   const { hasPrevolve } = useCardLogic();

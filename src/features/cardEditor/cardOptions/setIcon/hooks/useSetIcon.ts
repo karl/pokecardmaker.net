@@ -1,9 +1,8 @@
-import setIcons from 'src/features/cardEditor/cardOptions/setIcon/data';
-import { CardInterface, RelationsInterface } from 'src/features/cardEditor/types';
+import { CardInterface, RelationsInterface } from '@cardEditor';
 import findById from '@utils/findById';
 import { useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import { defaultRelations } from 'src/features/cardEditor/cardOptions';
+import { defaultRelations, useCardOptions } from '@cardEditor/cardOptions';
+import { setIcons } from '../data';
 
 const useSetIcon = () => {
   const { setIconId, stateSetter } = useCardOptions();

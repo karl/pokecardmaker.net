@@ -1,1 +1,1 @@
-export * from './useBaseSet';
+export { default as useBaseSet } from './useBaseSet';

@@ -1,9 +1,11 @@
-import subtypes from 'src/features/cardEditor/cardOptions/subtype/data';
-import { CardInterface } from 'src/features/cardEditor/types';
+import { CardInterface } from '@cardEditor';
 import { useEffect, useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
-import { defaultTypeSubtypes } from 'src/features/cardEditor/cardOptions';
+import {
+  defaultTypeSubtypes,
+  useCardOptions,
+  useCardRelations,
+} from '@cardEditor/cardOptions';
+import { subtypes } from '../data';
 
 const useSubtype = () => {
   const { stateSetter } = useCardOptions();

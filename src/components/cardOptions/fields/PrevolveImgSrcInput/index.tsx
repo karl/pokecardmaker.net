@@ -1,7 +1,7 @@
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardDebug from 'src/features/cardEditor/debug/hooks/useCardDebug';
 import { FC } from 'react';
 import TextInput from '@components/inputs/TextInput';
+import { useCardDebug } from '@cardEditor/cardDebug';
+import { useCardLogic } from '@cardEditor/cardLogic';
 
 const PrevolveImgSrcInput: FC = () => {
   const { hasPrevolve } = useCardLogic();

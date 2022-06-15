@@ -1,6 +1,6 @@
-import { CardLogic } from 'src/features/cardEditor/cardLogic/types';
-import { CardStyles } from 'src/features/cardEditor/cardStyles/types';
-import { Type } from 'src/features/cardEditor/cardOptions/type/types';
+import { CardLogic } from '@cardEditor/cardLogic/types';
+import { CardStyles } from '@cardEditor/cardStyles/types';
+import { Type } from '@cardEditor/cardOptions/type/types';
 import { supporterFullArt } from '../rarity/data';
 import { energy, pokemon, trainer } from '../supertype/data';
 
@@ -161,7 +161,7 @@ export const special: Type = {
   rarities: [],
 };
 
-const types: Type[] = [
+export const types: Type[] = [
   grass,
   fire,
   water,
@@ -176,5 +176,3 @@ const types: Type[] = [
   base,
   special,
 ];
-
-export default types;

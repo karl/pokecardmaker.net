@@ -1,7 +1,7 @@
 import NumberInput from '@components/inputs/NumberInput';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { FC, useCallback } from 'react';
+import { useCardOptions } from '@cardEditor/cardOptions';
+import { useCardLogic } from '@cardEditor/cardLogic';
 
 const HitpointsInput: FC = () => {
   const { hasHitpoints } = useCardLogic();

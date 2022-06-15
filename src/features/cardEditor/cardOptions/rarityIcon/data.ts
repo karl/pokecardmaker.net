@@ -1,4 +1,4 @@
-import { RarityIcon } from 'src/features/cardEditor/cardOptions/rarityIcon/types';
+import { RarityIcon } from '@cardEditor/cardOptions/rarityIcon/types';
 
 export const common: RarityIcon = {
   id: 1,
@@ -21,6 +21,4 @@ export const rare: RarityIcon = {
   imgSrc: '',
 };
 
-const rarityIcons: RarityIcon[] = [common, uncommon, rare];
-
-export default rarityIcons;
+export const rarityIcons: RarityIcon[] = [common, uncommon, rare];

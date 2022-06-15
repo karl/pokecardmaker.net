@@ -4,8 +4,8 @@ import CardOptionsForm from '@components/cardOptions/CardOptionsForm';
 import CardDisplay from '@components/cardRenderer/CardDisplay';
 import { GetStaticProps } from 'next';
 import { constructCardImgObj } from '@utils/constructCardImageObj';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { Box } from '@mui/system';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import { CardWrapper } from './styles';
 
 interface CardImageProps {

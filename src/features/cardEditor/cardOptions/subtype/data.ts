@@ -1,5 +1,5 @@
-import { Subtype } from 'src/features/cardEditor/cardOptions/subtype/types';
-import { CardStyles } from 'src/features/cardEditor/cardStyles/types';
+import { Subtype } from '@cardEditor/cardOptions/subtype/types';
+import { CardStyles } from '@cardEditor/cardStyles/types';
 import { fullArt, goldStar, goldenFullArt, promo } from '../rarity/data';
 import {
   colorless,
@@ -115,6 +115,4 @@ export const tool: Subtype = {
   rarities: [],
 };
 
-const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool];
-
-export default subtypes;
+export const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool];

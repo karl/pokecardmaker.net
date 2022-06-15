@@ -1,5 +1,5 @@
+import { useCardOptions } from '@cardEditor/cardOptions';
 import { baseFontSize, cardImgHeight, cardImgWidth } from '@constants';
-import useCardOptions from 'src/features/cardEditor/cardOptions/hooks/useCardOptions';
 import { Download as DownloadIcon } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import html2canvas from 'html2canvas';

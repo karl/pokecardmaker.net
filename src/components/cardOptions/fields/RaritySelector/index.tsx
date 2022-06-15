@@ -1,10 +1,10 @@
+import { useRarity } from '@cardEditor/cardOptions/rarity';
+import { useSubtype } from '@cardEditor/cardOptions/subtype';
+import { useType } from '@cardEditor/cardOptions/type';
+import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
-import useRarity from 'src/features/cardEditor/cardOptions/rarity/hooks/useRarity';
-import useSubtype from 'src/features/cardEditor/cardOptions/subtype/hooks/useSubtype';
-import useVariation from 'src/features/cardEditor/cardOptions/variation/hooks/useVariation';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
-import useType from 'src/features/cardEditor/cardOptions/type/hooks/useType';
 
 const RaritySelector: FC = () => {
   const { type } = useType();

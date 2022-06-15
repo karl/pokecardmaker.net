@@ -1,8 +1,8 @@
+import { useCardLogic } from '@cardEditor/cardLogic';
+import { useRarity } from '@cardEditor/cardOptions/rarity';
+import { useSubtype } from '@cardEditor/cardOptions/subtype';
+import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
-import useCardLogic from 'src/features/cardEditor/cardLogic/useCardLogic';
-import useRarity from 'src/features/cardEditor/cardOptions/rarity/hooks/useRarity';
-import useSubtype from 'src/features/cardEditor/cardOptions/subtype/hooks/useSubtype';
-import useVariation from 'src/features/cardEditor/cardOptions/variation/hooks/useVariation';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC } from 'react';
 

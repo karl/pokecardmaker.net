@@ -1,8 +1,7 @@
-import rarities from 'src/features/cardEditor/cardOptions/rarity/data';
-import { CardInterface } from 'src/features/cardEditor/types';
+import { useCardOptions, useCardRelations } from '@cardEditor/cardOptions';
+import { rarities } from '@cardEditor/cardOptions/rarity';
+import { CardInterface } from '@cardEditor';
 import { useEffect, useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
 
 const useRarity = () => {
   const { rarityId, stateSetter } = useCardOptions();

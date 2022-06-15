@@ -1,8 +1,7 @@
-import supertypes from 'src/features/cardEditor/cardOptions/supertype/data';
-import { CardInterface } from 'src/features/cardEditor/types';
+import { useCardOptions, useCardRelations } from '@cardEditor/cardOptions';
+import { CardInterface } from '@cardEditor';
 import { useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import useCardRelations from '../../hooks/useCardRelations';
+import { supertypes } from '../data';
 
 const useSupertype = () => {
   const { stateSetter } = useCardOptions();

@@ -1,1 +1,1 @@
-export * from './useRarityIcon';
+export { default as useRarityIcon } from './useRarityIcon';

@@ -16,14 +16,7 @@ import {
   supporter,
   water,
 } from './type';
-import {
-  basic,
-  stage1,
-  stage2,
-  tool,
-  v,
-  vmax,
-} from './subtype';
+import { basic, stage1, stage2, tool, v, vmax } from './subtype';
 import { swordAndShield as baseSet } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';

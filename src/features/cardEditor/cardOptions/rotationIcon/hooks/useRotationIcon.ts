@@ -1,9 +1,8 @@
-import rotationIcons from 'src/features/cardEditor/cardOptions/rotationIcon/data';
-import { CardInterface, RelationsInterface } from 'src/features/cardEditor/types';
+import { CardInterface, RelationsInterface } from '@cardEditor';
 import findById from '@utils/findById';
 import { useMemo } from 'react';
-import useCardOptions from '../../hooks/useCardOptions';
-import { defaultRelations } from 'src/features/cardEditor/cardOptions';
+import { defaultRelations, useCardOptions } from '@cardEditor/cardOptions';
+import { rotationIcons } from '../data';
 
 const useRotationIcon = () => {
   const { rotationIconId, stateSetter } = useCardOptions();
