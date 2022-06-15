@@ -5,7 +5,7 @@ import { Supertype } from '@cardEditor/cardOptions/supertype';
 import { Type } from '@cardEditor/cardOptions/type';
 import { Variation } from '@cardEditor/cardOptions/variation';
 
-export const getCardPath = (
+const getCardImagePath = (
   baseSet: BaseSet,
   supertype: Supertype,
   type: Type,
@@ -24,3 +24,5 @@ export const getCardPath = (
 
   return path;
 };
+
+export default getCardImagePath;

@@ -1,11 +1,11 @@
-import { SEO } from '@components';
+import { SEO } from '@components/layout';
 import { FC, useEffect } from 'react';
 import CardOptionsForm from '@components/cardOptions/CardOptionsForm';
 import CardDisplay from '@components/cardRenderer/CardDisplay';
 import { GetStaticProps } from 'next';
 import { constructCardImgObj } from '@utils/constructCardImageObj';
 import { Box } from '@mui/system';
-import { useCardOptions } from '@cardEditor/cardOptions';
+import { useCardStyles } from '@cardEditor/cardStyles';
 import { CardWrapper } from './styles';
 
 interface CardImageProps {
@@ -13,7 +13,7 @@ interface CardImageProps {
 }
 
 const Home: FC<CardImageProps> = ({ cardImgObj }) => {
-  const { setCardImgObj } = useCardOptions();
+  const { setCardImgObj } = useCardStyles();
 
   useEffect(() => {
     setCardImgObj(cardImgObj || undefined);

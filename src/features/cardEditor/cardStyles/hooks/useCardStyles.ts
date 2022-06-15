@@ -1,10 +1,14 @@
+import { CardStylesContext } from '@cardEditor/cardStyles';
 import { useContext } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
 
 const useCardStyles = () => {
-  const { cardStyles } = useContext(CardCreatorContext);
+  const { state, setCardImgObj, cardImgSrc } = useContext(CardStylesContext);
 
-  return cardStyles;
+  return {
+    ...state,
+    cardImgSrc,
+    setCardImgObj,
+  };
 };
 
 export default useCardStyles;

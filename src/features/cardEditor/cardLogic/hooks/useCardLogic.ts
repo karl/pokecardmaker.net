@@ -1,10 +1,10 @@
+import { CardLogicContext } from '@cardEditor/cardLogic';
 import { useContext } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
 
 const useCardLogic = () => {
-  const { cardLogic } = useContext(CardCreatorContext);
+  const { state } = useContext(CardLogicContext);
 
-  return cardLogic;
+  return state;
 };
 
 export default useCardLogic;

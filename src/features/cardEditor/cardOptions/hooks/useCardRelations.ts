@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { CardOptionsContext } from '@cardEditor/cardOptions';
 
 const useCardRelations = () => {
-  const { relations } = useContext(CardCreatorContext);
+  const { relations } = useContext(CardOptionsContext);
 
   return relations;
 };

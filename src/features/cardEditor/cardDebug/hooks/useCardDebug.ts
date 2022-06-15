@@ -1,13 +1,10 @@
+import { CardDebugContext } from '@cardEditor/cardDebug';
 import { useContext } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
 
 const useCardDebug = () => {
-  const { debug } = useContext(CardCreatorContext);
+  const debug = useContext(CardDebugContext);
 
-  return {
-    showDebug: process.env.NODE_ENV === 'development',
-    ...debug,
-  };
+  return debug;
 };
 
 export default useCardDebug;

@@ -1,10 +1,9 @@
 import { CardInterface } from '@cardEditor';
 import { useCallback, useContext, useMemo } from 'react';
-import { CardCreatorContext } from 'src/context/CardCreatorContext';
+import { CardOptionsContext } from '@cardEditor/cardOptions';
 
 const useCardOptions = () => {
-  const { state, setState, setCardImgObj, cardImgObj } =
-    useContext(CardCreatorContext);
+  const { state, setState } = useContext(CardOptionsContext);
 
   const stateSetter = useCallback(
     <T>(propertyName: keyof CardInterface) =>
@@ -143,8 +142,6 @@ const useCardOptions = () => {
     setMove1,
     setHasMove2,
     setMove2,
-    cardImgObj,
-    setCardImgObj,
   };
 };
 
