@@ -9,6 +9,7 @@ import { RequiredIsh } from '@interfaces/utils';
 import { useCardRelations } from '@cardEditor/cardOptions';
 import Routes from '@routes';
 import fallbackCard from '@assets/fallbackCard.png';
+import dot from 'dot-object';
 
 export type CardStylesState = RequiredIsh<CardStyles>;
 
@@ -60,8 +61,9 @@ export const CardStylesProvider: React.FC = ({ children }) => {
       const base64: string | undefined = dot.pick(`${path}.image`, cardImgObj);
       if (base64) src = `data:image/png;base64,${base64}`;
       else src = fallbackCard.src;
+    } else {
+      src = `${Routes.Assets.Cards}/${path}.png`;
     }
-    src = `${Routes.Assets.Cards}/${path}.png`;
     return {
       state: styles,
       cardImgSrc: src,
