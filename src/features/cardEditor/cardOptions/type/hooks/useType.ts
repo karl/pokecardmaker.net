@@ -1,10 +1,11 @@
 import { CardInterface } from '@cardEditor';
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import {
   defaultSupertypeTypes,
   useCardOptions,
   useCardRelations,
 } from '@cardEditor/cardOptions';
+import findById from '@utils/findById';
 import { Type } from '../types';
 import { types } from '../data';
 
@@ -27,6 +28,8 @@ const useType = () => {
     [stateSetter],
   );
 
+  const getTypeById = useCallback((id: number) => findById(types, id), []);
+
   useEffect(() => {
     if (!type.supertypes.includes(supertype.id)) {
       setType(defaultSupertypeTypes[supertype.id]);
@@ -40,6 +43,7 @@ const useType = () => {
     types,
     type,
     setType,
+    getTypeById,
   };
 };
 
