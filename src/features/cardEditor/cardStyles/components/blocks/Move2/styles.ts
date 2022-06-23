@@ -1,15 +1,9 @@
-import { css, styled } from '@css';
+import { styled } from '@css';
 
-export const Wrapper = styled('div')<{ $hasMove2: boolean }>`
+export const Wrapper = styled('div')`
   display: flex;
   flex-direction: column;
   gap: 0.2em;
-
-  ${({ $hasMove2 }) =>
-    !$hasMove2 &&
-    css`
-      margin: auto 0;
-    `}
 `;
 
 export const TitleBar = styled('div')`

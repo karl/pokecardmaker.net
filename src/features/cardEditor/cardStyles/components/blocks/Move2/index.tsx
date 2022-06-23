@@ -1,20 +1,21 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
-import Move1DamageAmount from './fields/Move1DamageAmount';
-import Move1Description from './fields/Move1Description';
-import Move1EnergyCost from './fields/Move1EnergyCost';
-import Move1Name from './fields/Move1Name';
+import Move1DamageAmount from './fields/Move2DamageAmount';
+import Move1Description from './fields/Move2Description';
+import Move1EnergyCost from './fields/Move2EnergyCost';
+import Move1Name from './fields/Move2Name';
 import { TextContainer, TitleBar, Wrapper } from './styles';
 
-const Move1: FC = () => {
+// TODO: Generalize these components with Move1
+const Move2: FC = () => {
   const { hasMoves } = useCardLogic();
-  const { move1, hasMove2, move2 } = useCardOptions();
+  const { move2, hasMove2 } = useCardOptions();
 
-  if (!hasMoves || !move1?.name) return null;
+  if (!hasMoves || !hasMove2 || !move2?.name) return null;
 
   return (
-    <Wrapper $hasMove2={hasMove2 && !!move2?.name}>
+    <Wrapper>
       <TitleBar>
         <Move1EnergyCost />
         <Move1Name />
@@ -27,4 +28,4 @@ const Move1: FC = () => {
   );
 };
 
-export default Move1;
+export default Move2;
