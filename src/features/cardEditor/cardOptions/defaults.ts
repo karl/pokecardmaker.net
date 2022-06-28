@@ -69,6 +69,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description:
       "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
     damageAmount: '80',
+    damageModifier: 'times',
     energyCost: [
       {
         amount: 1,
@@ -86,6 +87,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description:
       "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
     damageAmount: '80',
+    damageModifier: 'plus',
     energyCost: [
       {
         amount: 1,

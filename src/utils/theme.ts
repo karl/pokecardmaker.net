@@ -94,6 +94,9 @@ theme = createTheme(theme, {
         multiline: {
           padding: '0 !important',
         },
+        adornedEnd: {
+          paddingRight: '0 !important',
+        },
       },
     },
     MuiInputLabel: {

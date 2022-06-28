@@ -8,6 +8,8 @@ import { Subtype } from './cardOptions/subtype';
 import { Supertype } from './cardOptions/supertype';
 import { Variation } from './cardOptions/variation';
 
+export type DamageModifier = 'times' | 'plus';
+
 export interface BaseMove {
   name: string;
   description: string;
@@ -20,6 +22,7 @@ export interface MoveType {
 
 export interface AttackMove extends BaseMove {
   damageAmount: string;
+  damageModifier?: DamageModifier;
   energyCost: MoveType[];
 }
 

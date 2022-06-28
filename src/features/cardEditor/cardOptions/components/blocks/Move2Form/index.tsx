@@ -1,6 +1,7 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
 import MoveForm from '../../atoms/MoveForm';
+import Move2DamageAmountInput from './fields/Move2DamageAmountInput';
 import Move2DescriptionInput from './fields/Move2DescriptionInput';
 import Move2NameInput from './fields/Move2NameInput';
 
@@ -12,6 +13,7 @@ const Move2Form: FC = () => {
   return (
     <MoveForm label="Second move">
       <Move2NameInput />
+      <Move2DamageAmountInput />
       <Move2DescriptionInput />
     </MoveForm>
   );

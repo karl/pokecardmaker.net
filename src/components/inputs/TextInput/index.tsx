@@ -2,11 +2,20 @@ import { TextField } from '@mui/material';
 import { FC } from 'react';
 import { TextInputProps } from './types';
 
-const TextInput: FC<TextInputProps> = ({ label, slug, value, onChange }) => (
+const TextInput: FC<TextInputProps> = ({
+  label,
+  slug,
+  value,
+  endAdornment,
+  onChange,
+}) => (
   <TextField
     id={`${slug}-input`}
     InputLabelProps={{
       shrink: true,
+    }}
+    InputProps={{
+      endAdornment,
     }}
     type="text"
     label={label}
