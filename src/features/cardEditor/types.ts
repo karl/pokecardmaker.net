@@ -8,7 +8,7 @@ import { Subtype } from './cardOptions/subtype';
 import { Supertype } from './cardOptions/supertype';
 import { Variation } from './cardOptions/variation';
 
-export type DamageModifier = 'times' | 'plus';
+export type DamageModifier = '×' | '+';
 
 export interface BaseMove {
   name: string;
