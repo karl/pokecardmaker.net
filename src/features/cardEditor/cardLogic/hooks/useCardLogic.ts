@@ -2,9 +2,12 @@ import { CardLogicContext } from '@cardEditor/cardLogic';
 import { useContext } from 'react';
 
 const useCardLogic = () => {
-  const { state } = useContext(CardLogicContext);
+  const { state, greatestEnergyCost } = useContext(CardLogicContext);
 
-  return state;
+  return {
+    ...state,
+    greatestEnergyCost,
+  };
 };
 
 export default useCardLogic;

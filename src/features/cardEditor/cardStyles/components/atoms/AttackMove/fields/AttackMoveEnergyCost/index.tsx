@@ -22,7 +22,7 @@ const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
         </TypeContainer>
       )}
       {move?.energyCost.length !== 0 &&
-        move?.energyCost
+        [...(move?.energyCost ?? [])]
           // Sort Colorless to the end
           .sort(type => (type.typeId === colorless.id ? 1 : -1))
           .flatMap(energy =>
