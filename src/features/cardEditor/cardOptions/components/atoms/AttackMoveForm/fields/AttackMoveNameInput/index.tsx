@@ -6,22 +6,18 @@ const AttackMoveNameInput: FC<AttackMoveFieldProps> = ({
   slug,
   move,
   setMove,
-}) => {
-  if (!move) return null;
-
-  return (
-    <TextInput
-      slug={`${slug}Name`}
-      label="Name"
-      value={move.name}
-      onChange={value =>
-        setMove({
-          ...move,
-          name: value,
-        })
-      }
-    />
-  );
-};
+}) => (
+  <TextInput
+    slug={`${slug}Name`}
+    label="Name"
+    value={move.name}
+    onChange={value =>
+      setMove({
+        ...move,
+        name: value,
+      })
+    }
+  />
+);
 
 export default AttackMoveNameInput;
