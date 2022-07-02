@@ -1,17 +1,16 @@
-import { useCardOptions } from '@cardEditor/cardOptions';
 import { useType } from '@cardEditor/cardOptions/type';
 import Routes from '@routes';
 import Image from 'next/image';
 import { FC } from 'react';
+import { AttackMoveDisplayProps } from '../../types';
 import { TypeContainer, Wrapper } from './styles';
 
-const Move1EnergyCost: FC = () => {
-  const { move1 } = useCardOptions();
+const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
   const { getTypeById } = useType();
 
   return (
     <Wrapper>
-      {move1?.energyCost.flatMap(energy =>
+      {move?.energyCost.flatMap(energy =>
         new Array(energy.amount).fill(null).map(_ => (
           <TypeContainer key={energy.typeId}>
             <Image
@@ -29,4 +28,4 @@ const Move1EnergyCost: FC = () => {
   );
 };
 
-export default Move1EnergyCost;
+export default AttackMoveEnergyCost;

@@ -1,17 +1,16 @@
-import { useCardOptions } from '@cardEditor/cardOptions';
 import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
+import { AttackMoveDisplayProps } from '../../types';
 import { MoveDamageAmountText } from './styles';
 
-const Move1DamageAmount: FC = () => {
-  const { move2 } = useCardOptions();
+const AttackMoveDamageAmount: FC<AttackMoveDisplayProps> = ({ move }) => {
   const { movesOutline, movesTextColor } = useCardStyles();
 
   return (
     <MoveDamageAmountText $outline={movesOutline} $color={movesTextColor}>
-      {move2?.damageAmount}
+      {move?.damageAmount}
     </MoveDamageAmountText>
   );
 };
 
-export default Move1DamageAmount;
+export default AttackMoveDamageAmount;

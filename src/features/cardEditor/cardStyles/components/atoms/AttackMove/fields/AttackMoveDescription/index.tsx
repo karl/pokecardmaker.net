@@ -1,17 +1,16 @@
-import { useCardOptions } from '@cardEditor/cardOptions';
 import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
+import { AttackMoveDisplayProps } from '../../types';
 import { MoveDescriptionText } from './styles';
 
-const Move1Description: FC = () => {
-  const { move2 } = useCardOptions();
+const AttackMoveDescription: FC<AttackMoveDisplayProps> = ({ move }) => {
   const { movesOutline, movesTextColor } = useCardStyles();
 
   return (
     <MoveDescriptionText $outline={movesOutline} $color={movesTextColor}>
-      {move2?.description}
+      {move?.description}
     </MoveDescriptionText>
   );
 };
 
-export default Move1Description;
+export default AttackMoveDescription;
