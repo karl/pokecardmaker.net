@@ -1,6 +1,5 @@
-export interface NumberInputProps {
-  label: string;
-  slug: string;
-  value?: number;
+import { InputProps } from '../GeneralInput/types';
+
+export interface NumberInputProps extends InputProps {
   onChange: (value: number | '') => void;
 }

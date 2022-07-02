@@ -1,9 +1,5 @@
-import { ReactNode } from 'react';
+import { InputProps } from '../GeneralInput/types';
 
-export interface TextInputProps {
-  label: string;
-  slug: string;
-  value?: string;
+export interface TextInputProps extends InputProps {
   onChange: (value: string) => void;
-  endAdornment?: ReactNode;
 }

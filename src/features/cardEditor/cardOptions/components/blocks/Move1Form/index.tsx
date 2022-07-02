@@ -1,16 +1,20 @@
+import { useCardOptions } from '@cardEditor/cardOptions/hooks';
 import { FC } from 'react';
-import MoveForm from '../../atoms/MoveForm';
-import Move1DamageAmountInput from './fields/Move1DamageAmountInput';
-import Move1DescriptionInput from './fields/Move1DescriptionInput';
-import Move1NameInput from './fields/Move1NameInput';
+import AttackMoveForm from '../../atoms/AttackMoveForm';
 
-// TODO: Generalize these inputs
-const Move1Form: FC = () => (
-  <MoveForm label="First move">
-    <Move1NameInput />
-    <Move1DamageAmountInput />
-    <Move1DescriptionInput />
-  </MoveForm>
-);
+const Move1Form: FC = () => {
+  const { move1, setMove1 } = useCardOptions();
+
+  if (!move1) return null;
+
+  return (
+    <AttackMoveForm
+      label="First move"
+      slug="move1"
+      move={move1}
+      setMove={setMove1}
+    />
+  );
+};
 
 export default Move1Form;

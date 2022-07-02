@@ -1,21 +1,19 @@
-import { useCardOptions } from '@cardEditor/cardOptions';
+import { useCardOptions } from '@cardEditor/cardOptions/hooks';
 import { FC } from 'react';
-import MoveForm from '../../atoms/MoveForm';
-import Move2DamageAmountInput from './fields/Move2DamageAmountInput';
-import Move2DescriptionInput from './fields/Move2DescriptionInput';
-import Move2NameInput from './fields/Move2NameInput';
+import AttackMoveForm from '../../atoms/AttackMoveForm';
 
 const Move2Form: FC = () => {
-  const { hasMove2 } = useCardOptions();
+  const { move2, setMove2, hasMove2 } = useCardOptions();
 
-  if (!hasMove2) return null;
+  if (!move2 || !hasMove2) return null;
 
   return (
-    <MoveForm label="Second move">
-      <Move2NameInput />
-      <Move2DamageAmountInput />
-      <Move2DescriptionInput />
-    </MoveForm>
+    <AttackMoveForm
+      label="Second move"
+      slug="move2"
+      move={move2}
+      setMove={setMove2}
+    />
   );
 };
 
