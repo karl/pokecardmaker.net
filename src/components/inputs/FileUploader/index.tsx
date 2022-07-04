@@ -1,6 +1,7 @@
 import { UploadFile as UploadFileIcon } from '@mui/icons-material';
-import { Button, FormControl, InputLabel } from '@mui/material';
+import { Button, FormControl } from '@mui/material';
 import { ChangeEvent, FC, useCallback, useState } from 'react';
+import Label from '../Label';
 import { ButtonLabel } from './styles';
 import { FileUploaderProps } from './types';
 
@@ -19,9 +20,7 @@ const FileUploader: FC<FileUploaderProps> = ({ slug, label, onChange }) => {
 
   return (
     <FormControl>
-      <InputLabel shrink htmlFor={`${slug}-input`}>
-        {label}
-      </InputLabel>
+      <Label slug={slug}>{label}</Label>
       <Button
         sx={{
           borderColor: 'rgba(0, 0, 0, 0.25)',

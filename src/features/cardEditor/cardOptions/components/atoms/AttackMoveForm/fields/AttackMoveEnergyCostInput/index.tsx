@@ -1,9 +1,10 @@
 import { useType } from '@cardEditor/cardOptions/type';
-import { FormControl, FormLabel } from '@mui/material';
-import { Box } from '@mui/system';
+import Label from '@components/inputs/Label';
+import { FormControl } from '@mui/material';
 import { FC } from 'react';
 import { AttackMoveFieldProps } from '../../types';
 import EnergyCostTypeField from './components/EnergyCostTypeField';
+import { FieldWrapper } from './components/styles';
 
 const AttackMoveEnergyCostInput: FC<AttackMoveFieldProps> = ({
   slug,
@@ -14,15 +15,8 @@ const AttackMoveEnergyCostInput: FC<AttackMoveFieldProps> = ({
 
   return (
     <FormControl>
-      <FormLabel sx={{ paddingLeft: 2 }} htmlFor={`${slug}EnergyCost`}>
-        Energy Cost
-      </FormLabel>
-      <Box
-        id={`${slug}EnergyCost`}
-        display="flex"
-        width="100%"
-        justifyContent="space-between"
-      >
+      <Label slug={`${slug}EnergyCost`}>Energy Cost</Label>
+      <FieldWrapper id={`${slug}EnergyCost`}>
         {attackCostTypes.map(type => (
           <EnergyCostTypeField
             key={type.id}
@@ -31,7 +25,7 @@ const AttackMoveEnergyCostInput: FC<AttackMoveFieldProps> = ({
             setMove={setMove}
           />
         ))}
-      </Box>
+      </FieldWrapper>
     </FormControl>
   );
 };

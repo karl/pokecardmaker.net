@@ -1,5 +1,6 @@
-import { FormControl, InputLabel } from '@mui/material';
+import { FormControl } from '@mui/material';
 import { FC } from 'react';
+import Label from '../Label';
 import { StyledSelect } from './styles';
 import { ControlledSelectorProps } from './types';
 
@@ -12,14 +13,11 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
   ...props
 }) => (
   <FormControl fullWidth {...props}>
-    <InputLabel id={`${slug}-label`} shrink>
-      {displayName}
-    </InputLabel>
+    <Label slug={slug}>{displayName}</Label>
     <StyledSelect
       labelId={`${slug}-label`}
       id={`${slug}-input`}
       value={value?.toString() ?? ''}
-      label={displayName}
       // @ts-expect-error - Emotion bug
       onChange={onChange}
       displayEmpty

@@ -16,8 +16,6 @@ declare module '@mui/material/styles' {
 
 const spacingAmount = 4;
 
-// TODO: Change input styling. Current label doesn't look good on the small inputs.
-// Maybe just add the label above the input instead of inside
 let theme = createTheme({
   spacing: spacingAmount,
   palette: {
@@ -99,17 +97,17 @@ theme = createTheme(theme, {
         },
       },
     },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          background: theme.palette.background.default,
-          transform: `translate(14px, 6px) scale(1)`,
-        },
-        shrink: {
-          transform: `translate(14px, -9px) scale(0.75)`,
-        },
-      },
-    },
+    // MuiInputLabel: {
+    //   styleOverrides: {
+    //     root: {
+    //       background: theme.palette.background.default,
+    //       transform: `translate(14px, 6px) scale(1)`,
+    //     },
+    //     shrink: {
+    //       transform: `translate(14px, -9px) scale(0.75)`,
+    //     },
+    //   },
+    // },
     MuiButton: {
       styleOverrides: {
         startIcon: {

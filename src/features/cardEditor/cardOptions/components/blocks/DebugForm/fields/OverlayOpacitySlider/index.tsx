@@ -18,8 +18,8 @@ const OverlayOpacitySlider: FC = () => {
       min={0}
       max={100}
       value={opacity}
-      onChange={(_, value) => setOpacity(value as number)}
-      onChangeCommitted={(_, value) => setOverlayOpacity(value as number)}
+      onChange={setOpacity}
+      onChangeCommitted={setOverlayOpacity}
     />
   );
 };

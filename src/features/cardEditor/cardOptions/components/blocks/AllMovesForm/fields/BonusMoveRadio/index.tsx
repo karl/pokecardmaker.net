@@ -1,15 +1,10 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
-import {
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from '@mui/material';
-import { ChangeEvent, FC, useCallback, useMemo } from 'react';
+import ControlledRadio from '@components/inputs/ControlledRadio';
+import ControlledRadioGroup from '@components/inputs/ControlledRadioGroup';
+
+import { FC, useCallback, useMemo } from 'react';
 import { BonusMoveRadioValue } from './types';
 
-// TODO: Make generic radio input
 const BonusMoveRadio: FC = () => {
   const { hasAbility, hasMove2, setHasAbility, setHasMove2 } = useCardOptions();
 
@@ -20,8 +15,7 @@ const BonusMoveRadio: FC = () => {
   }, [hasAbility, hasMove2]);
 
   const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const newValue = e.currentTarget.value as BonusMoveRadioValue;
+    (newValue: BonusMoveRadioValue) => {
       switch (newValue) {
         case BonusMoveRadioValue.HasAbility:
           setHasAbility(true);
@@ -40,31 +34,19 @@ const BonusMoveRadio: FC = () => {
   );
 
   return (
-    <FormControl sx={{ px: 2 }}>
-      <FormLabel id="bonusMoveRadioLabel">Bonus Move</FormLabel>
-      <RadioGroup
-        name="bonusMoveRadio"
-        aria-labelledby="bonusMoveRadioLabel"
-        value={value}
-        onChange={handleChange}
-      >
-        <FormControlLabel
-          value={BonusMoveRadioValue.None}
-          label="None"
-          control={<Radio size="small" />}
-        />
-        <FormControlLabel
-          value={BonusMoveRadioValue.HasAbility}
-          label="Ability"
-          control={<Radio size="small" />}
-        />
-        <FormControlLabel
-          value={BonusMoveRadioValue.HasMove2}
-          label="Second move"
-          control={<Radio size="small" />}
-        />
-      </RadioGroup>
-    </FormControl>
+    <ControlledRadioGroup
+      slug="bonusMoveRadio"
+      label="Bonus Move"
+      value={value}
+      onChange={handleChange}
+    >
+      <ControlledRadio value={BonusMoveRadioValue.None} label="None" />
+      <ControlledRadio value={BonusMoveRadioValue.HasAbility} label="Ability" />
+      <ControlledRadio
+        value={BonusMoveRadioValue.HasMove2}
+        label="Second move"
+      />
+    </ControlledRadioGroup>
   );
 };
 
