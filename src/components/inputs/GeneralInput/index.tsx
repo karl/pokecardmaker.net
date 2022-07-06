@@ -6,6 +6,7 @@ import { GeneralInputProps } from './types';
 const GeneralInput: FC<GeneralInputProps> = ({
   slug,
   endAdornment,
+  startAdornment,
   label,
   onChange,
   ...rest
@@ -15,6 +16,7 @@ const GeneralInput: FC<GeneralInputProps> = ({
     <TextField
       id={`${slug}-input`}
       InputProps={{
+        startAdornment,
         endAdornment,
       }}
       // Components implementing this component will add typing

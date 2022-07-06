@@ -7,6 +7,7 @@ export const pokemon: Supertype = {
   logic: {
     hasHitpoints: true,
     hasMoves: true,
+    hasTypeBar: true,
   },
 };
 

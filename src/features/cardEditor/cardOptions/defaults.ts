@@ -52,7 +52,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   hitpoints: 120,
   illustrator: '',
   weaknessAmount: 2,
-  resistanceAmount: 30,
+  resistanceAmount: undefined,
   retreatCost: 1,
   prevolveName: 'Trubbish',
   dexStats: 'NO. 569  Trash Heap Pokémon  HT: 6\'3" WT:  236.6 lbs.',
@@ -69,7 +69,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description:
       "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
     damageAmount: 80,
-    damageModifier: '×',
+    damageModifier: undefined,
     energyCost: [
       {
         amount: 1,
@@ -108,7 +108,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
-  weaknessTypeId: defaultRelations.weaknessType?.id,
+  weaknessTypeId: fighting.id,
+  // weaknessTypeId: defaultRelations.weaknessType?.id,
   resistanceTypeId: defaultRelations.resistanceType?.id,
   setIconId: defaultRelations.setIcon?.id,
   rotationIconId: defaultRelations.rotationIcon?.id,

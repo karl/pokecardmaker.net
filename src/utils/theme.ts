@@ -97,17 +97,6 @@ theme = createTheme(theme, {
         },
       },
     },
-    // MuiInputLabel: {
-    //   styleOverrides: {
-    //     root: {
-    //       background: theme.palette.background.default,
-    //       transform: `translate(14px, 6px) scale(1)`,
-    //     },
-    //     shrink: {
-    //       transform: `translate(14px, -9px) scale(0.75)`,
-    //     },
-    //   },
-    // },
     MuiButton: {
       styleOverrides: {
         startIcon: {
@@ -133,7 +122,7 @@ theme = createTheme(theme, {
     MuiAccordionSummary: {
       styleOverrides: {
         root: {
-          padding: theme.spacing(0, 4),
+          padding: theme.spacing(0, 3),
           minHeight: '48px !important',
         },
         content: {

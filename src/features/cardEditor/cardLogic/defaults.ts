@@ -17,4 +17,5 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasIllustratorName: true,
   hasDexStats: false,
   hasDexEntry: false,
+  hasTypeBar: false,
 };

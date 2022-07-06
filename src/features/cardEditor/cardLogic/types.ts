@@ -72,4 +72,9 @@ export interface CardLogic {
    * @default false
    */
   hasDexEntry: boolean;
+  /**
+   * Whether the card has the type bar which displays weakness, resistance and retreat
+   * @default false
+   */
+  hasTypeBar: boolean;
 }

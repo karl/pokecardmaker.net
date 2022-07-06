@@ -5,6 +5,7 @@ export interface InputProps {
   label: string;
   slug: string;
   value?: string | number;
+  startAdornment?: ReactNode;
   endAdornment?: ReactNode;
   onChange: ((value: string) => void) | ((value: number | '') => void);
 }

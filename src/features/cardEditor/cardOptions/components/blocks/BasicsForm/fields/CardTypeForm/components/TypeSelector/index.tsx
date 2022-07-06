@@ -14,9 +14,12 @@ const TypeSelector: FC = () => {
   const { supertype } = useSupertype();
   const { types, type, setType } = useType();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setType(Number(event.target.value));
-  };
+  const handleChange = useCallback(
+    (event: SelectChangeEvent) => {
+      setType(Number(event.target.value));
+    },
+    [setType],
+  );
 
   const makeMenuItem = useCallback(
     (item: Type) => {

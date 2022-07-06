@@ -36,14 +36,14 @@ export interface CardInterface {
   imgLayer2Src?: string;
   customSetIconSrc?: string;
   typeImgSrc?: string;
-  typeImgAmount?: number;
+  typeImgAmount?: number | '';
   cardNumber?: string;
   totalInSet?: string;
   hitpoints?: number;
   illustrator?: string;
-  weaknessAmount?: number;
-  resistanceAmount?: number;
-  retreatCost?: number;
+  weaknessAmount?: number | '';
+  resistanceAmount?: number | '';
+  retreatCost?: number | '';
   prevolveName?: string;
   prevolveImgSrc?: string;
   dexStats?: string;
