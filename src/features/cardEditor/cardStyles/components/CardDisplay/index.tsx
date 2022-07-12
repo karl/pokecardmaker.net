@@ -10,6 +10,7 @@ import Debug from '../blocks/Debug';
 import Moves from '../blocks/Moves';
 import NameBar from '../blocks/NameBar';
 import Hitpoints from '../blocks/NameBar/fields/Hitpoints';
+import TypeBar from '../blocks/TypeBar';
 import CardImage from '../fields/CardImage';
 import DexStats from '../fields/DexStats';
 import PrevolveImg from '../fields/PrevolveImg';
@@ -49,6 +50,7 @@ const CardDisplay: FC = () => {
       <PrevolveImg />
       <DexStats />
       <Moves />
+      <TypeBar />
       <CardImage />
     </CardContainer>
   );

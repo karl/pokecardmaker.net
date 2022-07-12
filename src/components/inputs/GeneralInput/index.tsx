@@ -8,6 +8,7 @@ const GeneralInput: FC<GeneralInputProps> = ({
   endAdornment,
   startAdornment,
   label,
+  disabled,
   onChange,
   ...rest
 }) => (
@@ -19,6 +20,7 @@ const GeneralInput: FC<GeneralInputProps> = ({
         startAdornment,
         endAdornment,
       }}
+      disabled={disabled}
       // Components implementing this component will add typing
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       onChange={e => onChange(e.currentTarget.value as any)}

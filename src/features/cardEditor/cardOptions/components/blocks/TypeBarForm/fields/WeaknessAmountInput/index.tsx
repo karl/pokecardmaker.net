@@ -4,7 +4,10 @@ import NumberInput from '@components/inputs/NumberInput';
 import { InputAdornment } from '@mui/material';
 
 const WeaknessAmountInput: FC = () => {
-  const { weaknessAmount, setWeaknessAmount } = useCardOptions();
+  const { weaknessTypeId, weaknessAmount, setWeaknessAmount } =
+    useCardOptions();
+
+  if (!weaknessTypeId) return null;
 
   return (
     <NumberInput

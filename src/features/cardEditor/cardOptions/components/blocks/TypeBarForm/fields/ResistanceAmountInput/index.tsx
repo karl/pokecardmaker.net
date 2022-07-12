@@ -4,7 +4,10 @@ import NumberInput from '@components/inputs/NumberInput';
 import { InputAdornment } from '@mui/material';
 
 const ResistanceAmountInput: FC = () => {
-  const { resistanceAmount, setResistanceAmount } = useCardOptions();
+  const { resistanceTypeId, resistanceAmount, setResistanceAmount } =
+    useCardOptions();
+
+  if (!resistanceTypeId) return null;
 
   return (
     <NumberInput

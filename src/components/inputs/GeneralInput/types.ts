@@ -7,6 +7,7 @@ export interface InputProps {
   value?: string | number;
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
+  disabled?: boolean;
   onChange: ((value: string) => void) | ((value: number | '') => void);
 }
 
