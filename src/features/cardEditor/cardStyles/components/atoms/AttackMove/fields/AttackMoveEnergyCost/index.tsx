@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { AttackMoveDisplayProps } from '../../types';
 import { TypeContainer, Wrapper } from './styles';
 
+// TODO: Base64Encode these images
 const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
   const { getTypeById } = useType();
 

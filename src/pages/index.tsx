@@ -36,6 +36,7 @@ const Home: FC<CardImageProps> = ({ cardImgObj }) => {
 };
 
 // TODO: Maybe don't do this per page but just once at build-time
+// TODO: Add all images, not just card images
 export const getStaticProps: GetStaticProps<CardImageProps> = async () => {
   // In development each refresh triggers this, and that takes too long
   const useBase64 = process.env.NODE_ENV !== 'development';

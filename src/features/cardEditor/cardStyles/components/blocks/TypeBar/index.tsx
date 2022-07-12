@@ -3,6 +3,7 @@ import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
 import ResistanceAmount from './fields/ResistanceAmount';
 import ResistanceType from './fields/ResistanceType';
+import RetreatCost from './fields/RetreatCost';
 import WeaknessAmount from './fields/WeaknessAmount';
 import WeaknessType from './fields/WeaknessType';
 import { Block, ResistanceWrapper, WeaknessWrapper } from './styles';
@@ -28,6 +29,7 @@ const TypeBar: FC = () => {
           <ResistanceAmount />
         </ResistanceWrapper>
       )}
+      <RetreatCost />
     </Block>
   );
 };

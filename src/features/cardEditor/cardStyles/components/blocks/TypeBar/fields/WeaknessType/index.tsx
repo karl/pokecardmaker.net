@@ -3,7 +3,7 @@ import useBase64Img from '@hooks/useBase64Img';
 import Routes from '@routes';
 import Image from 'next/image';
 import { FC } from 'react';
-import { Wrapper } from './styles';
+import TypeImgWrapper from '../../atoms/TypeImgWrapper';
 
 const WeaknessType: FC = () => {
   const { weaknessType } = useWeaknessType();
@@ -14,7 +14,7 @@ const WeaknessType: FC = () => {
   if (!imgSrc) return null;
 
   return (
-    <Wrapper>
+    <TypeImgWrapper>
       <Image
         layout="fill"
         objectFit="contain"
@@ -22,7 +22,7 @@ const WeaknessType: FC = () => {
         alt=""
         src={imgSrc}
       />
-    </Wrapper>
+    </TypeImgWrapper>
   );
 };
 
