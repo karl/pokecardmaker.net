@@ -3,6 +3,7 @@ import AccordionForm from '@components/AccordionForm';
 import { FC } from 'react';
 import ResistanceAmountInput from './fields/ResistanceAmountInput';
 import ResistanceTypeSelector from './fields/ResistanceTypeSelector';
+import RetreatCostSelector from './fields/RetreatCostSelector';
 import WeaknessAmountInput from './fields/WeaknessAmountInput';
 import WeaknessTypeSelector from './fields/WeaknessTypeSelector';
 
@@ -17,6 +18,7 @@ const TypeBarForm: FC = () => {
       <WeaknessAmountInput />
       <ResistanceTypeSelector />
       <ResistanceAmountInput />
+      <RetreatCostSelector />
     </AccordionForm>
   );
 };

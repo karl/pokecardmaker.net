@@ -43,7 +43,7 @@ export interface CardInterface {
   illustrator?: string;
   weaknessAmount?: number | '';
   resistanceAmount?: number | '';
-  retreatCost?: number | '';
+  retreatCost?: number;
   prevolveName?: string;
   prevolveImgSrc?: string;
   dexStats?: string;

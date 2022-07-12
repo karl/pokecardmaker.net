@@ -53,7 +53,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   illustrator: '',
   weaknessAmount: 2,
   resistanceAmount: undefined,
-  retreatCost: 1,
+  retreatCost: 2,
   prevolveName: 'Trubbish',
   dexStats: 'NO. 569  Trash Heap Pokémon  HT: 6\'3" WT:  236.6 lbs.',
   dexEntry: '',
