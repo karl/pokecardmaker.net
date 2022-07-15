@@ -155,6 +155,7 @@ export const special: Type = {
   displayName: 'Special',
   logic: {
     hasTypeImage: true,
+    hasIllustratorName: false,
     hasDescription: true,
   },
   supertypes: [energy.id],
