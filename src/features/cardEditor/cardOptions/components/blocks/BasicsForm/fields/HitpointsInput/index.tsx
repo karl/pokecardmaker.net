@@ -1,22 +1,11 @@
 import NumberInput from '@components/inputs/NumberInput';
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { useCardLogic } from '@cardEditor/cardLogic';
 
 const HitpointsInput: FC = () => {
   const { hasHitpoints } = useCardLogic();
   const { hitpoints, setHitpoints } = useCardOptions();
-
-  const handleChange = useCallback(
-    (value: number | '') => {
-      if (value === '') {
-        setHitpoints(undefined);
-      } else {
-        setHitpoints(Math.max(0, Math.min(999, +value)));
-      }
-    },
-    [setHitpoints],
-  );
 
   if (!hasHitpoints) return null;
 
@@ -25,7 +14,9 @@ const HitpointsInput: FC = () => {
       slug="hitpoints"
       label="Hitpoints"
       value={hitpoints}
-      onChange={handleChange}
+      min={0}
+      max={999}
+      onChange={setHitpoints}
     />
   );
 };

@@ -39,7 +39,7 @@ export interface CardInterface {
   typeImgAmount?: number | '';
   cardNumber?: string;
   totalInSet?: string;
-  hitpoints?: number;
+  hitpoints?: number | '';
   illustrator?: string;
   weaknessAmount?: number | '';
   resistanceAmount?: number | '';

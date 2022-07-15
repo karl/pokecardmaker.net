@@ -13,6 +13,8 @@ const AttackMoveDamageAmountInput: FC<AttackMoveFieldProps> = ({
     slug={`${slug}DamageAmount`}
     label="Damage"
     value={move.damageAmount}
+    max={99999}
+    min={0}
     endAdornment={
       <InputAdornment position="end">
         <ButtonGroup disableElevation>

@@ -16,6 +16,8 @@ const WeaknessAmountInput: FC = () => {
       value={weaknessAmount}
       startAdornment={<InputAdornment position="start">×</InputAdornment>}
       onChange={setWeaknessAmount}
+      max={99}
+      min={1}
     />
   );
 };

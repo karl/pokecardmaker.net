@@ -9,7 +9,7 @@ const Hitpoints: FC = () => {
   const { hitpoints } = useCardOptions();
   const { hpSize, hpOutline, hpTextColor } = useCardStyles();
 
-  if (!hasHitpoints || !hitpoints) return null;
+  if (!hasHitpoints || hitpoints === '') return null;
 
   return (
     <Wrapper $size={hpSize} $outline={hpOutline} $color={hpTextColor}>

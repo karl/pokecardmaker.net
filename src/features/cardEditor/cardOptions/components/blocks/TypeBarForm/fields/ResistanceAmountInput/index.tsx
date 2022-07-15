@@ -16,6 +16,8 @@ const ResistanceAmountInput: FC = () => {
       value={resistanceAmount}
       startAdornment={<InputAdornment position="start">-</InputAdornment>}
       onChange={setResistanceAmount}
+      max={99}
+      min={1}
     />
   );
 };
