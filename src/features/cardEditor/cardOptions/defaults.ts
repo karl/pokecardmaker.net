@@ -67,8 +67,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   },
   move1: {
     name: 'Sludge Bomb',
-    description:
-      "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
+    description: '',
     damageAmount: 80,
     damageModifier: undefined,
     energyCost: [

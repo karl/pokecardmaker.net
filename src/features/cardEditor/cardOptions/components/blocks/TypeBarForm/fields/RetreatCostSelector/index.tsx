@@ -25,7 +25,7 @@ const RetreatCostSelector: FC = () => {
       onChange={handleChange}
       noGap
     >
-      <MenuItem value={0}>
+      <MenuItem value={0} title="0">
         <Image
           src={Routes.Assets.Icons.TypeBorder('empty')}
           width={26}
@@ -34,7 +34,7 @@ const RetreatCostSelector: FC = () => {
         />
       </MenuItem>
       {new Array(MAX_RETREAT_COST).fill(undefined).map((_, costIndex) => (
-        <MenuItem value={costIndex + 1} key={costIndex + 1}>
+        <MenuItem value={costIndex + 1} key={costIndex + 1} title={String(costIndex + 1)}>
           {new Array(costIndex + 1).fill(undefined).map((__, imageIndex) => (
             <Image
               key={imageIndex}
