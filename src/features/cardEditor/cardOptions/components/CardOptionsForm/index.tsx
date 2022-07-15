@@ -14,9 +14,9 @@ const CardOptionsForm: FC = () => (
     <CardDownloader />
     <CardTypeForm />
     <BasicsForm />
-    <CardInfoForm />
     <AllMovesForm />
     <TypeBarForm />
+    <CardInfoForm />
   </Form>
 );
 

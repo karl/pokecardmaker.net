@@ -17,9 +17,9 @@ import {
   water,
 } from './type';
 import { basic, stage1, stage2, tool, v, vmax } from './subtype';
-import { swordAndShield as baseSet } from './setIcon';
+import { swordAndShield as baseSet, rebelClash } from './setIcon';
 import { d } from './rotationIcon';
-import { common } from './rarityIcon';
+import { common, rare } from './rarityIcon';
 import { dynamax } from './variation';
 import { CardInterface, RelationsInterface } from '..';
 
@@ -47,16 +47,17 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   typeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '100',
-  totalInSet: '112',
+  cardNumber: '118',
+  totalInSet: '192',
   hitpoints: 120,
-  illustrator: '',
+  illustrator: 'AKIRA EGAWA',
   weaknessAmount: 2,
   resistanceAmount: undefined,
   retreatCost: 2,
   prevolveName: 'Trubbish',
   dexStats: 'NO. 569  Trash Heap Pokémon  HT: 6\'3" WT:  236.6 lbs.',
-  dexEntry: '',
+  dexEntry:
+    'This Pokémon eats trash, which turns into poison inside its body. The main component of the poison depends on what sort of trash was eaten.',
   description: '',
   hasAbility: true,
   ability: {
@@ -111,9 +112,11 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   weaknessTypeId: fighting.id,
   // weaknessTypeId: defaultRelations.weaknessType?.id,
   resistanceTypeId: defaultRelations.resistanceType?.id,
-  setIconId: defaultRelations.setIcon?.id,
+  setIconId: rebelClash.id,
+  // setIconId: defaultRelations.setIcon?.id,
   rotationIconId: defaultRelations.rotationIcon?.id,
-  rarityIconId: defaultRelations.rarityIcon?.id,
+  rarityIconId: rare.id,
+  // rarityIconId: defaultRelations.rarityIcon?.id,
 };
 
 export const defaultSupertypeTypes: {

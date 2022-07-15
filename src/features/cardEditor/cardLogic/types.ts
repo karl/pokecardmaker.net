@@ -59,6 +59,11 @@ export interface CardLogic {
    */
   hasDexStats: boolean;
   /**
+   * Whether the card has the type bar which displays weakness, resistance and retreat
+   * @default false
+   */
+  hasTypeBar: boolean;
+  /**
    * Whether the card should display set icon, rotation icon, card number and rarity icon
    * @default true
    */
@@ -72,9 +77,4 @@ export interface CardLogic {
    * @default false
    */
   hasDexEntry: boolean;
-  /**
-   * Whether the card has the type bar which displays weakness, resistance and retreat
-   * @default false
-   */
-  hasTypeBar: boolean;
 }

@@ -15,9 +15,8 @@ const RetreatCost: FC = () => {
   return (
     <Wrapper>
       {new Array(retreatCost).fill(undefined).map((_, i) => (
-        <TypeImgWrapper>
+        <TypeImgWrapper key={i}>
           <Image
-            key={i}
             layout="fill"
             objectFit="contain"
             objectPosition="left"

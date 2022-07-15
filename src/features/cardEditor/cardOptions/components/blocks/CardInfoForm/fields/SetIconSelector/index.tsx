@@ -7,6 +7,7 @@ import { useSetIcon } from '@cardEditor/cardOptions/setIcon';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
 
+// TODO: Make this image customizable
 const SetIconSelector: FC = () => {
   const { setIcons, setIcon, setSetIcon } = useSetIcon();
 
