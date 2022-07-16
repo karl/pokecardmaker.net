@@ -17,7 +17,7 @@ export interface CardStyles {
    */
   movesOutline?: TextColor;
   /**
-   * Illustrator, set icon, rotation icon, card number, rarity icon\
+   * Illustrator, set icon, rotation icon, card number, rarity icon
    * @default none
    */
   cardInfoOutline?: TextColor;
@@ -34,12 +34,12 @@ export interface CardStyles {
    */
   movesTextColor: TextColor;
   /**
-   * The bar that shows weakness & resistance\
+   * The bar that shows weakness & resistance
    * @default black
    */
   typeBarTextColor: TextColor;
   /**
-   * Illustrator, set icon, rotation icon, card number, rarity icon\
+   * Illustrator, set icon, rotation icon, card number, rarity icon
    * @default black
    */
   cardInfoTextColor: TextColor;

@@ -11,6 +11,7 @@ const Routes = {
       Set: (slug: string) => `${icons}/sets/${slug}.png`,
       Rotation: (slug: string) => `${icons}/rotations/${slug}.png`,
       Rarity: (slug: string) => `${icons}/rarities/${slug}.png`,
+      RarityWhite: (slug: string) => `${icons}/rarities/white/${slug}.png`,
       Type: (slug: string) => `${icons}/types/${slug}.png`,
       TypeBorder: (slug: string) => `${icons}/types/border/${slug}.png`,
     },

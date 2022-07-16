@@ -6,6 +6,7 @@ import {
 } from '@cardEditor/cardStyles/constants';
 import { FC, useMemo } from 'react';
 import { useDebounce, useElementSize } from 'usehooks-ts';
+import CardInfo from '../blocks/CardInfo';
 import Debug from '../blocks/Debug';
 import Moves from '../blocks/Moves';
 import NameBar from '../blocks/NameBar';
@@ -51,6 +52,7 @@ const CardDisplay: FC = () => {
       <DexStats />
       <Moves />
       <TypeBar />
+      <CardInfo />
       <CardImage />
     </CardContainer>
   );

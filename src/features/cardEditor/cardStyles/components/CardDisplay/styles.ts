@@ -11,7 +11,8 @@ export const CardContainer = styled('div')<{
   height: ${({ $height }) => `${$height}px`};
   overflow: hidden;
 
-  &, & * {
+  &,
+  & * {
     transition: all 0.15s ease-out;
   }
 
