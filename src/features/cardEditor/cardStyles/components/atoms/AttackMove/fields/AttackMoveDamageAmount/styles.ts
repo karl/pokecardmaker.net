@@ -2,6 +2,7 @@ import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
 import { styled } from '@css';
 
 export const Wrapper = styled('div')`
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.2em;
@@ -15,7 +16,9 @@ export const MoveDamageAmountText = styled(CardText)`
 `;
 
 export const MoveDamageModifierText = styled(CardText)`
-  line-height: 0.5em;
-  margin-bottom: 0.165em;
+  position: absolute;
   font-size: 2em;
+  top: 50%;
+  right: -1em;
+  transform: translate(-50%, -50%);
 `;

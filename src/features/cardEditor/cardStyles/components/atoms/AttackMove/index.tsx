@@ -7,7 +7,12 @@ import AttackMoveName from './fields/AttackMoveName';
 import { TextContainer, TitleBar, Wrapper } from './styles';
 import { AttackMoveDisplayProps } from './types';
 
-const AttackMove: FC<AttackMoveDisplayProps> = ({ move, ...props }) => {
+const AttackMove: FC<AttackMoveDisplayProps> = ({
+  move,
+  isLastMove,
+  isOnlyMove,
+  ...props
+}) => {
   const { hasMoves } = useCardLogic();
 
   if (!hasMoves || !move?.name) return null;
@@ -20,7 +25,11 @@ const AttackMove: FC<AttackMoveDisplayProps> = ({ move, ...props }) => {
         <AttackMoveDamageAmount move={move} />
       </TitleBar>
       <TextContainer>
-        <AttackMoveDescription move={move} />
+        <AttackMoveDescription
+          move={move}
+          isLastMove={isLastMove}
+          isOnlyMove={isOnlyMove}
+        />
       </TextContainer>
     </Wrapper>
   );

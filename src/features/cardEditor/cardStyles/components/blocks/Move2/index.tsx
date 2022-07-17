@@ -7,7 +7,7 @@ const Move2: FC = () => {
 
   if (!hasMove2) return null;
 
-  return <AttackMove move={move2} />;
+  return <AttackMove move={move2} isLastMove />;
 };
 
 export default Move2;

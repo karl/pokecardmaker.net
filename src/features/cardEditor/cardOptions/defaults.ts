@@ -17,9 +17,9 @@ import {
   water,
 } from './type';
 import { basic, stage1, stage2, tool, v, vmax } from './subtype';
-import { swordAndShield as baseSet, rebelClash } from './setIcon';
-import { d } from './rotationIcon';
-import { common, rare } from './rarityIcon';
+import { swordAndShield as baseSet, promo } from './setIcon';
+import { d, f } from './rotationIcon';
+import { common } from './rarityIcon';
 import { dynamax } from './variation';
 import { CardInterface, RelationsInterface } from '..';
 
@@ -38,7 +38,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: 'Garbodor',
+  name: 'Psyduck',
   subname: '',
   backgroundImgSrc: undefined,
   imgLayer1Src: undefined,
@@ -47,54 +47,48 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   typeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '118',
-  totalInSet: '192',
-  hitpoints: 120,
-  illustrator: 'AKIRA EGAWA',
+  cardNumber: '028',
+  totalInSet: '189',
+  hitpoints: 60,
+  illustrator: 'GPSSAM',
   weaknessAmount: 2,
   resistanceAmount: undefined,
-  retreatCost: 2,
-  prevolveName: 'Trubbish',
-  dexStats: 'NO. 569  Trash Heap Pokémon  HT: 6\'3" WT:  236.6 lbs.',
+  retreatCost: 1,
+  prevolveName: undefined,
+  dexStats: 'NO. 054  Duck Pokémon  HT: 2\'7"  WT: 43,2 lbs.',
   dexEntry:
-    'This Pokémon eats trash, which turns into poison inside its body. The main component of the poison depends on what sort of trash was eaten.',
+    "Suffers perpetual headaches. If the agony grows too great, Psyduck's latent power erupts, contrary to Psyduck's intent. Ergo, I am exploring ways to ease the pain.",
   description: '',
-  hasAbility: true,
+  hasAbility: false,
   ability: {
-    name: 'Poisonous Puddle',
-    description:
-      "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
+    description: '',
+    name: '',
   },
   move1: {
-    name: 'Sludge Bomb',
-    description: '',
-    damageAmount: 80,
+    name: 'Spacing Out',
+    description: 'Flip a coin. If heads, heal 10 damage from this Pokémon.',
+    damageAmount: '',
     damageModifier: undefined,
     energyCost: [
       {
         amount: 1,
-        typeId: dark.id,
-      },
-      {
-        amount: 2,
         typeId: colorless.id,
       },
     ],
   },
-  hasMove2: false,
+  hasMove2: true,
   move2: {
-    name: 'Sludge Bomb',
-    description:
-      "Once during your turn, if a Stadium is in play, you may make your opponent's Active Pokémon Poisoned.",
-    damageAmount: 80,
-    damageModifier: '+',
+    name: 'Ram',
+    description: '',
+    damageAmount: 20,
+    damageModifier: undefined,
     energyCost: [
       {
         amount: 1,
-        typeId: dark.id,
+        typeId: water.id,
       },
       {
-        amount: 2,
+        amount: 1,
         typeId: colorless.id,
       },
     ],
@@ -102,19 +96,20 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
-  typeId: dark.id,
+  typeId: water.id,
   // typeId: defaultRelations.type.id,
-  subtypeId: stage1.id,
+  subtypeId: basic.id,
   // subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
-  weaknessTypeId: fighting.id,
+  weaknessTypeId: lightning.id,
   // weaknessTypeId: defaultRelations.weaknessType?.id,
   resistanceTypeId: defaultRelations.resistanceType?.id,
-  setIconId: rebelClash.id,
+  setIconId: promo.id,
   // setIconId: defaultRelations.setIcon?.id,
-  rotationIconId: defaultRelations.rotationIcon?.id,
-  rarityIconId: rare.id,
+  rotationIconId: f.id,
+  // rotationIconId: defaultRelations.rotationIcon?.id,
+  rarityIconId: common.id,
   // rarityIconId: defaultRelations.rarityIcon?.id,
 };
 
