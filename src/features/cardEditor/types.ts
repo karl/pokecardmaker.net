@@ -1,3 +1,4 @@
+import { Area } from 'react-easy-crop';
 import { Type } from './cardOptions/type';
 import { BaseSet } from './cardOptions/baseSet';
 import { Rarity } from './cardOptions/rarity';
@@ -28,12 +29,17 @@ export interface AttackMove extends BaseMove {
 
 export type AbilityMove = BaseMove;
 
+export interface CroppableImg {
+  src: string;
+  croppedArea: Area;
+}
+
 export interface CardInterface {
   name?: string;
   subname?: string;
-  backgroundImgSrc?: string;
-  imgLayer1Src?: string;
-  imgLayer2Src?: string;
+  backgroundImg?: CroppableImg;
+  imgLayer1?: CroppableImg;
+  imgLayer2?: CroppableImg;
   customSetIconSrc?: string;
   typeImgSrc?: string;
   typeImgAmount?: number | '';

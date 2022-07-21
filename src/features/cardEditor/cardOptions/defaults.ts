@@ -40,9 +40,9 @@ export const defaultRelations: RelationsInterface = {
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
   name: 'Psyduck',
   subname: '',
-  backgroundImgSrc: undefined,
-  imgLayer1Src: undefined,
-  imgLayer2Src: undefined,
+  backgroundImg: undefined,
+  imgLayer1: undefined,
+  imgLayer2: undefined,
   customSetIconSrc: undefined,
   prevolveImgSrc: undefined,
   typeImgSrc: undefined,

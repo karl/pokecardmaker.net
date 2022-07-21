@@ -7,6 +7,7 @@ import AllMovesForm from '../blocks/AllMovesForm';
 import { Form } from './styles';
 import CardDownloader from '../atoms/CardDownloader';
 import TypeBarForm from '../blocks/TypeBarForm';
+import ImagesForm from '../blocks/ImagesForm';
 
 const CardOptionsForm: FC = () => (
   <Form as="form">
@@ -14,6 +15,7 @@ const CardOptionsForm: FC = () => (
     <CardDownloader />
     <CardTypeForm />
     <BasicsForm />
+    <ImagesForm />
     <AllMovesForm />
     <TypeBarForm />
     <CardInfoForm />
