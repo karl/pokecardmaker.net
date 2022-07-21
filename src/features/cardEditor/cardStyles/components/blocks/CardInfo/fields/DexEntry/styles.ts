@@ -5,10 +5,10 @@ export const DexEntryText = styled(CardText)`
   position: absolute;
   bottom: 4%;
   right: 6.5%;
-  width: 56%;
+  width: 58%;
   white-space: initial;
   text-align: right;
-  font-size: 1.1em;
+  font-size: 1.03em;
   line-height: 1.2em;
   font-family: 'Optima Medium', monospace;
   margin-left: 0.3em;

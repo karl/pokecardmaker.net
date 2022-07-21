@@ -32,6 +32,7 @@ export const basic: Subtype = {
   displayName: 'Basic',
   logic: {
     hasDexStats: true,
+    hasDexEntry: true,
   },
   types: pokemonTypeTypes,
   rarities: [promo.id, goldStar.id],
