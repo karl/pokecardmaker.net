@@ -7,30 +7,30 @@ import { Area } from 'react-easy-crop';
 
 const DEFAULT_CROP: Area = { height: 0, width: 0, x: 0, y: 0 };
 
-const ImgLayer1Cropper: FC = () => {
-  const { imgLayer1, setImgLayer1 } = useCardOptions();
+const ImgLayer2Cropper: FC = () => {
+  const { imgLayer2, setImgLayer2 } = useCardOptions();
   const { cardImgSrc } = useCardStyles();
 
   return (
     <>
       <FileUploader
-        label="Layer 1"
-        slug="imgLayer1"
+        label="Layer 2"
+        slug="imgLayer2"
         onChange={src =>
-          setImgLayer1({
-            croppedArea: imgLayer1?.croppedArea ?? DEFAULT_CROP,
+          setImgLayer2({
+            croppedArea: imgLayer2?.croppedArea ?? DEFAULT_CROP,
             src,
           })
         }
       />
-      {imgLayer1?.src && (
+      {imgLayer2?.src && (
         <ImgCropper
-          src={imgLayer1?.src}
+          src={imgLayer2?.src}
           overlayImgSrc={cardImgSrc}
-          overlayImgZIndex={1}
+          overlayImgZIndex={0}
           onChange={croppedArea =>
-            setImgLayer1({
-              src: imgLayer1.src,
+            setImgLayer2({
+              src: imgLayer2.src,
               croppedArea,
             })
           }
@@ -40,4 +40,4 @@ const ImgLayer1Cropper: FC = () => {
   );
 };
 
-export default ImgLayer1Cropper;
+export default ImgLayer2Cropper;

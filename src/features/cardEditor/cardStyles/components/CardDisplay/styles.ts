@@ -18,7 +18,7 @@ export const CardContainer = styled('div')<{
 
   &::before {
     /* Simple white background so the card isn't transparent */
-    z-index: -1;
+    z-index: -10;
     content: '';
     position: absolute;
     background: white;
