@@ -2,8 +2,8 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import React from 'react';
 import theme from '@utils/theme';
-import { createEmotionCache } from '@css';
-import Fonts from './_fonts';
+import { GlobalStyles, createEmotionCache } from '@css';
+import { fontFaces } from '@utils/fonts';
 
 export default class MyDocument extends Document {
   render() {
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           />
-          <Fonts />
+          <GlobalStyles styles={fontFaces} />
         </Head>
         <body>
           <Main />

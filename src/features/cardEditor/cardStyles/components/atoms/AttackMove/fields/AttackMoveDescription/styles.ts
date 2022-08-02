@@ -1,5 +1,6 @@
 import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
 import { css, styled } from '@css';
+import { Font } from '@utils/fonts';
 
 export const MoveDescriptionText = styled(CardText)<{
   $alignBottom: boolean;
@@ -7,7 +8,7 @@ export const MoveDescriptionText = styled(CardText)<{
   $isEmpty: boolean;
   $isOnlyMove: boolean;
 }>`
-  font-family: 'Gill Sans Std Regular', monospace;
+  font-family: '${Font.GillSansStdRegular}', monospace;
   font-size: 1.67em;
   letter-spacing: -0.003em;
   width: 100%;

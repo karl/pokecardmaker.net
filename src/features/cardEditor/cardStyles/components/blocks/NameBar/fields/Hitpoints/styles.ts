@@ -1,6 +1,7 @@
 import { css, styled } from '@css';
 import { Size } from '@cardEditor/cardStyles';
 import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
+import { Font } from '@utils/fonts';
 
 export const Wrapper = styled(CardText)<{ $size: Size }>`
   display: block;
@@ -23,7 +24,7 @@ export const HPText = styled('span')<{ $size: Size }>`
   ${({ $size }) =>
     $size === 'sm'
       ? css`
-          font-family: 'Gill Sans Std Ultra Bold', monospace;
+          font-family: '${Font.GillSansStdUltraBold}', monospace;
           font-size: 1.0625em;
           letter-spacing: -0.035em;
           font-weight: bold;
@@ -37,7 +38,7 @@ export const HPText = styled('span')<{ $size: Size }>`
 `;
 
 export const HPNumbers = styled('span')<{ $size: Size }>`
-  font-family: 'Futura LT Medium Bold', monospace;
+  font-family: '${Font.FuturaLTMediumBold}', monospace;
   letter-spacing: -0.05em;
 
   ${({ $size }) =>

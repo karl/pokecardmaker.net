@@ -1,12 +1,13 @@
 import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
 import { styled } from '@css';
+import { Font } from '@utils/fonts';
 
 export const Wrapper = styled('div')`
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.2em;
-  font-family: 'Futura Std Heavy', monospace;
+  font-family: '${Font.FuturaStdHeavy}', monospace;
   margin-left: auto;
 `;
 

@@ -1,4 +1,5 @@
 import { styled } from '@css';
+import { Font } from '@utils/fonts';
 
 export const Block = styled('div')`
   display: flex;
@@ -15,7 +16,7 @@ const TypeWrapper = styled('div')`
   display: flex;
   align-items: center;
   gap: 0.35em;
-  font-family: 'Futura LT Medium Bold', monospace;
+  font-family: '${Font.FuturaLTMediumBold}', monospace;
 `;
 
 export const WeaknessWrapper = styled(TypeWrapper)`
