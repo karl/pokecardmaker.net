@@ -17,6 +17,7 @@ const Tooltip: FC<TooltipProps> = ({ title, withPopup, children }) => {
           PaperProps={{
             sx: { background: theme => theme.palette.background.default },
           }}
+          maxWidth="md"
         >
           <DialogTitle sx={{ m: 0, px: 6, fontSize: 21 }}>
             {title}

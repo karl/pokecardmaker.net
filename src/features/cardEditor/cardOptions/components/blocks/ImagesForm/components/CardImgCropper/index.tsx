@@ -35,7 +35,7 @@ const CardImgCropper: FC<CardImgCropperProps> = ({
         }
         tooltipProps={{
           withPopup: true,
-          title: label,
+          title: 'Image Layers',
           children: tooltipContent,
         }}
       />
