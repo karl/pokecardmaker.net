@@ -12,6 +12,7 @@ const ImgLayer1Cropper: FC = () => {
       img={imgLayer1}
       setImg={setImgLayer1}
       overlayZIndex={1}
+      tooltipContent={<>bruh</>}
     />
   );
 };

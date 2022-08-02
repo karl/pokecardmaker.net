@@ -10,6 +10,7 @@ const FileUploader: FC<FileUploaderProps> = ({
   label,
   onChange,
   file,
+  tooltipProps,
 }) => {
   const [fileName, setFileName] = useState<string>();
 
@@ -30,7 +31,9 @@ const FileUploader: FC<FileUploaderProps> = ({
 
   return (
     <FormControl>
-      <Label slug={slug}>{label}</Label>
+      <Label slug={slug} tooltipProps={tooltipProps}>
+        {label}
+      </Label>
       <Button
         sx={{
           borderColor: 'rgba(0, 0, 0, 0.25)',

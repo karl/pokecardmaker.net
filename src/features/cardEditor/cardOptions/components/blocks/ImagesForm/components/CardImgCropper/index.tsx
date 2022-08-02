@@ -15,6 +15,7 @@ const CardImgCropper: FC<CardImgCropperProps> = ({
   slug,
   overlayZIndex,
   img,
+  tooltipContent,
   setImg,
 }) => {
   const { cardImgSrc } = useCardStyles();
@@ -32,6 +33,11 @@ const CardImgCropper: FC<CardImgCropperProps> = ({
             src,
           })
         }
+        tooltipProps={{
+          withPopup: true,
+          title: label,
+          children: tooltipContent,
+        }}
       />
       {img?.src && (
         <Box display="flex" gap={1} mt={-1}>

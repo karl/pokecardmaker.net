@@ -10,10 +10,13 @@ const GeneralInput: FC<GeneralInputProps> = ({
   label,
   disabled,
   onChange,
+  tooltipProps,
   ...rest
 }) => (
   <FormControl>
-    <Label slug={slug}>{label}</Label>
+    <Label slug={slug} tooltipProps={tooltipProps}>
+      {label}
+    </Label>
     <TextField
       id={`${slug}-input`}
       InputProps={{

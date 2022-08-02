@@ -1,5 +1,6 @@
 import { InputBaseProps } from '@mui/material';
-import { ReactNode } from 'react';
+import { PropsWithChildren, ReactNode } from 'react';
+import { TooltipProps } from '../Tooltip/types';
 
 export interface InputProps {
   label: string;
@@ -9,6 +10,7 @@ export interface InputProps {
   endAdornment?: ReactNode;
   disabled?: boolean;
   onChange: ((value: string) => void) | ((value: number | '') => void);
+  tooltipProps?: PropsWithChildren<TooltipProps>;
 }
 
 export interface GeneralInputProps extends InputProps {
