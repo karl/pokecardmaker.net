@@ -6,8 +6,10 @@ import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const SetIcon: FC = () => {
-  const { setIcon } = useSetIcon();
-  const imgSrc = useBase64Img(setIcon && Routes.Assets.Icons.Set(setIcon.slug));
+  const { setIcon, customSetIconSrc } = useSetIcon();
+  const imgSrc = useBase64Img(
+    customSetIconSrc || (setIcon && Routes.Assets.Icons.Set(setIcon.slug)),
+  );
 
   if (!imgSrc) return null;
 
