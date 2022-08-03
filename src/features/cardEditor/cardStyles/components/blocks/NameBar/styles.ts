@@ -1,11 +1,7 @@
 import { styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Block = styled('div')`
+export const Block = styled(PlacementBlock)`
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 3.3%;
-  left: 19%;
-  width: 53%;
-  height: 6%;
 `;

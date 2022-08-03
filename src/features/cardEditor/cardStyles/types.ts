@@ -3,6 +3,19 @@ export type NameSymbol = 'vmax' | 'v' | 'star';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
 
+export interface Placement {
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
+  height?: string;
+  width?: string;
+}
+
+export interface Positions {
+  name?: Placement;
+}
+
 export interface CardStyles {
   /**
    * @default none
@@ -63,4 +76,9 @@ export interface CardStyles {
    * @default none
    */
   abilitySymbol?: AbilitySymbol;
+  /**
+   * Used to change position of items displayed on the card \
+   * For example, `Name` is displayed differently on a Pokémon and a Trainer
+   */
+  positions: Partial<Positions>;
 }
