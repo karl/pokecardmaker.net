@@ -27,9 +27,9 @@ export const trainer: Supertype = {
   styles: {
     positions: {
       name: {
-        top: '6.9%',
+        top: '6.7%',
         left: '6.3%',
-        width: '88%',
+        width: '87.3%',
       },
     },
   },

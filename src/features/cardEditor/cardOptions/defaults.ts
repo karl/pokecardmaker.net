@@ -38,8 +38,8 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: 'Psyduck',
-  subname: '',
+  name: "Professor's Research",
+  subname: 'Professor Oak',
   backgroundImg: undefined,
   imgLayer1: undefined,
   imgLayer2: undefined,
@@ -95,8 +95,9 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   },
   // Relations
   baseSetId: defaultRelations.baseSet.id,
-  supertypeId: defaultRelations.supertype.id,
-  typeId: water.id,
+  supertypeId: trainer.id,
+  // supertypeId: defaultRelations.supertype.id,
+  typeId: supporter.id,
   // typeId: defaultRelations.type.id,
   subtypeId: basic.id,
   // subtypeId: defaultRelations.subtype?.id,

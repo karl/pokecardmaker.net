@@ -3,6 +3,7 @@ import { useCardStyles } from '@cardEditor/cardStyles/hooks';
 import { FC } from 'react';
 import Name from './fields/Name';
 import NameSymbol from './fields/NameSymbol';
+import Subname from './fields/Subname';
 import { Block } from './styles';
 
 const NameBar: FC = () => {
@@ -17,6 +18,7 @@ const NameBar: FC = () => {
     <Block {...namePosition}>
       <Name />
       <NameSymbol />
+      <Subname />
     </Block>
   );
 };
