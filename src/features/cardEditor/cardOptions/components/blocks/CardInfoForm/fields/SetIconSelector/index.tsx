@@ -68,7 +68,7 @@ const SetIconSelector: FC = () => {
           label="Custom Set Icon"
           onChange={setCustomSetIconSrc}
           tooltipProps={{
-            title: 'Recommended size: 38×38 pixels'
+            title: 'Recommended size: 38×38 pixels',
           }}
         />
       )}

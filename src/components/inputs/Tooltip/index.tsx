@@ -1,5 +1,11 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Dialog, DialogContent, DialogTitle, IconButton, Tooltip as MUITooltip } from '@mui/material';
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Tooltip as MUITooltip,
+} from '@mui/material';
 import { FC, useState } from 'react';
 import TooltipButton from './atoms/TooltipButton';
 import { TooltipProps } from './types';
