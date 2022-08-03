@@ -1,10 +1,18 @@
 import { styled } from '@css';
+import { Typography } from '@mui/material';
 
 export const ImagesWrapper = styled('div')`
   display: flex;
-  align-items: center;
-  width: 850px;
+  flex-direction: column;
+  padding: ${({ theme }) => theme.spacing(4, 0)};
   gap: 1em;
+  align-items: flex-start;
+  min-width: 500px;
+
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const PerspectiveWrapper = styled('div')`
@@ -26,7 +34,6 @@ export const PerspectiveImg = styled('div')<{ $translateX?: number }>`
   cursor: pointer;
 
   &:hover {
-    z-index: 999;
     box-shadow: 5px 5px 20px black;
     background: ${({ theme }) => theme.palette.background.default};
     border-radius: 21px;
@@ -36,5 +43,15 @@ export const PerspectiveImg = styled('div')<{ $translateX?: number }>`
 export const FullImage = styled('div')`
   display: flex;
   align-items: center;
-  height: 500px;
+  max-height: 400px;
+  width: 300px;
+  position: relative;
+`;
+
+export const NumberText = styled(Typography)`
+  z-index: 999;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  font-weight: bold;
 `;

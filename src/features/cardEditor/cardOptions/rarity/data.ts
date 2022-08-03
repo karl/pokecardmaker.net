@@ -6,6 +6,7 @@ export const promo: Rarity = {
   displayName: 'Promo',
   logic: {
     hasDexEntry: true,
+    hasDexStats: false,
   },
   styles: {
     nameOutline: 'white',
