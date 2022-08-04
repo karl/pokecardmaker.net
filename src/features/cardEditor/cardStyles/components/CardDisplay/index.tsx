@@ -14,6 +14,7 @@ import Hitpoints from '../blocks/NameBar/fields/Hitpoints';
 import TypeBar from '../blocks/TypeBar';
 import BackgroundImg from '../fields/BackgroundImg';
 import CardImage from '../fields/CardImage';
+import Description from '../fields/Description';
 import DexStats from '../fields/DexStats';
 import ImgLayer1 from '../fields/ImgLayer1';
 import ImgLayer2 from '../fields/ImgLayer2';
@@ -54,6 +55,7 @@ const CardDisplay: FC = () => {
       <PrevolveImg />
       <DexStats />
       <Moves />
+      <Description />
       <TypeBar />
       <CardInfo />
       <BackgroundImg />

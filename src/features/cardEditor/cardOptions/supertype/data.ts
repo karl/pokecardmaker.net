@@ -39,6 +39,15 @@ export const energy: Supertype = {
   id: 3,
   slug: 'energy',
   displayName: 'Energy',
+  styles: {
+    positions: {
+      name: {
+        top: '6.7%',
+        left: '6.3%',
+        width: '62.5%',
+      },
+    },
+  },
 };
 
 export const supertypes: Supertype[] = [pokemon, trainer, energy];

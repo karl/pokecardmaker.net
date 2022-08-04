@@ -1,6 +1,7 @@
 import { css, styled } from '@css';
 import { TextColor } from '@cardEditor/cardStyles';
 
+// TODO: Add support for [Special Characters]
 export const CardText = styled('p')<{
   $outline?: TextColor;
   $color?: TextColor;

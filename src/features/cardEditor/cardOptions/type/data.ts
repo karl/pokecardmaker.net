@@ -120,6 +120,7 @@ export const item: Type = {
   displayName: 'Item',
   logic: {
     hasSubtypes: true,
+    hasDescription: true,
   },
   supertypes: [trainer.id],
   rarities: [],

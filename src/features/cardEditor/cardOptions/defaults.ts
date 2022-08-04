@@ -38,7 +38,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: "Professor's Research",
+  name: 'Ordinary Rod',
   subname: 'Professor Oak',
   backgroundImg: undefined,
   imgLayer1: undefined,
@@ -58,7 +58,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   dexStats: 'NO. 054  Duck Pokémon  HT: 2\'7"  WT: 43,2 lbs.',
   dexEntry:
     "Suffers perpetual headaches. If the agony grows too great, Psyduck's latent power erupts, contrary to Psyduck's intent. Ergo, I am exploring ways to ease the pain.",
-  description: '',
+  description:
+    'Choose 1 or both:\n\n- Shuffle up to 2 Pokémon from your discard pile into your deck.\n- Shuffle up to 2 basic Energy cards from your discard pile into your deck.',
   hasAbility: false,
   ability: {
     description: '',
@@ -97,7 +98,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: trainer.id,
   // supertypeId: defaultRelations.supertype.id,
-  typeId: supporter.id,
+  typeId: item.id,
   // typeId: defaultRelations.type.id,
   subtypeId: basic.id,
   // subtypeId: defaultRelations.subtype?.id,

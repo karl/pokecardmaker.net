@@ -1,6 +1,7 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
 import AccordionForm from '@components/AccordionForm';
 import { FC } from 'react';
+import DescriptionInput from './fields/DescriptionInput';
 import DexStatsInput from './fields/DexStatsInput';
 import HitpointsInput from './fields/HitpointsInput';
 import NameInput from './fields/NameInput';
@@ -16,8 +17,9 @@ const BasicsForm: FC = () => {
   return (
     <AccordionForm slug="basicsForm" header="Basics">
       <NameInput />
-      <SubnameInput />
       <HitpointsInput />
+      <SubnameInput />
+      <DescriptionInput />
       <PrevolveNameInput />
       <PrevolveImgSrcFileUploader />
       <DexStatsInput />
