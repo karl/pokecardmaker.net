@@ -1,6 +1,6 @@
 import { styled } from '@css';
 import { Font } from '@utils/fonts';
-import { CardText } from '../../atoms/CardText';
+import CardText from '../../atoms/CardText';
 
 export const DexStatsText = styled(CardText)`
   position: absolute;

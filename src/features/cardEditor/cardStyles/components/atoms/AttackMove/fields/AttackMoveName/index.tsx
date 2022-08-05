@@ -11,8 +11,8 @@ const AttackMoveName: FC<AttackMoveDisplayProps> = ({ move }) => {
   return (
     <MoveNameText
       $energyCost={greatestEnergyCost}
-      $outline={movesOutline}
-      $color={movesTextColor}
+      outline={movesOutline}
+      color={movesTextColor}
     >
       {move?.name}
     </MoveNameText>

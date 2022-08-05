@@ -12,7 +12,7 @@ const Hitpoints: FC = () => {
   if (!hasHitpoints || hitpoints === '') return null;
 
   return (
-    <Wrapper $size={hpSize} $outline={hpOutline} $color={hpTextColor}>
+    <Wrapper $size={hpSize} outline={hpOutline} color={hpTextColor}>
       <HPText $size={hpSize}>HP</HPText>
       <HPNumbers $size={hpSize}>{hitpoints}</HPNumbers>
     </Wrapper>

@@ -5,10 +5,7 @@ import { Crop as CropIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import { FC, useState } from 'react';
-import { Area } from 'react-easy-crop';
 import { CardImgCropperProps } from './types';
-
-const DEFAULT_CROP: Area = { height: 0, width: 0, x: 0, y: 0 };
 
 const CardImgCropper: FC<CardImgCropperProps> = ({
   label,
@@ -29,7 +26,7 @@ const CardImgCropper: FC<CardImgCropperProps> = ({
         file={img?.src}
         onChange={src =>
           setImg({
-            croppedArea: img?.croppedArea ?? DEFAULT_CROP,
+            croppedArea: img?.croppedArea,
             src,
           })
         }
@@ -61,7 +58,8 @@ const CardImgCropper: FC<CardImgCropperProps> = ({
       )}
       {img?.src && cropActive && (
         <ImgCropper
-          src={img?.src}
+          src={img.src}
+          initialCroppedArea={img.croppedArea}
           overlayImgSrc={cardImgSrc}
           overlayImgZIndex={overlayZIndex}
           onChange={croppedArea =>

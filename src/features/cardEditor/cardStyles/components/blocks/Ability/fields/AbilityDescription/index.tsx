@@ -8,7 +8,7 @@ const AbilityDescription: FC = () => {
   const { movesOutline, movesTextColor } = useCardStyles();
 
   return (
-    <AbilityDescriptionText $outline={movesOutline} $color={movesTextColor}>
+    <AbilityDescriptionText outline={movesOutline} color={movesTextColor}>
       {ability?.description}
     </AbilityDescriptionText>
   );

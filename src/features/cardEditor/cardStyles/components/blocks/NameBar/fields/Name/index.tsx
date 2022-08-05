@@ -10,7 +10,7 @@ const Name: FC = () => {
   if (!name) return null;
 
   return (
-    <NameText $outline={nameOutline} $color={nameTextColor}>
+    <NameText outline={nameOutline} color={nameTextColor}>
       {name}
     </NameText>
   );

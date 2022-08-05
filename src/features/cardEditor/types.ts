@@ -31,7 +31,7 @@ export type AbilityMove = BaseMove;
 
 export interface CroppableImg {
   src: string;
-  croppedArea: Area;
+  croppedArea?: Area;
 }
 
 export interface CardInterface {

@@ -8,7 +8,7 @@ const AbilityName: FC = () => {
   const { movesOutline } = useCardStyles();
 
   return (
-    <AbilityNameText $outline={movesOutline}>{ability?.name}</AbilityNameText>
+    <AbilityNameText outline={movesOutline}>{ability?.name}</AbilityNameText>
   );
 };
 

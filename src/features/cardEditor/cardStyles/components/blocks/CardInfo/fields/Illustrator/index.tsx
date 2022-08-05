@@ -12,7 +12,7 @@ const Illustrator: FC = () => {
   if (!hasIllustratorName || !illustrator) return null;
 
   return (
-    <IllustratorText $color={cardInfoTextColor} $outline={cardInfoOutline}>
+    <IllustratorText color={cardInfoTextColor} outline={cardInfoOutline}>
       Illus. {illustrator}
     </IllustratorText>
   );

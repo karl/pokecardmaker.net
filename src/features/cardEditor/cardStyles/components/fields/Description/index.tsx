@@ -2,7 +2,7 @@ import { useCardLogic } from '@cardEditor/cardLogic';
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
-import { DescriptionText } from './styles';
+import { DescriptionText, Wrapper } from './styles';
 
 const Description: FC = () => {
   const { hasDescription } = useCardLogic();
@@ -12,9 +12,11 @@ const Description: FC = () => {
   if (!hasDescription || !description) return null;
 
   return (
-    <DescriptionText $outline={movesOutline} $color={movesTextColor}>
-      {description}
-    </DescriptionText>
+    <Wrapper>
+      <DescriptionText outline={movesOutline} color={movesTextColor}>
+        {description}
+      </DescriptionText>
+    </Wrapper>
   );
 };
 

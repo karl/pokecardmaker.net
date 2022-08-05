@@ -1,8 +1,7 @@
-import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
+import CardText from '@cardEditor/cardStyles/components/atoms/CardText';
 import { styled } from '@css';
 
 export const Wrapper = styled(CardText)`
-  display: block;
   display: flex;
   align-items: center;
   position: relative;

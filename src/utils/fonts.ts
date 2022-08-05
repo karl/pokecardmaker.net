@@ -12,6 +12,7 @@ export enum Font {
   GillSansStdRegular = 'Gill Sans Std Regular',
   GillSansStdUltraBold = 'Gill Sans Std Ultra Bold',
   OptimaMedium = 'Optima Medium',
+  PkmnTCGSpecialCharacters = 'Pokemon TCG Special Characters',
 }
 
 interface FontFace {
@@ -63,6 +64,10 @@ const fonts: FontFace[] = [
   {
     fontName: Font.OptimaMedium,
     fileName: 'Optima-Medium',
+  },
+  {
+    fontName: Font.PkmnTCGSpecialCharacters,
+    fileName: 'PKMN_TCG_SYM18',
   },
 ];
 

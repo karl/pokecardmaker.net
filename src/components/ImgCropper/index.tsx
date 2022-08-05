@@ -12,6 +12,7 @@ import { ImgCropperProps } from './types';
 
 const ImgCropper: FC<ImgCropperProps> = ({
   src,
+  initialCroppedArea,
   overlayImgSrc,
   overlayImgZIndex = 0,
   onChange,
@@ -24,6 +25,7 @@ const ImgCropper: FC<ImgCropperProps> = ({
       <Cropper
         image={src}
         crop={crop}
+        initialCroppedAreaPercentages={initialCroppedArea}
         zoom={zoom}
         cropSize={{ width: cropperWidth, height: cropperHeight }}
         maxZoom={100}

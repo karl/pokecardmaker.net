@@ -1,4 +1,4 @@
-import { CardText } from '@cardEditor/cardStyles/components/atoms/CardText';
+import CardText from '@cardEditor/cardStyles/components/atoms/CardText';
 import { css, styled } from '@css';
 import { Font } from '@utils/fonts';
 

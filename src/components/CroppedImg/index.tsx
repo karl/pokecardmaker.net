@@ -1,8 +1,15 @@
 import { FC, useMemo } from 'react';
+import { Area } from 'react-easy-crop';
 import { Img, Wrapper } from './styles';
 import { CroppedImgProps } from './types';
 
-const CroppedImg: FC<CroppedImgProps> = ({ src, croppedArea, ...props }) => {
+const DEFAULT_CROP: Area = { height: 0, width: 0, x: 0, y: 0 };
+
+const CroppedImg: FC<CroppedImgProps> = ({
+  src,
+  croppedArea = DEFAULT_CROP,
+  ...props
+}) => {
   const transform = useMemo(() => {
     const scale = 100 / croppedArea.width;
 

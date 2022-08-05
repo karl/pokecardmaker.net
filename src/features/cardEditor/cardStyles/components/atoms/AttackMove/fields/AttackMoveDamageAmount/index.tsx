@@ -14,10 +14,10 @@ const AttackMoveDamageAmount: FC<AttackMoveDisplayProps> = ({ move }) => {
 
   return (
     <Wrapper>
-      <MoveDamageAmountText $outline={movesOutline} $color={movesTextColor}>
+      <MoveDamageAmountText outline={movesOutline} color={movesTextColor}>
         {move?.damageAmount}
       </MoveDamageAmountText>
-      <MoveDamageModifierText $outline={movesOutline} $color={movesTextColor}>
+      <MoveDamageModifierText outline={movesOutline} color={movesTextColor}>
         {move?.damageModifier}
       </MoveDamageModifierText>
     </Wrapper>

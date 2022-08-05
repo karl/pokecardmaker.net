@@ -12,7 +12,7 @@ const DexEntry: FC = () => {
   if (!hasDexEntry || !dexEntry) return null;
 
   return (
-    <DexEntryText $color={cardInfoTextColor} $outline={cardInfoOutline}>
+    <DexEntryText color={cardInfoTextColor} outline={cardInfoOutline}>
       {dexEntry}
     </DexEntryText>
   );

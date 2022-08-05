@@ -10,7 +10,7 @@ const CardNumber: FC = () => {
   if (!cardNumber && !totalInSet) return null;
 
   return (
-    <CardNumberText $color={cardInfoTextColor} $outline={cardInfoOutline}>
+    <CardNumberText color={cardInfoTextColor} outline={cardInfoOutline}>
       {cardNumber && <span>{cardNumber}</span>}
       {cardNumber && totalInSet && <span>/</span>}
       {totalInSet && <span>{totalInSet}</span>}

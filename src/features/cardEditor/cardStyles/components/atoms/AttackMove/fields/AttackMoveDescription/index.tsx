@@ -12,8 +12,8 @@ const AttackMoveDescription: FC<AttackMoveDisplayProps> = ({
 
   return (
     <MoveDescriptionText
-      $outline={movesOutline}
-      $color={movesTextColor}
+      outline={movesOutline}
+      color={movesTextColor}
       $alignBottom={alignMovesBottom}
       $isLastMove={!!isLastMove}
       $isEmpty={!move?.description}
