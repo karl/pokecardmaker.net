@@ -38,6 +38,7 @@
     "@mui/styled-engine": "^5.7.0",
     "@mui/system": "^5.7.0",
     "dot-object": "^2.1.4",
+    "html-react-parser": "^3.0.1",
     "html2canvas": "^1.4.1",
     "lodash.merge": "^4.6.2",
     "next": "^12.1.4",

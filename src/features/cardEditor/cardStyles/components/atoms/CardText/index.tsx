@@ -1,8 +1,34 @@
 import { Children, FC, ReactNode, useMemo } from 'react';
+import parse, {
+  Element,
+  HTMLReactParserOptions,
+  domToReact,
+} from 'html-react-parser';
 import { CardTextProps } from './types';
 import { SpecialCharacter, Text } from './styles';
 
-const specialCharacterRegexp = /\[.*?\]/g;
+const parseOptions: HTMLReactParserOptions = {
+  replace: domNode => {
+    if (domNode instanceof Element) {
+      const children = domToReact(domNode.children, parseOptions);
+      switch (domNode.name) {
+        case 'b':
+          return <b>{children}</b>;
+        case 'i':
+          return <i>{children}</i>;
+        case 's':
+          return <s>{children}</s>;
+        case 'u':
+          return <u>{children}</u>;
+        case 'pkm':
+          return <SpecialCharacter>{children}</SpecialCharacter>;
+        default:
+          return null;
+      }
+    }
+    return domNode;
+  },
+};
 
 const CardText: FC<CardTextProps> = ({
   outline,
@@ -10,31 +36,23 @@ const CardText: FC<CardTextProps> = ({
   children,
   ...props
 }) => {
-  // TODO: Allow for more types of formatting (like italic)
   const content = useMemo<ReactNode>(
     () =>
       Children.map(children, child => {
         // Only format strings, not elements
         if (typeof child !== 'string') return child;
-        // Check if there are any [special characters] present
-        const specialCharacters = child.match(specialCharacterRegexp);
-        if (!specialCharacters || specialCharacters.length === 0) return child;
-        // Make an array of all [special characters], without their indicators ([])
-        const characters: string[] = specialCharacters.map(char =>
-          char.replace('[', '').replace(']', ''),
-        );
-        // Make an array of all content split where the [special characters] should be
-        const withoutSpecialCharacters = child.split(specialCharacterRegexp);
-        // Insert the [special characters] back in place with a new style
-        const contentChild: ReactNode[] = [];
-        withoutSpecialCharacters.forEach((element, i) => {
-          contentChild.push(element);
-          if (characters.length <= i || characters[i].length > 1) return;
-          contentChild.push(
-            <SpecialCharacter>{characters[i]}</SpecialCharacter>,
-          );
-        });
-        return contentChild;
+        const contentString = child
+          // Bold
+          .replace(/(?:\*)(?:(?!\s))((?:(?!\*|\n).)+)(?:\*)/g, '<b>$1</b>')
+          // Italic
+          .replace(/(?:_)(?:(?!\s))((?:(?!\n|_).)+)(?:_)/g, '<i>$1</i>')
+          // Stripethrough
+          .replace(/(?:~)(?:(?!\s))((?:(?!\n|~).)+)(?:~)/g, '<s>$1</s>')
+          // Underline
+          .replace(/(?:--)(?:(?!\s))((?:(?!\n|--).)+)(?:--)/g, '<u>$1</u>')
+          // Special Character
+          .replace(/(?:\[)(?:(?!\s))((?:(?!\n|\[).)+)(?:\])/g, '<pkm>$1</pkm>');
+        return parse(contentString, parseOptions);
       }),
     [children],
   );
