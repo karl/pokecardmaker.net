@@ -12,7 +12,7 @@ const getCardImagePath = (
   subtype?: Subtype,
   variation?: Variation,
   rarity?: Rarity,
-  seperator = '.',
+  seperator = '/',
 ) => {
   // It's more readable this way
   // eslint-disable-next-line @typescript-eslint/naming-convention

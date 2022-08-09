@@ -22,6 +22,7 @@ const FileUploader: FC<FileUploaderProps> = ({
     (e: ChangeEvent<HTMLInputElement>) => {
       const upload = e.currentTarget.files?.[0];
       if (!upload) return;
+      // TODO: Convert the blobs to dataURL using FileReader
       onChange(URL.createObjectURL(upload));
       setFileName(upload.name);
       e.currentTarget.value = '';
