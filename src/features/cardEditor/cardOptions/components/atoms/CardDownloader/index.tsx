@@ -1,10 +1,10 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
 import { cardId as defaultCardId } from '@cardEditor/cardStyles';
 import { Download as DownloadIcon } from '@mui/icons-material';
-import { Button } from '@mui/material';
-import html2canvas from 'html2canvas';
-import { FC, useCallback } from 'react';
+import { Button, CircularProgress } from '@mui/material';
+import { FC, useCallback, useState } from 'react';
 import { baseFontSize, cardImgHeight, cardImgWidth } from 'src/constants';
+import { toCanvas } from 'html-to-image';
 import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
@@ -12,19 +12,23 @@ const CardDownloader: FC<CardDownloaderProps> = ({
   cardId = defaultCardId,
 }) => {
   const { name } = useCardOptions();
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const makeCanvas = useCallback(async (): Promise<
     HTMLCanvasElement | undefined
   > => {
+    setLoading(true);
     const tempDiv = document.querySelector('#temp') as HTMLElement | null;
     const originalDiv = document.querySelector(
       `#${cardId}`,
     ) as HTMLElement | null;
-    if (!tempDiv || !originalDiv) return undefined;
+
+    if (!tempDiv || !originalDiv) {
+      setLoading(false);
+      return undefined;
+    }
 
     const div = originalDiv.cloneNode(true) as HTMLCanvasElement;
-    // Remove noscript tags from next.js images
-    div.querySelectorAll('noscript').forEach(e => e.remove());
     // Add the cloned div to the DOM in an invisible div
     tempDiv.append(div);
 
@@ -32,17 +36,16 @@ const CardDownloader: FC<CardDownloaderProps> = ({
     div.style.width = `${cardImgWidth}px`;
     div.style.height = `${cardImgHeight}px`;
     div.style.fontSize = `${baseFontSize}px`;
-    const canvas = await html2canvas(div, {
+
+    const canvas = await toCanvas(div, {
       backgroundColor: 'transparent',
-      foreignObjectRendering: true,
-      scrollY: -div.offsetTop,
-      scrollX: -div.offsetLeft,
-      windowHeight: div.clientHeight,
-      windowWidth: div.clientWidth,
+      height: div.clientHeight,
+      width: div.clientWidth,
     });
 
     // Remove the cloned div from the dom
     div.remove();
+    setLoading(false);
     return canvas;
   }, [cardId]);
 
@@ -80,7 +83,14 @@ const CardDownloader: FC<CardDownloaderProps> = ({
         fullWidth
         variant="contained"
         onClick={handleDownload}
-        startIcon={<DownloadIcon />}
+        disabled={isLoading}
+        startIcon={
+          isLoading ? (
+            <CircularProgress color="inherit" size={20} />
+          ) : (
+            <DownloadIcon />
+          )
+        }
       >
         Download
       </Button>

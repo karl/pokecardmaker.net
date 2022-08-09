@@ -1,27 +1,19 @@
 import { useSetIcon } from '@cardEditor/cardOptions/setIcon';
-import useBase64Img from '@hooks/useBase64Img';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const SetIcon: FC = () => {
   const { setIcon, customSetIconSrc } = useSetIcon();
-  const imgSrc = useBase64Img(
-    customSetIconSrc || (setIcon && Routes.Assets.Icons.Set(setIcon.slug)),
-  );
+  const imgSrc =
+    customSetIconSrc || (!!setIcon && Routes.Assets.Icons.Set(setIcon.slug));
 
   if (!imgSrc) return null;
 
   return (
     <Wrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <DisplayImg src={imgSrc} />
     </Wrapper>
   );
 };
