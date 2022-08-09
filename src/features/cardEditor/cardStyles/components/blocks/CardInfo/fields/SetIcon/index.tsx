@@ -1,6 +1,6 @@
 import { useSetIcon } from '@cardEditor/cardOptions/setIcon';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import { Wrapper } from './styles';
 
@@ -13,13 +13,7 @@ const SetIcon: FC = () => {
 
   return (
     <Wrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <DisplayImg src={imgSrc} />
     </Wrapper>
   );
 };

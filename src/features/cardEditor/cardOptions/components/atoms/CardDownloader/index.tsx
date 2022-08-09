@@ -22,14 +22,13 @@ const CardDownloader: FC<CardDownloaderProps> = ({
     const originalDiv = document.querySelector(
       `#${cardId}`,
     ) as HTMLElement | null;
+
     if (!tempDiv || !originalDiv) {
       setLoading(false);
       return undefined;
     }
 
     const div = originalDiv.cloneNode(true) as HTMLCanvasElement;
-    // Remove noscript tags from next.js images
-    div.querySelectorAll('noscript').forEach(e => e.remove());
     // Add the cloned div to the DOM in an invisible div
     tempDiv.append(div);
 
@@ -38,7 +37,6 @@ const CardDownloader: FC<CardDownloaderProps> = ({
     div.style.height = `${cardImgHeight}px`;
     div.style.fontSize = `${baseFontSize}px`;
 
-    // TODO: Can currently only download 1 image and then repeats that for some reason
     const canvas = await toCanvas(div, {
       backgroundColor: 'transparent',
       height: div.clientHeight,

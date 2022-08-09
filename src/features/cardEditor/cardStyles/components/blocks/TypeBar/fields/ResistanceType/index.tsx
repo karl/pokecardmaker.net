@@ -1,6 +1,6 @@
 import useResistanceType from '@cardEditor/cardOptions/type/hooks/useResistanceType';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import TypeImgWrapper from '../../atoms/TypeImgWrapper';
 
@@ -13,13 +13,7 @@ const ResistanceType: FC = () => {
 
   return (
     <TypeImgWrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <DisplayImg src={imgSrc} />
     </TypeImgWrapper>
   );
 };

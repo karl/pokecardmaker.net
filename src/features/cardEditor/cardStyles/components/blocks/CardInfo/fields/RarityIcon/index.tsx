@@ -1,7 +1,7 @@
 import { useRarityIcon } from '@cardEditor/cardOptions/rarityIcon';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import { useCardStyles } from '@cardEditor/cardStyles/hooks';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import { Wrapper } from './styles';
 
@@ -18,13 +18,7 @@ const RarityIcon: FC = () => {
 
   return (
     <Wrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <DisplayImg src={imgSrc} />
     </Wrapper>
   );
 };

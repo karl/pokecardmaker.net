@@ -1,6 +1,6 @@
 import useWeaknessType from '@cardEditor/cardOptions/type/hooks/useWeaknessType';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import TypeImgWrapper from '../../atoms/TypeImgWrapper';
 
@@ -12,13 +12,7 @@ const WeaknessType: FC = () => {
 
   return (
     <TypeImgWrapper>
-      <Image
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left"
-        alt=""
-        src={imgSrc}
-      />
+      <DisplayImg src={imgSrc} />
     </TypeImgWrapper>
   );
 };

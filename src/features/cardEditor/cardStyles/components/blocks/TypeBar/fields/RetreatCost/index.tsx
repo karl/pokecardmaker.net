@@ -1,6 +1,6 @@
 import { useCardOptions } from '@cardEditor/cardOptions';
+import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
-import Image from 'next/image';
 import { FC } from 'react';
 import TypeImgWrapper from '../../atoms/TypeImgWrapper';
 import { Wrapper } from './styles';
@@ -16,13 +16,7 @@ const RetreatCost: FC = () => {
     <Wrapper>
       {new Array(retreatCost).fill(undefined).map((_, i) => (
         <TypeImgWrapper key={i}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            objectPosition="left"
-            alt=""
-            src={imgSrc}
-          />
+          <DisplayImg src={imgSrc} />
         </TypeImgWrapper>
       ))}
     </Wrapper>
