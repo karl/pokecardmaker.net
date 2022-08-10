@@ -150,6 +150,7 @@ export const base: Type = {
   rarities: [],
 };
 
+// TODO: Create Special Energy's Type selector+uploader
 export const special: Type = {
   id: 13,
   slug: 'special',
