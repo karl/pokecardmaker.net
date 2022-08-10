@@ -42,7 +42,7 @@ const FileUploader: FC<FileUploaderProps> = ({
     const upload = e.currentTarget.files?.[0];
     if (!upload) return;
     if (upload.size > maxFileSize) {
-      setErrorMessage('Maximum filesize is 5MB');
+      setErrorMessage('Please upload a file smaller than 5 MB');
       return;
     }
     setLoading(true);
