@@ -6,3 +6,5 @@ export const cardId = 'card';
 // Form width minus all paddings
 export const cropperWidth = 354;
 export const cropperHeight = (cropperWidth / cardImgWidth) * cardImgHeight;
+// 5 megabytes
+export const maxFileSize = 5_242_880;

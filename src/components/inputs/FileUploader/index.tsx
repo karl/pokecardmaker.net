@@ -1,5 +1,12 @@
 import { UploadFile as UploadFileIcon } from '@mui/icons-material';
-import { Button, CircularProgress, FormControl } from '@mui/material';
+import {
+  Button,
+  CircularProgress,
+  FormControl,
+  FormHelperText,
+  InputAdornment,
+  Typography,
+} from '@mui/material';
 import {
   ChangeEvent,
   FC,
@@ -8,6 +15,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { maxFileSize } from 'src/constants';
 import Label from '../Label';
 import { ButtonLabel } from './styles';
 import { FileUploaderProps } from './types';
@@ -22,14 +30,21 @@ const FileUploader: FC<FileUploaderProps> = ({
   const fileReader = useRef<FileReader>();
   const [isLoading, setLoading] = useState<boolean>(false);
   const [fileName, setFileName] = useState<string>();
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   useEffect(() => {
     if (!file) setFileName(undefined);
   }, [file]);
 
   const onUpload = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setErrorMessage(undefined);
+
     const upload = e.currentTarget.files?.[0];
     if (!upload) return;
+    if (upload.size > maxFileSize) {
+      setErrorMessage('Maximum filesize is 5MB');
+      return;
+    }
     setLoading(true);
 
     // Read as dataURL so we don't have to use local blobs, blobs don't work with html-to-canvas
@@ -67,7 +82,7 @@ const FileUploader: FC<FileUploaderProps> = ({
   }, [onChange]);
 
   return (
-    <FormControl>
+    <FormControl error={!!errorMessage}>
       <Label slug={slug} tooltipProps={tooltipProps}>
         {label}
       </Label>
@@ -86,6 +101,13 @@ const FileUploader: FC<FileUploaderProps> = ({
             <UploadFileIcon />
           )
         }
+        endIcon={
+          !fileName ? (
+            <InputAdornment position="end">
+              <Typography variant="subtitle2">&lt; 5 MB</Typography>
+            </InputAdornment>
+          ) : undefined
+        }
       >
         <ButtonLabel>{fileName ?? <>&nbsp;</>}</ButtonLabel>
         <input
@@ -96,6 +118,7 @@ const FileUploader: FC<FileUploaderProps> = ({
           onChange={onUpload}
         />
       </Button>
+      {errorMessage && <FormHelperText>{errorMessage}</FormHelperText>}
     </FormControl>
   );
 };

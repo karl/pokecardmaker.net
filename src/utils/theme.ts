@@ -130,6 +130,13 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          marginLeft: theme.spacing(1),
+        },
+      },
+    },
   },
 });
 
