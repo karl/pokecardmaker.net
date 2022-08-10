@@ -19,4 +19,5 @@ export const Text = styled('p')<{
 
 export const SpecialCharacter = styled('span')`
   font-family: '${Font.PkmnTCGSpecialCharacters}', monospace;
+  line-height: 0;
 `;
