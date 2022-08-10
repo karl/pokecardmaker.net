@@ -64,7 +64,6 @@ const FileUploader: FC<FileUploaderProps> = ({
       if (typeof result !== 'string') return;
 
       setLoading(false);
-      // TODO: Compress image to not be any bigger than cardWidth and cardHeight?
       onChange(result);
     };
 

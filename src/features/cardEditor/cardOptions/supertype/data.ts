@@ -16,6 +16,12 @@ export const pokemon: Supertype = {
         left: '19%',
         width: '53%',
       },
+      description: {
+        top: '54%',
+        left: '11.9%',
+        height: '31.7%',
+        width: '76%',
+      },
     },
   },
 };
@@ -31,6 +37,12 @@ export const trainer: Supertype = {
         left: '6.3%',
         width: '87.3%',
       },
+      description: {
+        top: '54%',
+        left: '11.9%',
+        height: '31.7%',
+        width: '76%',
+      },
     },
   },
 };
@@ -45,6 +57,12 @@ export const energy: Supertype = {
         top: '6.7%',
         left: '6.3%',
         width: '62.5%',
+      },
+      description: {
+        top: '66%',
+        left: '8.9%',
+        height: '25%',
+        width: '83%',
       },
     },
   },

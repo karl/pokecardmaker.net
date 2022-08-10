@@ -1,13 +1,9 @@
 import CardText from '@cardEditor/cardStyles/components/atoms/CardText';
 import { styled } from '@css';
 import { Font } from '@utils/fonts';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')`
-  position: absolute;
-  width: 76%;
-  top: 54%;
-  left: 11.9%;
-  height: 31.7%;
+export const Wrapper = styled(PlacementBlock)`
   display: flex;
   align-items: center;
 `;

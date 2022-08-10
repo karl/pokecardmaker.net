@@ -7,12 +7,16 @@ import { DescriptionText, Wrapper } from './styles';
 const Description: FC = () => {
   const { hasDescription } = useCardLogic();
   const { description } = useCardOptions();
-  const { movesOutline, movesTextColor } = useCardStyles();
+  const {
+    movesOutline,
+    movesTextColor,
+    positions: { description: descriptionPosition },
+  } = useCardStyles();
 
   if (!hasDescription || !description) return null;
 
   return (
-    <Wrapper>
+    <Wrapper {...descriptionPosition}>
       <DescriptionText outline={movesOutline} color={movesTextColor}>
         {description}
       </DescriptionText>

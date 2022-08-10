@@ -14,6 +14,7 @@ export interface Placement {
 
 export interface Positions {
   name?: Placement;
+  description?: Placement;
 }
 
 export interface CardStyles {

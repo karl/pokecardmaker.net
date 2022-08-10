@@ -2,6 +2,7 @@ import { styled } from '@css';
 import { Placement } from '@cardEditor/cardStyles';
 import { isPresent } from '@utils/isPresent';
 
+// TODO: Allow all CSSProperties
 export const PlacementBlock = styled('div', {
   // Don't put the Placement properties in the dom
   shouldForwardProp: propName =>
