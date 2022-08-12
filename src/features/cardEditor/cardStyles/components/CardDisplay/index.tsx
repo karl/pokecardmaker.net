@@ -22,7 +22,7 @@ import PrevolveImg from '../fields/PrevolveImg';
 import PrevolveName from '../fields/PrevolveName';
 import SvgHelpers from '../fields/SvgHelpers';
 import TypeImg from '../fields/TypeImg';
-import { CardContainer } from './styles';
+import { CardContainer, CardContent } from './styles';
 
 const CardDisplay: FC = () => {
   const [squareRef, { width }] = useElementSize();
@@ -50,20 +50,22 @@ const CardDisplay: FC = () => {
     >
       <Debug />
       <SvgHelpers />
-      <NameBar />
-      <Hitpoints />
-      <PrevolveName />
-      <PrevolveImg />
-      <DexStats />
-      <Moves />
-      <Description />
-      <TypeBar />
-      <CardInfo />
+      <CardContent>
+        <NameBar />
+        <Hitpoints />
+        <PrevolveName />
+        <PrevolveImg />
+        <TypeImg />
+        <DexStats />
+        <Moves />
+        <Description />
+        <TypeBar />
+        <CardInfo />
+      </CardContent>
       <BackgroundImg />
       <ImgLayer1 />
       <CardImage />
       <ImgLayer2 />
-      <TypeImg />
     </CardContainer>
   );
 };

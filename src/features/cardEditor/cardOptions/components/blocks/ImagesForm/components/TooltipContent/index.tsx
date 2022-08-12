@@ -71,8 +71,9 @@ const TooltipContent: FC = () => (
       </Typography>
       <Typography variant="h5">4. Layer 2</Typography>
       <Typography mb={2}>
-        The layer 2 image is placed in front of everything. This is generally
-        used to overlap certain parts of your image over the card borders.
+        The layer 2 image is placed in front of the Card Image, and behind the
+        text on the card. This is generally used to overlap certain parts of
+        your image over the card borders.
       </Typography>
     </Box>
   </Box>
