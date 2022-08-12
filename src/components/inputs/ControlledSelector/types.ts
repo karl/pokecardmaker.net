@@ -5,5 +5,5 @@ export interface ControlledSelectorProps {
   slug: string;
   value?: number | '';
   onChange: (event: SelectChangeEvent) => void;
-  noGap?: boolean;
+  gap?: number;
 }

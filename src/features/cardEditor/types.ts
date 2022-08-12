@@ -41,7 +41,7 @@ export interface CardInterface {
   imgLayer1?: CroppableImg;
   imgLayer2?: CroppableImg;
   customSetIconSrc?: string;
-  typeImgSrc?: string;
+  customTypeImgSrc?: string;
   typeImgAmount?: number | '';
   cardNumber?: string;
   totalInSet?: string;
@@ -70,6 +70,7 @@ export interface CardInterface {
   weaknessTypeId?: number;
   resistanceTypeId?: number;
   setIconId?: number;
+  typeImgId?: number;
   rotationIconId?: number;
   rarityIconId?: number;
 }
@@ -89,4 +90,5 @@ export interface RelationsInterface {
   setIcon?: SetIcon;
   rotationIcon?: RotationIcon;
   rarityIcon?: RarityIcon;
+  typeImg?: Type;
 }

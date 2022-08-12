@@ -41,14 +41,6 @@ const useCardOptions = () => {
     () => stateSetter<CardInterface['prevolveImgSrc']>('prevolveImgSrc'),
     [stateSetter],
   );
-  const setTypeImgSrc = useMemo(
-    () => stateSetter<CardInterface['typeImgSrc']>('typeImgSrc'),
-    [stateSetter],
-  );
-  const setTypeImgAmount = useMemo(
-    () => stateSetter<CardInterface['typeImgAmount']>('typeImgAmount'),
-    [stateSetter],
-  );
   const setCardNumber = useMemo(
     () => stateSetter<CardInterface['cardNumber']>('cardNumber'),
     [stateSetter],
@@ -120,8 +112,6 @@ const useCardOptions = () => {
     setImgLayer1,
     setImgLayer2,
     setPrevolveImgSrc,
-    setTypeImgSrc,
-    setTypeImgAmount,
     setCardNumber,
     setTotalInSet,
     setHitpoints,

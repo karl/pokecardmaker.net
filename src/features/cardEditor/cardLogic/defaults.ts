@@ -8,6 +8,7 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasSubname: false,
   hasSubtypes: false,
   hasTypeImage: false,
+  hasMultipleTypeImages: false,
   isAttackCostType: false,
   isPokemonType: false,
   isSubtypeRequired: false,

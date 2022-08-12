@@ -23,7 +23,7 @@ const RetreatCostSelector: FC = () => {
       displayName="Retreat Cost"
       slug="retreatcost"
       onChange={handleChange}
-      noGap
+      gap={0}
     >
       <MenuItem value={0} title="0">
         <Image

@@ -35,6 +35,7 @@ export const defaultRelations: RelationsInterface = {
   setIcon: baseSet,
   rotationIcon: d,
   rarityIcon: common,
+  typeImg: undefined,
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
@@ -45,7 +46,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   imgLayer2: undefined,
   customSetIconSrc: undefined,
   prevolveImgSrc: undefined,
-  typeImgSrc: undefined,
+  customTypeImgSrc: undefined,
   typeImgAmount: 1,
   cardNumber: '028',
   totalInSet: '189',
@@ -113,6 +114,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // rotationIconId: defaultRelations.rotationIcon?.id,
   rarityIconId: common.id,
   // rarityIconId: defaultRelations.rarityIcon?.id,
+  typeImgId: defaultRelations.typeImg?.id,
 };
 
 export const defaultSupertypeTypes: {

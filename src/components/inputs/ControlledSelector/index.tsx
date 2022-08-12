@@ -8,7 +8,7 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
   displayName,
   slug,
   value,
-  noGap = false,
+  gap = 2,
   onChange,
   children,
   ...props
@@ -22,7 +22,7 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
       // @ts-expect-error - Emotion bug
       onChange={onChange}
       displayEmpty
-      $noGap={noGap}
+      $gap={gap}
     >
       {children}
     </StyledSelect>

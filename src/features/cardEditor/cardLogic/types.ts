@@ -37,6 +37,11 @@ export interface CardLogic {
    */
   hasTypeImage: boolean;
   /**
+   * Whether the type can have multiple type images displayed at once
+   * @default false
+   */
+  hasMultipleTypeImages: boolean;
+  /**
    * Whether the card has a description text (Supporter/Special energy text)
    * @default false
    */

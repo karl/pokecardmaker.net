@@ -1,4 +1,4 @@
-import useWeaknessType from '@cardEditor/cardOptions/type/hooks/useWeaknessType';
+import { useWeaknessType } from '@cardEditor/cardOptions/type';
 import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
 import { FC } from 'react';

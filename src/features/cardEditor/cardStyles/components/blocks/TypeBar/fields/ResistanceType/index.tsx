@@ -1,4 +1,4 @@
-import useResistanceType from '@cardEditor/cardOptions/type/hooks/useResistanceType';
+import { useResistanceType } from '@cardEditor/cardOptions/type';
 import DisplayImg from '@cardEditor/cardStyles/components/atoms/DisplayImg';
 import Routes from '@routes';
 import { FC } from 'react';
