@@ -21,6 +21,7 @@ import ImgLayer2 from '../fields/ImgLayer2';
 import PrevolveImg from '../fields/PrevolveImg';
 import PrevolveName from '../fields/PrevolveName';
 import SvgHelpers from '../fields/SvgHelpers';
+import TypeImg from '../fields/TypeImg';
 import { CardContainer } from './styles';
 
 const CardDisplay: FC = () => {
@@ -62,6 +63,7 @@ const CardDisplay: FC = () => {
       <ImgLayer1 />
       <CardImage />
       <ImgLayer2 />
+      <TypeImg />
     </CardContainer>
   );
 };

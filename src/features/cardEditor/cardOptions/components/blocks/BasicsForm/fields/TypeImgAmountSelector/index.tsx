@@ -6,7 +6,7 @@ import { MenuItem, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';
 import Image from 'next/image';
 
-const MAX_TYPE_IMG_AMOUNT = 2;
+const MAX_TYPE_IMG_AMOUNT = 3;
 
 const TypeImgAmountSelector: FC = () => {
   const { hasMultipleTypeImages } = useCardLogic();
@@ -43,9 +43,12 @@ const TypeImgAmountSelector: FC = () => {
               src={
                 customTypeImgSrc ||
                 (typeImg
-                  ? Routes.Assets.Icons.Type(typeImg.slug)
+                  ? Routes.Assets.Icons.TypeBorder(typeImg.slug)
                   : Routes.Assets.Icons.TypeBorder('colorless'))
               }
+              style={{ borderRadius: '50%' }}
+              objectFit="cover"
+              objectPosition="center"
               width={26}
               height={26}
               alt=""

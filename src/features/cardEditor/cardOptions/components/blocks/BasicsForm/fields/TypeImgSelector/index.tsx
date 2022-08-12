@@ -53,8 +53,8 @@ const TypeImgSelector: FC = () => {
             <SelectorListItemIcon>
               <Image
                 src={Routes.Assets.Icons.TypeBorder(pt.slug)}
-                width={36}
-                height={36}
+                width={26}
+                height={26}
                 alt=""
               />
             </SelectorListItemIcon>
