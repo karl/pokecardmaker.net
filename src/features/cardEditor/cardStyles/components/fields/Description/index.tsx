@@ -4,6 +4,7 @@ import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
 import { DescriptionText, Wrapper } from './styles';
 
+// TODO: Check placement of description on all cards (like FA trainer and Tool)
 const Description: FC = () => {
   const { hasDescription } = useCardLogic();
   const { description } = useCardOptions();

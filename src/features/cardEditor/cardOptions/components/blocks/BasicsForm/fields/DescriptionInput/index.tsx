@@ -1,9 +1,9 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
 import { useCardOptions } from '@cardEditor/cardOptions';
+import TextFormattingTooltip from '@cardEditor/cardOptions/components/atoms/TextFormattingTooltip';
 import TextAreaInput from '@components/inputs/TextAreaInput';
 import { FC } from 'react';
 
-// TODO: Add tooltip for [Special Characters]
 const DescriptionInput: FC = () => {
   const { hasDescription } = useCardLogic();
   const { description, setDescription } = useCardOptions();
@@ -16,6 +16,11 @@ const DescriptionInput: FC = () => {
       label="Description"
       value={description}
       onChange={setDescription}
+      tooltipProps={{
+        title: 'Text Formatting',
+        withPopup: true,
+        children: <TextFormattingTooltip />,
+      }}
     />
   );
 };
