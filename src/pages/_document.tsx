@@ -5,6 +5,7 @@ import theme from '@utils/theme';
 import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
 
+// TODO: Add GTM (and cookie popup)
 export default class MyDocument extends Document {
   render() {
     return (

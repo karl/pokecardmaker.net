@@ -8,6 +8,7 @@ import { toCanvas } from 'html-to-image';
 import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
+// TODO: Move this under the card (for desktop)
 const CardDownloader: FC<CardDownloaderProps> = ({
   cardId = defaultCardId,
 }) => {

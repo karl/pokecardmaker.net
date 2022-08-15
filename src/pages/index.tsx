@@ -5,6 +5,7 @@ import CardDisplay from '@cardEditor/cardStyles/components/CardDisplay';
 import { SEO } from '@layout';
 import { CardWrapper } from './styles';
 
+// TODO: Restyle this (and make new homepage?)
 const Home: FC = () => (
   <>
     <SEO

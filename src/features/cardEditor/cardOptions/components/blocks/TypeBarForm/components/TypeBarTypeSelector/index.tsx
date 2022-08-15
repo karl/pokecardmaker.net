@@ -8,7 +8,6 @@ import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
 import { TypeBarTypeSelectorProps } from './types';
 
-// TODO: Make TypeSelector a more generic component together with the Pokémon Type Selector
 const TypeBarTypeSelector: FC<TypeBarTypeSelectorProps> = ({
   displayName,
   slug,

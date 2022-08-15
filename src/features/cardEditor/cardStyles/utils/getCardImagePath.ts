@@ -5,6 +5,8 @@ import { Supertype } from '@cardEditor/cardOptions/supertype';
 import { Type } from '@cardEditor/cardOptions/type';
 import { Variation } from '@cardEditor/cardOptions/variation';
 
+// TODO: Make mapping of all possible paths and return undefined when path doesn't exist,
+// so we don't make useless requests to non-existant files (use previous getBase64Files fn)
 const getCardImagePath = (
   baseSet: BaseSet,
   supertype: Supertype,
