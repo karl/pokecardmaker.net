@@ -6,14 +6,17 @@ import { isPresent } from '@utils/isPresent';
 export const PlacementBlock = styled('div', {
   // Don't put the Placement properties in the dom
   shouldForwardProp: propName =>
-    !['top', 'right', 'bottom', 'left', 'height', 'width'].includes(
+    !['top', 'right', 'bottom', 'left', 'height', 'width', 'line-height'].includes(
       propName.toString(),
     ),
 })<Placement>`
   position: absolute;
 
-  ${({ top, right, bottom, left, height, width }) =>
-    Object.entries({ top, right, bottom, left, height, width })
+  ${({ top, right, bottom, left, height, width, ...rest }) => {
+    const lineHeight = rest['line-height'];
+
+    return Object.entries({ top, right, bottom, left, height, width, 'line-height': lineHeight })
       .map(([key, value]) => value && `${key}: ${value};`)
       .filter(isPresent)}
+  }
 `;

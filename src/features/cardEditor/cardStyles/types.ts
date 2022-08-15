@@ -10,6 +10,7 @@ export interface Placement {
   left?: string;
   height?: string;
   width?: string;
+  'line-height'?: string;
 }
 
 export interface Positions {

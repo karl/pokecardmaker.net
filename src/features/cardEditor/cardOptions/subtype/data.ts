@@ -114,6 +114,14 @@ export const tool: Subtype = {
   displayName: 'Tool',
   types: [item.id],
   rarities: [],
+  styles: {
+    positions: {
+      description: {
+        top: '61%',
+        height: '20%',
+      },
+    },
+  },
 };
 
 export const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool];

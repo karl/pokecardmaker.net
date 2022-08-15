@@ -13,5 +13,6 @@ export const DescriptionText = styled(CardText)`
   font-size: 1.635em;
   letter-spacing: 0.002em;
   white-space: pre-line;
-  line-height: 1.35em;
+  text-align: justify;
+  line-height: inherit;
 `;
