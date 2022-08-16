@@ -5,7 +5,7 @@ import { SEO } from '@layout';
 import CardDownloader from '@cardEditor/cardOptions/components/atoms/CardDownloader';
 import { CardWrapper, Wrapper } from './styles';
 
-// TODO: Restyle this (and make new homepage?)
+// TODO: Make new homepage with textual content for SEO
 const Home: FC = () => (
   <>
     <SEO
