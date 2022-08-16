@@ -2,7 +2,7 @@ import { GitHub as GitHubIcon } from '@mui/icons-material';
 import { Box, Divider, IconButton, Typography } from '@mui/material';
 import { FC } from 'react';
 
-// TODO: Add privacy policy
+// TODO IMPORTANT: Add privacy policy
 const Footer: FC = () => (
   <Box component="footer" display="flex" justifyContent="center" p={1}>
     <Typography variant="h6" align="center" alignSelf="center">
