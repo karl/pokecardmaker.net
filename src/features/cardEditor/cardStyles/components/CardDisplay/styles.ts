@@ -5,7 +5,6 @@ export const CardContainer = styled('div')<{
   $height: number;
 }>`
   position: relative;
-  width: 70%;
   z-index: 1;
   font-size: ${({ $fontSize }) => `${$fontSize}px`};
   height: ${({ $height }) => `${$height}px`};

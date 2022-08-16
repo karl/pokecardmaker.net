@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { Box } from '@mui/system';
 import CardOptionsForm from '@cardEditor/cardOptions/components/CardOptionsForm';
 import CardDisplay from '@cardEditor/cardStyles/components/CardDisplay';
 import { SEO } from '@layout';
-import { CardWrapper } from './styles';
+import CardDownloader from '@cardEditor/cardOptions/components/atoms/CardDownloader';
+import { CardWrapper, Wrapper } from './styles';
 
 // TODO: Restyle this (and make new homepage?)
 const Home: FC = () => (
@@ -12,12 +12,13 @@ const Home: FC = () => (
       title="Creator"
       description="Create your own custom Pokémon cards in the Sword and Shield format!"
     />
-    <Box display="flex" gap={4}>
+    <Wrapper>
       <CardOptionsForm />
       <CardWrapper>
         <CardDisplay />
+        <CardDownloader />
       </CardWrapper>
-    </Box>
+    </Wrapper>
   </>
 );
 

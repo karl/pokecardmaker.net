@@ -20,10 +20,18 @@ const CardInfoForm: FC = () => {
       <IllustratorInput />
       <SetIconSelector />
       <RotationIconSelector />
-      <Box gap={2} display="flex" justifyContent="center" alignItems="center">
+      <Box
+        gap={2}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        sx={{ '> *': { flexGrow: 1 } }}
+      >
         <CardNumberInput />
         {/* Height of input label */}
-        <Box mt="25px">/</Box>
+        <Box mt="25px" flexGrow={0}>
+          /
+        </Box>
         <TotalInSetInput />
       </Box>
       <RarityIconSelector />

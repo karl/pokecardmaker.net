@@ -12,13 +12,13 @@ import ImagesForm from '../blocks/ImagesForm';
 const CardOptionsForm: FC = () => (
   <Form as="form">
     <DebugForm />
-    <CardDownloader />
     <CardTypeForm />
     <BasicsForm />
     <ImagesForm />
     <AllMovesForm />
     <TypeBarForm />
     <CardInfoForm />
+    <CardDownloader />
   </Form>
 );
 
