@@ -4,9 +4,8 @@ import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { Supertype } from '@cardEditor/cardOptions/supertype';
 import { Type } from '@cardEditor/cardOptions/type';
 import { Variation } from '@cardEditor/cardOptions/variation';
+import cardImgPaths from '@utils/cardImgPaths';
 
-// TODO: Make mapping of all possible paths and return undefined when path doesn't exist,
-// so we don't make useless requests to non-existant files (use previous getBase64Files fn)
 const getCardImagePath = (
   baseSet: BaseSet,
   supertype: Supertype,
@@ -15,7 +14,7 @@ const getCardImagePath = (
   variation?: Variation,
   rarity?: Rarity,
   seperator = '/',
-) => {
+): string | undefined => {
   // It's more readable this way
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const _ = seperator;
@@ -23,6 +22,9 @@ const getCardImagePath = (
   if (subtype) path += `${_}subtypes${_}${subtype.slug}`;
   if (variation) path += `${_}variations${_}${variation.slug}`;
   if (rarity) path += `${_}rarities${_}${rarity.slug}`;
+
+  // Prevent loading of images that don't exist
+  if (!cardImgPaths.includes(path)) return undefined;
 
   return path;
 };

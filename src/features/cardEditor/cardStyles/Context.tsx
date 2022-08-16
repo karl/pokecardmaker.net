@@ -14,7 +14,7 @@ export type CardStylesState = RequiredIsh<CardStyles>;
 
 interface CardStylesContextInterface {
   state: CardStylesState;
-  cardImgSrc: string;
+  cardImgSrc: string | undefined;
 }
 
 const initialState: CardStylesState = defaultCardStyles;
@@ -53,7 +53,7 @@ export const CardStylesProvider: React.FC = ({ children }) => {
 
     return {
       state: styles,
-      cardImgSrc: `${Routes.Assets.Cards}/${path}.png`,
+      cardImgSrc: path ? `${Routes.Assets.Cards}/${path}.png` : undefined,
     };
   }, [baseSet, supertype, type, subtype, variation, rarity]);
 
