@@ -1,14 +1,25 @@
 import { useSupertype } from '@cardEditor/cardOptions/supertype';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
+import ReactGA from 'react-ga4';
 
 const SupertypeSelector: FC = () => {
   const { supertypes, supertype, setSupertype } = useSupertype();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSupertype(Number(event.target.value));
-  };
+  const handleChange = useCallback(
+    (event: SelectChangeEvent) => {
+      setSupertype(Number(event.target.value));
+      const st = supertypes.find(item => item.id === +event.target.value);
+      console.log('supertype_change', st);
+      // TODO: Why does this send 2 events?
+      if (st)
+        ReactGA.event('supertype_change', {
+          slug: st.slug,
+        });
+    },
+    [setSupertype, supertypes],
+  );
 
   return (
     <ControlledSelector

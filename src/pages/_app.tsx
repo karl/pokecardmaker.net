@@ -9,7 +9,7 @@ import { CardStylesProvider } from '@cardEditor/cardStyles';
 import { CardLogicProvider } from '@cardEditor/cardLogic';
 import { CardDebugProvider } from '@cardEditor/cardDebug';
 import { Footer, Header } from '@layout';
-import { Background, MainContainer } from './styles';
+import { Background, MainContainer } from '.';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;

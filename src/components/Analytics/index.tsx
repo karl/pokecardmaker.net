@@ -1,18 +1,20 @@
-import { FC } from 'react';
-import ReactGA from "react-ga4";
+import { FC, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-console.log('gaId', gaId);
 
 const Analytics: FC = () => {
-  if (gaId) {
-    ReactGA.initialize(gaId);
-    ReactGA.send("pageview");
-  }
+  useEffect(() => {
+    if (gaId) {
+      console.log('initialize');
+      // TODO: Only init if cookies accepted
+      ReactGA.initialize(gaId, {
+        // testMode: true,
+      });
+    }
+  }, []);
 
-  return (
-    <></>
-  );
-}
+  return <></>;
+};
 
 export default Analytics;
