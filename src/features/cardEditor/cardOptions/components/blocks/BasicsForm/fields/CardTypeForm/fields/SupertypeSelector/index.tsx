@@ -13,10 +13,12 @@ const SupertypeSelector: FC = () => {
       const st = supertypes.find(item => item.id === +event.target.value);
       console.log('supertype_change', st);
       // TODO: Why does this send 2 events?
-      if (st)
+      if (st) {
+        // TODO: Send all selected options (no user text input)
         ReactGA.event('supertype_change', {
           slug: st.slug,
         });
+      }
     },
     [setSupertype, supertypes],
   );
