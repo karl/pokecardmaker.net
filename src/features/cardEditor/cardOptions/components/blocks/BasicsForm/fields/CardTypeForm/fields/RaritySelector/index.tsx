@@ -3,18 +3,24 @@ import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
+import { AnalyticsEvent, useAnalytics } from '@features/analytics';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 const RaritySelector: FC = () => {
+  const { trackCardCreatorEvent } = useAnalytics();
   const { type } = useType();
   const { subtype } = useSubtype();
   const { variation } = useVariation();
   const { rarities, rarity, setRarity } = useRarity();
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setRarity(Number(event.target.value) ?? undefined);
-  };
+  const handleChange = useCallback(
+    (event: SelectChangeEvent) => {
+      setRarity(Number(event.target.value) ?? undefined);
+      trackCardCreatorEvent(AnalyticsEvent.RarityChange);
+    },
+    [setRarity, trackCardCreatorEvent],
+  );
 
   if (
     !type.rarities.length &&

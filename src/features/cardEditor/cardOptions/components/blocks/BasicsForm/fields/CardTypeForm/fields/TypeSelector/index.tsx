@@ -8,8 +8,10 @@ import { useSupertype } from '@cardEditor/cardOptions/supertype';
 import { Type, useType } from '@cardEditor/cardOptions/type';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
+import { AnalyticsEvent, useAnalytics } from '@features/analytics';
 
 const TypeSelector: FC = () => {
+  const { trackCardCreatorEvent } = useAnalytics();
   const { isPokemonType } = useCardLogic();
   const { supertype } = useSupertype();
   const { types, type, setType } = useType();
@@ -17,8 +19,9 @@ const TypeSelector: FC = () => {
   const handleChange = useCallback(
     (event: SelectChangeEvent) => {
       setType(Number(event.target.value));
+      trackCardCreatorEvent(AnalyticsEvent.TypeChange);
     },
-    [setType],
+    [setType, trackCardCreatorEvent],
   );
 
   const makeMenuItem = useCallback(

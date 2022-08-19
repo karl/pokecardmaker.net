@@ -5,12 +5,14 @@ import { Button, CircularProgress } from '@mui/material';
 import { FC, useCallback, useState } from 'react';
 import { baseFontSize, cardImgHeight, cardImgWidth } from 'src/constants';
 import { toCanvas } from 'html-to-image';
+import { AnalyticsEvent, useAnalytics } from '@features/analytics';
 import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
 const CardDownloader: FC<CardDownloaderProps> = ({
   cardId = defaultCardId,
 }) => {
+  const { trackCardCreatorEvent } = useAnalytics();
   const { name } = useCardOptions();
   const [isLoading, setLoading] = useState<boolean>(false);
 
@@ -74,7 +76,8 @@ const CardDownloader: FC<CardDownloaderProps> = ({
     const canvas = await makeCanvas();
     if (!canvas) return;
     downloadCanvas(canvas);
-  }, [downloadCanvas, makeCanvas]);
+    trackCardCreatorEvent(AnalyticsEvent.CardDownload);
+  }, [downloadCanvas, makeCanvas, trackCardCreatorEvent]);
 
   return (
     <div>

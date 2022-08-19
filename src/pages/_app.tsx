@@ -9,7 +9,9 @@ import { CardStylesProvider } from '@cardEditor/cardStyles';
 import { CardLogicProvider } from '@cardEditor/cardLogic';
 import { CardDebugProvider } from '@cardEditor/cardDebug';
 import { Footer, Header } from '@layout';
-import { Background, MainContainer } from '.';
+import { GoogleTagManagerScript } from '@components/GTM';
+import { AnalyticsProvider } from '@features/analytics';
+import { Background, MainContainer } from './styles';
 
 interface AppProps extends NextAppProps {
   emotionCache: EmotionCache;
@@ -28,14 +30,17 @@ const App: FC<AppProps> = ({
         <CardDebugProvider>
           <CardLogicProvider>
             <CardStylesProvider>
-              <CssBaseline />
-              <Background>
-                <Header />
-                <MainContainer as="main">
-                  <Component {...pageProps} />
-                </MainContainer>
-                <Footer />
-              </Background>
+              <AnalyticsProvider>
+                <GoogleTagManagerScript />
+                <CssBaseline />
+                <Background>
+                  <Header />
+                  <MainContainer as="main">
+                    <Component {...pageProps} />
+                  </MainContainer>
+                  <Footer />
+                </Background>
+              </AnalyticsProvider>
             </CardStylesProvider>
           </CardLogicProvider>
         </CardDebugProvider>

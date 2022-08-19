@@ -4,6 +4,7 @@ import React from 'react';
 import theme from '@utils/theme';
 import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
+import { GoogleTagManagerNoScript } from '@components/GTM';
 
 // TODO IMPORTANT: Add GTM (and cookie popup)
 export default class MyDocument extends Document {
@@ -22,6 +23,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <GoogleTagManagerNoScript />
         </body>
       </Html>
     );
