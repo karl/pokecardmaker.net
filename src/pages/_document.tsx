@@ -6,7 +6,6 @@ import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
 import { GoogleTagManagerNoScript } from '@components/GTM';
 
-// TODO IMPORTANT: Add GTM (and cookie popup)
 export default class MyDocument extends Document {
   render() {
     return (

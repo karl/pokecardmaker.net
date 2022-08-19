@@ -11,6 +11,7 @@ import { CardDebugProvider } from '@cardEditor/cardDebug';
 import { Footer, Header } from '@layout';
 import { GoogleTagManagerScript } from '@components/GTM';
 import { AnalyticsProvider } from '@features/analytics';
+import CookieConsent from '@components/CookieConsent';
 import { Background, MainContainer } from './styles';
 
 interface AppProps extends NextAppProps {
@@ -34,6 +35,7 @@ const App: FC<AppProps> = ({
                 <GoogleTagManagerScript />
                 <CssBaseline />
                 <Background>
+                  <CookieConsent />
                   <Header />
                   <MainContainer as="main">
                     <Component {...pageProps} />
