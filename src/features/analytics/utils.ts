@@ -9,7 +9,7 @@ declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    gtag: (...args: any) => void;
+    gtag?: (...args: any) => void;
   }
 }
 
@@ -31,9 +31,13 @@ export const pushToDataLayer = (
 export const editCookieConsent = (consent: { analytics: boolean }) => {
   setCookie(ConsentCookie.Analytics, consent.analytics);
 
-  window?.gtag('consent', 'update', {
-    analytics_storage: consent.analytics ? 'granted' : 'denied',
-  });
+  if (window?.gtag) {
+    window.gtag('consent', 'update', {
+      analytics_storage: consent.analytics ? 'granted' : 'denied',
+    });
+  } else {
+    console.error('gtag is not a function');
+  }
 };
 
 export const initializeCookieConsent = () => {

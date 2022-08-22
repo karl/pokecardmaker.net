@@ -1,14 +1,17 @@
-import { Button } from '@mui/material';
-import Link from 'next/link';
+import { Button, Link } from '@mui/material';
+import NextLink from 'next/link';
 import { FC } from 'react';
 import { NavItems } from './styles';
 
+// TODO: Style this
 const DesktopHeader: FC = () => (
   <>
     <NavItems>
-      <Link href="/" passHref>
-        <Button>Homepage</Button>
-      </Link>
+      <NextLink href="/" passHref>
+        <Button component={Link} color="secondary" variant="contained">
+          Homepage
+        </Button>
+      </NextLink>
     </NavItems>
   </>
 );

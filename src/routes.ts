@@ -5,6 +5,8 @@ const icons = `${assets}/icons`;
 const symbols = `${assets}/symbols`;
 
 const Routes = {
+  PrivacyPolicy: '/privacy-policy',
+  CookiePolicy: '/cookie-policy',
   Assets: {
     Cards: `${assets}/cards`,
     Icons: {
