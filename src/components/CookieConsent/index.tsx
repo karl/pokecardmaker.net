@@ -1,4 +1,4 @@
-import { Alert, Button, Snackbar } from '@mui/material';
+import { Alert, Button, Link, Snackbar } from '@mui/material';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { hasCookie } from 'cookies-next';
 import {
@@ -12,6 +12,8 @@ import {
   Close as CloseIcon,
   Cookie as CookieIcon,
 } from '@mui/icons-material';
+import NextLink from 'next/link';
+import Routes from '@routes';
 import { ActionWrapper, Content } from './styles';
 
 const CookieConsent: FC = () => {
@@ -54,7 +56,13 @@ const CookieConsent: FC = () => {
           }
         >
           <Content>
-            <span>We use cookies for analytical purposes</span>
+            <span>
+              <span>We use cookies only for analytical purposes</span>
+              <br />
+              <NextLink passHref href={Routes.CookiePolicy}>
+                <Link color="inherit">Read about our cookie policy here</Link>
+              </NextLink>
+            </span>
             <ActionWrapper>
               <Button
                 startIcon={<CheckmarkIcon />}

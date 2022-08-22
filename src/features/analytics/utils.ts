@@ -31,6 +31,7 @@ export const pushToDataLayer = (
 export const editCookieConsent = (consent: { analytics: boolean }) => {
   setCookie(ConsentCookie.Analytics, consent.analytics);
 
+  // TODO: Broken on other pages than home?
   if (window?.gtag) {
     window.gtag('consent', 'update', {
       analytics_storage: consent.analytics ? 'granted' : 'denied',
