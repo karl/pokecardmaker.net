@@ -137,6 +137,13 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiAlert: {
+      styleOverrides: {
+        icon: {
+          alignItems: 'center',
+        },
+      },
+    },
   },
 });
 
