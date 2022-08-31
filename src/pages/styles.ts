@@ -1,7 +1,6 @@
 import { styled } from '@css';
 import { Container } from '@mui/system';
 
-// TODO: Make sure Next doesn't see this as a page anymore when building
 export const Background = styled('div')`
   display: flex;
   flex-direction: column;
