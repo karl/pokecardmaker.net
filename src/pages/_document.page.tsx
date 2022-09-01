@@ -1,7 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import React from 'react';
-import theme from '@utils/theme';
 import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
 import { GoogleTagManagerNoScript } from '@components/GTM';

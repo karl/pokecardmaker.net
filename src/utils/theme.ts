@@ -34,6 +34,21 @@ let theme = createTheme({
   typography: {
     fontFamily: 'Atkinson Hyperlegible, sans-serif',
     fontSize: 16,
+    h1: {
+      fontSize: 40,
+    },
+    h2: {
+      fontSize: 30,
+    },
+    h3: {
+      fontSize: 28,
+    },
+    h4: {
+      fontSize: 24,
+    },
+    h5: {
+      fontSize: 18,
+    },
     h6: {
       fontSize: 15,
     },

@@ -12,11 +12,7 @@ const Footer: FC = () => (
     <Box ml={2.5} mr={1} py={1}>
       <Divider orientation="vertical" color="light" />
     </Box>
-    <IconButton
-      color="inherit"
-      target="_blank"
-      href="https://github.com/lvandernoll/pokecardmaker.net"
-    >
+    <IconButton color="inherit" target="_blank" href={Routes.GitHub}>
       <GitHubIcon />
     </IconButton>
     <Box mr={2.5} ml={1} py={1}>

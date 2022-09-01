@@ -9,6 +9,7 @@ import { AnalyticsEvent, useAnalytics } from '@features/analytics';
 import { TempDiv } from './styles';
 import { CardDownloaderProps } from './types';
 
+// TODO: Add share image functionality (Twitter)
 const CardDownloader: FC<CardDownloaderProps> = ({
   cardId = defaultCardId,
 }) => {

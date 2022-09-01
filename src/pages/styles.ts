@@ -1,5 +1,8 @@
 import { styled } from '@css';
+import { Paper } from '@mui/material';
 import { Container } from '@mui/system';
+
+// General layout
 
 export const Background = styled('div')`
   display: flex;
@@ -13,53 +16,25 @@ export const MainContainer = styled(Container)`
   flex-grow: 1;
 `;
 
-export const Wrapper = styled('div')`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing(4)};
-  flex-direction: column-reverse;
-  align-items: center;
-  max-width: 550px;
-  margin: 0 auto;
+// Homepage
 
-  ${({ theme }) => theme.breakpoints.up('md')} {
-    align-items: flex-start;
-    flex-direction: row;
-    max-width: unset;
-  }
-`;
-
-export const CardWrapper = styled('div')`
+export const PaperBox = styled(Paper)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: ${({ theme }) => theme.spacing(4)};
   gap: ${({ theme }) => theme.spacing(4)};
-  height: 100%;
-  width: 100%;
+`;
 
-  > * {
-    width: 100%;
-  }
+export const List = styled('ul')`
+  margin: 0;
+  padding-left: ${({ theme }) => theme.spacing(6)};
+`;
 
-  ${({ theme }) => theme.breakpoints.up('md')} {
-    position: sticky;
-    top: ${({ theme }) => theme.spacing(2)};
-  }
-
-  ${({ theme }) => theme.breakpoints.up(1000)} {
-    > * {
-      width: 90%;
-    }
-  }
-
-  ${({ theme }) => theme.breakpoints.up(1100)} {
-    > * {
-      width: 80%;
-    }
-  }
-
-  ${({ theme }) => theme.breakpoints.up('lg')} {
-    > * {
-      width: 75%;
-    }
-  }
+export const TypeList = styled('ul')`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(1)};
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;

@@ -17,8 +17,8 @@ import {
   water,
 } from './type';
 import { basic, stage1, stage2, tool, v, vmax } from './subtype';
-import { swordAndShield as baseSet, promo } from './setIcon';
-import { d, f } from './rotationIcon';
+import { swordAndShield as baseSet } from './setIcon';
+import { d } from './rotationIcon';
 import { common } from './rarityIcon';
 import { dynamax } from './variation';
 import { CardInterface, RelationsInterface } from '..';

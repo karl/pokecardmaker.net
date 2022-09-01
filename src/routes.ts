@@ -5,8 +5,11 @@ const icons = `${assets}/icons`;
 const symbols = `${assets}/symbols`;
 
 const Routes = {
+  Home: '/',
+  Creator: '/creator',
   PrivacyPolicy: '/privacy-policy',
   CookiePolicy: '/cookie-policy',
+  GitHub: 'https://github.com/lvandernoll/pokecardmaker.net',
   Assets: {
     Cards: `${assets}/cards`,
     Icons: {
