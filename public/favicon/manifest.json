@@ -1,0 +1,13 @@
+{
+  "short_name": "pokecardmaker",
+  "name": "Pokécardmaker.net",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#d35337",
+  "background_color": "#ffffff"
+}

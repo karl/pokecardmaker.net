@@ -5,6 +5,7 @@ import theme from '@utils/theme';
 import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
 import { GoogleTagManagerNoScript } from '@components/GTM';
+import Favicon from '@components/Favicon';
 
 export default class MyDocument extends Document {
   render() {
@@ -12,11 +13,11 @@ export default class MyDocument extends Document {
       <Html lang="nl">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           />
+          <Favicon />
           <GlobalStyles styles={fontFaces} />
         </Head>
         <body>

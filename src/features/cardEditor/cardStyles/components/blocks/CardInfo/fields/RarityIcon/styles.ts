@@ -5,5 +5,5 @@ export const Wrapper = styled('div')`
   height: 0.8em;
   width: 0.8em;
   margin-left: -0.35em;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.2em;
 `;
