@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://pokecardmaker.net
+
+# Sitemaps
+Sitemap: https://pokecardmaker.net/sitemap.xml
