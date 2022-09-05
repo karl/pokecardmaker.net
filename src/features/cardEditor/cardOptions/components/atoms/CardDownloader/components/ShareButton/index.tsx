@@ -33,7 +33,8 @@ const ShareButton: FC<ShareButtonProps> = ({ cardId, ...props }) => {
       };
       if (!navigator.share) return;
       if (!!navigator.canShare && !navigator.canShare(shareData)) return;
-      navigator.share(shareData);
+      navigator.share(shareData)
+        .catch(console.error);
       trackCardCreatorEvent(AnalyticsEvent.CardShare, {
         sharePlatform: 'native',
       });
