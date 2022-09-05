@@ -21,7 +21,7 @@ const ShareButton: FC<ShareButtonProps> = ({ cardId, ...props }) => {
 
     canvas.toBlob(blob => {
       if (!blob) return;
-      const file = new File([blob], `${name ?? 'Pokecardmaker-net'}.png`, { type: 'image/png' });
+      const file = new File([blob], `${name || 'Pokécardmaker.net'}.png`, { type: 'image/png' });
 
       const shareData: ShareData = {
         title: 'Pokécardmaker.net',
