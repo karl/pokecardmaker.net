@@ -21,7 +21,7 @@ const ShareButton: FC<ShareButtonProps> = ({ cardId, ...props }) => {
 
     canvas.toBlob(blob => {
       if (!blob) return;
-      const file = new File([blob], `${name ?? 'Pokécardmaker.net'}.png`, { type: 'image/png' });
+      const file = new File([blob], `${name ?? 'Pokecardmaker-net'}.png`, { type: 'image/png' });
 
       const shareData: ShareData = {
         title: 'Pokécardmaker.net',
@@ -34,7 +34,9 @@ const ShareButton: FC<ShareButtonProps> = ({ cardId, ...props }) => {
       if (!navigator.share) return;
       if (!!navigator.canShare && !navigator.canShare(shareData)) return;
       navigator.share(shareData)
-        .catch(console.error);
+        .catch(e => {
+          console.error(e, shareData);
+        });
       trackCardCreatorEvent(AnalyticsEvent.CardShare, {
         sharePlatform: 'native',
       });
