@@ -31,8 +31,14 @@ const ShareButton: FC<ShareButtonProps> = ({ cardId, ...props }) => {
         } card that I made!`,
         url: 'https://pokecardmaker.net',
       };
+      /* eslint-disable */
+      console.log(shareData);
+      console.log('share?')
       if (!navigator.share) return;
+      console.log('share')
+      console.log('canShare?')
       if (!!navigator.canShare && !navigator.canShare(shareData)) return;
+      console.log('canShare')
       navigator.share(shareData);
       trackCardCreatorEvent(AnalyticsEvent.CardShare, {
         sharePlatform: 'native',
