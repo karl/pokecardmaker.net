@@ -22,11 +22,11 @@ const SEO: FC<SEOProps> = ({
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteTitle} />
     {/* TODO: Change this image to avoid cropping */}
-    <meta property="og:image" content="https://pokecardmaker.net/assets/metaImage.png" />
+    <meta property="og:image" content="https://pokecardmaker.net/assets/images/metaImage.png" />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="https://pokecardmaker.net/assets/metaImage.png" />
+    <meta property="twitter:image" content="https://pokecardmaker.net/assets/images/metaImage.png" />
   </Head>
 );
 
