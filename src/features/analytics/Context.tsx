@@ -4,7 +4,10 @@ import { pushToDataLayer, relationsToSlugs } from './utils';
 import { AnalyticsEvent } from './types';
 
 interface AnalyticsContextInterface {
-  trackCardCreatorEvent: (event: AnalyticsEvent) => void;
+  trackCardCreatorEvent: (
+    event: AnalyticsEvent,
+    data?: Record<string, string>,
+  ) => void;
 }
 
 export const AnalyticsContext = createContext<AnalyticsContextInterface>({
@@ -29,13 +32,17 @@ export const AnalyticsProvider: React.FC = ({ children }) => {
     });
   }, [baseSet, supertype, type, subtype, variation, rarity]);
 
-  const trackCardCreatorEvent = useCallback((event: AnalyticsEvent) => {
-    setTimeout(() => {
-      pushToDataLayer(event, {
-        card: cardDataRef.current,
-      });
-    }, 1000);
-  }, []);
+  const trackCardCreatorEvent = useCallback(
+    (event: AnalyticsEvent, data?: Record<string, string>) => {
+      setTimeout(() => {
+        pushToDataLayer(event, {
+          card: cardDataRef.current,
+          ...data,
+        });
+      }, 1000);
+    },
+    [],
+  );
 
   return (
     <AnalyticsContext.Provider

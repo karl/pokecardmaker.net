@@ -121,6 +121,9 @@ theme = createTheme(theme, {
           transform: 'translateY(-50%)',
           margin: 'unset',
         },
+        outlined: {
+          background: theme.palette.background.default,
+        },
       },
     },
     MuiAccordion: {

@@ -6,6 +6,7 @@ export enum AnalyticsEvent {
   VariationChange = 'variation_change',
   RarityChange = 'rarity_change',
   CardDownload = 'card_download',
+  CardShare = 'card_share',
 }
 
 export enum ConsentCookie {
