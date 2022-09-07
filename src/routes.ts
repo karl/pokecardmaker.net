@@ -13,7 +13,8 @@ const Routes = {
     Home: 'https://github.com/lvandernoll/pokecardmaker.net',
     Discussions: {
       Home: 'https://github.com/lvandernoll/pokecardmaker.net/discussions',
-      Ideas: 'https://github.com/lvandernoll/pokecardmaker.net/discussions/categories/ideas',
+      Ideas:
+        'https://github.com/lvandernoll/pokecardmaker.net/discussions/categories/ideas',
     },
   },
   Assets: {
