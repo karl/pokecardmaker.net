@@ -7,7 +7,7 @@ import { FC } from 'react';
 const Footer: FC = () => (
   <Box component="footer" display="flex" justifyContent="center" p={1}>
     <Typography variant="h6" align="center" alignSelf="center">
-      © {new Date().getFullYear()} Pokécardmaker.net
+      © {new Date().getFullYear()} Pokécardmaker.net {process.env.$DEPLOY_ALLOW === '1' ? '(test)' : ''}
     </Typography>
     <Box ml={2.5} mr={1} py={1}>
       <Divider orientation="vertical" color="light" />
