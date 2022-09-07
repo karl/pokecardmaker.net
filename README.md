@@ -6,7 +6,9 @@ Pokécardmaker.net lets you create your own custom Pokémon cards in the modern 
 ![Screenshot of application](./docs/screenshot1.png)
 
 ## Setup
-- run `npm i`
+- Run `npm i`
+- Copy `.env.example` into `.env` and fill in properties to your liking
+    - It is recommended to not add a `NEXT_PUBLIC_GTM_ID` value during development, as this will only slow things down
 
 ## Scripts
 - To start the dev server, run `npm start` or `npm run dev`

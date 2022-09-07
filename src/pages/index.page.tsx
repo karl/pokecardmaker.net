@@ -38,9 +38,9 @@ const Home: FC = () => {
           <Typography textAlign={[null, 'center']}>
             We&apos;ve got all the top card images you wish for and are always
             aiming to keep adding more unique and custom types. If you&apos;re
-            missing any types, feel free to create an issue on the{' '}
-            <Link href={Routes.GitHub} target="_blank">
-              GitHub page
+            missing any types, feel free to create a post on the{' '}
+            <Link href={Routes.GitHub.Discussions.Ideas} target="_blank">
+              GitHub discussions page
             </Link>
             .
           </Typography>

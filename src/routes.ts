@@ -9,7 +9,13 @@ const Routes = {
   Creator: '/creator',
   PrivacyPolicy: '/privacy-policy',
   CookiePolicy: '/cookie-policy',
-  GitHub: 'https://github.com/lvandernoll/pokecardmaker.net',
+  GitHub: {
+    Home: 'https://github.com/lvandernoll/pokecardmaker.net',
+    Discussions: {
+      Home: 'https://github.com/lvandernoll/pokecardmaker.net/discussions',
+      Ideas: 'https://github.com/lvandernoll/pokecardmaker.net/discussions/categories/ideas',
+    },
+  },
   Assets: {
     Cards: `${assets}/cards`,
     Icons: {
