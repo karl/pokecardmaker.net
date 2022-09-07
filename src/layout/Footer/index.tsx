@@ -48,7 +48,7 @@ const Footer: FC = () => (
         Cookie Policy
       </Typography>
     </NextLink>
-    {process.env.NODE_ENV !== 'production' && (
+    {process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production' && (
       <>
         <Box mx={2.5} py={1}>
           <FooterDivider />
