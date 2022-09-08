@@ -177,6 +177,17 @@ export const special: Type = {
       rarities: [goldenFullArtEnergy.id],
     },
   },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      styles: {
+        positions: {
+          description: {
+            // TODO
+          }
+        }
+      }
+    }
+  }
 };
 
 export const types: Type[] = [
