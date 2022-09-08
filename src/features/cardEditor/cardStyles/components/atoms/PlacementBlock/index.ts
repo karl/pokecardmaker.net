@@ -30,7 +30,7 @@ export const PlacementBlock = styled('div', {
       width,
       'line-height': lineHeight,
     })
-      .map(([key, value]) => value && `${key}: ${value};`)
+      .map(([key, value]) => value && `${key}: ${value} !important;`)
       .filter(isPresent);
   }}
 `;

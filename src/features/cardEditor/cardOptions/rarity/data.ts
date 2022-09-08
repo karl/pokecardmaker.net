@@ -65,6 +65,16 @@ export const goldStar: Rarity = {
   },
 };
 
+export const goldenFullArtEnergy: Rarity = {
+  id: 7,
+  slug: 'goldenFullArtEnergy',
+  displayName: 'Golden Full Art',
+  styles: {
+    rarityIconColor: 'white',
+    movesOutline: 'white',
+  },
+};
+
 export const rarities: Rarity[] = [
   promo,
   fullArt,
@@ -72,4 +82,5 @@ export const rarities: Rarity[] = [
   rainbow,
   supporterFullArt,
   goldStar,
+  goldenFullArtEnergy,
 ];

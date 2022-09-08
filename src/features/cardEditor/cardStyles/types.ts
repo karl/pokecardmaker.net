@@ -16,6 +16,8 @@ export interface Placement {
 export interface Positions {
   name?: Placement;
   description?: Placement;
+  typeImgContainer?: Placement;
+  typeImg?: Placement;
 }
 
 export interface CardStyles {
@@ -78,6 +80,11 @@ export interface CardStyles {
    * @default none
    */
   abilitySymbol?: AbilitySymbol;
+  /**
+   * Whether the energy card's type img should have a white border
+   * @default true
+   */
+  hasTypeImgBorder: boolean;
   /**
    * Used to change position of items displayed on the card \
    * For example, `Name` is displayed differently on a Pokémon and a Trainer

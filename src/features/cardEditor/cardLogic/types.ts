@@ -82,4 +82,9 @@ export interface CardLogic {
    * @default false
    */
   hasDexEntry: boolean;
+  /**
+   * Whether the card should show the Rotation Icon (D/E/F)
+   * @default true
+   */
+  hasRotationIcon: boolean;
 }

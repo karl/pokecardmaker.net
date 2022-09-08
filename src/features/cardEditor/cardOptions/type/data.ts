@@ -1,8 +1,9 @@
 import { CardLogic } from '@cardEditor/cardLogic';
 import { CardStyles } from '@cardEditor/cardStyles';
 import { Type } from '@cardEditor/cardOptions/type';
-import { supporterFullArt } from '../rarity';
+import { goldenFullArtEnergy, supporterFullArt } from '../rarity';
 import { energy, pokemon, trainer } from '../supertype';
+import { sunAndMoon, swordAndShield } from '../baseSet';
 
 const pokemonTypeLogic: Partial<CardLogic> = {
   hasSubtypes: true,
@@ -16,6 +17,7 @@ const pokemonTypeStyles: Partial<CardStyles> = {
 };
 
 const pokemonTypeSupertypes: number[] = [pokemon.id];
+const pokemonTypeBaseSetDependencies: Type['baseSetDependencies'] = {};
 
 export const grass: Type = {
   id: 1,
@@ -24,7 +26,7 @@ export const grass: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const fire: Type = {
@@ -34,7 +36,7 @@ export const fire: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const water: Type = {
@@ -44,7 +46,7 @@ export const water: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const lightning: Type = {
@@ -54,7 +56,7 @@ export const lightning: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const psychic: Type = {
@@ -64,7 +66,7 @@ export const psychic: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const fighting: Type = {
@@ -74,7 +76,7 @@ export const fighting: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const dark: Type = {
@@ -91,7 +93,7 @@ export const dark: Type = {
     rarityIconColor: 'white',
   },
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const metal: Type = {
@@ -101,7 +103,7 @@ export const metal: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const colorless: Type = {
@@ -111,7 +113,7 @@ export const colorless: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const item: Type = {
@@ -123,7 +125,7 @@ export const item: Type = {
     hasDescription: true,
   },
   supertypes: [trainer.id],
-  rarities: [],
+  baseSetDependencies: {},
 };
 
 export const supporter: Type = {
@@ -135,7 +137,11 @@ export const supporter: Type = {
     hasDescription: true,
   },
   supertypes: [trainer.id],
-  rarities: [supporterFullArt.id],
+  baseSetDependencies: {
+    [swordAndShield.id]: {
+      rarities: [supporterFullArt.id],
+    },
+  },
 };
 
 export const base: Type = {
@@ -148,7 +154,11 @@ export const base: Type = {
     hasCardInfo: false,
   },
   supertypes: [energy.id],
-  rarities: [],
+  baseSetDependencies: {
+    [sunAndMoon.id]: {
+      rarities: [goldenFullArtEnergy.id],
+    },
+  },
 };
 
 export const special: Type = {
@@ -162,7 +172,11 @@ export const special: Type = {
     hasDescription: true,
   },
   supertypes: [energy.id],
-  rarities: [],
+  baseSetDependencies: {
+    [sunAndMoon.id]: {
+      rarities: [goldenFullArtEnergy.id],
+    },
+  },
 };
 
 export const types: Type[] = [

@@ -1,5 +1,8 @@
 import { SetIcon } from '@cardEditor/cardOptions/setIcon';
-import { swordAndShield as ssBaseSet } from '../baseSet';
+import {
+  sunAndMoon as smBaseSet,
+  swordAndShield as ssBaseSet,
+} from '../baseSet';
 
 export const swordAndShield: SetIcon = {
   id: 1,
@@ -97,6 +100,14 @@ export const promo: SetIcon = {
   baseSet: ssBaseSet.id,
 };
 
+export const sunAndMoon: SetIcon = {
+  id: 13,
+  slug: 'sunAndMoon',
+  displayName: 'Sun & Moon',
+  imgSrc: '',
+  baseSet: smBaseSet.id,
+};
+
 export const setIcons: SetIcon[] = [
   swordAndShield,
   rebelClash,
@@ -110,4 +121,5 @@ export const setIcons: SetIcon[] = [
   fusionStrike,
   brilliantStars,
   promo,
+  sunAndMoon,
 ];

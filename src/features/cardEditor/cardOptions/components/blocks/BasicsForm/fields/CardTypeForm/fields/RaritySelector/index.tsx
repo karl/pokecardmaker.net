@@ -1,3 +1,4 @@
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
 import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
@@ -9,6 +10,7 @@ import { FC, useCallback } from 'react';
 
 const RaritySelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
+  const { baseSet } = useBaseSet();
   const { type } = useType();
   const { subtype } = useSubtype();
   const { variation } = useVariation();
@@ -23,7 +25,7 @@ const RaritySelector: FC = () => {
   );
 
   if (
-    !type.rarities.length &&
+    !type.baseSetDependencies[baseSet.id]?.rarities.length &&
     (!subtype || !subtype?.rarities.length) &&
     !variation?.rarities.length
   )
@@ -41,7 +43,7 @@ const RaritySelector: FC = () => {
       </MenuItem>
       {rarities.map(
         r =>
-          (type.rarities.includes(r.id) ||
+          (type.baseSetDependencies[baseSet.id]?.rarities.includes(r.id) ||
             subtype?.rarities.includes(r.id) ||
             variation?.rarities.includes(r.id)) && (
             <MenuItem key={r.slug} value={r.id}>
