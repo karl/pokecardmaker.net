@@ -65,6 +65,7 @@ export const goldStar: Rarity = {
   },
 };
 
+// TODO: Maybe use overrides on goldenFullArt instead of making a new type
 export const goldenFullArtEnergy: Rarity = {
   id: 7,
   slug: 'goldenFullArtEnergy',
