@@ -10,7 +10,12 @@ import SetIcon from './fields/SetIcon';
 import { CardInfoBar, Wrapper } from './styles';
 
 const CardInfo: FC = () => {
-  const { positions: { cardInfoContainer: containerPlacement, cardInfoBar: infoBarPlacement }} = useCardStyles();
+  const {
+    positions: {
+      cardInfoContainer: containerPlacement,
+      cardInfoBar: infoBarPlacement,
+    },
+  } = useCardStyles();
   const { hasCardInfo } = useCardLogic();
 
   if (!hasCardInfo) return null;

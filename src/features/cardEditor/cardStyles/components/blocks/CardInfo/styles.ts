@@ -11,4 +11,5 @@ export const Wrapper = styled(PlacementBlock)`
 export const CardInfoBar = styled(PlacementBlock)`
   display: flex;
   align-items: flex-end;
+  position: relative;
 `;

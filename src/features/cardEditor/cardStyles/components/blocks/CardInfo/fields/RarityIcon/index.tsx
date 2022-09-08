@@ -7,7 +7,10 @@ import { Wrapper } from './styles';
 
 const RarityIcon: FC = () => {
   const { rarityIcon } = useRarityIcon();
-  const { rarityIconColor, positions: { rarityIcon: placement} } = useCardStyles();
+  const {
+    rarityIconColor,
+    positions: { rarityIcon: placement },
+  } = useCardStyles();
   const imgSrc =
     !!rarityIcon &&
     (rarityIconColor === 'white'

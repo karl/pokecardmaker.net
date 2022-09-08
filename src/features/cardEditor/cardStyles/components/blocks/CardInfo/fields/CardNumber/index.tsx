@@ -5,12 +5,20 @@ import { CardNumberText } from './styles';
 
 const CardNumber: FC = () => {
   const { cardNumber, totalInSet } = useCardOptions();
-  const { cardInfoOutline, cardInfoTextColor, positions: { cardNumber: placement} } = useCardStyles();
+  const {
+    cardInfoOutline,
+    cardInfoTextColor,
+    positions: { cardNumber: placement },
+  } = useCardStyles();
 
   if (!cardNumber && !totalInSet) return null;
 
   return (
-    <CardNumberText color={cardInfoTextColor} outline={cardInfoOutline} {...placement}>
+    <CardNumberText
+      color={cardInfoTextColor}
+      outline={cardInfoOutline}
+      {...placement}
+    >
       {cardNumber && <span>{cardNumber}</span>}
       {cardNumber && totalInSet && <span>/</span>}
       {totalInSet && <span>{totalInSet}</span>}

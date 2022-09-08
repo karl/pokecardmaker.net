@@ -71,11 +71,11 @@ export const energy: Supertype = {
             top: '66.4%',
             height: '23.5%',
             'line-height': '1.86em',
-          }
-        }
-      }
-    }
-  }
+          },
+        },
+      },
+    },
+  },
 };
 
 export const supertypes: Supertype[] = [pokemon, trainer, energy];

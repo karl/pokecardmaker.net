@@ -6,7 +6,9 @@ import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const SetIcon: FC = () => {
-  const { positions: { setIcon: placement }} = useCardStyles();
+  const {
+    positions: { setIcon: placement },
+  } = useCardStyles();
   const { setIcon, customSetIconSrc } = useSetIcon();
   const imgSrc =
     customSetIconSrc || (!!setIcon && Routes.Assets.Icons.Set(setIcon.slug));
