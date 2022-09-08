@@ -1,4 +1,5 @@
 import { Supertype } from '@cardEditor/cardOptions/supertype';
+import { sunAndMoon } from '../baseSet';
 
 export const pokemon: Supertype = {
   id: 1,
@@ -62,6 +63,19 @@ export const energy: Supertype = {
       },
     },
   },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      styles: {
+        positions: {
+          description: {
+            top: '66.4%',
+            height: '23.5%',
+            'line-height': '1.86em',
+          }
+        }
+      }
+    }
+  }
 };
 
 export const supertypes: Supertype[] = [pokemon, trainer, energy];

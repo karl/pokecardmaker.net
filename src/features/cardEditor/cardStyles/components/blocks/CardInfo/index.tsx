@@ -1,4 +1,5 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardStyles } from '@cardEditor/cardStyles/hooks';
 import { FC } from 'react';
 import CardNumber from './fields/CardNumber';
 import DexEntry from './fields/DexEntry';
@@ -9,15 +10,16 @@ import SetIcon from './fields/SetIcon';
 import { CardInfoBar, Wrapper } from './styles';
 
 const CardInfo: FC = () => {
+  const { positions: { cardInfoContainer: containerPlacement, cardInfoBar: infoBarPlacement }} = useCardStyles();
   const { hasCardInfo } = useCardLogic();
 
   if (!hasCardInfo) return null;
 
   return (
     <>
-      <Wrapper>
+      <Wrapper {...containerPlacement}>
         <Illustrator />
-        <CardInfoBar>
+        <CardInfoBar {...infoBarPlacement}>
           <SetIcon />
           <RotationIcon />
           <CardNumber />

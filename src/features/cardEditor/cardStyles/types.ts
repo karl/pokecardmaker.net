@@ -10,7 +10,11 @@ export interface Placement {
   left?: string;
   height?: string;
   width?: string;
+  gap?: string;
   'line-height'?: string;
+  'font-size'?: string;
+  'margin-left'?: string;
+  'align-items'?: string;
 }
 
 export interface Positions {
@@ -18,6 +22,11 @@ export interface Positions {
   description?: Placement;
   typeImgContainer?: Placement;
   typeImg?: Placement;
+  cardInfoContainer?: Placement;
+  cardInfoBar?: Placement;
+  setIcon?: Placement;
+  cardNumber?: Placement;
+  rarityIcon?: Placement;
 }
 
 export interface CardStyles {

@@ -3,7 +3,6 @@ import { styled } from '@css';
 import { Font } from '@utils/fonts';
 
 export const CardNumberText = styled(CardText)`
-  font-size: 1.15em;
   font-family: '${Font.FrutigerLT66BoldItalic}', monospace;
   line-height: 0.88em;
   margin-left: -0.2em;

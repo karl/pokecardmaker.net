@@ -1,15 +1,14 @@
 import { styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled(PlacementBlock)`
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 3.6%;
   left: 6.6%;
 `;
 
-export const CardInfoBar = styled('div')`
+export const CardInfoBar = styled(PlacementBlock)`
   display: flex;
-  gap: 0.8em;
   align-items: flex-end;
 `;
