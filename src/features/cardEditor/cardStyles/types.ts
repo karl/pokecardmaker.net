@@ -18,7 +18,6 @@ export interface Placement {
 export interface Positions {
   name?: Placement;
   prevolveImg?: Placement;
-  nameSymbol?: Placement;
   ability?: Placement;
   move2?: Placement;
   description?: Placement;

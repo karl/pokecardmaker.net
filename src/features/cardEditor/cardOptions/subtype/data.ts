@@ -103,11 +103,6 @@ export const vmax: Subtype = {
     cardInfoOutline: 'white',
     hpOutline: 'black',
     nameSymbol: 'vmax',
-    positions: {
-      nameSymbol: {
-        width: '6.6em',
-      },
-    },
   },
   types: pokemonTypeTypes,
   rarities: [],
@@ -140,10 +135,6 @@ export const vstar: Subtype = {
     nameSymbol: 'vstar',
     hpSize: 'lg',
     positions: {
-      nameSymbol: {
-        height: '4em',
-        width: '7em',
-      },
       prevolveImg: {
         top: '7.7%',
         left: '4.4%',

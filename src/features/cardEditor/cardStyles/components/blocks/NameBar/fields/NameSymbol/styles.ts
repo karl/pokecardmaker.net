@@ -1,8 +1,34 @@
+import { NameSymbol } from '@cardEditor/cardStyles';
 import { PlacementBlock } from '@cardEditor/cardStyles/components/atoms/PlacementBlock';
-import { styled } from '@css';
+import { css, styled } from '@css';
 
-export const Wrapper = styled(PlacementBlock)`
+export const Wrapper = styled(PlacementBlock)<{ $symbol: NameSymbol }>`
   position: relative;
-  height: 3.25em;
-  width: 4.5em;
+
+  ${({ $symbol }) => {
+    switch ($symbol) {
+      case 'v':
+        return css`
+          height: 3.25em;
+          width: 4.5em;
+        `;
+      case 'vmax':
+        return css`
+          height: 3.25em;
+          width: 6.6em;
+        `;
+      case 'vstar':
+        return css`
+          height: 4em;
+          width: 7em;
+        `;
+      case 'star':
+        return css`
+          height: 3em;
+          width: 5.5em;
+        `;
+      default:
+        return undefined;
+    }
+  }}
 `;
