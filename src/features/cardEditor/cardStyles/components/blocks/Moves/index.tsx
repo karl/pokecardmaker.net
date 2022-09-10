@@ -9,7 +9,10 @@ import { Wrapper } from './styles';
 
 const Moves: FC = () => {
   const { hasMoves } = useCardLogic();
-  const { alignMovesBottom } = useCardStyles();
+  const {
+    alignMovesBottom,
+    positions: { movesWrapper: placement },
+  } = useCardStyles();
   const { hasMove2, move2 } = useCardOptions();
 
   if (!hasMoves) return null;
@@ -18,6 +21,7 @@ const Moves: FC = () => {
     <Wrapper
       $hasMove2={hasMove2 && !!move2?.name}
       $alignBottom={alignMovesBottom}
+      {...placement}
     >
       <Ability />
       <Move1 />

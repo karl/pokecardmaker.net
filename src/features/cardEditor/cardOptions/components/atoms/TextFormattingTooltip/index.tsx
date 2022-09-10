@@ -4,7 +4,7 @@ import {
 } from '@mui/icons-material';
 import { Box, Link, Typography } from '@mui/material';
 import { FC, useCallback, useState } from 'react';
-import { specialCharacters } from '../../blocks/BasicsForm/fields/DescriptionInput/data';
+import { specialCharacters } from './data';
 import {
   ExampleList,
   Monospace,

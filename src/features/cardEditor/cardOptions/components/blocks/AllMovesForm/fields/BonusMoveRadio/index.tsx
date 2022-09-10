@@ -1,12 +1,22 @@
+import { useCardLogic } from '@cardEditor/cardLogic';
 import { useCardOptions } from '@cardEditor/cardOptions';
 import ControlledRadio from '@components/inputs/ControlledRadio';
 import ControlledRadioGroup from '@components/inputs/ControlledRadioGroup';
 
-import { FC, useCallback, useMemo } from 'react';
+import { FC, useCallback, useEffect, useMemo } from 'react';
 import { BonusMoveRadioValue } from './types';
 
 const BonusMoveRadio: FC = () => {
+  const { bonusMoveRequired } = useCardLogic();
   const { hasAbility, hasMove2, setHasAbility, setHasMove2 } = useCardOptions();
+
+  useEffect(() => {
+    if (!!bonusMoveRequired && !hasAbility && !hasMove2) {
+      handleChange(BonusMoveRadioValue.HasAbility);
+    }
+    // Don't react to `handleChange`
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bonusMoveRequired, hasAbility, hasMove2]);
 
   const value = useMemo<BonusMoveRadioValue>(() => {
     if (hasAbility) return BonusMoveRadioValue.HasAbility;
@@ -40,7 +50,11 @@ const BonusMoveRadio: FC = () => {
       value={value}
       onChange={handleChange}
     >
-      <ControlledRadio value={BonusMoveRadioValue.None} label="None" />
+      <ControlledRadio
+        value={BonusMoveRadioValue.None}
+        label="None"
+        disabled={!!bonusMoveRequired}
+      />
       <ControlledRadio value={BonusMoveRadioValue.HasAbility} label="Ability" />
       <ControlledRadio
         value={BonusMoveRadioValue.HasMove2}

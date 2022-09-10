@@ -1,10 +1,17 @@
-import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
+import {
+  ListItemText,
+  MenuItem,
+  SelectChangeEvent,
+  Typography,
+} from '@mui/material';
 import { FC, useCallback } from 'react';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
 import { useCardLogic } from '@cardEditor/cardLogic';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
+import { Star as StarIcon } from '@mui/icons-material';
+import { Box } from '@mui/system';
 
 const SubtypeSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
@@ -28,6 +35,18 @@ const SubtypeSelector: FC = () => {
       displayName="Subtype"
       slug="subtype"
       onChange={handleChange}
+      helpText={
+        <Box display="flex" alignItems="center" mt={0.5}>
+          <StarIcon color="primary" fontSize="inherit" />
+          <Typography color="black" variant="caption" lineHeight={0}>
+            Try the new{' '}
+            <b>
+              <i>VSTAR</i>
+            </b>{' '}
+            subtype!
+          </Typography>
+        </Box>
+      }
     >
       {!isSubtypeRequired && (
         <MenuItem value="">

@@ -1,4 +1,5 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
+import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
 import AttackMoveDamageAmount from './fields/AttackMoveDamageAmount';
 import AttackMoveDescription from './fields/AttackMoveDescription';
@@ -13,9 +14,15 @@ const AttackMove: FC<AttackMoveDisplayProps> = ({
   isOnlyMove,
   ...props
 }) => {
-  const { hasMoves } = useCardLogic();
+  const { hasMoves, bonusMoveRequired } = useCardLogic();
+  const { hasMove2 } = useCardOptions();
 
-  if (!hasMoves || !move?.name) return null;
+  if (
+    !hasMoves ||
+    // If is 2nd move while bonus move is required, force show even when name is undefined
+    (!(isLastMove && bonusMoveRequired && hasMove2) && !move?.name)
+  )
+    return null;
 
   return (
     <Wrapper {...props}>
