@@ -55,7 +55,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   weaknessAmount: 2,
   resistanceAmount: 30,
   retreatCost: 1,
-  prevolveName: '',
+  prevolveName: undefined,
   dexStats: '',
   dexEntry: '',
   description: '',
@@ -71,7 +71,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     damageModifier: undefined,
     energyCost: [],
   },
-  hasMove2: false,
+  hasMove2: true,
   move2: {
     name: '',
     description: '',
