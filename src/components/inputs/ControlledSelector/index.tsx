@@ -1,4 +1,4 @@
-import { FormControl } from '@mui/material';
+import { FormControl, FormHelperText } from '@mui/material';
 import { FC } from 'react';
 import Label from '../Label';
 import { StyledSelect } from './styles';
@@ -9,6 +9,7 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
   slug,
   value,
   gap = 2,
+  helpText,
   onChange,
   children,
   ...props
@@ -26,6 +27,7 @@ const ControlledSelector: FC<ControlledSelectorProps> = ({
     >
       {children}
     </StyledSelect>
+    {helpText && <FormHelperText>{helpText}</FormHelperText>}
   </FormControl>
 );
 

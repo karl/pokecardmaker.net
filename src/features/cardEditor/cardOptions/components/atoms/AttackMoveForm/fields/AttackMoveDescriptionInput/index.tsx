@@ -1,5 +1,6 @@
 import TextAreaInput from '@components/inputs/TextAreaInput';
 import { FC } from 'react';
+import TextFormattingTooltip from '../../../TextFormattingTooltip';
 import { AttackMoveFieldProps } from '../../types';
 
 const AttackMoveDescriptionInput: FC<AttackMoveFieldProps> = ({
@@ -17,6 +18,11 @@ const AttackMoveDescriptionInput: FC<AttackMoveFieldProps> = ({
         description: value,
       })
     }
+    tooltipProps={{
+      title: 'Text Formatting',
+      withPopup: true,
+      children: <TextFormattingTooltip />,
+    }}
   />
 );
 

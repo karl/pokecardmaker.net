@@ -31,7 +31,7 @@ export const HPText = styled('span')<{ $size: Size }>`
         `
       : css`
           font-family: 'Gill Sans Std', monospace;
-          font-size: 1.25em;
+          font-size: 1em;
           letter-spacing: -0.035em;
           font-weight: bold;
         `};

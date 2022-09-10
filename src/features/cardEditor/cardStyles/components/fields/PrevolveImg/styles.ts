@@ -1,8 +1,8 @@
 import { styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled(PlacementBlock)`
   overflow: hidden;
-  position: absolute;
   top: 7.9%;
   left: 4.6%;
   width: 11%;

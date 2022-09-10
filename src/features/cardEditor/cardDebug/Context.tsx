@@ -35,7 +35,7 @@ export const CardDebugProvider: React.FC = ({ children }) => {
   const [showCardOverlay, setShowCardOverlay] = useState<boolean>(true);
   const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
-    'https://www.pokemonkaart.nl/wp-content/uploads/Sword-Shield_Ordinary-Rod.jpg',
+    'https://www.pokemonkaart.nl/wp-content/uploads/Arceus-VSTAR-123-Brilliant-Stars.jpg',
   );
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>();
 
