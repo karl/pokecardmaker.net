@@ -103,6 +103,11 @@ export const vmax: Subtype = {
     cardInfoOutline: 'white',
     hpOutline: 'black',
     nameSymbol: 'vmax',
+    positions: {
+      nameSymbol: {
+        width: '6.6em',
+      },
+    },
   },
   types: pokemonTypeTypes,
   rarities: [],
