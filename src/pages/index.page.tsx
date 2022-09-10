@@ -86,7 +86,6 @@ const Home: FC = () => {
                   </li>
                 ))}
               </TypeList>
-              {/* Add all icons here */}
               <List>
                 <li>Basic Pokémon</li>
                 <li>Gold Star Basic Pokémon</li>
@@ -100,6 +99,7 @@ const Home: FC = () => {
                 <li>Rainbow Pokémon V-Max Dynamax</li>
                 <li>Pokémon V-Max Gigantamax</li>
                 <li>Rainbow Pokémon V-Max Gigantamax</li>
+                <li>Pokémon V-Star</li>
               </List>
             </div>
           </Box>
