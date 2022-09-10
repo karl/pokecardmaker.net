@@ -1,5 +1,5 @@
-export type AbilitySymbol = 'normal' | 'v';
-export type NameSymbol = 'vmax' | 'v' | 'star';
+export type AbilitySymbol = 'normal' | 'v' | 'vstar';
+export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
 
@@ -11,6 +11,7 @@ export interface Placement {
   height?: string;
   width?: string;
   'line-height'?: string;
+  'flex-direction'?: string;
 }
 
 export interface Positions {

@@ -124,4 +124,22 @@ export const tool: Subtype = {
   },
 };
 
-export const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool];
+export const vstar: Subtype = {
+  id: 7,
+  slug: 'vstar',
+  displayName: 'VStar',
+  styles: {
+    movesOutline: 'white',
+    rarityIconColor: 'white',
+    abilitySymbol: 'vstar',
+    nameSymbol: 'vstar',
+    hpSize: 'lg',
+  },
+  logic: {
+    hasPrevolve: true,
+  },
+  types: pokemonTypeTypes,
+  rarities: [],
+};
+
+export const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool, vstar];

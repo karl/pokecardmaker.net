@@ -16,7 +16,7 @@ import {
   supporter,
   water,
 } from './type';
-import { basic, stage1, stage2, tool, v, vmax } from './subtype';
+import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
 import { swordAndShield as baseSet } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
@@ -39,7 +39,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: '',
+  name: 'Arceus',
   subname: '',
   backgroundImg: undefined,
   imgLayer1: undefined,
@@ -48,28 +48,31 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   customTypeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '',
-  totalInSet: '',
-  hitpoints: '',
-  illustrator: '',
+  cardNumber: '123',
+  totalInSet: '172',
+  hitpoints: 280,
+  illustrator: '5bon Graphics',
   weaknessAmount: 2,
   resistanceAmount: 30,
-  retreatCost: 1,
-  prevolveName: undefined,
+  retreatCost: 2,
+  prevolveName: 'Arceus _*V*_',
   dexStats: '',
   dexEntry: '',
   description: '',
-  hasAbility: false,
+  hasAbility: true,
   ability: {
-    description: '',
-    name: '',
+    name: 'Starbirth',
+    description: 'During your turn, you may search your deck for up to 2 cards and put them into your hand. Then shuffle your deck. _(You can\'t use more than 1 *VSTAR* Power in a game.)_',
   },
   move1: {
-    name: '',
-    description: '',
-    damageAmount: '',
+    name: 'Trinity Nova',
+    description: 'Search your deck for up to 3 basic Energy cards and attach them to your Pokémon _*V*_ in any way you like. Then, shuffle your deck.',
+    damageAmount: 200,
     damageModifier: undefined,
-    energyCost: [],
+    energyCost: [{
+      amount: 3,
+      typeId: colorless.id,
+    }],
   },
   hasMove2: true,
   move2: {
@@ -82,8 +85,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
-  typeId: defaultRelations.type.id,
-  subtypeId: defaultRelations.subtype?.id,
+  typeId: colorless.id,
+  subtypeId: vstar.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
   weaknessTypeId: defaultRelations.weaknessType?.id,
