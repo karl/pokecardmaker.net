@@ -14,6 +14,7 @@ export const PlacementBlock = styled('div', {
       'height',
       'width',
       'line-height',
+      'order',
       'gap',
       'font-size',
       'margin-left',
@@ -22,7 +23,7 @@ export const PlacementBlock = styled('div', {
 })<Placement>`
   position: absolute;
 
-  ${({ top, right, bottom, left, height, width, gap, ...rest }) => {
+  ${({ top, right, bottom, left, height, width, order, gap, ...rest }) => {
     const lineHeight = rest['line-height'];
     const fontSize = rest['font-size'];
     const marginLeft = rest['margin-left'];
@@ -35,6 +36,7 @@ export const PlacementBlock = styled('div', {
       left,
       height,
       width,
+      order,
       gap,
       'line-height': lineHeight,
       'font-size': fontSize,

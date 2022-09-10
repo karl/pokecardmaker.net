@@ -1,8 +1,11 @@
 import { styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled(PlacementBlock)`
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.2em;
 `;
 

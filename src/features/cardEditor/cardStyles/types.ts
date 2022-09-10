@@ -1,5 +1,5 @@
-export type AbilitySymbol = 'normal' | 'v';
-export type NameSymbol = 'vmax' | 'v' | 'star';
+export type AbilitySymbol = 'normal' | 'v' | 'vstar';
+export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
 
@@ -10,6 +10,7 @@ export interface Placement {
   left?: string;
   height?: string;
   width?: string;
+  order?: string;
   gap?: string;
   'line-height'?: string;
   'font-size'?: string;
@@ -19,6 +20,9 @@ export interface Placement {
 
 export interface Positions {
   name?: Placement;
+  prevolveImg?: Placement;
+  ability?: Placement;
+  move2?: Placement;
   description?: Placement;
   typeImgContainer?: Placement;
   typeImg?: Placement;
@@ -27,6 +31,7 @@ export interface Positions {
   setIcon?: Placement;
   cardNumber?: Placement;
   rarityIcon?: Placement;
+  movesWrapper?: Placement;
 }
 
 export interface CardStyles {

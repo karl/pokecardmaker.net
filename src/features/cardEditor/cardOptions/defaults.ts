@@ -61,8 +61,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   description: '',
   hasAbility: false,
   ability: {
-    description: '',
     name: '',
+    description: '',
   },
   move1: {
     name: '',

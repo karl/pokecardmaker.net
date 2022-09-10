@@ -83,6 +83,11 @@ export interface CardLogic {
    */
   hasDexEntry: boolean;
   /**
+   * Whether it is required to have a bonus move (2nd move or ability)
+   * @default false
+   */
+  bonusMoveRequired: boolean;
+  /**
    * Whether the card should show the Rotation Icon (D/E/F)
    * @default true
    */

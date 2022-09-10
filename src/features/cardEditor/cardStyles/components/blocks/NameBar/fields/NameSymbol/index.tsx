@@ -11,7 +11,7 @@ const NameSymbol: FC = () => {
   if (!imgSrc) return null;
 
   return (
-    <Wrapper>
+    <Wrapper $symbol={nameSymbol}>
       <DisplayImg src={imgSrc} />
     </Wrapper>
   );
