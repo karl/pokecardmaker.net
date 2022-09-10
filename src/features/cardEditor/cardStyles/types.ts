@@ -10,13 +10,19 @@ export interface Placement {
   left?: string;
   height?: string;
   width?: string;
+  order?: string;
+  gap?: string;
   'line-height'?: string;
-  'flex-direction'?: string;
 }
 
 export interface Positions {
   name?: Placement;
+  prevolveImg?: Placement;
+  nameSymbol?: Placement;
+  ability?: Placement;
+  move2?: Placement;
   description?: Placement;
+  movesWrapper?: Placement;
 }
 
 export interface CardStyles {

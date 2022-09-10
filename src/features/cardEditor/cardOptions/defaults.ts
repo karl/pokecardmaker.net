@@ -62,19 +62,23 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   hasAbility: true,
   ability: {
     name: 'Starbirth',
-    description: 'During your turn, you may search your deck for up to 2 cards and put them into your hand. Then shuffle your deck. _(You can\'t use more than 1 *VSTAR* Power in a game.)_',
+    description:
+      "During your turn, you may search your deck for up to 2 cards and put them into your hand. Then shuffle your deck. _(You can't use more than 1 *VSTAR* Power in a.)_",
   },
   move1: {
     name: 'Trinity Nova',
-    description: 'Search your deck for up to 3 basic Energy cards and attach them to your Pokémon _*V*_ in any way you like. Then, shuffle your deck.',
+    description:
+      'Search your deck for up to 3 basic Energy cards and attach them to your Pokémon _*V*_ in any way you like. Then, shuffle your deck.',
     damageAmount: 200,
     damageModifier: undefined,
-    energyCost: [{
-      amount: 3,
-      typeId: colorless.id,
-    }],
+    energyCost: [
+      {
+        amount: 3,
+        typeId: colorless.id,
+      },
+    ],
   },
-  hasMove2: true,
+  hasMove2: false,
   move2: {
     name: '',
     description: '',

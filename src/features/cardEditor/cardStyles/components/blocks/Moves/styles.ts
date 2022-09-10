@@ -1,10 +1,10 @@
 import { css, styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')<{
+export const Wrapper = styled(PlacementBlock)<{
   $hasMove2: boolean;
   $alignBottom: boolean;
 }>`
-  position: absolute;
   top: 53%;
   left: 5%;
   width: 90%;

@@ -134,12 +134,44 @@ export const vstar: Subtype = {
     abilitySymbol: 'vstar',
     nameSymbol: 'vstar',
     hpSize: 'lg',
+    positions: {
+      nameSymbol: {
+        height: '4em',
+        width: '7em',
+      },
+      prevolveImg: {
+        top: '7.7%',
+        left: '4.4%',
+      },
+      movesWrapper: {
+        top: 'unset',
+        bottom: '14.5%',
+        height: 'unset',
+        gap: '3em',
+      },
+      move2: {
+        height: '10.8em',
+      },
+      ability: {
+        height: '10.8em',
+        order: '10',
+      },
+    },
   },
   logic: {
     hasPrevolve: true,
+    bonusMoveRequired: true,
   },
   types: pokemonTypeTypes,
   rarities: [],
 };
 
-export const subtypes: Subtype[] = [basic, stage1, stage2, v, vmax, tool, vstar];
+export const subtypes: Subtype[] = [
+  basic,
+  stage1,
+  stage2,
+  v,
+  vmax,
+  tool,
+  vstar,
+];

@@ -82,4 +82,9 @@ export interface CardLogic {
    * @default false
    */
   hasDexEntry: boolean;
+  /**
+   * Whether it is required to have a bonus move (2nd move or ability)
+   * @default false
+   */
+  bonusMoveRequired: boolean;
 }
