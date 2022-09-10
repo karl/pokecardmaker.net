@@ -39,7 +39,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: 'Arceus',
+  name: '',
   subname: '',
   backgroundImg: undefined,
   imgLayer1: undefined,
@@ -48,35 +48,28 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   customTypeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '123',
-  totalInSet: '172',
-  hitpoints: 280,
-  illustrator: '5bon Graphics',
+  cardNumber: '',
+  totalInSet: '',
+  hitpoints: '',
+  illustrator: '',
   weaknessAmount: 2,
   resistanceAmount: 30,
-  retreatCost: 2,
-  prevolveName: 'Arceus _*V*_',
+  retreatCost: 1,
+  prevolveName: '',
   dexStats: '',
   dexEntry: '',
   description: '',
-  hasAbility: true,
+  hasAbility: false,
   ability: {
-    name: 'Starbirth',
-    description:
-      "During your turn, you may search your deck for up to 2 cards and put them into your hand. Then shuffle your deck. _(You can't use more than 1 *VSTAR* Power in a.)_",
+    name: '',
+    description: '',
   },
   move1: {
-    name: 'Trinity Nova',
-    description:
-      'Search your deck for up to 3 basic Energy cards and attach them to your Pokémon _*V*_ in any way you like. Then, shuffle your deck.',
-    damageAmount: 200,
+    name: '',
+    description: '',
+    damageAmount: '',
     damageModifier: undefined,
-    energyCost: [
-      {
-        amount: 3,
-        typeId: colorless.id,
-      },
-    ],
+    energyCost: [],
   },
   hasMove2: false,
   move2: {
@@ -89,8 +82,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
-  typeId: colorless.id,
-  subtypeId: vstar.id,
+  typeId: defaultRelations.type.id,
+  subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
   weaknessTypeId: defaultRelations.weaknessType?.id,
