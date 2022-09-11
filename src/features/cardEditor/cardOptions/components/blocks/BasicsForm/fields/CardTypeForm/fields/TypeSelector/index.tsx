@@ -4,11 +4,12 @@ import Routes from '@routes';
 import Image from 'next/image';
 import { FC, useCallback } from 'react';
 import { useCardLogic } from '@cardEditor/cardLogic';
-import { useSupertype } from '@cardEditor/cardOptions/supertype';
+import { pokemon, useSupertype } from '@cardEditor/cardOptions/supertype';
 import { Type, useType } from '@cardEditor/cardOptions/type';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 
 const TypeSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
@@ -56,6 +57,21 @@ const TypeSelector: FC = () => {
       displayName="Type"
       slug="type"
       onChange={handleChange}
+      helpText={
+        supertype.id === pokemon.id ? (
+          <NewFeatureHelpText>
+            Try the new{' '}
+            <b>
+              <i>Dragon</i>
+            </b>{' '}
+            and{' '}
+            <b>
+              <i>Fairy</i>
+            </b>{' '}
+            types!
+          </NewFeatureHelpText>
+        ) : undefined
+      }
     >
       {types.map(t => t.supertypes.includes(supertype.id) && makeMenuItem(t))}
     </ControlledSelector>

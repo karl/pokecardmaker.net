@@ -33,7 +33,7 @@ const Home: FC = () => {
         </PaperBox>
         <PaperBox>
           <Typography variant="h2">
-            110+ different card images and growing
+            140+ different card images and growing
           </Typography>
           <Typography textAlign={[null, 'center']}>
             We&apos;ve got all the top card images you wish for and are always

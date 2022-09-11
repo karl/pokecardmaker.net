@@ -16,7 +16,10 @@ const useRarity = () => {
     if (!rarityId) return;
     if (
       !type.rarities.includes(rarityId) &&
-      (!subtype || !subtype.rarities.includes(rarityId))
+      (!subtype ||
+        !subtype.relations
+          .find(r => r.type === type.id)
+          ?.rarities.includes(rarityId))
     ) {
       setRarity(undefined);
     }
