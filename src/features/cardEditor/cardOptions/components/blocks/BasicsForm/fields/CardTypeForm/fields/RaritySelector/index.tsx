@@ -1,6 +1,7 @@
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
 import { useSubtype } from '@cardEditor/cardOptions/subtype';
-import { useType } from '@cardEditor/cardOptions/type';
+import { fairy, useType } from '@cardEditor/cardOptions/type';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -36,6 +37,17 @@ const RaritySelector: FC = () => {
       displayName="Rarity"
       slug="rarity"
       onChange={handleChange}
+      helpText={
+        type.id === fairy.id ? (
+          <NewFeatureHelpText>
+            Try the new{' '}
+            <b>
+              <i>Gilded</i>
+            </b>{' '}
+            Fairy rarity!
+          </NewFeatureHelpText>
+        ) : undefined
+      }
     >
       <MenuItem value="">
         <ListItemText primary="None" />
