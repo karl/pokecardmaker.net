@@ -1,6 +1,7 @@
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
 import { useSubtype } from '@cardEditor/cardOptions/subtype';
-import { useType } from '@cardEditor/cardOptions/type';
+import { fairy, useType } from '@cardEditor/cardOptions/type';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -24,7 +25,8 @@ const RaritySelector: FC = () => {
 
   if (
     !type.rarities.length &&
-    (!subtype || !subtype?.rarities.length) &&
+    (!subtype ||
+      !subtype?.relations.find(r => r.type === type.id)?.rarities.length) &&
     !variation?.rarities.length
   )
     return null;
@@ -35,6 +37,17 @@ const RaritySelector: FC = () => {
       displayName="Rarity"
       slug="rarity"
       onChange={handleChange}
+      helpText={
+        type.id === fairy.id ? (
+          <NewFeatureHelpText>
+            Try the new{' '}
+            <b>
+              <i>Gilded</i>
+            </b>{' '}
+            Fairy rarity!
+          </NewFeatureHelpText>
+        ) : undefined
+      }
     >
       <MenuItem value="">
         <ListItemText primary="None" />
@@ -42,7 +55,9 @@ const RaritySelector: FC = () => {
       {rarities.map(
         r =>
           (type.rarities.includes(r.id) ||
-            subtype?.rarities.includes(r.id) ||
+            subtype?.relations
+              .find(rl => rl.type === type.id)
+              ?.rarities.includes(r.id) ||
             variation?.rarities.includes(r.id)) && (
             <MenuItem key={r.slug} value={r.id}>
               <ListItemText primary={r.displayName} />

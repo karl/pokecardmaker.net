@@ -1,20 +1,16 @@
-import {
-  ListItemText,
-  MenuItem,
-  SelectChangeEvent,
-  Typography,
-} from '@mui/material';
+import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
 import { FC, useCallback } from 'react';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
 import { useCardLogic } from '@cardEditor/cardLogic';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
-import { Star as StarIcon } from '@mui/icons-material';
-import { Box } from '@mui/system';
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
+import { pokemon, useSupertype } from '@cardEditor/cardOptions/supertype';
 
 const SubtypeSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
+  const { supertype } = useSupertype();
   const { type } = useType();
   const { hasSubtypes, isSubtypeRequired } = useCardLogic();
   const { subtypes, subtype, setSubtype } = useSubtype();
@@ -36,16 +32,15 @@ const SubtypeSelector: FC = () => {
       slug="subtype"
       onChange={handleChange}
       helpText={
-        <Box display="flex" alignItems="center" mt={0.5}>
-          <StarIcon color="primary" fontSize="inherit" />
-          <Typography color="black" variant="caption" lineHeight={0}>
+        supertype.id === pokemon.id ? (
+          <NewFeatureHelpText>
             Try the new{' '}
             <b>
               <i>VSTAR</i>
             </b>{' '}
             subtype!
-          </Typography>
-        </Box>
+          </NewFeatureHelpText>
+        ) : undefined
       }
     >
       {!isSubtypeRequired && (
@@ -55,7 +50,7 @@ const SubtypeSelector: FC = () => {
       )}
       {subtypes.map(
         st =>
-          st.types.includes(type.id) && (
+          !!st.relations.find(r => r.type === type.id) && (
             <MenuItem key={st.slug} value={st.id}>
               <ListItemText primary={st.displayName} />
             </MenuItem>

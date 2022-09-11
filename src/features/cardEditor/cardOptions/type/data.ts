@@ -104,8 +104,28 @@ export const metal: Type = {
   rarities: [],
 };
 
-export const colorless: Type = {
+export const dragon: Type = {
   id: 9,
+  slug: 'dragon',
+  displayName: 'Dragon',
+  logic: pokemonTypeLogic,
+  styles: pokemonTypeStyles,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const fairy: Type = {
+  id: 10,
+  slug: 'fairy',
+  displayName: 'Fairy',
+  logic: pokemonTypeLogic,
+  styles: pokemonTypeStyles,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const colorless: Type = {
+  id: 11,
   slug: 'colorless',
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
@@ -115,7 +135,7 @@ export const colorless: Type = {
 };
 
 export const item: Type = {
-  id: 10,
+  id: 12,
   slug: 'item',
   displayName: 'Item',
   logic: {
@@ -127,7 +147,7 @@ export const item: Type = {
 };
 
 export const supporter: Type = {
-  id: 11,
+  id: 13,
   slug: 'supporter',
   displayName: 'Supporter',
   logic: {
@@ -139,7 +159,7 @@ export const supporter: Type = {
 };
 
 export const base: Type = {
-  id: 12,
+  id: 14,
   slug: 'base',
   displayName: 'Base',
   logic: {
@@ -152,7 +172,7 @@ export const base: Type = {
 };
 
 export const special: Type = {
-  id: 13,
+  id: 15,
   slug: 'special',
   displayName: 'Special',
   logic: {
@@ -174,6 +194,8 @@ export const types: Type[] = [
   fighting,
   dark,
   metal,
+  dragon,
+  fairy,
   colorless,
   item,
   supporter,

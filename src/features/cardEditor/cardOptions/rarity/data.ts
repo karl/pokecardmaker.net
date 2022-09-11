@@ -65,6 +65,12 @@ export const goldStar: Rarity = {
   },
 };
 
+export const gilded: Rarity = {
+  id: 7,
+  slug: 'gilded',
+  displayName: 'Gilded',
+};
+
 export const rarities: Rarity[] = [
   promo,
   fullArt,
@@ -72,4 +78,5 @@ export const rarities: Rarity[] = [
   rainbow,
   supporterFullArt,
   goldStar,
+  gilded,
 ];
