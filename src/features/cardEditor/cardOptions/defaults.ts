@@ -5,6 +5,8 @@ import {
   base,
   colorless,
   dark,
+  dragon,
+  fairy,
   fighting,
   fire,
   grass,
@@ -16,7 +18,7 @@ import {
   supporter,
   water,
 } from './type';
-import { basic, stage1, stage2, tool, v, vmax } from './subtype';
+import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
 import { swordAndShield as baseSet } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
@@ -115,6 +117,8 @@ export const defaultTypeSubtypes: {
   [fighting.id]: defaultPokemonTypeSubtype,
   [dark.id]: defaultPokemonTypeSubtype,
   [metal.id]: defaultPokemonTypeSubtype,
+  [dragon.id]: defaultPokemonTypeSubtype,
+  [fairy.id]: defaultPokemonTypeSubtype,
   [colorless.id]: defaultPokemonTypeSubtype,
   [item.id]: undefined,
   [supporter.id]: undefined,
@@ -130,5 +134,6 @@ export const defaultSubtypeVariations: {
   [stage2.id]: undefined,
   [v.id]: undefined,
   [vmax.id]: dynamax.id,
+  [vstar.id]: undefined,
   [tool.id]: undefined,
 };

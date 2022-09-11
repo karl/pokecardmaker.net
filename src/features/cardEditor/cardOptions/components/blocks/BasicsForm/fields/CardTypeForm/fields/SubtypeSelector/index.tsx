@@ -55,7 +55,7 @@ const SubtypeSelector: FC = () => {
       )}
       {subtypes.map(
         st =>
-          st.types.includes(type.id) && (
+          !!st.relations.find(r => r.type === type.id) && (
             <MenuItem key={st.slug} value={st.id}>
               <ListItemText primary={st.displayName} />
             </MenuItem>
