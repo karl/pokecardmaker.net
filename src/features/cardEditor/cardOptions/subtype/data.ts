@@ -37,6 +37,8 @@ export const basic: Subtype = {
   logic: {
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
   relations: [
     ...defaultPokemonTypes.map(t => ({
@@ -62,6 +64,8 @@ export const stage1: Subtype = {
     hasPrevolve: true,
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
   relations: [
     ...defaultPokemonTypes.map(t => ({
@@ -87,6 +91,8 @@ export const stage2: Subtype = {
     hasPrevolve: true,
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
   relations: [
     ...defaultPokemonTypes.map(t => ({
