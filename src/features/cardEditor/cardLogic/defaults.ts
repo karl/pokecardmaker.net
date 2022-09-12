@@ -12,6 +12,7 @@ export const defaultCardLogic: Required<CardLogic> = {
   isAttackCostType: false,
   isPokemonType: false,
   isSubtypeRequired: false,
+  isVariationRequired: true,
   hasPrevolve: false,
   hasVariations: false,
   hasCardInfo: true,
