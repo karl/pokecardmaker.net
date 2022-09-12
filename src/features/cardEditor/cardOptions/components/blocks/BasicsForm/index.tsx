@@ -13,8 +13,8 @@ import TypeImgSelector from './fields/TypeImgSelector';
 const BasicsForm: FC = () => (
   <AccordionForm slug="basicsForm" header="Basics">
     <NameInput />
-    <HitpointsInput />
     <SubnameInput />
+    <HitpointsInput />
     <DescriptionInput />
     <PrevolveNameInput />
     <PrevolveImgSrcFileUploader />

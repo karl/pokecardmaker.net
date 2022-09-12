@@ -16,6 +16,7 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
   nameSymbol: undefined,
   hpSize: 'sm',
   alignMovesBottom: false,
+  hasSubnameBeforeName: false,
   // TODO: Create default for this
   positions: {},
 };

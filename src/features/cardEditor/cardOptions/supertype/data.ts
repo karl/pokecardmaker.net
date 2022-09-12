@@ -8,8 +8,10 @@ export const pokemon: Supertype = {
     hasHitpoints: true,
     hasMoves: true,
     hasTypeBar: true,
+    hasSubname: true,
   },
   styles: {
+    hasSubnameBeforeName: true,
     positions: {
       name: {
         top: '3.3%',
