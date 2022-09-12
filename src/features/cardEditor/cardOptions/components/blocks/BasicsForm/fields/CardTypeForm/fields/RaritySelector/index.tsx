@@ -25,9 +25,10 @@ const RaritySelector: FC = () => {
 
   if (
     !type.rarities.length &&
-    (!subtype ||
-      !subtype?.relations.find(r => r.type === type.id)?.rarities.length) &&
-    !variation?.rarities.length
+    (variation
+      ? !variation?.rarities.length
+      : !!subtype &&
+        !subtype?.relations.find(r => r.type === type.id)?.rarities.length)
   )
     return null;
 
