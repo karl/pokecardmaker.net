@@ -85,6 +85,10 @@ export interface CardStyles {
    */
   abilitySymbol?: AbilitySymbol;
   /**
+   * @default false
+   */
+  hasSubnameBeforeName?: boolean;
+  /**
    * Used to change position of items displayed on the card \
    * For example, `Name` is displayed differently on a Pokémon and a Trainer
    */
