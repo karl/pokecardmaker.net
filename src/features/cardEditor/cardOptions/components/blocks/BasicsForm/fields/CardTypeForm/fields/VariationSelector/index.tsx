@@ -1,6 +1,12 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
-import { useSubtype } from '@cardEditor/cardOptions/subtype';
+import {
+  basic,
+  stage1,
+  stage2,
+  useSubtype,
+} from '@cardEditor/cardOptions/subtype';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -9,7 +15,7 @@ import { FC, useCallback } from 'react';
 
 const VariationSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
-  const { hasVariations } = useCardLogic();
+  const { hasVariations, isVariationRequired } = useCardLogic();
   const { subtype } = useSubtype();
   const { rarity } = useRarity();
   const { variations, variation, setVariation } = useVariation();
@@ -30,7 +36,23 @@ const VariationSelector: FC = () => {
       displayName="Variation"
       slug="variation"
       onChange={handleChange}
+      helpText={
+        [basic.id, stage1.id, stage2.id].includes(subtype.id) ? (
+          <NewFeatureHelpText>
+            Try the new{' '}
+            <b>
+              <i>Light</i>
+            </b>{' '}
+            variation!
+          </NewFeatureHelpText>
+        ) : undefined
+      }
     >
+      {!isVariationRequired && (
+        <MenuItem value="">
+          <ListItemText primary="None" />
+        </MenuItem>
+      )}
       {variations.map(
         v =>
           (v.subtypes.includes(subtype.id) ||
