@@ -16,7 +16,7 @@ const useRarity = () => {
     if (!rarityId) return;
     if (
       !type.rarities.includes(rarityId) &&
-      (!!variation
+      (variation
         ? !variation.rarities.includes(rarityId)
         : !subtype ||
           !subtype.relations
