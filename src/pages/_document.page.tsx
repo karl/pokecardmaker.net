@@ -3,8 +3,8 @@ import createEmotionServer from '@emotion/server/create-instance';
 import React from 'react';
 import { GlobalStyles, createEmotionCache } from '@css';
 import { fontFaces } from '@utils/fonts';
-import { GoogleTagManagerNoScript } from '@components/GTM';
 import Favicon from '@components/Favicon';
+import { GoogleTagManagerNoScript } from '@features/analytics/components/GTM';
 
 export default class MyDocument extends Document {
   render() {
