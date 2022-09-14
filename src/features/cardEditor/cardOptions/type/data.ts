@@ -158,8 +158,19 @@ export const supporter: Type = {
   rarities: [supporterFullArt.id],
 };
 
-export const base: Type = {
+export const stadium: Type = {
   id: 14,
+  slug: 'stadium',
+  displayName: 'Stadium',
+  logic: {
+    hasDescription: true,
+  },
+  supertypes: [trainer.id],
+  rarities: [],
+};
+
+export const base: Type = {
+  id: 15,
   slug: 'base',
   displayName: 'Base',
   logic: {
@@ -172,7 +183,7 @@ export const base: Type = {
 };
 
 export const special: Type = {
-  id: 15,
+  id: 16,
   slug: 'special',
   displayName: 'Special',
   logic: {
@@ -199,6 +210,7 @@ export const types: Type[] = [
   colorless,
   item,
   supporter,
+  stadium,
   base,
   special,
 ];
