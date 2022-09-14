@@ -176,6 +176,7 @@ export default [
   'baseSets/swordAndShield/supertypes/pokemon/types/water/subtypes/vstar',
   'baseSets/swordAndShield/supertypes/trainer/types/item/subtypes/tool',
   'baseSets/swordAndShield/supertypes/trainer/types/item',
+  'baseSets/swordAndShield/supertypes/trainer/types/stadium',
   'baseSets/swordAndShield/supertypes/trainer/types/supporter/rarities/supporterFullArt',
   'baseSets/swordAndShield/supertypes/trainer/types/supporter',
 ];
