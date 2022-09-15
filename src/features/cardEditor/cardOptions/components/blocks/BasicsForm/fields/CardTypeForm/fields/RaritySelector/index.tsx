@@ -1,7 +1,12 @@
 import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
-import { useSubtype } from '@cardEditor/cardOptions/subtype';
-import { fairy, useType } from '@cardEditor/cardOptions/type';
+import {
+  basic,
+  stage1,
+  stage2,
+  useSubtype,
+} from '@cardEditor/cardOptions/subtype';
+import { useType } from '@cardEditor/cardOptions/type';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -39,13 +44,15 @@ const RaritySelector: FC = () => {
       slug="rarity"
       onChange={handleChange}
       helpText={
-        type.id === fairy.id ? (
+        subtype?.id === basic.id ||
+        subtype?.id === stage1.id ||
+        subtype?.id === stage2.id ? (
           <NewFeatureHelpText>
             Try the new{' '}
             <b>
-              <i>Gilded</i>
+              <i>Character Rare</i>
             </b>{' '}
-            Fairy rarity!
+            rarity!
           </NewFeatureHelpText>
         ) : undefined
       }
