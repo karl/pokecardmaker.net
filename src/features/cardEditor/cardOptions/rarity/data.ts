@@ -71,6 +71,26 @@ export const gilded: Rarity = {
   displayName: 'Gilded',
 };
 
+export const characterRare: Rarity = {
+  id: 8,
+  slug: 'characterRare',
+  displayName: 'Character Rare',
+  logic: {
+    hasDexStats: false,
+  },
+  styles: {
+    nameOutline: 'white',
+    hpOutline: 'white',
+    movesOutline: 'white',
+    cardInfoOutline: 'white',
+    rarityIconColor: 'white',
+    hpTextColor: 'black',
+    nameTextColor: 'black',
+    movesTextColor: 'black',
+    cardInfoTextColor: 'black',
+  },
+};
+
 export const rarities: Rarity[] = [
   promo,
   fullArt,
@@ -79,4 +99,5 @@ export const rarities: Rarity[] = [
   supporterFullArt,
   goldStar,
   gilded,
+  characterRare,
 ];

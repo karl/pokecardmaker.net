@@ -1,6 +1,13 @@
 import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { CardStyles } from '@cardEditor/cardStyles';
-import { fullArt, gilded, goldStar, goldenFullArt, promo } from '../rarity';
+import {
+  characterRare,
+  fullArt,
+  gilded,
+  goldStar,
+  goldenFullArt,
+  promo,
+} from '../rarity';
 import {
   colorless,
   dark,
@@ -43,15 +50,15 @@ export const basic: Subtype = {
   relations: [
     ...defaultPokemonTypes.map(t => ({
       type: t,
-      rarities: [promo.id, goldStar.id],
+      rarities: [promo.id, goldStar.id, characterRare.id],
     })),
     {
       type: dragon.id,
-      rarities: [],
+      rarities: [characterRare.id],
     },
     {
       type: fairy.id,
-      rarities: [gilded.id],
+      rarities: [gilded.id, characterRare.id],
     },
   ],
 };
@@ -70,15 +77,15 @@ export const stage1: Subtype = {
   relations: [
     ...defaultPokemonTypes.map(t => ({
       type: t,
-      rarities: [],
+      rarities: [characterRare.id],
     })),
     {
       type: dragon.id,
-      rarities: [],
+      rarities: [characterRare.id],
     },
     {
       type: fairy.id,
-      rarities: [gilded.id],
+      rarities: [gilded.id, characterRare.id],
     },
   ],
 };
@@ -97,15 +104,15 @@ export const stage2: Subtype = {
   relations: [
     ...defaultPokemonTypes.map(t => ({
       type: t,
-      rarities: [],
+      rarities: [characterRare.id],
     })),
     {
       type: dragon.id,
-      rarities: [],
+      rarities: [characterRare.id],
     },
     {
       type: fairy.id,
-      rarities: [gilded.id],
+      rarities: [gilded.id, characterRare.id],
     },
   ],
 };
