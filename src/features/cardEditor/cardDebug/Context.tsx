@@ -35,7 +35,7 @@ export const CardDebugProvider: React.FC = ({ children }) => {
   const [showCardOverlay, setShowCardOverlay] = useState<boolean>(true);
   const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
-    'https://www.pokemonkaart.nl/wp-content/uploads/Alolan-Exeggutor-V-005-pokemon-go-swsh.jpg',
+    'https://www.pokemonkaart.nl/wp-content/uploads/Jolteon-TG04-Brilliant-Stars.jpg',
   );
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>();
 

@@ -1,12 +1,6 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
-import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
-import {
-  basic,
-  stage1,
-  stage2,
-  useSubtype,
-} from '@cardEditor/cardOptions/subtype';
+import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -36,17 +30,6 @@ const VariationSelector: FC = () => {
       displayName="Variation"
       slug="variation"
       onChange={handleChange}
-      helpText={
-        [basic.id, stage1.id, stage2.id].includes(subtype.id) ? (
-          <NewFeatureHelpText>
-            Try the new{' '}
-            <b>
-              <i>Light</i>
-            </b>{' '}
-            variation!
-          </NewFeatureHelpText>
-        ) : undefined
-      }
     >
       {!isVariationRequired && (
         <MenuItem value="">
