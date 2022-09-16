@@ -1,28 +1,27 @@
+const { compress } = require('compress-images/promise');
 const fs = require('fs');
-const sharp = require('sharp');
-const cardImgPaths = require('./cardImgPaths');
+const fse = require('fs-extra');
 
-const paths = cardImgPaths;
-const outDir = './scripts/assets/min/';
+const INPUT_FOLDER = './public/assets/';
+const INPUT_FILES = `${INPUT_FOLDER}**/*.png`;
+const OUTPUT_FOLDER = './scripts/output/';
 
-paths.map(filePath => {
-  const file = `./public/assets/cards/${filePath}.png`;
-  const folder = filePath.slice(0, filePath.lastIndexOf('/'));
-  const outFolder = outDir + folder;
+const process = async () => {
+  // Compress all images in the input directory
+  await compress({
+    source: INPUT_FILES,
+    destination: OUTPUT_FOLDER,
+    enginesSetup: {
+      png: {
+        engine: 'pngquant',
+        command: ['--quality=50-100', '--strip', '-s1', '-o'],
+      },
+    },
+  });
+  // Copy them to the original input directory
+  fse.copySync(OUTPUT_FOLDER, INPUT_FOLDER, { overwrite: true });
+  // Remove the temporary output directory
+  fs.rmSync(OUTPUT_FOLDER, { recursive: true, force: true });
+};
 
-  if (!fs.existsSync(outFolder)) {
-    fs.mkdirSync(outFolder, { recursive: true });
-  }
-
-  sharp(file, { density: 1 })
-    .withMetadata()
-    .png({
-      quality: 1,
-      compressionLevel: 9,
-      progressive: true,
-      adaptiveFiltering: true,
-      force: true,
-    })
-    .toFile(outFolder, console.error);
-});
-
+process();
