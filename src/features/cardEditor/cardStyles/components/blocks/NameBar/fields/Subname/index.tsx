@@ -5,13 +5,25 @@ import { FC } from 'react';
 import { SubnameText } from './styles';
 
 const Subname: FC = () => {
-  const { hasSubnameBeforeName: beforeName } = useCardStyles();
+  const {
+    nameOutline,
+    nameTextColor,
+    hasSubnameBeforeName: beforeName,
+  } = useCardStyles();
   const { subname } = useCardOptions();
   const { hasSubname } = useCardLogic();
 
   if (!hasSubname || !subname) return null;
 
-  return <SubnameText $beforeName={!!beforeName}>{subname}</SubnameText>;
+  return (
+    <SubnameText
+      outline={nameOutline}
+      color={nameTextColor}
+      $beforeName={!!beforeName}
+    >
+      {subname}
+    </SubnameText>
+  );
 };
 
 export default Subname;
