@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "create:data": "node ./scripts/createCardImgPathArray.js",
+    "optimize:images": "node ./scripts/optimizeImages.js",
     "prestart": "npm run create:data",
     "start": "next dev",
     "dev": "npm run start",
