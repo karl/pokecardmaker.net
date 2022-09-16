@@ -8,7 +8,7 @@
     "prestart": "npm run create:data",
     "start": "next dev",
     "dev": "npm run start",
-    "prebuild": "npm run create:data",
+    "prebuild": "npm run create:data && npm run optimize:images",
     "build": "next build",
     "postbuild": "next-sitemap && next export",
     "lint": "eslint --ext .ts,.tsx src",
