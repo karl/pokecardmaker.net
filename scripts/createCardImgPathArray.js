@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const CARDS_FOLDER = './public/assets/cards';
-const WRITE_PATH = './src/utils/cardImgPaths.ts';
+const WRITE_PATH = './cardImgPaths.js';
 const SEPERATOR = '/';
 
 /**
