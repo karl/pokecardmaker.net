@@ -17,6 +17,7 @@ Pokécardmaker.net lets you create your own custom Pokémon cards in the modern 
 - To validate TypeScript types, run `npm run typecheck`
 - To lint the code, run `npm run lint`
 - To fix possible lint errors in the code, run `npm run lint:fix`
+- To optimize all images in the assets folder, run `npm run optimize:images`
 
 ## Adding new cards
 In order to add new cards, set icons, rarity icons or rotation icons, a few steps are required. Here is an example of adding a new set icon:
