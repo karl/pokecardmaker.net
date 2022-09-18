@@ -90,12 +90,18 @@ const Home: FC = () => {
               <List>
                 <li>Basic Pokémon</li>
                 <li>Basic Light Pokémon</li>
+                <li>Basic Dark Pokémon</li>
+                <li>Basic Character Rare Pokémon</li>
                 <li>Gold Star Basic Pokémon</li>
                 <li>Promo Basic Pokémon</li>
                 <li>Stage 1 Pokémon</li>
                 <li>Stage 1 Light Pokémon</li>
+                <li>Stage 1 Dark Pokémon</li>
+                <li>Stage 1 Character Rare Pokémon</li>
                 <li>Stage 2 Pokémon</li>
                 <li>Stage 2 Light Pokémon</li>
+                <li>Stage 2 Dark Pokémon</li>
+                <li>Stage 2 Character Rare Pokémon</li>
                 <li>Pokémon V</li>
                 <li>Pokémon V Full Art</li>
                 <li>Pokémon V Golden Full Art</li>

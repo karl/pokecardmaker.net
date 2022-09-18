@@ -25,5 +25,21 @@ export const light: Variation = {
   subtypes: [basic.id, stage1.id, stage2.id],
   rarities: [],
 };
+export const dark: Variation = {
+  id: 4,
+  slug: 'dark',
+  displayName: 'Dark',
+  subtypes: [basic.id, stage1.id, stage2.id],
+  rarities: [],
+  styles: {
+    rarityIconColor: 'white',
+    cardInfoTextColor: 'black',
+    cardInfoOutline: 'white',
+    typeBarTextColor: 'black',
+    typeBarOutline: 'white',
+    dexStatsOutline: 'white',
+    dexStatsTextColor: 'black',
+  },
+};
 
-export const variations: Variation[] = [dynamax, gigantamax, light];
+export const variations: Variation[] = [dynamax, gigantamax, light, dark];
