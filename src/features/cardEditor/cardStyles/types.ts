@@ -43,6 +43,16 @@ export interface CardStyles {
    */
   cardInfoOutline?: TextColor;
   /**
+   * The bar that shows weakness & resistance
+   * @default none
+   */
+  typeBarOutline?: TextColor;
+  /**
+   * The bar in the middle of the card that describes height and weight
+   * @default none
+   */
+  dexStatsOutline?: TextColor;
+  /**
    * @default black
    */
   nameTextColor: TextColor;
@@ -64,6 +74,11 @@ export interface CardStyles {
    * @default black
    */
   cardInfoTextColor: TextColor;
+  /**
+   * The bar in the middle of the card that describes height and weight
+   * @default black
+   */
+  dexStatsTextColor: TextColor;
   /**
    * @default black
    */
