@@ -12,7 +12,7 @@ const RotationIcon: FC = () => {
   if (!imgSrc) return null;
 
   return (
-    <Wrapper>
+    <Wrapper $shape={rotationIcon.shape}>
       <DisplayImg src={imgSrc} />
     </Wrapper>
   );

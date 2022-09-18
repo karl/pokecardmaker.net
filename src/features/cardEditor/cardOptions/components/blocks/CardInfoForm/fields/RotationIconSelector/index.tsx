@@ -6,6 +6,7 @@ import ControlledSelector from '@components/inputs/ControlledSelector';
 import { useRotationIcon } from '@cardEditor/cardOptions/rotationIcon';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 
 const RotationIconSelector: FC = () => {
   const { rotationIcons, rotationIcon, setRotationIcon } = useRotationIcon();
@@ -20,6 +21,15 @@ const RotationIconSelector: FC = () => {
       displayName="Rotation Icon"
       slug="rotationIcon"
       onChange={handleChange}
+      helpText={
+        <NewFeatureHelpText>
+          Try the new{' '}
+          <b>
+            <i>Ditto</i>
+          </b>{' '}
+          rotation icon!
+        </NewFeatureHelpText>
+      }
     >
       {rotationIcons.map(ri => (
         <SelectorMenuItem key={ri.slug} value={ri.id}>
@@ -27,7 +37,7 @@ const RotationIconSelector: FC = () => {
             <Image
               src={Routes.Assets.Icons.Rotation(ri.slug)}
               width={19}
-              height={28}
+              height={ri.shape === 'square' ? 19 : 28}
               alt=""
             />
           </SelectorListItemIcon>
