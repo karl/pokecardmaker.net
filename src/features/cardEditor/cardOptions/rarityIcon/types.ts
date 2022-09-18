@@ -1,3 +1,3 @@
-import { IdentifierInfo, ImageInfo } from '../types';
+import { IdentifierInfo } from '../types';
 
-export interface RarityIcon extends IdentifierInfo, ImageInfo {}
+export type RarityIcon = IdentifierInfo;
