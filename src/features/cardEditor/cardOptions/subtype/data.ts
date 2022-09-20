@@ -120,6 +120,7 @@ export const stage2: Subtype = {
 const vStyles: Partial<CardStyles> = {
   hpTextColor: 'white',
   movesOutline: 'white',
+  movesTextColor: 'black',
   typeBarTextColor: 'white',
   rarityIconColor: 'white',
   abilitySymbol: 'v',
@@ -165,7 +166,9 @@ export const vmax: Subtype = {
   styles: {
     ...vStyles,
     nameOutline: 'white',
+    nameTextColor: 'black',
     cardInfoOutline: 'white',
+    cardInfoTextColor: 'black',
     hpOutline: 'black',
     nameSymbol: 'vmax',
   },
