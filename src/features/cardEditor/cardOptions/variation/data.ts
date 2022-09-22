@@ -37,8 +37,8 @@ export const dark: Variation = {
     cardInfoOutline: 'white',
     typeBarTextColor: 'black',
     typeBarOutline: 'white',
-    dexStatsOutline: 'white',
     dexStatsTextColor: 'black',
+    dexStatsOutline: 'white',
   },
 };
 
