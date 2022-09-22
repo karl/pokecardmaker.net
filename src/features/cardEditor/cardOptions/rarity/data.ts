@@ -10,9 +10,13 @@ export const promo: Rarity = {
   },
   styles: {
     nameOutline: 'white',
+    nameTextColor: 'black',
     hpOutline: 'white',
+    hpTextColor: 'black',
     movesOutline: 'white',
+    movesTextColor: 'black',
     cardInfoOutline: 'white',
+    cardInfoTextColor: 'black',
     alignMovesBottom: true,
   },
 };
@@ -22,7 +26,9 @@ export const fullArt: Rarity = {
   slug: 'fullArt',
   displayName: 'Full Art',
   styles: {
+    nameTextColor: 'black',
     nameOutline: 'white',
+    cardInfoTextColor: 'black',
     cardInfoOutline: 'white',
   },
 };
@@ -32,7 +38,9 @@ export const goldenFullArt: Rarity = {
   slug: 'goldenFullArt',
   displayName: 'Golden Full Art',
   styles: {
+    nameTextColor: 'black',
     nameOutline: 'white',
+    cardInfoTextColor: 'black',
     cardInfoOutline: 'white',
     hpOutline: 'black',
     typeBarTextColor: 'black',
@@ -50,7 +58,9 @@ export const supporterFullArt: Rarity = {
   slug: 'supporterFullArt',
   displayName: 'Full Art',
   styles: {
+    movesTextColor: 'black',
     movesOutline: 'white',
+    cardInfoTextColor: 'black',
     cardInfoOutline: 'white',
     rarityIconColor: 'white',
   },
@@ -79,15 +89,15 @@ export const characterRare: Rarity = {
     hasDexStats: false,
   },
   styles: {
+    nameTextColor: 'black',
     nameOutline: 'white',
+    hpTextColor: 'black',
     hpOutline: 'white',
+    movesTextColor: 'black',
     movesOutline: 'white',
+    cardInfoTextColor: 'black',
     cardInfoOutline: 'white',
     rarityIconColor: 'white',
-    hpTextColor: 'black',
-    nameTextColor: 'black',
-    movesTextColor: 'black',
-    cardInfoTextColor: 'black',
   },
 };
 

@@ -183,7 +183,9 @@ export const vstar: Subtype = {
   slug: 'vstar',
   displayName: 'VStar',
   styles: {
+    movesTextColor: 'black',
     movesOutline: 'white',
+    hpTextColor: 'black',
     rarityIconColor: 'white',
     abilitySymbol: 'vstar',
     nameSymbol: 'vstar',
