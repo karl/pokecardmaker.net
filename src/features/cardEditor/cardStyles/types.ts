@@ -1,5 +1,5 @@
 export type AbilitySymbol = 'normal' | 'v' | 'vstar';
-export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar';
+export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar' | 'ex';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
 

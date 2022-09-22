@@ -1,11 +1,5 @@
-import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
-import {
-  basic,
-  stage1,
-  stage2,
-  useSubtype,
-} from '@cardEditor/cardOptions/subtype';
+import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
@@ -43,19 +37,6 @@ const RaritySelector: FC = () => {
       displayName="Rarity"
       slug="rarity"
       onChange={handleChange}
-      helpText={
-        subtype?.id === basic.id ||
-        subtype?.id === stage1.id ||
-        subtype?.id === stage2.id ? (
-          <NewFeatureHelpText>
-            Try the new{' '}
-            <b>
-              <i>Character Rare</i>
-            </b>{' '}
-            rarity!
-          </NewFeatureHelpText>
-        ) : undefined
-      }
     >
       <MenuItem value="">
         <ListItemText primary="None" />
