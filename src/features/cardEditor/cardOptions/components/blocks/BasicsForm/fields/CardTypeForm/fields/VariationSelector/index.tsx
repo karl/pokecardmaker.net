@@ -43,7 +43,7 @@ const VariationSelector: FC = () => {
           <NewFeatureHelpText>
             Try the new{' '}
             <b>
-              <i>Dark</i>
+              <i>ex</i>
             </b>{' '}
             variation!
           </NewFeatureHelpText>

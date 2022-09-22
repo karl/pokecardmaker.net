@@ -12,6 +12,7 @@
 /log
 **/*.tmp
 ./scripts/output/
+./scripts/organize/
 
 # testing
 /coverage
