@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💡 Idea
+    url: https://github.com/lvandernoll/pokecardmaker.net/discussions/new?category=ideas
+    about: Have a feature request or an idea? Make a post!
+  - name: ❔ Question
+    url: https://github.com/lvandernoll/pokecardmaker.net/discussions/new?category=q-a
+    about: Have a question? Ask away!

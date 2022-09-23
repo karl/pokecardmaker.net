@@ -1,9 +1,18 @@
 import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { CardStyles } from '@cardEditor/cardStyles';
-import { fullArt, goldStar, goldenFullArt, promo } from '../rarity';
+import {
+  characterRare,
+  fullArt,
+  gilded,
+  goldStar,
+  goldenFullArt,
+  promo,
+} from '../rarity';
 import {
   colorless,
   dark,
+  dragon,
+  fairy,
   fighting,
   fire,
   grass,
@@ -14,7 +23,7 @@ import {
   water,
 } from '../type';
 
-const pokemonTypeTypes: number[] = [
+const defaultPokemonTypes: number[] = [
   grass.id,
   fire.id,
   water.id,
@@ -26,6 +35,8 @@ const pokemonTypeTypes: number[] = [
   colorless.id,
 ];
 
+const allPokemonTypes: number[] = [...defaultPokemonTypes, dragon.id, fairy.id];
+
 export const basic: Subtype = {
   id: 1,
   slug: 'basic',
@@ -33,9 +44,23 @@ export const basic: Subtype = {
   logic: {
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
-  types: pokemonTypeTypes,
-  rarities: [promo.id, goldStar.id],
+  relations: [
+    ...defaultPokemonTypes.map(t => ({
+      type: t,
+      rarities: [promo.id, goldStar.id, characterRare.id],
+    })),
+    {
+      type: dragon.id,
+      rarities: [characterRare.id],
+    },
+    {
+      type: fairy.id,
+      rarities: [gilded.id, characterRare.id],
+    },
+  ],
 };
 
 export const stage1: Subtype = {
@@ -46,9 +71,23 @@ export const stage1: Subtype = {
     hasPrevolve: true,
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
-  types: pokemonTypeTypes,
-  rarities: [],
+  relations: [
+    ...defaultPokemonTypes.map(t => ({
+      type: t,
+      rarities: [characterRare.id],
+    })),
+    {
+      type: dragon.id,
+      rarities: [characterRare.id],
+    },
+    {
+      type: fairy.id,
+      rarities: [gilded.id, characterRare.id],
+    },
+  ],
 };
 
 export const stage2: Subtype = {
@@ -59,14 +98,29 @@ export const stage2: Subtype = {
     hasPrevolve: true,
     hasDexStats: true,
     hasDexEntry: true,
+    hasVariations: true,
+    isVariationRequired: false,
   },
-  types: pokemonTypeTypes,
-  rarities: [],
+  relations: [
+    ...defaultPokemonTypes.map(t => ({
+      type: t,
+      rarities: [characterRare.id],
+    })),
+    {
+      type: dragon.id,
+      rarities: [characterRare.id],
+    },
+    {
+      type: fairy.id,
+      rarities: [gilded.id, characterRare.id],
+    },
+  ],
 };
 
 const vStyles: Partial<CardStyles> = {
   hpTextColor: 'white',
   movesOutline: 'white',
+  movesTextColor: 'black',
   typeBarTextColor: 'white',
   rarityIconColor: 'white',
   abilitySymbol: 'v',
@@ -82,8 +136,20 @@ export const v: Subtype = {
     ...vStyles,
     nameSymbol: 'v',
   },
-  types: pokemonTypeTypes,
-  rarities: [fullArt.id, goldenFullArt.id],
+  relations: [
+    ...defaultPokemonTypes.map(t => ({
+      type: t,
+      rarities: [fullArt.id, goldenFullArt.id],
+    })),
+    {
+      type: dragon.id,
+      rarities: [],
+    },
+    {
+      type: fairy.id,
+      rarities: [],
+    },
+  ],
 };
 
 export const vmax: Subtype = {
@@ -100,36 +166,26 @@ export const vmax: Subtype = {
   styles: {
     ...vStyles,
     nameOutline: 'white',
+    nameTextColor: 'black',
     cardInfoOutline: 'white',
+    cardInfoTextColor: 'black',
     hpOutline: 'black',
     nameSymbol: 'vmax',
   },
-  types: pokemonTypeTypes,
-  rarities: [],
-};
-
-export const tool: Subtype = {
-  id: 6,
-  slug: 'tool',
-  displayName: 'Tool',
-  types: [item.id],
-  rarities: [],
-  styles: {
-    positions: {
-      description: {
-        top: '61%',
-        height: '20%',
-      },
-    },
-  },
+  relations: allPokemonTypes.map(t => ({
+    type: t,
+    rarities: [],
+  })),
 };
 
 export const vstar: Subtype = {
-  id: 7,
+  id: 6,
   slug: 'vstar',
   displayName: 'VStar',
   styles: {
+    movesTextColor: 'black',
     movesOutline: 'white',
+    hpTextColor: 'black',
     rarityIconColor: 'white',
     abilitySymbol: 'vstar',
     nameSymbol: 'vstar',
@@ -158,8 +214,30 @@ export const vstar: Subtype = {
     hasPrevolve: true,
     bonusMoveRequired: true,
   },
-  types: pokemonTypeTypes,
-  rarities: [],
+  relations: allPokemonTypes.map(t => ({
+    type: t,
+    rarities: [],
+  })),
+};
+
+export const tool: Subtype = {
+  id: 7,
+  slug: 'tool',
+  displayName: 'Tool',
+  styles: {
+    positions: {
+      description: {
+        top: '61%',
+        height: '20%',
+      },
+    },
+  },
+  relations: [
+    {
+      type: item.id,
+      rarities: [],
+    },
+  ],
 };
 
 export const subtypes: Subtype[] = [

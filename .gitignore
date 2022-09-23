@@ -9,6 +9,10 @@
 /node_modules
 /.pnp
 .pnp.js
+/log
+**/*.tmp
+./scripts/output/
+./scripts/organize/
 
 # testing
 /coverage

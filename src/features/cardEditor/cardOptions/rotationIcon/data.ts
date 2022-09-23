@@ -1,24 +1,31 @@
 import { RotationIcon } from '@cardEditor/cardOptions/rotationIcon';
 
-export const d: RotationIcon = {
+export const ditto: RotationIcon = {
   id: 1,
+  slug: 'ditto',
+  displayName: 'Ditto',
+  shape: 'square',
+};
+
+export const d: RotationIcon = {
+  id: 2,
   slug: 'd',
   displayName: 'D',
-  imgSrc: '',
+  shape: 'rectangle',
 };
 
 export const e: RotationIcon = {
-  id: 2,
+  id: 3,
   slug: 'e',
   displayName: 'E',
-  imgSrc: '',
+  shape: 'rectangle',
 };
 
 export const f: RotationIcon = {
-  id: 3,
+  id: 4,
   slug: 'f',
   displayName: 'F',
-  imgSrc: '',
+  shape: 'rectangle',
 };
 
-export const rotationIcons: RotationIcon[] = [d, e, f];
+export const rotationIcons: RotationIcon[] = [ditto, d, e, f];

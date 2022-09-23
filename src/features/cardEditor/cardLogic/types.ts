@@ -18,6 +18,10 @@ export interface CardLogic {
    */
   isSubtypeRequired: boolean;
   /**
+   * @default true
+   */
+  isVariationRequired: boolean;
+  /**
    * @default false
    */
   hasSubname: boolean;

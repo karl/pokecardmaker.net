@@ -8,6 +8,7 @@ import NextLink from 'next/link';
 import Routes from '@routes';
 import { useType } from '@cardEditor/cardOptions/type';
 import banner from '@assets/images/banner.png';
+import cardImgPaths from '@utils/cardImgPaths';
 import { List, PaperBox, TypeList } from './styles';
 
 const Home: FC = () => {
@@ -33,7 +34,7 @@ const Home: FC = () => {
         </PaperBox>
         <PaperBox>
           <Typography variant="h2">
-            110+ different card images and growing
+            {cardImgPaths.length} different card images and growing
           </Typography>
           <Typography textAlign={[null, 'center']}>
             We&apos;ve got all the top card images you wish for and are always
@@ -88,10 +89,22 @@ const Home: FC = () => {
               </TypeList>
               <List>
                 <li>Basic Pokémon</li>
+                <li>Basic Light Pokémon</li>
+                <li>Basic Dark Pokémon</li>
+                <li>Basic Character Rare Pokémon</li>
+                <li>Basic ex Pokémon</li>
                 <li>Gold Star Basic Pokémon</li>
                 <li>Promo Basic Pokémon</li>
                 <li>Stage 1 Pokémon</li>
+                <li>Stage 1 Light Pokémon</li>
+                <li>Stage 1 Dark Pokémon</li>
+                <li>Stage 1 Character Rare Pokémon</li>
+                <li>Stage 1 ex Pokémon</li>
                 <li>Stage 2 Pokémon</li>
+                <li>Stage 2 Light Pokémon</li>
+                <li>Stage 2 Dark Pokémon</li>
+                <li>Stage 2 Character Rare Pokémon</li>
+                <li>Stage 2 ex Pokémon</li>
                 <li>Pokémon V</li>
                 <li>Pokémon V Full Art</li>
                 <li>Pokémon V Golden Full Art</li>
@@ -103,6 +116,19 @@ const Home: FC = () => {
               </List>
             </div>
           </Box>
+        </PaperBox>
+        <PaperBox>
+          <Typography variant="h3">Thanks ❤️</Typography>
+          <p style={{ margin: 0 }}>
+            Huge thanks to{' '}
+            <Link
+              href="https://www.deviantart.com/aschefield101/gallery"
+              target="_blank"
+            >
+              aschefield101
+            </Link>{' '}
+            and RuneScript for providing the template designs
+          </p>
         </PaperBox>
       </Box>
     </>

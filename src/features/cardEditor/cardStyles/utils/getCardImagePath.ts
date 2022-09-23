@@ -24,7 +24,10 @@ const getCardImagePath = (
   if (rarity) path += `${_}rarities${_}${rarity.slug}`;
 
   // Prevent loading of images that don't exist
-  if (!cardImgPaths.includes(path)) return undefined;
+  if (!cardImgPaths.includes(path)) {
+    console.warn('Card path not found:', path);
+    return undefined;
+  }
 
   return path;
 };

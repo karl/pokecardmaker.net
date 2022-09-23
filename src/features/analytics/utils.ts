@@ -10,6 +10,9 @@ declare global {
     dataLayer: Record<string, unknown>[];
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     gtag?: (...args: any) => void;
+    goatcounter?: {
+      count: () => void;
+    };
   }
 }
 

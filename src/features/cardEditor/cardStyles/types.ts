@@ -1,5 +1,5 @@
 export type AbilitySymbol = 'normal' | 'v' | 'vstar';
-export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar';
+export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar' | 'ex';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
 
@@ -53,6 +53,16 @@ export interface CardStyles {
    */
   cardInfoOutline?: TextColor;
   /**
+   * The bar that shows weakness & resistance
+   * @default none
+   */
+  typeBarOutline?: TextColor;
+  /**
+   * The bar in the middle of the card that describes height and weight
+   * @default none
+   */
+  dexStatsOutline?: TextColor;
+  /**
    * @default black
    */
   nameTextColor: TextColor;
@@ -74,6 +84,11 @@ export interface CardStyles {
    * @default black
    */
   cardInfoTextColor: TextColor;
+  /**
+   * The bar in the middle of the card that describes height and weight
+   * @default black
+   */
+  dexStatsTextColor: TextColor;
   /**
    * @default black
    */
@@ -99,6 +114,10 @@ export interface CardStyles {
    * @default true
    */
   hasTypeImgBorder: boolean;
+  /**
+   * @default false
+   */
+  hasSubnameBeforeName?: boolean;
   /**
    * Used to change position of items displayed on the card \
    * For example, `Name` is displayed differently on a Pokémon and a Trainer

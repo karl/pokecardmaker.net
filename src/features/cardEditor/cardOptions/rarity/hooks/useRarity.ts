@@ -5,7 +5,7 @@ import { useEffect, useMemo } from 'react';
 
 const useRarity = () => {
   const { rarityId, stateSetter } = useCardOptions();
-  const { rarity, baseSet, type, subtype } = useCardRelations();
+  const { rarity, baseSet, type, subtype, variation } = useCardRelations();
 
   const setRarity = useMemo(
     () => stateSetter<CardInterface['rarityId']>('rarityId'),
@@ -16,12 +16,17 @@ const useRarity = () => {
     if (!rarityId) return;
     if (
       !type.baseSetDependencies[baseSet.id]?.rarities.includes(rarityId) &&
-      (!subtype || !subtype.rarities.includes(rarityId))
+      (variation
+        ? !variation.rarities.includes(rarityId)
+        : !subtype ||
+          !subtype.relations
+            .find(r => r.type === type.id)
+            ?.rarities.includes(rarityId))
     ) {
       setRarity(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setRarity, subtype, type, baseSet]);
+  }, [setRarity, subtype, type, variation, baseSet]);
 
   return {
     rarities,

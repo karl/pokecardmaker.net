@@ -7,4 +7,9 @@ export const FieldWrapper = styled('div')`
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: ${({ theme }) => theme.shape.borderRadius}px;
   padding: ${({ theme }) => theme.spacing(1.5, 3)};
+
+  ${({ theme }) => theme.breakpoints.down(410)} {
+    padding: 0;
+    border: 0;
+  }
 `;

@@ -37,13 +37,6 @@ export interface IdentifierInfo {
   displayName: string;
 }
 
-export interface ImageInfo {
-  /**
-   * The source to the image that belongs to this object
-   */
-  imgSrc: string;
-}
-
 export interface CardOptions {
   baseSets: BaseSet[];
   supertypes: Supertype[];

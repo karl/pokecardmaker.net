@@ -106,8 +106,28 @@ export const metal: Type = {
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
-export const colorless: Type = {
+export const dragon: Type = {
   id: 9,
+  slug: 'dragon',
+  displayName: 'Dragon',
+  logic: pokemonTypeLogic,
+  styles: pokemonTypeStyles,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const fairy: Type = {
+  id: 10,
+  slug: 'fairy',
+  displayName: 'Fairy',
+  logic: pokemonTypeLogic,
+  styles: pokemonTypeStyles,
+  supertypes: pokemonTypeSupertypes,
+  rarities: [],
+};
+
+export const colorless: Type = {
+  id: 11,
   slug: 'colorless',
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
@@ -117,7 +137,7 @@ export const colorless: Type = {
 };
 
 export const item: Type = {
-  id: 10,
+  id: 12,
   slug: 'item',
   displayName: 'Item',
   logic: {
@@ -129,7 +149,7 @@ export const item: Type = {
 };
 
 export const supporter: Type = {
-  id: 11,
+  id: 13,
   slug: 'supporter',
   displayName: 'Supporter',
   logic: {
@@ -144,8 +164,19 @@ export const supporter: Type = {
   },
 };
 
+export const stadium: Type = {
+  id: 14,
+  slug: 'stadium',
+  displayName: 'Stadium',
+  logic: {
+    hasDescription: true,
+  },
+  supertypes: [trainer.id],
+  rarities: [],
+};
+
 export const base: Type = {
-  id: 12,
+  id: 15,
   slug: 'base',
   displayName: 'Base',
   logic: {
@@ -162,7 +193,7 @@ export const base: Type = {
 };
 
 export const special: Type = {
-  id: 13,
+  id: 16,
   slug: 'special',
   displayName: 'Special',
   logic: {
@@ -188,9 +219,12 @@ export const types: Type[] = [
   fighting,
   dark,
   metal,
+  dragon,
+  fairy,
   colorless,
   item,
   supporter,
+  stadium,
   base,
   special,
 ];

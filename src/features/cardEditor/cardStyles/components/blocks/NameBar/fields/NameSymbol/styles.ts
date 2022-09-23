@@ -27,6 +27,11 @@ export const Wrapper = styled(PlacementBlock)<{ $symbol: NameSymbol }>`
           height: 3em;
           width: 5.5em;
         `;
+      case 'ex':
+        return css`
+          height: 3em;
+          width: 4.2em;
+        `;
       default:
         return undefined;
     }

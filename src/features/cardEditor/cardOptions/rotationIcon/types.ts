@@ -1,4 +1,8 @@
-import { IdentifierInfo, ImageInfo } from '../types';
+import { IdentifierInfo } from '../types';
+
+export type RotationIconShape = 'rectangle' | 'square';
 
 // D/E/F
-export interface RotationIcon extends IdentifierInfo, ImageInfo {}
+export interface RotationIcon extends IdentifierInfo {
+  shape: RotationIconShape;
+}
