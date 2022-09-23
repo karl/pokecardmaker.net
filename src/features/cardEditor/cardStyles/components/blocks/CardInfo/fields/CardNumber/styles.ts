@@ -7,4 +7,6 @@ export const CardNumberText = styled(CardText)`
   line-height: 0.88em;
   margin-left: -0.2em;
   letter-spacing: 0.02em;
+  display: flex;
+  justify-content: flex-end;
 `;

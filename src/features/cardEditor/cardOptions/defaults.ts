@@ -41,7 +41,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: '',
+  name: 'Oddish',
   subname: '',
   backgroundImg: undefined,
   imgLayer1: undefined,
@@ -50,16 +50,17 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   customTypeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '',
-  totalInSet: '',
-  hitpoints: '',
-  illustrator: '',
+  cardNumber: '5',
+  totalInSet: '214',
+  hitpoints: 50,
+  illustrator: '0313',
   weaknessAmount: 2,
   resistanceAmount: 30,
   retreatCost: 1,
   prevolveName: undefined,
-  dexStats: '',
-  dexEntry: '',
+  dexStats: 'NO. 043  Weed Pokémon  HT: 1\'08"  WT: 11.9 lbs.',
+  dexEntry:
+    'During the day, it stays in the cold underground to avoid the sun. It grows by bathing in moonlight.',
   description: '',
   hasAbility: false,
   ability: {
@@ -67,19 +68,23 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description: '',
   },
   move1: {
-    name: '',
-    description: '',
+    name: 'Stun Spore',
+    description:
+      "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
     damageAmount: '',
     damageModifier: undefined,
-    energyCost: [],
+    energyCost: [{ typeId: colorless.id, amount: 1 }],
   },
   hasMove2: true,
   move2: {
-    name: '',
+    name: 'Seed Bomb',
     description: '',
-    damageAmount: '',
+    damageAmount: 20,
     damageModifier: undefined,
-    energyCost: [],
+    energyCost: [
+      { typeId: grass.id, amount: 1 },
+      { typeId: colorless.id, amount: 1 },
+    ],
   },
   // Relations
   baseSetId: sunAndMoon.id,
@@ -89,7 +94,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
-  weaknessTypeId: defaultRelations.weaknessType?.id,
+  weaknessTypeId: fire.id,
+  // weaknessTypeId: defaultRelations.weaknessType?.id,
   resistanceTypeId: defaultRelations.resistanceType?.id,
   setIconId: defaultRelations.setIcon?.id,
   rotationIconId: defaultRelations.rotationIcon?.id,

@@ -19,6 +19,9 @@ export const PlacementBlock = styled('div', {
       'font-size',
       'margin-left',
       'align-items',
+      'text-align',
+      'min-width',
+      'letter-spacing',
     ].includes(propName.toString()),
 })<Placement>`
   position: absolute;
@@ -28,6 +31,9 @@ export const PlacementBlock = styled('div', {
     const fontSize = rest['font-size'];
     const marginLeft = rest['margin-left'];
     const alignItems = rest['align-items'];
+    const textAlign = rest['text-align'];
+    const minWidth = rest['min-width'];
+    const letterSpacing = rest['letter-spacing'];
 
     return Object.entries({
       top,
@@ -42,6 +48,9 @@ export const PlacementBlock = styled('div', {
       'font-size': fontSize,
       'margin-left': marginLeft,
       'align-items': alignItems,
+      'text-align': textAlign,
+      'min-width': minWidth,
+      'letter-spacing': letterSpacing,
     })
       .map(([key, value]) => value && `${key}: ${value} !important;`)
       .filter(isPresent);

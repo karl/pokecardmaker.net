@@ -32,10 +32,10 @@ export const CardDebugContext = createContext<CardDebugContextInterface>({
 });
 
 export const CardDebugProvider: React.FC = ({ children }) => {
-  const [showCardOverlay, setShowCardOverlay] = useState<boolean>(false);
+  const [showCardOverlay, setShowCardOverlay] = useState<boolean>(true);
   const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
-    'https://www.pokemonkaart.nl/wp-content/uploads/Jolteon-TG04-Brilliant-Stars.jpg',
+    'https://images.pokemontcg.io/sm10/7_hires.png',
   );
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>();
 

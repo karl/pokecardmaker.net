@@ -16,22 +16,32 @@ export interface Placement {
   'font-size'?: string;
   'margin-left'?: string;
   'align-items'?: string;
+  'text-align'?: string;
+  'min-width'?: string;
+  'letter-spacing'?: string;
 }
 
 export interface Positions {
   name?: Placement;
-  prevolveImg?: Placement;
-  ability?: Placement;
-  move2?: Placement;
+  hitpoints?: Placement;
   description?: Placement;
   typeImgContainer?: Placement;
   typeImg?: Placement;
+  prevolveName?: Placement;
+  prevolveImg?: Placement;
+  dexStats?: Placement;
+  movesWrapper?: Placement;
+  ability?: Placement;
+  move2?: Placement;
+  typeBar?: Placement;
+  weakness?: Placement;
+  resistance?: Placement;
   cardInfoContainer?: Placement;
   cardInfoBar?: Placement;
   setIcon?: Placement;
   cardNumber?: Placement;
   rarityIcon?: Placement;
-  movesWrapper?: Placement;
+  dexEntry?: Placement;
 }
 
 export interface CardStyles {

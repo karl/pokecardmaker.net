@@ -21,6 +21,18 @@ export const pokemon: Supertype = {
       },
     },
   },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      styles: {
+        positions: {
+          name: {
+            top: '3%',
+            left: '18.3%',
+          },
+        },
+      },
+    },
+  },
 };
 
 export const trainer: Supertype = {

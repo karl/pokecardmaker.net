@@ -4,11 +4,12 @@ import { Font } from '@utils/fonts';
 
 export const DexEntryText = styled(CardText)`
   position: absolute;
-  bottom: 4%;
+  display: flex;
+  align-items: center;
+  height: 7.6%;
+  bottom: 3%;
   right: 6.5%;
-  width: 58%;
   white-space: initial;
-  text-align: right;
   font-size: 1.03em;
   line-height: 1.2em;
   font-family: '${Font.OptimaMedium}', monospace;
