@@ -1,7 +1,6 @@
 import { toCanvas } from 'html-to-image';
 import { baseFontSize, cardImgHeight, cardImgWidth } from 'src/constants';
 
-// TODO: upon return, setLoading false;
 export const makeCanvas = async (
   cardId: string,
 ): Promise<HTMLCanvasElement | undefined> => {

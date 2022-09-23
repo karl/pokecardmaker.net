@@ -24,7 +24,7 @@ const useSubtype = () => {
       setSubtype(defaultTypeSubtypes[type.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setSubtype, type]);
+  }, [setSubtype, type, baseSet]);
 
   return {
     subtypes,

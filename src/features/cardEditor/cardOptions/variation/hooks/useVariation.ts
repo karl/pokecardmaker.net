@@ -24,7 +24,7 @@ const useVariation = () => {
       setVariation(defaultSubtypeVariations[subtype.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setVariation, subtype]);
+  }, [setVariation, subtype, baseSet]);
 
   return {
     variations,

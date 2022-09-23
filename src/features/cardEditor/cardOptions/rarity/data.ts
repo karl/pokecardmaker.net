@@ -33,9 +33,9 @@ export const fullArt: Rarity = {
   },
 };
 
-export const goldenFullArt: Rarity = {
+export const goldenFullArtPokemon: Rarity = {
   id: 3,
-  slug: 'goldenFullArt',
+  slug: 'goldenFullArtPokemon',
   displayName: 'Golden Full Art',
   styles: {
     nameTextColor: 'black',
@@ -101,7 +101,6 @@ export const characterRare: Rarity = {
   },
 };
 
-// TODO: Maybe use overrides on goldenFullArt instead of making a new type
 export const goldenFullArtEnergy: Rarity = {
   id: 9,
   slug: 'goldenFullArtEnergy',
@@ -115,7 +114,7 @@ export const goldenFullArtEnergy: Rarity = {
 export const rarities: Rarity[] = [
   promo,
   fullArt,
-  goldenFullArt,
+  goldenFullArtPokemon,
   rainbow,
   supporterFullArt,
   goldStar,

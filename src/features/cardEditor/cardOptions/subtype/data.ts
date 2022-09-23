@@ -6,7 +6,7 @@ import {
   fullArt,
   gilded,
   goldStar,
-  goldenFullArt,
+  goldenFullArtPokemon,
   promo,
 } from '../rarity';
 import {
@@ -180,7 +180,7 @@ export const v: Subtype = {
     [swordAndShield.id]: [
       ...defaultPokemonTypes.map(t => ({
         type: t,
-        rarities: [fullArt.id, goldenFullArt.id],
+        rarities: [fullArt.id, goldenFullArtPokemon.id],
       })),
       {
         type: dragon.id,

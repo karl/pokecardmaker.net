@@ -16,8 +16,16 @@ const pokemonTypeStyles: Partial<CardStyles> = {
   abilitySymbol: 'normal',
 };
 
-const pokemonTypeSupertypes: number[] = [pokemon.id];
-const pokemonTypeBaseSetDependencies: Type['baseSetDependencies'] = {};
+const pokemonTypeBaseSetDependencies: Type['baseSetDependencies'] = {
+  [swordAndShield.id]: {
+    supertypes: [pokemon.id],
+    rarities: [],
+  },
+  [sunAndMoon.id]: {
+    supertypes: [pokemon.id],
+    rarities: [],
+  },
+};
 
 export const grass: Type = {
   id: 1,
@@ -25,7 +33,6 @@ export const grass: Type = {
   displayName: 'Grass',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -35,7 +42,6 @@ export const fire: Type = {
   displayName: 'Fire',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -45,7 +51,6 @@ export const water: Type = {
   displayName: 'Water',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -55,7 +60,6 @@ export const lightning: Type = {
   displayName: 'Lightning',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -65,7 +69,6 @@ export const psychic: Type = {
   displayName: 'Psychic',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -75,7 +78,6 @@ export const fighting: Type = {
   displayName: 'Fighting',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -92,7 +94,6 @@ export const dark: Type = {
     cardInfoTextColor: 'white',
     rarityIconColor: 'white',
   },
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -102,7 +103,6 @@ export const metal: Type = {
   displayName: 'Metal',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -112,7 +112,6 @@ export const dragon: Type = {
   displayName: 'Dragon',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -122,7 +121,6 @@ export const fairy: Type = {
   displayName: 'Fairy',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -132,7 +130,6 @@ export const colorless: Type = {
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
-  supertypes: pokemonTypeSupertypes,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
@@ -144,8 +141,16 @@ export const item: Type = {
     hasSubtypes: true,
     hasDescription: true,
   },
-  supertypes: [trainer.id],
-  baseSetDependencies: {},
+  baseSetDependencies: {
+    [swordAndShield.id]: {
+      supertypes: [trainer.id],
+      rarities: [],
+    },
+    [sunAndMoon.id]: {
+      supertypes: [trainer.id],
+      rarities: [],
+    },
+  },
 };
 
 export const supporter: Type = {
@@ -156,10 +161,14 @@ export const supporter: Type = {
     hasSubname: true,
     hasDescription: true,
   },
-  supertypes: [trainer.id],
   baseSetDependencies: {
     [swordAndShield.id]: {
+      supertypes: [trainer.id],
       rarities: [supporterFullArt.id],
+    },
+    [sunAndMoon.id]: {
+      supertypes: [trainer.id],
+      rarities: [],
     },
   },
 };
@@ -171,13 +180,13 @@ export const stadium: Type = {
   logic: {
     hasDescription: true,
   },
-  supertypes: [trainer.id],
-
   baseSetDependencies: {
     [swordAndShield.id]: {
+      supertypes: [trainer.id],
       rarities: [],
     },
     [sunAndMoon.id]: {
+      supertypes: [trainer.id],
       rarities: [],
     },
   },
@@ -192,9 +201,13 @@ export const base: Type = {
     hasName: false,
     hasCardInfo: false,
   },
-  supertypes: [energy.id],
   baseSetDependencies: {
+    [swordAndShield.id]: {
+      supertypes: [energy.id],
+      rarities: [],
+    },
     [sunAndMoon.id]: {
+      supertypes: [energy.id],
       rarities: [goldenFullArtEnergy.id],
     },
   },
@@ -210,9 +223,13 @@ export const special: Type = {
     hasIllustratorName: false,
     hasDescription: true,
   },
-  supertypes: [energy.id],
   baseSetDependencies: {
+    [swordAndShield.id]: {
+      supertypes: [energy.id],
+      rarities: [],
+    },
     [sunAndMoon.id]: {
+      supertypes: [energy.id],
       rarities: [goldenFullArtEnergy.id],
     },
   },
