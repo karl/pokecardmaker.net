@@ -1,5 +1,5 @@
 import { RequiredIsh } from '@interfaces/utils';
-import { swordAndShield } from './baseSet';
+import { sunAndMoon, swordAndShield } from './baseSet';
 import { energy, pokemon, trainer } from './supertype';
 import {
   base,
@@ -82,7 +82,8 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     energyCost: [],
   },
   // Relations
-  baseSetId: defaultRelations.baseSet.id,
+  baseSetId: sunAndMoon.id,
+  // baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
   typeId: defaultRelations.type.id,
   subtypeId: defaultRelations.subtype?.id,

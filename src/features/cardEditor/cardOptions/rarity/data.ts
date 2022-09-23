@@ -109,7 +109,7 @@ export const goldenFullArtEnergy: Rarity = {
   styles: {
     rarityIconColor: 'white',
     movesOutline: 'white',
-  }
+  },
 };
 
 export const rarities: Rarity[] = [

@@ -1,5 +1,6 @@
 import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { CardStyles } from '@cardEditor/cardStyles';
+import { sunAndMoon, swordAndShield } from '../baseSet';
 import {
   characterRare,
   fullArt,
@@ -47,20 +48,33 @@ export const basic: Subtype = {
     hasVariations: true,
     isVariationRequired: false,
   },
-  relations: [
-    ...defaultPokemonTypes.map(t => ({
+  baseSetDependencies: {
+    [swordAndShield.id]: [
+      ...defaultPokemonTypes.map(t => ({
+        type: t,
+        rarities: [promo.id, goldStar.id, characterRare.id],
+      })),
+      {
+        type: dragon.id,
+        rarities: [characterRare.id],
+      },
+      {
+        type: fairy.id,
+        rarities: [gilded.id, characterRare.id],
+      },
+    ],
+    [sunAndMoon.id]: allPokemonTypes.map(t => ({
       type: t,
-      rarities: [promo.id, goldStar.id, characterRare.id],
+      rarities: [],
     })),
-    {
-      type: dragon.id,
-      rarities: [characterRare.id],
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: false,
+      },
     },
-    {
-      type: fairy.id,
-      rarities: [gilded.id, characterRare.id],
-    },
-  ],
+  },
 };
 
 export const stage1: Subtype = {
@@ -74,20 +88,33 @@ export const stage1: Subtype = {
     hasVariations: true,
     isVariationRequired: false,
   },
-  relations: [
-    ...defaultPokemonTypes.map(t => ({
+  baseSetDependencies: {
+    [swordAndShield.id]: [
+      ...defaultPokemonTypes.map(t => ({
+        type: t,
+        rarities: [characterRare.id],
+      })),
+      {
+        type: dragon.id,
+        rarities: [characterRare.id],
+      },
+      {
+        type: fairy.id,
+        rarities: [gilded.id, characterRare.id],
+      },
+    ],
+    [sunAndMoon.id]: allPokemonTypes.map(t => ({
       type: t,
-      rarities: [characterRare.id],
+      rarities: [],
     })),
-    {
-      type: dragon.id,
-      rarities: [characterRare.id],
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: false,
+      },
     },
-    {
-      type: fairy.id,
-      rarities: [gilded.id, characterRare.id],
-    },
-  ],
+  },
 };
 
 export const stage2: Subtype = {
@@ -101,20 +128,33 @@ export const stage2: Subtype = {
     hasVariations: true,
     isVariationRequired: false,
   },
-  relations: [
-    ...defaultPokemonTypes.map(t => ({
+  baseSetDependencies: {
+    [swordAndShield.id]: [
+      ...defaultPokemonTypes.map(t => ({
+        type: t,
+        rarities: [characterRare.id],
+      })),
+      {
+        type: dragon.id,
+        rarities: [characterRare.id],
+      },
+      {
+        type: fairy.id,
+        rarities: [gilded.id, characterRare.id],
+      },
+    ],
+    [sunAndMoon.id]: allPokemonTypes.map(t => ({
       type: t,
-      rarities: [characterRare.id],
+      rarities: [],
     })),
-    {
-      type: dragon.id,
-      rarities: [characterRare.id],
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: false,
+      },
     },
-    {
-      type: fairy.id,
-      rarities: [gilded.id, characterRare.id],
-    },
-  ],
+  },
 };
 
 const vStyles: Partial<CardStyles> = {
@@ -136,20 +176,22 @@ export const v: Subtype = {
     ...vStyles,
     nameSymbol: 'v',
   },
-  relations: [
-    ...defaultPokemonTypes.map(t => ({
-      type: t,
-      rarities: [fullArt.id, goldenFullArt.id],
-    })),
-    {
-      type: dragon.id,
-      rarities: [],
-    },
-    {
-      type: fairy.id,
-      rarities: [],
-    },
-  ],
+  baseSetDependencies: {
+    [swordAndShield.id]: [
+      ...defaultPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArt.id],
+      })),
+      {
+        type: dragon.id,
+        rarities: [],
+      },
+      {
+        type: fairy.id,
+        rarities: [],
+      },
+    ],
+  },
 };
 
 export const vmax: Subtype = {
@@ -172,10 +214,12 @@ export const vmax: Subtype = {
     hpOutline: 'black',
     nameSymbol: 'vmax',
   },
-  relations: allPokemonTypes.map(t => ({
-    type: t,
-    rarities: [],
-  })),
+  baseSetDependencies: {
+    [swordAndShield.id]: allPokemonTypes.map(t => ({
+      type: t,
+      rarities: [],
+    })),
+  },
 };
 
 export const vstar: Subtype = {
@@ -214,10 +258,12 @@ export const vstar: Subtype = {
     hasPrevolve: true,
     bonusMoveRequired: true,
   },
-  relations: allPokemonTypes.map(t => ({
-    type: t,
-    rarities: [],
-  })),
+  baseSetDependencies: {
+    [swordAndShield.id]: allPokemonTypes.map(t => ({
+      type: t,
+      rarities: [],
+    })),
+  },
 };
 
 export const tool: Subtype = {
@@ -232,12 +278,20 @@ export const tool: Subtype = {
       },
     },
   },
-  relations: [
-    {
-      type: item.id,
-      rarities: [],
-    },
-  ],
+  baseSetDependencies: {
+    [swordAndShield.id]: [
+      {
+        type: item.id,
+        rarities: [],
+      },
+    ],
+    [sunAndMoon.id]: [
+      {
+        type: item.id,
+        rarities: [],
+      },
+    ],
+  },
 };
 
 export const subtypes: Subtype[] = [

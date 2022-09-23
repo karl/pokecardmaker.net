@@ -113,7 +113,7 @@ export const dragon: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const fairy: Type = {
@@ -123,7 +123,7 @@ export const fairy: Type = {
   logic: pokemonTypeLogic,
   styles: pokemonTypeStyles,
   supertypes: pokemonTypeSupertypes,
-  rarities: [],
+  baseSetDependencies: pokemonTypeBaseSetDependencies,
 };
 
 export const colorless: Type = {
@@ -172,7 +172,15 @@ export const stadium: Type = {
     hasDescription: true,
   },
   supertypes: [trainer.id],
-  rarities: [],
+
+  baseSetDependencies: {
+    [swordAndShield.id]: {
+      rarities: [],
+    },
+    [sunAndMoon.id]: {
+      rarities: [],
+    },
+  },
 };
 
 export const base: Type = {

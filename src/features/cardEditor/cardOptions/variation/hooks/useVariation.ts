@@ -9,7 +9,7 @@ import { variations } from '../data';
 
 const useVariation = () => {
   const { stateSetter } = useCardOptions();
-  const { variation, subtype } = useCardRelations();
+  const { baseSet, variation, subtype } = useCardRelations();
 
   const setVariation = useMemo(
     () => stateSetter<CardInterface['variationId']>('variationId'),
@@ -18,7 +18,9 @@ const useVariation = () => {
 
   useEffect(() => {
     if (!subtype) setVariation(undefined);
-    else if (!variation?.subtypes.includes(subtype.id)) {
+    else if (
+      !variation?.baseSetDependencies[baseSet.id]?.subtypes.includes(subtype.id)
+    ) {
       setVariation(defaultSubtypeVariations[subtype.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

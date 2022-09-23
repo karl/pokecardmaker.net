@@ -5,10 +5,12 @@ import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
 import { useCardLogic } from '@cardEditor/cardLogic';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const SubtypeSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
   const { type } = useType();
+  const { baseSet } = useBaseSet();
   const { hasSubtypes, isSubtypeRequired } = useCardLogic();
   const { subtypes, subtype, setSubtype } = useSubtype();
 
@@ -36,7 +38,9 @@ const SubtypeSelector: FC = () => {
       )}
       {subtypes.map(
         st =>
-          !!st.relations.find(r => r.type === type.id) && (
+          !!st.baseSetDependencies[baseSet.id]?.find(
+            r => r.type === type.id,
+          ) && (
             <MenuItem key={st.slug} value={st.id}>
               <ListItemText primary={st.displayName} />
             </MenuItem>

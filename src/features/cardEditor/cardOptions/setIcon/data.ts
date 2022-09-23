@@ -92,7 +92,6 @@ export const sunAndMoon: SetIcon = {
   id: 13,
   slug: 'sunAndMoon',
   displayName: 'Sun & Moon',
-  imgSrc: '',
   baseSet: smBaseSet.id,
 };
 

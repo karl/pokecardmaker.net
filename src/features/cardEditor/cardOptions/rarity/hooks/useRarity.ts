@@ -17,10 +17,12 @@ const useRarity = () => {
     if (
       !type.baseSetDependencies[baseSet.id]?.rarities.includes(rarityId) &&
       (variation
-        ? !variation.rarities.includes(rarityId)
+        ? !variation.baseSetDependencies[baseSet.id]?.rarities.includes(
+            rarityId,
+          )
         : !subtype ||
-          !subtype.relations
-            .find(r => r.type === type.id)
+          !subtype.baseSetDependencies[baseSet.id]
+            ?.find(r => r.type === type.id)
             ?.rarities.includes(rarityId))
     ) {
       setRarity(undefined);

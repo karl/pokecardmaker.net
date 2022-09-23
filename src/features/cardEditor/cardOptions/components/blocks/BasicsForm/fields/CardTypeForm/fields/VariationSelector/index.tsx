@@ -1,4 +1,5 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
 import {
@@ -16,6 +17,7 @@ import { FC, useCallback } from 'react';
 const VariationSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
   const { hasVariations, isVariationRequired } = useCardLogic();
+  const { baseSet } = useBaseSet();
   const { subtype } = useSubtype();
   const { rarity } = useRarity();
   const { variations, variation, setVariation } = useVariation();
@@ -57,8 +59,10 @@ const VariationSelector: FC = () => {
       )}
       {variations.map(
         v =>
-          (v.subtypes.includes(subtype.id) ||
-            v.rarities.includes(rarity?.id ?? 0)) && (
+          (v.baseSetDependencies[baseSet.id]?.subtypes.includes(subtype.id) ||
+            v.baseSetDependencies[baseSet.id]?.rarities.includes(
+              rarity?.id ?? 0,
+            )) && (
             <MenuItem key={v.slug} value={v.id}>
               <ListItemText primary={v.displayName} />
             </MenuItem>
