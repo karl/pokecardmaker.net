@@ -38,6 +38,7 @@ export interface Positions {
   resistance?: Placement;
   cardInfoContainer?: Placement;
   cardInfoBar?: Placement;
+  illustrator?: Placement;
   setIcon?: Placement;
   cardNumber?: Placement;
   rarityIcon?: Placement;

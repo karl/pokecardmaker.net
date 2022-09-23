@@ -47,7 +47,7 @@ export const swordAndShield: BaseSet = {
       dexEntry: {
         'text-align': 'right',
         width: '58%',
-      }
+      },
     },
   },
 };
@@ -100,12 +100,15 @@ export const sunAndMoon: BaseSet = {
         left: '45.6%',
       },
       cardInfoContainer: {
-        gap: '0.5em',
+        gap: '0.3em',
         bottom: '4%',
       },
       cardInfoBar: {
         gap: '0.75em',
         'align-items': 'center',
+      },
+      illustrator: {
+        'letter-spacing': '-0.04em',
       },
       setIcon: {
         height: '1.7em',
@@ -120,8 +123,8 @@ export const sunAndMoon: BaseSet = {
       },
       dexEntry: {
         'text-align': 'left',
-        'width': '50%',
-      }
+        width: '50%',
+      },
     },
   },
 };

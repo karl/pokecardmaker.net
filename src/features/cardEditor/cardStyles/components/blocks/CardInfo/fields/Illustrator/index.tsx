@@ -7,12 +7,20 @@ import { IllustratorText } from './styles';
 const Illustrator: FC = () => {
   const { illustrator } = useCardOptions();
   const { hasIllustratorName } = useCardLogic();
-  const { cardInfoOutline, cardInfoTextColor } = useCardStyles();
+  const {
+    cardInfoOutline,
+    cardInfoTextColor,
+    positions: { illustrator: placement },
+  } = useCardStyles();
 
   if (!hasIllustratorName || !illustrator) return null;
 
   return (
-    <IllustratorText color={cardInfoTextColor} outline={cardInfoOutline}>
+    <IllustratorText
+      color={cardInfoTextColor}
+      outline={cardInfoOutline}
+      {...placement}
+    >
       Illus. {illustrator}
     </IllustratorText>
   );
