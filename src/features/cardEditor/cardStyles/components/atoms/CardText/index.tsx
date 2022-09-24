@@ -5,7 +5,7 @@ import parse, {
   domToReact,
 } from 'html-react-parser';
 import { CardTextProps } from './types';
-import { SpecialCharacter, Text } from './styles';
+import { SpecialCharacter, Text, TextInner } from './styles';
 
 const parseOptions: HTMLReactParserOptions = {
   replace: domNode => {
@@ -58,9 +58,12 @@ const CardText: FC<CardTextProps> = ({
   );
 
   return (
-    <Text $outline={outline} $color={color} {...props}>
-      {content}
-    </Text>
+    <>
+      <Text $outline={outline} $color={color} {...props}>
+        {content}
+        {outline && <TextInner $color={color}>{content}</TextInner>}
+      </Text>
+    </>
   );
 };
 

@@ -20,7 +20,6 @@ import ImgLayer1 from '../fields/ImgLayer1';
 import ImgLayer2 from '../fields/ImgLayer2';
 import PrevolveImg from '../fields/PrevolveImg';
 import PrevolveName from '../fields/PrevolveName';
-import SvgHelpers from '../fields/SvgHelpers';
 import TypeImg from '../fields/TypeImg';
 import { CardContainer, CardContent } from './styles';
 
@@ -49,7 +48,6 @@ const CardDisplay: FC = () => {
       ref={squareRef}
     >
       <Debug />
-      <SvgHelpers />
       <CardContent>
         <NameBar />
         <Hitpoints />
