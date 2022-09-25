@@ -51,7 +51,7 @@ const TextFormattingTooltip: FC = () => {
               <i>_Italic_</i>
             </li>
             <li>
-              <s>~Stripethrough~</s>
+              <s>~Strikethrough~</s>
             </li>
             <li>
               <u>-Underlined-</u>
