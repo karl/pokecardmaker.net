@@ -11,11 +11,11 @@ const PrevolveImg: FC = () => {
   } = useCardStyles();
   const { hasPrevolve } = useCardLogic();
   const { prevolveImgSrc } = useCardOptions();
-  const { prevolveImgSrc: debugImgSrc } = useCardDebug();
+  const { showDebug, prevolveImgSrc: debugImgSrc } = useCardDebug();
 
   const imgSrc = useMemo<string | undefined>(
-    () => prevolveImgSrc ?? debugImgSrc,
-    [prevolveImgSrc, debugImgSrc],
+    () => (showDebug ? prevolveImgSrc ?? debugImgSrc : prevolveImgSrc),
+    [showDebug, prevolveImgSrc, debugImgSrc],
   );
 
   if (!hasPrevolve || !imgSrc) return null;
