@@ -12,7 +12,7 @@ const SvgHelpers: FC = () => (
           in="SourceAlpha"
           result="MORPH"
           operator="dilate"
-          radius="2"
+          radius="1.5"
         />
         <feColorMatrix
           in="MORPH"
@@ -30,7 +30,7 @@ const SvgHelpers: FC = () => (
           in="SourceAlpha"
           result="MORPH"
           operator="dilate"
-          radius="2"
+          radius="1.5"
         />
         <feColorMatrix
           in="MORPH"
