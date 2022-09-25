@@ -19,6 +19,8 @@ export interface Placement {
   'text-align'?: string;
   'min-width'?: string;
   'letter-spacing'?: string;
+  'border-radius'?: string;
+  'clip-path'?: string;
 }
 
 export interface Positions {

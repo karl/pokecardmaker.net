@@ -22,6 +22,8 @@ export const PlacementBlock = styled('div', {
       'text-align',
       'min-width',
       'letter-spacing',
+      'border-radius',
+      'clip-path',
     ].includes(propName.toString()),
 })<Placement>`
   position: absolute;
@@ -34,6 +36,8 @@ export const PlacementBlock = styled('div', {
     const textAlign = rest['text-align'];
     const minWidth = rest['min-width'];
     const letterSpacing = rest['letter-spacing'];
+    const borderRadius = rest['border-radius'];
+    const clipPath = rest['clip-path'];
 
     return Object.entries({
       top,
@@ -51,6 +55,8 @@ export const PlacementBlock = styled('div', {
       'text-align': textAlign,
       'min-width': minWidth,
       'letter-spacing': letterSpacing,
+      'border-radius': borderRadius,
+      'clip-path': clipPath,
     })
       .map(([key, value]) => value && `${key}: ${value} !important;`)
       .filter(isPresent);

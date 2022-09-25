@@ -1,5 +1,5 @@
 import { RequiredIsh } from '@interfaces/utils';
-import { sunAndMoon, swordAndShield } from './baseSet';
+import { swordAndShield } from './baseSet';
 import { energy, pokemon, trainer } from './supertype';
 import {
   base,
@@ -19,7 +19,7 @@ import {
   water,
 } from './type';
 import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
-import { swordAndShield as baseSet } from './setIcon';
+import { promo } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
 import { dynamax } from './variation';
@@ -34,7 +34,7 @@ export const defaultRelations: RelationsInterface = {
   variation: undefined,
   weaknessType: water,
   resistanceType: undefined,
-  setIcon: baseSet,
+  setIcon: promo,
   rotationIcon: d,
   rarityIcon: common,
   typeImg: colorless,
@@ -82,8 +82,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     energyCost: [],
   },
   // Relations
-  baseSetId: sunAndMoon.id,
-  // baseSetId: defaultRelations.baseSet.id,
+  baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
   typeId: defaultRelations.type.id,
   subtypeId: defaultRelations.subtype?.id,

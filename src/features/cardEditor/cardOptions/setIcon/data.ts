@@ -7,7 +7,7 @@ import {
 export const swordAndShield: SetIcon = {
   id: 1,
   slug: 'swordAndShield',
-  displayName: 'Base',
+  displayName: 'Sword & Shield',
   baseSet: ssBaseSet.id,
 };
 

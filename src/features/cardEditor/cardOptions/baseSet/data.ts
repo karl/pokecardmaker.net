@@ -14,6 +14,13 @@ export const swordAndShield: BaseSet = {
         top: '9.7%',
         left: '17.8%',
       },
+      prevolveImg: {
+        top: '7.9%',
+        left: '4.6%',
+        height: '5.2em',
+        width: '5.15em',
+        'border-radius': '1.3em 0.45em 1.95em',
+      },
       dexStats: {
         top: '48%',
       },
@@ -79,7 +86,12 @@ export const sunAndMoon: BaseSet = {
         height: '2.5em',
       },
       prevolveImg: {
-        // TODO: Make octagonal
+        top: '7.3%',
+        left: '4.2%',
+        height: '5.2em',
+        width: '5.2em',
+        'clip-path':
+          'polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%)',
       },
       prevolveName: {
         'letter-spacing': '-0.04em',
