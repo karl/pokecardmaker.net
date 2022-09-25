@@ -162,6 +162,14 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiListSubheader: {
+      styleOverrides: {
+        root: {
+          zIndex: 110,
+          fontWeight: 'bold',
+        },
+      },
+    },
   },
 });
 

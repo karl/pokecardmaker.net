@@ -7,7 +7,7 @@ import {
 export const swordAndShield: SetIcon = {
   id: 1,
   slug: 'swordAndShield',
-  displayName: 'Sword & Shield',
+  displayName: 'Base',
   baseSet: ssBaseSet.id,
 };
 
@@ -85,13 +85,12 @@ export const promo: SetIcon = {
   id: 12,
   slug: 'promo',
   displayName: 'Promo',
-  baseSet: ssBaseSet.id,
 };
 
 export const sunAndMoon: SetIcon = {
   id: 13,
   slug: 'sunAndMoon',
-  displayName: 'Sun & Moon',
+  displayName: 'Base',
   baseSet: smBaseSet.id,
 };
 
