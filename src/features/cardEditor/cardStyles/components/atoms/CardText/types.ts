@@ -1,6 +1,6 @@
-import { TextColor } from '@cardEditor/cardStyles';
+import { Placement, TextColor } from '@cardEditor/cardStyles';
 
-export interface CardTextProps {
+export interface CardTextProps extends Placement {
   outline?: TextColor;
   color?: TextColor;
 }

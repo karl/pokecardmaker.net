@@ -19,7 +19,7 @@ import {
   water,
 } from './type';
 import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
-import { swordAndShield as baseSet } from './setIcon';
+import { promo } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
 import { dynamax } from './variation';
@@ -34,7 +34,7 @@ export const defaultRelations: RelationsInterface = {
   variation: undefined,
   weaknessType: water,
   resistanceType: undefined,
-  setIcon: baseSet,
+  setIcon: promo,
   rotationIcon: d,
   rarityIcon: common,
   typeImg: colorless,

@@ -9,7 +9,7 @@ import { subtypes } from '../data';
 
 const useSubtype = () => {
   const { stateSetter } = useCardOptions();
-  const { type, subtype } = useCardRelations();
+  const { baseSet, type, subtype } = useCardRelations();
 
   const setSubtype = useMemo(
     () => stateSetter<CardInterface['subtypeId']>('subtypeId'),
@@ -17,11 +17,14 @@ const useSubtype = () => {
   );
 
   useEffect(() => {
-    if (!subtype || !subtype.relations.find(r => r.type === type.id)) {
+    if (
+      !subtype ||
+      !subtype.baseSetDependencies[baseSet.id]?.find(r => r.type === type.id)
+    ) {
       setSubtype(defaultTypeSubtypes[type.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setSubtype, type]);
+  }, [setSubtype, type, baseSet]);
 
   return {
     subtypes,

@@ -9,10 +9,12 @@ import { Type, useType } from '@cardEditor/cardOptions/type';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const TypeSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
   const { isPokemonType } = useCardLogic();
+  const { baseSet } = useBaseSet();
   const { supertype } = useSupertype();
   const { types, type, setType } = useType();
 
@@ -57,7 +59,12 @@ const TypeSelector: FC = () => {
       slug="type"
       onChange={handleChange}
     >
-      {types.map(t => t.supertypes.includes(supertype.id) && makeMenuItem(t))}
+      {types.map(
+        t =>
+          t.baseSetDependencies[baseSet.id]?.supertypes.includes(
+            supertype.id,
+          ) && makeMenuItem(t),
+      )}
     </ControlledSelector>
   );
 };

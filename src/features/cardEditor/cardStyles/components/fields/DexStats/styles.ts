@@ -4,7 +4,6 @@ import CardText from '../../atoms/CardText';
 
 export const DexStatsText = styled(CardText)`
   position: absolute;
-  top: 48%;
   left: 11%;
   width: 78%;
   font-family: '${Font.FrutigerLT55Roman}', monospace;

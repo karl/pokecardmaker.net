@@ -1,24 +1,26 @@
 import { css, styled } from '@css';
+import { PlacementBlock } from '../../atoms/PlacementBlock';
 
-export const Wrapper = styled('div')<{ $multiple: boolean; $custom: boolean }>`
+export const Wrapper = styled(PlacementBlock)<{
+  $multiple: boolean;
+  $custom: boolean;
+}>`
   display: flex;
   justify-content: flex-end;
   align-items: center;
   overflow: hidden;
-  position: absolute;
+  width: 23.5%;
+  gap: 0.15em;
 
   ${({ $custom, $multiple }) =>
     $multiple
       ? css`
-          gap: 0.15em;
           top: 2.5%;
           right: 4.5%;
-          width: 23.5%;
           height: 6.5%;
         `
       : css`
           top: 2.4%;
-          width: 9%;
           height: 7.5%;
 
           ${$custom
@@ -36,6 +38,7 @@ export const Wrapper = styled('div')<{ $multiple: boolean; $custom: boolean }>`
 export const StyledImg = styled('img')<{
   $multiple: boolean;
   $custom: boolean;
+  $hasBorder: boolean;
 }>`
   height: 100%;
   border-radius: 50%;
@@ -43,13 +46,14 @@ export const StyledImg = styled('img')<{
   object-fit: cover;
   object-position: center;
 
-  ${({ $custom, $multiple }) =>
+  ${({ $custom, $multiple, $hasBorder }) =>
     $multiple
       ? css`
           width: 3.5em;
           height: 3.5em;
 
-          ${$custom
+          ${$hasBorder &&
+          ($custom
             ? css`
                 /* Multiple custom */
                 border: 3px solid white;
@@ -57,7 +61,7 @@ export const StyledImg = styled('img')<{
             : css`
                 /* Multiple default */
                 border: 2px solid white;
-              `}
+              `)}
         `
       : css`
           ${$custom

@@ -35,10 +35,15 @@ export const CardStylesProvider: React.FC = ({ children }) => {
       defaultCardStyles,
       baseSet.styles,
       supertype.styles,
+      supertype.baseSetOverwrites?.[baseSet.id]?.styles,
       type.styles,
+      type.baseSetOverwrites?.[baseSet.id]?.styles,
       subtype?.styles,
+      subtype?.baseSetOverwrites?.[baseSet.id]?.styles,
       variation?.styles,
+      variation?.baseSetOverwrites?.[baseSet.id]?.styles,
       rarity?.styles,
+      rarity?.baseSetOverwrites?.[baseSet.id]?.styles,
     );
 
     // Create cardImgSrc

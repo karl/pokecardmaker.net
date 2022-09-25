@@ -13,6 +13,13 @@ import { Variation } from './variation';
 export interface CardTypeHelpers {
   styles?: Partial<CardStyles>;
   logic?: Partial<CardLogic>;
+  // This lets you overwrite logic and style properties per baseSet on a type-level
+  baseSetOverwrites?: {
+    [id: number]: {
+      styles?: Partial<CardStyles>;
+      logic?: Partial<CardLogic>;
+    };
+  };
 }
 
 export interface IdentifierInfo {

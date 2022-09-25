@@ -7,12 +7,20 @@ import { DexEntryText } from './styles';
 const DexEntry: FC = () => {
   const { dexEntry } = useCardOptions();
   const { hasDexEntry } = useCardLogic();
-  const { cardInfoOutline, cardInfoTextColor } = useCardStyles();
+  const {
+    cardInfoOutline,
+    cardInfoTextColor,
+    positions: { dexEntry: placement },
+  } = useCardStyles();
 
   if (!hasDexEntry || !dexEntry) return null;
 
   return (
-    <DexEntryText color={cardInfoTextColor} outline={cardInfoOutline}>
+    <DexEntryText
+      color={cardInfoTextColor}
+      outline={cardInfoOutline}
+      {...placement}
+    >
       {dexEntry}
     </DexEntryText>
   );
