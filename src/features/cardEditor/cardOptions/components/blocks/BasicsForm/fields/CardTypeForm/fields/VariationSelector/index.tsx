@@ -1,12 +1,7 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
-import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import { useRarity } from '@cardEditor/cardOptions/rarity';
-import {
-  basic,
-  stage1,
-  stage2,
-  useSubtype,
-} from '@cardEditor/cardOptions/subtype';
+import { useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
@@ -16,6 +11,7 @@ import { FC, useCallback } from 'react';
 const VariationSelector: FC = () => {
   const { trackCardCreatorEvent } = useAnalytics();
   const { hasVariations, isVariationRequired } = useCardLogic();
+  const { baseSet } = useBaseSet();
   const { subtype } = useSubtype();
   const { rarity } = useRarity();
   const { variations, variation, setVariation } = useVariation();
@@ -36,19 +32,6 @@ const VariationSelector: FC = () => {
       displayName="Variation"
       slug="variation"
       onChange={handleChange}
-      helpText={
-        subtype?.id === basic.id ||
-        subtype?.id === stage1.id ||
-        subtype?.id === stage2.id ? (
-          <NewFeatureHelpText>
-            Try the new{' '}
-            <b>
-              <i>ex</i>
-            </b>{' '}
-            variation!
-          </NewFeatureHelpText>
-        ) : undefined
-      }
     >
       {!isVariationRequired && (
         <MenuItem value="">
@@ -57,8 +40,10 @@ const VariationSelector: FC = () => {
       )}
       {variations.map(
         v =>
-          (v.subtypes.includes(subtype.id) ||
-            v.rarities.includes(rarity?.id ?? 0)) && (
+          (v.baseSetDependencies[baseSet.id]?.subtypes.includes(subtype.id) ||
+            v.baseSetDependencies[baseSet.id]?.rarities.includes(
+              rarity?.id ?? 0,
+            )) && (
             <MenuItem key={v.slug} value={v.id}>
               <ListItemText primary={v.displayName} />
             </MenuItem>

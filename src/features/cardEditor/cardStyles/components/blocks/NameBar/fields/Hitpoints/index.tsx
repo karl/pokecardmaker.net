@@ -7,12 +7,22 @@ import { HPNumbers, HPText, Wrapper } from './styles';
 const Hitpoints: FC = () => {
   const { hasHitpoints } = useCardLogic();
   const { hitpoints } = useCardOptions();
-  const { hpSize, hpOutline, hpTextColor } = useCardStyles();
+  const {
+    hpSize,
+    hpOutline,
+    hpTextColor,
+    positions: { hitpoints: placement },
+  } = useCardStyles();
 
   if (!hasHitpoints || hitpoints === '') return null;
 
   return (
-    <Wrapper $size={hpSize} outline={hpOutline} color={hpTextColor}>
+    <Wrapper
+      $size={hpSize}
+      outline={hpOutline}
+      color={hpTextColor}
+      {...placement}
+    >
       <HPText $size={hpSize}>HP</HPText>
       <HPNumbers $size={hpSize}>{hitpoints}</HPNumbers>
     </Wrapper>

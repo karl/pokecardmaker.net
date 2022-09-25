@@ -13,15 +13,38 @@ export interface Placement {
   order?: string;
   gap?: string;
   'line-height'?: string;
+  'font-size'?: string;
+  'margin-left'?: string;
+  'align-items'?: string;
+  'text-align'?: string;
+  'min-width'?: string;
+  'letter-spacing'?: string;
+  'border-radius'?: string;
+  'clip-path'?: string;
 }
 
 export interface Positions {
   name?: Placement;
+  hitpoints?: Placement;
+  description?: Placement;
+  typeImgContainer?: Placement;
+  typeImg?: Placement;
+  prevolveName?: Placement;
   prevolveImg?: Placement;
+  dexStats?: Placement;
+  movesWrapper?: Placement;
   ability?: Placement;
   move2?: Placement;
-  description?: Placement;
-  movesWrapper?: Placement;
+  typeBar?: Placement;
+  weakness?: Placement;
+  resistance?: Placement;
+  cardInfoContainer?: Placement;
+  cardInfoBar?: Placement;
+  illustrator?: Placement;
+  setIcon?: Placement;
+  cardNumber?: Placement;
+  rarityIcon?: Placement;
+  dexEntry?: Placement;
 }
 
 export interface CardStyles {
@@ -99,6 +122,11 @@ export interface CardStyles {
    * @default none
    */
   abilitySymbol?: AbilitySymbol;
+  /**
+   * Whether the energy card's type img should have a white border
+   * @default true
+   */
+  hasTypeImgBorder: boolean;
   /**
    * @default false
    */

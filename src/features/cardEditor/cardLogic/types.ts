@@ -91,4 +91,9 @@ export interface CardLogic {
    * @default false
    */
   bonusMoveRequired: boolean;
+  /**
+   * Whether the card should show the Rotation Icon (D/E/F)
+   * @default true
+   */
+  hasRotationIcon: boolean;
 }

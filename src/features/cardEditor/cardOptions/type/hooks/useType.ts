@@ -11,7 +11,7 @@ import { types } from '../data';
 
 const useType = () => {
   const { stateSetter } = useCardOptions();
-  const { supertype, type } = useCardRelations();
+  const { baseSet, supertype, type } = useCardRelations();
 
   const pokemonTypes = useMemo<Type[]>(
     () => types.filter(t => t.logic?.isPokemonType),
@@ -31,11 +31,13 @@ const useType = () => {
   const getTypeById = useCallback((id: number) => findById(types, id), []);
 
   useEffect(() => {
-    if (!type.supertypes.includes(supertype.id)) {
+    if (
+      !type.baseSetDependencies[baseSet.id]?.supertypes.includes(supertype.id)
+    ) {
       setType(defaultSupertypeTypes[supertype.id]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setType, supertype]);
+  }, [baseSet, setType, supertype]);
 
   return {
     attackCostTypes,

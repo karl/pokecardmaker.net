@@ -6,14 +6,18 @@ import ControlledSelector from '@components/inputs/ControlledSelector';
 import { useRotationIcon } from '@cardEditor/cardOptions/rotationIcon';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
+import { useCardLogic } from '@cardEditor/cardLogic';
 import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 
 const RotationIconSelector: FC = () => {
+  const { hasRotationIcon } = useCardLogic();
   const { rotationIcons, rotationIcon, setRotationIcon } = useRotationIcon();
 
   const handleChange = (event: SelectChangeEvent) => {
     setRotationIcon(Number(event.target.value));
   };
+
+  if (!hasRotationIcon) return null;
 
   return (
     <ControlledSelector

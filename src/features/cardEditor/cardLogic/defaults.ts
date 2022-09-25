@@ -21,4 +21,5 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasDexEntry: false,
   hasTypeBar: false,
   bonusMoveRequired: false,
+  hasRotationIcon: true,
 };

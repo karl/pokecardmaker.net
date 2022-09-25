@@ -7,12 +7,20 @@ import { DexStatsText } from './styles';
 const DexStats: FC = () => {
   const { hasDexStats } = useCardLogic();
   const { dexStats } = useCardOptions();
-  const { dexStatsTextColor, dexStatsOutline } = useCardStyles();
+  const {
+    dexStatsTextColor,
+    dexStatsOutline,
+    positions: { dexStats: placement },
+  } = useCardStyles();
 
   if (!hasDexStats) return null;
 
   return (
-    <DexStatsText color={dexStatsTextColor} outline={dexStatsOutline}>
+    <DexStatsText
+      color={dexStatsTextColor}
+      outline={dexStatsOutline}
+      {...placement}
+    >
       {dexStats}
     </DexStatsText>
   );
