@@ -157,6 +157,150 @@ export const sunAndMoon: SetIcon = {
   shape: 'square',
 };
 
+export const guardiansRising: SetIcon = {
+  id: id++,
+  slug: 'guardiansRising',
+  displayName: 'Guardians Rising',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const burningShadows: SetIcon = {
+  id: id++,
+  slug: 'burningShadows',
+  displayName: 'Burning Shadows',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const shiningLegends: SetIcon = {
+  id: id++,
+  slug: 'shiningLegends',
+  displayName: 'Shining Legends',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const crimsonInvasion: SetIcon = {
+  id: id++,
+  slug: 'crimsonInvasion',
+  displayName: 'Crimson Invasion',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const mcDonalds2017: SetIcon = {
+  id: id++,
+  slug: 'mcDonalds2017',
+  displayName: "McDonald's Collection 2017",
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const ultraPrism: SetIcon = {
+  id: id++,
+  slug: 'ultraPrism',
+  displayName: 'Ultra Prism',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const forbiddenLight: SetIcon = {
+  id: id++,
+  slug: 'forbiddenLight',
+  displayName: 'Forbidden Light',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const celestialStorm: SetIcon = {
+  id: id++,
+  slug: 'celestialStorm',
+  displayName: 'Celestial Storm',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const dragonMajesty: SetIcon = {
+  id: id++,
+  slug: 'dragonMajesty',
+  displayName: 'Dragon Majesty',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const mcDonalds2018: SetIcon = {
+  id: id++,
+  slug: 'mcDonalds2018',
+  displayName: "McDonald's Collection 2018",
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const lostThunder: SetIcon = {
+  id: id++,
+  slug: 'lostThunder',
+  displayName: 'Lost Thunder',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const teamUp: SetIcon = {
+  id: id++,
+  slug: 'teamUp',
+  displayName: 'Team Up',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const detectivePikachu: SetIcon = {
+  id: id++,
+  slug: 'detectivePikachu',
+  displayName: 'Detective Pikachu',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const unbrokenBonds: SetIcon = {
+  id: id++,
+  slug: 'unbrokenBonds',
+  displayName: 'Unbroken Bonds',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const unifiedMinds: SetIcon = {
+  id: id++,
+  slug: 'unifiedMinds',
+  displayName: 'Unified Minds',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const hiddenFates: SetIcon = {
+  id: id++,
+  slug: 'hiddenFates',
+  displayName: 'Hidden Fates',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const mcDonalds2019: SetIcon = {
+  id: id++,
+  slug: 'mcDonalds2019',
+  displayName: "McDonald's Collection 2019",
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
+export const cosmicEclipse: SetIcon = {
+  id: id++,
+  slug: 'cosmicEclipse',
+  displayName: 'Cosmic Eclipse',
+  baseSet: smBaseSet.id,
+  shape: 'square',
+};
+
 export const setIcons: SetIcon[] = [
   promo,
   swordAndShield,
@@ -177,4 +321,22 @@ export const setIcons: SetIcon[] = [
   pokemonGO,
   lostOrigin,
   sunAndMoon,
+  guardiansRising,
+  burningShadows,
+  shiningLegends,
+  crimsonInvasion,
+  mcDonalds2017,
+  ultraPrism,
+  forbiddenLight,
+  celestialStorm,
+  dragonMajesty,
+  mcDonalds2018,
+  lostThunder,
+  teamUp,
+  detectivePikachu,
+  unbrokenBonds,
+  unifiedMinds,
+  hiddenFates,
+  mcDonalds2019,
+  cosmicEclipse,
 ];
