@@ -38,8 +38,10 @@ const defaultPokemonTypes: number[] = [
 
 const allPokemonTypes: number[] = [...defaultPokemonTypes, dragon.id, fairy.id];
 
+let id = 1;
+
 export const basic: Subtype = {
-  id: 1,
+  id: id++,
   slug: 'basic',
   displayName: 'Basic',
   logic: {
@@ -78,7 +80,7 @@ export const basic: Subtype = {
 };
 
 export const stage1: Subtype = {
-  id: 2,
+  id: id++,
   slug: 'stage1',
   displayName: 'Stage 1',
   logic: {
@@ -118,7 +120,7 @@ export const stage1: Subtype = {
 };
 
 export const stage2: Subtype = {
-  id: 3,
+  id: id++,
   slug: 'stage2',
   displayName: 'Stage 2',
   logic: {
@@ -169,7 +171,7 @@ const vStyles: Partial<CardStyles> = {
 };
 
 export const v: Subtype = {
-  id: 4,
+  id: id++,
   slug: 'v',
   displayName: 'V',
   styles: {
@@ -195,7 +197,7 @@ export const v: Subtype = {
 };
 
 export const vmax: Subtype = {
-  id: 5,
+  id: id++,
   slug: 'vmax',
   displayName: 'VMax',
   logic: {
@@ -223,7 +225,7 @@ export const vmax: Subtype = {
 };
 
 export const vstar: Subtype = {
-  id: 6,
+  id: id++,
   slug: 'vstar',
   displayName: 'VStar',
   styles: {
@@ -267,7 +269,7 @@ export const vstar: Subtype = {
 };
 
 export const tool: Subtype = {
-  id: 7,
+  id: id++,
   slug: 'tool',
   displayName: 'Tool',
   styles: {

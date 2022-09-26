@@ -15,6 +15,7 @@ import { QuestionMark as QuestionMarkIcon } from '@mui/icons-material';
 import FileUploader from '@components/inputs/FileUploader';
 import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import findById from '@utils/findById';
+import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 
 const SetIconSelector: FC = () => {
   const { baseSets } = useBaseSet();
@@ -63,6 +64,19 @@ const SetIconSelector: FC = () => {
         displayName="Set Icon"
         slug="setIcon"
         onChange={handleChange}
+        helpText={
+          <NewFeatureHelpText>
+            Try the new{' '}
+            <b>
+              <i>Sword & Shield</i>
+            </b>
+            &nbsp;and&nbsp;
+            <b>
+              <i>Sun & Moon</i>
+            </b>{' '}
+            set icons!
+          </NewFeatureHelpText>
+        }
       >
         <SelectorMenuItem value={0}>
           <SelectorListItemIcon>
@@ -88,7 +102,7 @@ const SetIconSelector: FC = () => {
                   <Image
                     src={Routes.Assets.Icons.Set(si.slug)}
                     width={36}
-                    height={36}
+                    height={si.shape === 'square' ? 36 : 24}
                     alt=""
                   />
                 </SelectorListItemIcon>

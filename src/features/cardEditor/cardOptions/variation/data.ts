@@ -3,8 +3,10 @@ import { swordAndShield } from '../baseSet';
 import { rainbow } from '../rarity';
 import { basic, stage1, stage2, vmax } from '../subtype';
 
+let id = 1;
+
 export const dynamax: Variation = {
-  id: 1,
+  id: id++,
   slug: 'dynamax',
   displayName: 'Dynamax',
   baseSetDependencies: {
@@ -16,7 +18,7 @@ export const dynamax: Variation = {
 };
 
 export const gigantamax: Variation = {
-  id: 2,
+  id: id++,
   slug: 'gigantamax',
   displayName: 'Gigantamax',
   baseSetDependencies: {
@@ -28,7 +30,7 @@ export const gigantamax: Variation = {
 };
 
 export const light: Variation = {
-  id: 3,
+  id: id++,
   slug: 'light',
   displayName: 'Light',
   baseSetDependencies: {
@@ -40,7 +42,7 @@ export const light: Variation = {
 };
 
 export const dark: Variation = {
-  id: 4,
+  id: id++,
   slug: 'dark',
   displayName: 'Dark',
   styles: {
@@ -61,7 +63,7 @@ export const dark: Variation = {
 };
 
 export const ex: Variation = {
-  id: 5,
+  id: id++,
   slug: 'ex',
   displayName: 'ex',
   logic: {

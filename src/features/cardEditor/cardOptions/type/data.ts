@@ -27,8 +27,10 @@ const pokemonTypeBaseSetDependencies: Type['baseSetDependencies'] = {
   },
 };
 
+let id = 1;
+
 export const grass: Type = {
-  id: 1,
+  id: id++,
   slug: 'grass',
   displayName: 'Grass',
   logic: pokemonTypeLogic,
@@ -37,7 +39,7 @@ export const grass: Type = {
 };
 
 export const fire: Type = {
-  id: 2,
+  id: id++,
   slug: 'fire',
   displayName: 'Fire',
   logic: pokemonTypeLogic,
@@ -46,7 +48,7 @@ export const fire: Type = {
 };
 
 export const water: Type = {
-  id: 3,
+  id: id++,
   slug: 'water',
   displayName: 'Water',
   logic: pokemonTypeLogic,
@@ -55,7 +57,7 @@ export const water: Type = {
 };
 
 export const lightning: Type = {
-  id: 4,
+  id: id++,
   slug: 'lightning',
   displayName: 'Lightning',
   logic: pokemonTypeLogic,
@@ -64,7 +66,7 @@ export const lightning: Type = {
 };
 
 export const psychic: Type = {
-  id: 5,
+  id: id++,
   slug: 'psychic',
   displayName: 'Psychic',
   logic: pokemonTypeLogic,
@@ -73,7 +75,7 @@ export const psychic: Type = {
 };
 
 export const fighting: Type = {
-  id: 6,
+  id: id++,
   slug: 'fighting',
   displayName: 'Fighting',
   logic: pokemonTypeLogic,
@@ -82,7 +84,7 @@ export const fighting: Type = {
 };
 
 export const dark: Type = {
-  id: 7,
+  id: id++,
   slug: 'dark',
   displayName: 'Dark',
   logic: pokemonTypeLogic,
@@ -98,7 +100,7 @@ export const dark: Type = {
 };
 
 export const metal: Type = {
-  id: 8,
+  id: id++,
   slug: 'metal',
   displayName: 'Metal',
   logic: pokemonTypeLogic,
@@ -107,7 +109,7 @@ export const metal: Type = {
 };
 
 export const dragon: Type = {
-  id: 9,
+  id: id++,
   slug: 'dragon',
   displayName: 'Dragon',
   logic: pokemonTypeLogic,
@@ -116,7 +118,7 @@ export const dragon: Type = {
 };
 
 export const fairy: Type = {
-  id: 10,
+  id: id++,
   slug: 'fairy',
   displayName: 'Fairy',
   logic: pokemonTypeLogic,
@@ -125,7 +127,7 @@ export const fairy: Type = {
 };
 
 export const colorless: Type = {
-  id: 11,
+  id: id++,
   slug: 'colorless',
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
@@ -134,7 +136,7 @@ export const colorless: Type = {
 };
 
 export const item: Type = {
-  id: 12,
+  id: id++,
   slug: 'item',
   displayName: 'Item',
   logic: {
@@ -154,7 +156,7 @@ export const item: Type = {
 };
 
 export const supporter: Type = {
-  id: 13,
+  id: id++,
   slug: 'supporter',
   displayName: 'Supporter',
   logic: {
@@ -174,7 +176,7 @@ export const supporter: Type = {
 };
 
 export const stadium: Type = {
-  id: 14,
+  id: id++,
   slug: 'stadium',
   displayName: 'Stadium',
   logic: {
@@ -193,7 +195,7 @@ export const stadium: Type = {
 };
 
 export const base: Type = {
-  id: 15,
+  id: id++,
   slug: 'base',
   displayName: 'Base',
   logic: {
@@ -214,7 +216,7 @@ export const base: Type = {
 };
 
 export const special: Type = {
-  id: 16,
+  id: id++,
   slug: 'special',
   displayName: 'Special',
   logic: {
