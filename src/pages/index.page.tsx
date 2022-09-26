@@ -10,6 +10,7 @@ import { useType } from '@cardEditor/cardOptions/type';
 import banner from '@assets/images/banner.png';
 import cardImgPaths from '@utils/cardImgPaths';
 import { List, PaperBox, TypeList } from './styles';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const Home: FC = () => {
   const { pokemonTypes } = useType();
@@ -82,7 +83,7 @@ const Home: FC = () => {
                       alt={pt.displayName}
                       height={20}
                       width={20}
-                      src={Routes.Assets.Icons.Type(pt.slug)}
+                      src={Routes.Assets.Icons.Type('swordAndShield', pt.slug)}
                     />
                   </li>
                 ))}
