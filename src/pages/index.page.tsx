@@ -10,7 +10,6 @@ import { useType } from '@cardEditor/cardOptions/type';
 import banner from '@assets/images/banner.png';
 import cardImgPaths from '@utils/cardImgPaths';
 import { List, PaperBox, TypeList } from './styles';
-import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const Home: FC = () => {
   const { pokemonTypes } = useType();
