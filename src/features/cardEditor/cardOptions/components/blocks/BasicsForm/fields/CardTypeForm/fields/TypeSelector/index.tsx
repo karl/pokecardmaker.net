@@ -33,7 +33,7 @@ const TypeSelector: FC = () => {
           <SelectorMenuItem value={item.id} key={item.slug}>
             <SelectorListItemIcon>
               <Image
-                src={Routes.Assets.Icons.Type(item.slug)}
+                src={Routes.Assets.Icons.Type(baseSet.slug, item.slug)}
                 width={26}
                 height={26}
                 alt=""
@@ -49,7 +49,7 @@ const TypeSelector: FC = () => {
         </MenuItem>
       );
     },
-    [isPokemonType],
+    [isPokemonType, baseSet],
   );
 
   return (

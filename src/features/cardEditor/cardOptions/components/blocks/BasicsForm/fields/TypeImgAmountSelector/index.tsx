@@ -5,10 +5,12 @@ import ControlledSelector from '@components/inputs/ControlledSelector';
 import { MenuItem, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';
 import Image from 'next/image';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const MAX_TYPE_IMG_AMOUNT = 3;
 
 const TypeImgAmountSelector: FC = () => {
+  const { baseSet } = useBaseSet();
   const { hasMultipleTypeImages } = useCardLogic();
   const { typeImgAmount, setTypeImgAmount, typeImg, customTypeImgSrc } =
     useTypeImg();
@@ -43,8 +45,8 @@ const TypeImgAmountSelector: FC = () => {
               src={
                 customTypeImgSrc ||
                 (typeImg
-                  ? Routes.Assets.Icons.TypeBorder(typeImg.slug)
-                  : Routes.Assets.Icons.TypeBorder('colorless'))
+                  ? Routes.Assets.Icons.TypeBorder(baseSet.slug, typeImg.slug)
+                  : Routes.Assets.Icons.TypeBorder(baseSet.slug, 'colorless'))
               }
               style={{ borderRadius: '50%' }}
               objectFit="cover"

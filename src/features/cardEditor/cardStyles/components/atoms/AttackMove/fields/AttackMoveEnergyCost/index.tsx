@@ -1,3 +1,4 @@
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import { colorless, useType } from '@cardEditor/cardOptions/type';
 import Routes from '@routes';
 import { FC } from 'react';
@@ -6,6 +7,7 @@ import { AttackMoveDisplayProps } from '../../types';
 import { TypeContainer, Wrapper } from './styles';
 
 const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
+  const { baseSet } = useBaseSet();
   const { getTypeById } = useType();
 
   return (
@@ -13,7 +15,9 @@ const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
       {/* If there's no energy cost, display an empty cost symbol */}
       {move?.energyCost.length === 0 && (
         <TypeContainer>
-          <DisplayImg src={Routes.Assets.Icons.TypeBorder('empty')} />
+          <DisplayImg
+            src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'empty')}
+          />
         </TypeContainer>
       )}
       {move?.energyCost.length !== 0 &&
@@ -25,6 +29,7 @@ const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
               <TypeContainer key={`${energy.typeId}-${i}`}>
                 <DisplayImg
                   src={Routes.Assets.Icons.TypeBorder(
+                    baseSet.slug,
                     getTypeById(energy.typeId)!.slug,
                   )}
                 />
