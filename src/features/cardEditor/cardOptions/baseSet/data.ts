@@ -1,7 +1,9 @@
 import { BaseSet } from '@cardEditor/cardOptions/baseSet';
 
+let id = 1;
+
 export const swordAndShield: BaseSet = {
-  id: 1,
+  id: id++,
   slug: 'swordAndShield',
   displayName: 'Sword & Shield',
   styles: {
@@ -60,7 +62,7 @@ export const swordAndShield: BaseSet = {
 };
 
 export const sunAndMoon: BaseSet = {
-  id: 2,
+  id: id++,
   slug: 'sunAndMoon',
   displayName: 'Sun & Moon',
   logic: {

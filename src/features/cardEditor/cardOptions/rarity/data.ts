@@ -1,7 +1,9 @@
 import { Rarity } from '@cardEditor/cardOptions/rarity';
 
+let id = 1;
+
 export const promo: Rarity = {
-  id: 1,
+  id: id++,
   slug: 'promo',
   displayName: 'Promo',
   logic: {
@@ -22,7 +24,7 @@ export const promo: Rarity = {
 };
 
 export const fullArt: Rarity = {
-  id: 2,
+  id: id++,
   slug: 'fullArt',
   displayName: 'Full Art',
   styles: {
@@ -34,7 +36,7 @@ export const fullArt: Rarity = {
 };
 
 export const goldenFullArtPokemon: Rarity = {
-  id: 3,
+  id: id++,
   slug: 'goldenFullArtPokemon',
   displayName: 'Golden Full Art',
   styles: {
@@ -48,13 +50,13 @@ export const goldenFullArtPokemon: Rarity = {
 };
 
 export const rainbow: Rarity = {
-  id: 4,
+  id: id++,
   slug: 'rainbow',
   displayName: 'Rainbow',
 };
 
 export const supporterFullArt: Rarity = {
-  id: 5,
+  id: id++,
   slug: 'supporterFullArt',
   displayName: 'Full Art',
   styles: {
@@ -67,7 +69,7 @@ export const supporterFullArt: Rarity = {
 };
 
 export const goldStar: Rarity = {
-  id: 6,
+  id: id++,
   slug: 'goldStar',
   displayName: 'Gold Star',
   styles: {
@@ -76,13 +78,13 @@ export const goldStar: Rarity = {
 };
 
 export const gilded: Rarity = {
-  id: 7,
+  id: id++,
   slug: 'gilded',
   displayName: 'Gilded',
 };
 
 export const characterRare: Rarity = {
-  id: 8,
+  id: id++,
   slug: 'characterRare',
   displayName: 'Character Rare',
   logic: {
@@ -102,7 +104,7 @@ export const characterRare: Rarity = {
 };
 
 export const goldenFullArtEnergy: Rarity = {
-  id: 9,
+  id: id++,
   slug: 'goldenFullArtEnergy',
   displayName: 'Golden Full Art',
   styles: {
