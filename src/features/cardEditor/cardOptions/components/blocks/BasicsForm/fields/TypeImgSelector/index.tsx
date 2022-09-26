@@ -9,9 +9,11 @@ import { QuestionMark as QuestionMarkIcon } from '@mui/icons-material';
 import FileUploader from '@components/inputs/FileUploader';
 import { useType, useTypeImg } from '@cardEditor/cardOptions/type';
 import { useCardLogic } from '@cardEditor/cardLogic';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const TypeImgSelector: FC = () => {
   const { hasTypeImage } = useCardLogic();
+  const { baseSet } = useBaseSet();
   const { pokemonTypes } = useType();
   const { typeImg, setTypeImg, customTypeImgSrc, setCustomTypeImgSrc } =
     useTypeImg();
@@ -52,7 +54,7 @@ const TypeImgSelector: FC = () => {
           <SelectorMenuItem key={pt.slug} value={pt.id}>
             <SelectorListItemIcon>
               <Image
-                src={Routes.Assets.Icons.TypeBorder(pt.slug)}
+                src={Routes.Assets.Icons.TypeBorder(baseSet.slug, pt.slug)}
                 width={26}
                 height={26}
                 alt=""

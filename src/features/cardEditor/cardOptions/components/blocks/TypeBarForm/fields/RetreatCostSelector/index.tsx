@@ -4,10 +4,12 @@ import ControlledSelector from '@components/inputs/ControlledSelector';
 import { MenuItem, SelectChangeEvent } from '@mui/material';
 import Routes from '@routes';
 import Image from 'next/image';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 
 const MAX_RETREAT_COST = 5;
 
 const RetreatCostSelector: FC = () => {
+  const { baseSet } = useBaseSet();
   const { retreatCost, setRetreatCost } = useCardOptions();
 
   const handleChange = useCallback(
@@ -27,7 +29,7 @@ const RetreatCostSelector: FC = () => {
     >
       <MenuItem value={0} title="0">
         <Image
-          src={Routes.Assets.Icons.TypeBorder('empty')}
+          src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'empty')}
           width={26}
           height={26}
           alt=""
@@ -42,7 +44,7 @@ const RetreatCostSelector: FC = () => {
           {new Array(costIndex + 1).fill(undefined).map((__, imageIndex) => (
             <Image
               key={imageIndex}
-              src={Routes.Assets.Icons.TypeBorder('colorless')}
+              src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'colorless')}
               width={26}
               height={26}
               alt=""

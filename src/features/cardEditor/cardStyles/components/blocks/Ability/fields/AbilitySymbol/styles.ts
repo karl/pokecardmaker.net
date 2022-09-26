@@ -1,7 +1,6 @@
+import { PlacementBlock } from '@cardEditor/cardStyles/components/atoms/PlacementBlock';
 import { styled } from '@css';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled(PlacementBlock)`
   position: relative;
-  height: 2.35em;
-  width: 12.2em;
 `;

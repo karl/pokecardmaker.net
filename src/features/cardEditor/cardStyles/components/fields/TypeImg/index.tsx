@@ -1,4 +1,5 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import { useTypeImg } from '@cardEditor/cardOptions/type';
 import { useCardStyles } from '@cardEditor/cardStyles/hooks';
 import Routes from '@routes';
@@ -11,13 +12,16 @@ const TypeImg: FC = () => {
     positions: { typeImgContainer: containerPlacement, typeImg: imgPlacement },
   } = useCardStyles();
   const { hasTypeImage, hasMultipleTypeImages } = useCardLogic();
+  const { baseSet } = useBaseSet();
   const { typeImg, customTypeImgSrc, typeImgAmount } = useTypeImg();
 
   const imgSrc = useMemo<string | undefined>(
     () =>
       customTypeImgSrc ||
-      (typeImg ? Routes.Assets.Icons.TypeBorder(typeImg.slug) : undefined),
-    [customTypeImgSrc, typeImg],
+      (typeImg
+        ? Routes.Assets.Icons.TypeBorder(baseSet.slug, typeImg.slug)
+        : undefined),
+    [customTypeImgSrc, typeImg, baseSet],
   );
 
   if (!hasTypeImage || !imgSrc) return null;

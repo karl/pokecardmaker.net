@@ -20,6 +20,6 @@ export const MoveDamageModifierText = styled(CardText)`
   position: absolute;
   font-size: 2em;
   top: 38%;
-  right: -1em;
+  right: -0.9em;
   transform: translate(-50%, -50%);
 `;

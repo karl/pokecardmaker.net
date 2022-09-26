@@ -5,7 +5,7 @@ import AttackMoveDamageAmount from './fields/AttackMoveDamageAmount';
 import AttackMoveDescription from './fields/AttackMoveDescription';
 import AttackMoveEnergyCost from './fields/AttackMoveEnergyCost';
 import AttackMoveName from './fields/AttackMoveName';
-import { TextContainer, TitleBar, Wrapper } from './styles';
+import { TitleBar, Wrapper } from './styles';
 import { AttackMoveDisplayProps } from './types';
 
 const AttackMove: FC<AttackMoveDisplayProps> = ({
@@ -31,13 +31,11 @@ const AttackMove: FC<AttackMoveDisplayProps> = ({
         <AttackMoveName move={move} />
         <AttackMoveDamageAmount move={move} />
       </TitleBar>
-      <TextContainer>
-        <AttackMoveDescription
-          move={move}
-          isLastMove={isLastMove}
-          isOnlyMove={isOnlyMove}
-        />
-      </TextContainer>
+      <AttackMoveDescription
+        move={move}
+        isLastMove={isLastMove}
+        isOnlyMove={isOnlyMove}
+      />
     </Wrapper>
   );
 };

@@ -6,8 +6,8 @@ export const Wrapper = styled(PlacementBlock)<{
   $alignBottom: boolean;
 }>`
   top: 53%;
-  left: 5%;
-  width: 90%;
+  left: 7.5%;
+  width: 84.5%;
   height: 30.5%;
   display: flex;
   flex-direction: column;

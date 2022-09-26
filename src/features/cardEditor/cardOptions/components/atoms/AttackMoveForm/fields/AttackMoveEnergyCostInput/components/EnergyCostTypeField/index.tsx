@@ -1,3 +1,4 @@
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import {
   ExpandMore as ChevronDownIcon,
   ExpandLess as ChevronUpIcon,
@@ -15,6 +16,8 @@ const EnergyCostTypeField: FC<EnergyCostTypeFieldProps> = ({
   move,
   setMove,
 }) => {
+  const { baseSet } = useBaseSet();
+
   const energyCost = useMemo(
     () => move.energyCost.find(ec => ec.typeId === type.id),
     [move.energyCost, type],
@@ -82,7 +85,7 @@ const EnergyCostTypeField: FC<EnergyCostTypeFieldProps> = ({
           alt={type.displayName}
           layout="fill"
           objectFit="contain"
-          src={Routes.Assets.Icons.TypeBorder(type.slug)}
+          src={Routes.Assets.Icons.TypeBorder(baseSet.slug, type.slug)}
         />
       </TypeContainer>
       <IconButton aria-label="remove" size="small" onClick={remove}>

@@ -6,6 +6,7 @@ import { FC, useCallback } from 'react';
 import { useType } from '@cardEditor/cardOptions/type';
 import { SelectorListItemIcon } from '@components/SelectorListItemIcon';
 import { SelectorMenuItem } from '@components/SelectorMenuItem';
+import { useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import { TypeBarTypeSelectorProps } from './types';
 
 const TypeBarTypeSelector: FC<TypeBarTypeSelectorProps> = ({
@@ -14,6 +15,7 @@ const TypeBarTypeSelector: FC<TypeBarTypeSelectorProps> = ({
   type,
   setType,
 }) => {
+  const { baseSet } = useBaseSet();
   const { attackCostTypes } = useType();
 
   const handleChange = useCallback(
@@ -33,7 +35,7 @@ const TypeBarTypeSelector: FC<TypeBarTypeSelectorProps> = ({
       <SelectorMenuItem value="">
         <SelectorListItemIcon>
           <Image
-            src={Routes.Assets.Icons.TypeBorder('empty')}
+            src={Routes.Assets.Icons.Type(baseSet.slug, 'empty')}
             width={26}
             height={26}
             alt=""
@@ -45,7 +47,7 @@ const TypeBarTypeSelector: FC<TypeBarTypeSelectorProps> = ({
         <SelectorMenuItem value={item.id} key={item.slug}>
           <SelectorListItemIcon>
             <Image
-              src={Routes.Assets.Icons.Type(item.slug)}
+              src={Routes.Assets.Icons.Type(baseSet.slug, item.slug)}
               width={26}
               height={26}
               alt=""

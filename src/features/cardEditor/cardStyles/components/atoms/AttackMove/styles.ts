@@ -11,12 +11,6 @@ export const Wrapper = styled(PlacementBlock)`
 
 export const TitleBar = styled('div')`
   display: flex;
-  width: 94.6%;
-  margin-left: 2.2%;
   align-items: flex-end;
   gap: 0.5em;
-`;
-
-export const TextContainer = styled('div')`
-  padding: 0 3.5%;
 `;
