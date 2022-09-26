@@ -69,8 +69,8 @@ const SetIconSelector: FC = () => {
             Try the new{' '}
             <b>
               <i>Sword & Shield</i>
-            </b>{' '}
-            &{' '}
+            </b>
+            &nbsp;and&nbsp;
             <b>
               <i>Sun & Moon</i>
             </b>{' '}
