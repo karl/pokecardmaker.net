@@ -1,5 +1,4 @@
 import { CardLogic } from '@cardEditor/cardLogic';
-import { CardStyles } from '@cardEditor/cardStyles';
 import { Type } from '@cardEditor/cardOptions/type';
 import { goldenFullArtEnergy, supporterFullArt } from '../rarity';
 import { energy, pokemon, trainer } from '../supertype';
@@ -12,8 +11,17 @@ const pokemonTypeLogic: Partial<CardLogic> = {
   isAttackCostType: true,
 };
 
-const pokemonTypeStyles: Partial<CardStyles> = {
-  abilitySymbol: 'normal',
+const pokemonTypeBaseSetOverwrites: Type['baseSetOverwrites'] = {
+  [swordAndShield.id]: {
+    styles: {
+      abilitySymbol: 'swordAndShield',
+    },
+  },
+  [sunAndMoon.id]: {
+    styles: {
+      abilitySymbol: 'sunAndMoon',
+    },
+  },
 };
 
 const pokemonTypeBaseSetDependencies: Type['baseSetDependencies'] = {
@@ -34,8 +42,8 @@ export const grass: Type = {
   slug: 'grass',
   displayName: 'Grass',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const fire: Type = {
@@ -43,8 +51,8 @@ export const fire: Type = {
   slug: 'fire',
   displayName: 'Fire',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const water: Type = {
@@ -52,8 +60,8 @@ export const water: Type = {
   slug: 'water',
   displayName: 'Water',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const lightning: Type = {
@@ -61,8 +69,8 @@ export const lightning: Type = {
   slug: 'lightning',
   displayName: 'Lightning',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const psychic: Type = {
@@ -70,8 +78,8 @@ export const psychic: Type = {
   slug: 'psychic',
   displayName: 'Psychic',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const fighting: Type = {
@@ -79,8 +87,8 @@ export const fighting: Type = {
   slug: 'fighting',
   displayName: 'Fighting',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const dark: Type = {
@@ -89,7 +97,6 @@ export const dark: Type = {
   displayName: 'Dark',
   logic: pokemonTypeLogic,
   styles: {
-    ...pokemonTypeStyles,
     hpTextColor: 'white',
     nameTextColor: 'white',
     movesTextColor: 'white',
@@ -97,6 +104,7 @@ export const dark: Type = {
     rarityIconColor: 'white',
   },
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const metal: Type = {
@@ -104,8 +112,8 @@ export const metal: Type = {
   slug: 'metal',
   displayName: 'Metal',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const dragon: Type = {
@@ -113,8 +121,8 @@ export const dragon: Type = {
   slug: 'dragon',
   displayName: 'Dragon',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const fairy: Type = {
@@ -122,8 +130,8 @@ export const fairy: Type = {
   slug: 'fairy',
   displayName: 'Fairy',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const colorless: Type = {
@@ -131,8 +139,8 @@ export const colorless: Type = {
   slug: 'colorless',
   displayName: 'Colorless',
   logic: pokemonTypeLogic,
-  styles: pokemonTypeStyles,
   baseSetDependencies: pokemonTypeBaseSetDependencies,
+  baseSetOverwrites: pokemonTypeBaseSetOverwrites,
 };
 
 export const item: Type = {

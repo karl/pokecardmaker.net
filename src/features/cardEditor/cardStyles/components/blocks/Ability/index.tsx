@@ -4,11 +4,11 @@ import { FC } from 'react';
 import AbilityDescription from './fields/AbilityDescription';
 import AbilityName from './fields/AbilityName';
 import AbilitySymbol from './fields/AbilitySymbol';
-import { TextContainer, TitleBar, Wrapper } from './styles';
+import { TitleBar, Wrapper } from './styles';
 
 const Ability: FC = () => {
   const {
-    positions: { ability: placement },
+    positions: { ability: placement, abilityTitleBar: titleBarPlacement },
   } = useCardStyles();
   const { hasAbility } = useCardOptions();
 
@@ -16,13 +16,11 @@ const Ability: FC = () => {
 
   return (
     <Wrapper {...placement}>
-      <TitleBar>
+      <TitleBar {...titleBarPlacement}>
         <AbilitySymbol />
         <AbilityName />
       </TitleBar>
-      <TextContainer>
-        <AbilityDescription />
-      </TextContainer>
+      <AbilityDescription />
     </Wrapper>
   );
 };

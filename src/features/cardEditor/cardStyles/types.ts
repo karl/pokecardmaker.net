@@ -1,4 +1,4 @@
-export type AbilitySymbol = 'normal' | 'v' | 'vstar';
+export type AbilitySymbol = 'sunAndMoon' | 'swordAndShield' | 'v' | 'vstar';
 export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar' | 'ex';
 export type TextColor = 'white' | 'black';
 export type Size = 'sm' | 'lg';
@@ -34,6 +34,9 @@ export interface Positions {
   dexStats?: Placement;
   movesWrapper?: Placement;
   ability?: Placement;
+  abilityTitleBar?: Placement;
+  abilitySymbol?: Placement;
+  abilityName?: Placement;
   move2?: Placement;
   typeBar?: Placement;
   weakness?: Placement;
