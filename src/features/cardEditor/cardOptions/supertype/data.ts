@@ -1,8 +1,10 @@
 import { Supertype } from '@cardEditor/cardOptions/supertype';
 import { sunAndMoon, swordAndShield } from '../baseSet';
 
+let id = 1;
+
 export const pokemon: Supertype = {
-  id: 1,
+  id: id++,
   slug: 'pokemon',
   displayName: 'Pok\u00e9mon',
   logic: {
@@ -44,7 +46,7 @@ export const pokemon: Supertype = {
 };
 
 export const trainer: Supertype = {
-  id: 2,
+  id: id++,
   slug: 'trainer',
   displayName: 'Trainer',
   styles: {
@@ -86,7 +88,7 @@ export const trainer: Supertype = {
 };
 
 export const energy: Supertype = {
-  id: 3,
+  id: id++,
   slug: 'energy',
   displayName: 'Energy',
   styles: {

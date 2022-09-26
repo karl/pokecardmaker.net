@@ -5,8 +5,12 @@ import { FC } from 'react';
 
 const NewFeatureHelpText: FC = ({ children }) => (
   <Box display="flex" alignItems="center" mt={0.5}>
-    <StarIcon color="primary" fontSize="inherit" />
-    <Typography color="black" variant="caption" lineHeight={0}>
+    <StarIcon
+      color="primary"
+      fontSize="inherit"
+      sx={{ alignSelf: 'flex-start', height: 24 }}
+    />
+    <Typography color="black" variant="caption" lineHeight={1.75}>
       {children}
     </Typography>
   </Box>

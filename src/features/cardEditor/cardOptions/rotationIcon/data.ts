@@ -1,28 +1,30 @@
 import { RotationIcon } from '@cardEditor/cardOptions/rotationIcon';
 
+let id = 1;
+
 export const ditto: RotationIcon = {
-  id: 1,
+  id: id++,
   slug: 'ditto',
   displayName: 'Ditto',
   shape: 'square',
 };
 
 export const d: RotationIcon = {
-  id: 2,
+  id: id++,
   slug: 'd',
   displayName: 'D',
   shape: 'rectangle',
 };
 
 export const e: RotationIcon = {
-  id: 3,
+  id: id++,
   slug: 'e',
   displayName: 'E',
   shape: 'rectangle',
 };
 
 export const f: RotationIcon = {
-  id: 4,
+  id: id++,
   slug: 'f',
   displayName: 'F',
   shape: 'rectangle',
