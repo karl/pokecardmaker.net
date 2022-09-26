@@ -88,7 +88,7 @@ const SetIconSelector: FC = () => {
                   <Image
                     src={Routes.Assets.Icons.Set(si.slug)}
                     width={36}
-                    height={36}
+                    height={si.shape === 'square' ? 36 : 24}
                     alt=""
                   />
                 </SelectorListItemIcon>
