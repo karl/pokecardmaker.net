@@ -82,7 +82,7 @@ const Home: FC = () => {
                       alt={pt.displayName}
                       height={20}
                       width={20}
-                      src={Routes.Assets.Icons.Type(pt.slug)}
+                      src={Routes.Assets.Icons.Type('swordAndShield', pt.slug)}
                     />
                   </li>
                 ))}

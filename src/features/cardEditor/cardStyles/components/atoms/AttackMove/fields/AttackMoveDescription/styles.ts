@@ -16,6 +16,7 @@ export const MoveDescriptionText = styled(CardText)<{
   text-align: justify;
   line-height: 1.05em;
   min-height: 0.55em;
+  padding-left: 1.5%;
 
   ${({ $isEmpty, $alignBottom, $isLastMove }) =>
     ($isEmpty || ($alignBottom && $isLastMove)) &&

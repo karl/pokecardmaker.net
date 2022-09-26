@@ -26,6 +26,20 @@ export const swordAndShield: BaseSet = {
       dexStats: {
         top: '48%',
       },
+      ability: {
+        gap: '0.2em',
+      },
+      abilityTitleBar: {
+        gap: '0.5em',
+      },
+      abilitySymbol: {
+        width: '12.2em',
+        height: '2.35em',
+        'margin-left': '-2%',
+      },
+      abilityName: {
+        'line-height': '1em',
+      },
       typeBar: {
         bottom: '11.2%',
         width: '88.8%',
@@ -102,6 +116,16 @@ export const sunAndMoon: BaseSet = {
       },
       dexStats: {
         top: '47.9%',
+      },
+      abilityTitleBar: {
+        gap: '1.8em',
+      },
+      abilitySymbol: {
+        width: '10em',
+        height: '3em',
+      },
+      abilityName: {
+        'line-height': '1.2em',
       },
       typeBar: {
         bottom: '10.8%',

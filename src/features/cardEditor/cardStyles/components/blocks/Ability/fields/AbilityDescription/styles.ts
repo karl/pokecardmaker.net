@@ -10,4 +10,5 @@ export const AbilityDescriptionText = styled(CardText)`
   white-space: pre-wrap;
   text-align: justify;
   line-height: 1.05em;
+  padding-left: 1.5%;
 `;

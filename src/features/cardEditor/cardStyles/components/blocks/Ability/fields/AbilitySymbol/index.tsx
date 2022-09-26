@@ -5,14 +5,17 @@ import { FC } from 'react';
 import { Wrapper } from './styles';
 
 const AbilitySymbol: FC = () => {
-  const { abilitySymbol } = useCardStyles();
+  const {
+    abilitySymbol,
+    positions: { abilitySymbol: placement },
+  } = useCardStyles();
   const imgSrc =
     !!abilitySymbol && Routes.Assets.Symbols.Ability(abilitySymbol);
 
   if (!imgSrc) return null;
 
   return (
-    <Wrapper>
+    <Wrapper {...placement}>
       <DisplayImg src={imgSrc} />
     </Wrapper>
   );
