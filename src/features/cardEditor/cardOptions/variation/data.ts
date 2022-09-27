@@ -1,5 +1,5 @@
 import { Variation } from '@cardEditor/cardOptions/variation';
-import { swordAndShield } from '../baseSet';
+import { sunAndMoon, swordAndShield } from '../baseSet';
 import { rainbow } from '../rarity';
 import { basic, stage1, stage2, vmax } from '../subtype';
 
@@ -82,4 +82,23 @@ export const ex: Variation = {
   },
 };
 
-export const variations: Variation[] = [dynamax, gigantamax, light, dark, ex];
+export const ultraBeast: Variation = {
+  id: id++,
+  slug: 'ultraBeast',
+  displayName: 'Ultra Beast',
+  baseSetDependencies: {
+    [sunAndMoon.id]: {
+      subtypes: [basic.id, stage1.id, stage2.id],
+      rarities: [],
+    },
+  },
+};
+
+export const variations: Variation[] = [
+  dynamax,
+  gigantamax,
+  light,
+  dark,
+  ex,
+  ultraBeast,
+];

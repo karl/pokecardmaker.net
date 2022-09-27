@@ -37,20 +37,22 @@ const organizeType = (typeName) => {
     );
 
     files.forEach(file => {
-      if (file.name !== '1_Basic' && file.name !== '2_Stage 1' && file.name !== '3_Stage 2') {
+      if (file.name !== '13_UB Basic' && file.name !== '14_UB Stage 1' && file.name !== '15_UB Stage 2') {
         return;
       }
 
       // Everything in this scope is configurable per file name structure
-      const [_, subtype] = file.name.split('_');
+      const [_, subtype, subTypeNum] = file.name.split(' ');
 
-      const writeToDir = `${OUT_DIRECTORY}/subtypes`;
+      const finalSubtype = `${subtype.replace(' ', '').toLowerCase()}${subTypeNum || ''}`;
+
+      const writeToDir = `${OUT_DIRECTORY}/subtypes/${finalSubtype}/variations`;
 
       if (!fs.existsSync(writeToDir)) {
         fs.mkdirSync(writeToDir, { recursive: true });
       }
 
-      fs.renameSync(file.path, `${writeToDir}/${subtype.replace(' ', '').toLowerCase()}.png`);
+      fs.renameSync(file.path, `${writeToDir}/ultraBeast.png`);
     })
   };
 
