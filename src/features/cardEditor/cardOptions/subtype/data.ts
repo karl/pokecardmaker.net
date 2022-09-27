@@ -70,13 +70,6 @@ export const basic: Subtype = {
       rarities: [],
     })),
   },
-  baseSetOverwrites: {
-    [sunAndMoon.id]: {
-      logic: {
-        hasVariations: false,
-      },
-    },
-  },
 };
 
 export const stage1: Subtype = {
@@ -110,13 +103,6 @@ export const stage1: Subtype = {
       rarities: [],
     })),
   },
-  baseSetOverwrites: {
-    [sunAndMoon.id]: {
-      logic: {
-        hasVariations: false,
-      },
-    },
-  },
 };
 
 export const stage2: Subtype = {
@@ -149,13 +135,6 @@ export const stage2: Subtype = {
       type: t,
       rarities: [],
     })),
-  },
-  baseSetOverwrites: {
-    [sunAndMoon.id]: {
-      logic: {
-        hasVariations: false,
-      },
-    },
   },
 };
 
