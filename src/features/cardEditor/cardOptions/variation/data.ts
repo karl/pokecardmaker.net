@@ -1,7 +1,15 @@
 import { Variation } from '@cardEditor/cardOptions/variation';
 import { sunAndMoon, swordAndShield } from '../baseSet';
-import { rainbow } from '../rarity';
-import { basic, stage1, stage2, vmax } from '../subtype';
+import { fullArt, rainbow } from '../rarity';
+import {
+  basic,
+  gxBasic,
+  gxStage1,
+  gxStage2,
+  stage1,
+  stage2,
+  vmax,
+} from '../subtype';
 
 let id = 1;
 
@@ -11,8 +19,11 @@ export const dynamax: Variation = {
   displayName: 'Dynamax',
   baseSetDependencies: {
     [swordAndShield.id]: {
-      subtypes: [vmax.id],
-      rarities: [rainbow.id],
+      subtypes: {
+        [vmax.id]: {
+          rarities: [rainbow.id],
+        },
+      },
     },
   },
 };
@@ -23,8 +34,11 @@ export const gigantamax: Variation = {
   displayName: 'Gigantamax',
   baseSetDependencies: {
     [swordAndShield.id]: {
-      subtypes: [vmax.id],
-      rarities: [rainbow.id],
+      subtypes: {
+        [vmax.id]: {
+          rarities: [rainbow.id],
+        },
+      },
     },
   },
 };
@@ -35,8 +49,17 @@ export const light: Variation = {
   displayName: 'Light',
   baseSetDependencies: {
     [swordAndShield.id]: {
-      subtypes: [basic.id, stage1.id, stage2.id],
-      rarities: [],
+      subtypes: {
+        [basic.id]: {
+          rarities: [],
+        },
+        [stage1.id]: {
+          rarities: [],
+        },
+        [stage2.id]: {
+          rarities: [],
+        },
+      },
     },
   },
 };
@@ -56,8 +79,17 @@ export const dark: Variation = {
   },
   baseSetDependencies: {
     [swordAndShield.id]: {
-      subtypes: [basic.id, stage1.id, stage2.id],
-      rarities: [],
+      subtypes: {
+        [basic.id]: {
+          rarities: [],
+        },
+        [stage1.id]: {
+          rarities: [],
+        },
+        [stage2.id]: {
+          rarities: [],
+        },
+      },
     },
   },
 };
@@ -76,8 +108,17 @@ export const ex: Variation = {
   },
   baseSetDependencies: {
     [swordAndShield.id]: {
-      subtypes: [basic.id, stage1.id, stage2.id],
-      rarities: [],
+      subtypes: {
+        [basic.id]: {
+          rarities: [],
+        },
+        [stage1.id]: {
+          rarities: [],
+        },
+        [stage2.id]: {
+          rarities: [],
+        },
+      },
     },
   },
 };
@@ -88,8 +129,26 @@ export const ultraBeast: Variation = {
   displayName: 'Ultra Beast',
   baseSetDependencies: {
     [sunAndMoon.id]: {
-      subtypes: [basic.id, stage1.id, stage2.id],
-      rarities: [],
+      subtypes: {
+        [basic.id]: {
+          rarities: [],
+        },
+        [stage1.id]: {
+          rarities: [],
+        },
+        [stage2.id]: {
+          rarities: [],
+        },
+        [gxBasic.id]: {
+          rarities: [fullArt.id, rainbow.id],
+        },
+        [gxStage1.id]: {
+          rarities: [fullArt.id, rainbow.id],
+        },
+        [gxStage2.id]: {
+          rarities: [fullArt.id, rainbow.id],
+        },
+      },
     },
   },
 };

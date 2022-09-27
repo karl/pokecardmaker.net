@@ -18,7 +18,7 @@ import {
   supporter,
   water,
 } from './type';
-import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
+import { basic, gxBasic, gxStage1, gxStage2, stage1, stage2, tool, v, vmax, vstar } from './subtype';
 import { promo } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
@@ -135,5 +135,8 @@ export const defaultSubtypeVariations: {
   [v.id]: undefined,
   [vmax.id]: dynamax.id,
   [vstar.id]: undefined,
+  [gxBasic.id]: undefined,
+  [gxStage1.id]: undefined,
+  [gxStage2.id]: undefined,
   [tool.id]: undefined,
 };

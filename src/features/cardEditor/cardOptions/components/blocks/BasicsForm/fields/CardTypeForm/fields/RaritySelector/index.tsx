@@ -26,8 +26,9 @@ const RaritySelector: FC = () => {
 
   if (
     !type.baseSetDependencies[baseSet.id]?.rarities.length &&
-    (variation
-      ? !variation.baseSetDependencies[baseSet.id]?.rarities.length
+    (variation && subtype
+      ? !variation.baseSetDependencies[baseSet.id]?.subtypes[subtype.id]
+          .rarities.length
       : !subtype ||
         !subtype.baseSetDependencies[baseSet.id]?.find(r => r.type === type.id)
           ?.rarities.length)
@@ -47,12 +48,13 @@ const RaritySelector: FC = () => {
       {rarities.map(
         r =>
           (type.baseSetDependencies[baseSet.id]?.rarities.includes(r.id) ||
-            subtype?.baseSetDependencies[baseSet.id]
-              ?.find(rl => rl.type === type.id)
-              ?.rarities.includes(r.id) ||
-            variation?.baseSetDependencies[baseSet.id]?.rarities.includes(
-              r.id,
-            )) && (
+            (variation && subtype
+              ? variation?.baseSetDependencies[baseSet.id]?.subtypes[
+                  subtype.id
+                ]?.rarities.includes(r.id)
+              : subtype?.baseSetDependencies[baseSet.id]
+                  ?.find(rl => rl.type === type.id)
+                  ?.rarities.includes(r.id))) && (
             <MenuItem key={r.slug} value={r.id}>
               <ListItemText primary={r.displayName} />
             </MenuItem>

@@ -8,6 +8,7 @@ import {
   goldStar,
   goldenFullArtPokemon,
   promo,
+  rainbow,
 } from '../rarity';
 import {
   colorless,
@@ -275,6 +276,79 @@ export const tool: Subtype = {
   },
 };
 
+const gxStyles: Partial<CardStyles> = {
+  hpTextColor: 'black',
+  hpOutline: 'white',
+  nameTextColor: 'black',
+  nameOutline: 'white',
+  movesOutline: 'white',
+  movesTextColor: 'black',
+  typeBarTextColor: 'black',
+  rarityIconColor: 'white',
+  nameSymbol: 'v',
+  // TODO
+  // abilitySymbol: 'sunAndMoon',
+  hpSize: 'lg',
+  alignMovesBottom: true,
+};
+
+export const gxBasic: Subtype = {
+  id: id++,
+  slug: 'gxBasic',
+  displayName: 'GX (Basic)',
+  logic: {
+    hasVariations: true,
+    isVariationRequired: false,
+  },
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
+export const gxStage1: Subtype = {
+  id: id++,
+  slug: 'gxStage1',
+  displayName: 'GX (Stage 1)',
+  logic: {
+    hasVariations: true,
+    isVariationRequired: false,
+  },
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
+export const gxStage2: Subtype = {
+  id: id++,
+  slug: 'gxStage2',
+  displayName: 'GX (Stage 2)',
+  logic: {
+    hasVariations: true,
+    isVariationRequired: false,
+  },
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
 export const subtypes: Subtype[] = [
   basic,
   stage1,
@@ -283,4 +357,7 @@ export const subtypes: Subtype[] = [
   vmax,
   tool,
   vstar,
+  gxBasic,
+  gxStage1,
+  gxStage2,
 ];
