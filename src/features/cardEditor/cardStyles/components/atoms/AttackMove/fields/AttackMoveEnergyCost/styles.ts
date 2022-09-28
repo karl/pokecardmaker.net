@@ -1,12 +1,24 @@
-import { styled } from '@css';
+import { css, styled } from '@css';
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled('div')<{ $typesHaveBorder: boolean }>`
   display: flex;
-  gap: 0.05em;
+  ${({ $typesHaveBorder }) =>
+    !$typesHaveBorder &&
+    css`
+      gap: 0.15em;
+    `}
 `;
 
-export const TypeContainer = styled('div')`
+export const TypeContainer = styled('div')<{ $hasBorder: boolean }>`
   position: relative;
-  width: 2.75em;
-  height: 2.75em;
+  ${({ $hasBorder }) =>
+    $hasBorder
+      ? css`
+          width: 2.75em;
+          height: 2.75em;
+        `
+      : css`
+          width: 2.45em;
+          height: 2.45em;
+        `}
 `;

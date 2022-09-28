@@ -29,7 +29,7 @@ const RetreatCostSelector: FC = () => {
     >
       <MenuItem value={0} title="0">
         <Image
-          src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'empty')}
+          src={Routes.Assets.Icons.Type(baseSet.slug, 'empty', true)}
           width={26}
           height={26}
           alt=""
@@ -44,7 +44,7 @@ const RetreatCostSelector: FC = () => {
           {new Array(costIndex + 1).fill(undefined).map((__, imageIndex) => (
             <Image
               key={imageIndex}
-              src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'colorless')}
+              src={Routes.Assets.Icons.Type(baseSet.slug, 'colorless', true)}
               width={26}
               height={26}
               alt=""

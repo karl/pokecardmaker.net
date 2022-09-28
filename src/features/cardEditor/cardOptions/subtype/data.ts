@@ -277,6 +277,7 @@ export const tool: Subtype = {
 };
 
 const gxStyles: Partial<CardStyles> = {
+  hasAttackCostBorder: true,
   hpTextColor: 'black',
   hpOutline: 'white',
   nameTextColor: 'black',

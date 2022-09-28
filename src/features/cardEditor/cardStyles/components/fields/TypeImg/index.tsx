@@ -19,7 +19,7 @@ const TypeImg: FC = () => {
     () =>
       customTypeImgSrc ||
       (typeImg
-        ? Routes.Assets.Icons.TypeBorder(baseSet.slug, typeImg.slug)
+        ? Routes.Assets.Icons.Type(baseSet.slug, typeImg.slug, true)
         : undefined),
     [customTypeImgSrc, typeImg, baseSet],
   );

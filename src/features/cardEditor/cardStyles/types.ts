@@ -44,6 +44,7 @@ export interface Positions {
   abilityTitleBar?: Placement;
   abilitySymbol?: Placement;
   abilityName?: Placement;
+  moveCostWrapper?: Placement;
   move2?: Placement;
   typeBar?: Placement;
   weakness?: Placement;
@@ -70,6 +71,11 @@ export interface CardStyles {
    * @default none
    */
   movesOutline?: TextColor;
+  /**
+   * Whether the card's attack cost type images have white borders
+   * @default true
+   */
+  hasAttackCostBorder: boolean;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon
    * @default none

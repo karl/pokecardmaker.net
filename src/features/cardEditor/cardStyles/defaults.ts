@@ -12,6 +12,7 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
   nameOutline: undefined,
   hpOutline: undefined,
   movesOutline: undefined,
+  hasAttackCostBorder: true,
   cardInfoOutline: undefined,
   typeBarOutline: undefined,
   dexStatsOutline: undefined,
