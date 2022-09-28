@@ -36,7 +36,7 @@ export const pokemon: Supertype = {
       styles: {
         positions: {
           name: {
-            top: '2.8%',
+            top: '3%',
             left: '18.3%',
           },
         },

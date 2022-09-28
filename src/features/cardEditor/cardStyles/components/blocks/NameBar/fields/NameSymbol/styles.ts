@@ -36,8 +36,8 @@ export const Wrapper = styled(PlacementBlock)<{ $symbol: NameSymbol }>`
       case 'gxUltraBeast':
         return css`
           height: 3em;
-          width: 6.7em;
-          top: 5%;
+          width: 6.8em;
+          top: 4%;
         `;
       default:
         return undefined;
