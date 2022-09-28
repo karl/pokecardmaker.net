@@ -1,6 +1,13 @@
 export type AbilitySymbol = 'sunAndMoon' | 'swordAndShield' | 'v' | 'vstar';
-export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar' | 'ex';
-export type TextColor = 'white' | 'black';
+export type NameSymbol =
+  | 'vmax'
+  | 'v'
+  | 'star'
+  | 'vstar'
+  | 'ex'
+  | 'gx'
+  | 'gxUltraBeast';
+export type TextColor = 'white' | 'black' | 'gx' | 'ultraBeast';
 export type Size = 'sm' | 'lg';
 
 export interface Placement {

@@ -127,6 +127,9 @@ export const ultraBeast: Variation = {
   id: id++,
   slug: 'ultraBeast',
   displayName: 'Ultra Beast',
+  styles: {
+    nameSymbol: 'gxUltraBeast',
+  },
   baseSetDependencies: {
     [sunAndMoon.id]: {
       subtypes: {

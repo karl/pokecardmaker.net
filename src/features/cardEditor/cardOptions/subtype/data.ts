@@ -285,11 +285,14 @@ const gxStyles: Partial<CardStyles> = {
   movesTextColor: 'black',
   typeBarTextColor: 'black',
   rarityIconColor: 'white',
-  nameSymbol: 'v',
-  // TODO
-  // abilitySymbol: 'sunAndMoon',
+  nameSymbol: 'gx',
   hpSize: 'lg',
   alignMovesBottom: true,
+  positions: {
+    hitpoints: {
+      top: '2.5%',
+    },
+  },
 };
 
 export const gxBasic: Subtype = {
