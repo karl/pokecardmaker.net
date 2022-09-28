@@ -129,6 +129,10 @@ export const ultraBeast: Variation = {
   displayName: 'Ultra Beast',
   styles: {
     nameSymbol: 'gxUltraBeast',
+    move3: {
+      background: 'gxUltraBeast',
+      descriptionTextColor: 'ultraBeast',
+    },
   },
   baseSetDependencies: {
     [sunAndMoon.id]: {

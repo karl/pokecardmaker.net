@@ -4,6 +4,7 @@ import { FC } from 'react';
 import AbilityForm from '../AbilityForm';
 import Move1Form from '../Move1Form';
 import Move2Form from '../Move2Form';
+import Move3Form from '../Move3Form';
 import BonusMoveRadio from './fields/BonusMoveRadio';
 
 const AllMovesForm: FC = () => {
@@ -17,6 +18,7 @@ const AllMovesForm: FC = () => {
       <BonusMoveRadio />
       <AbilityForm />
       <Move2Form />
+      <Move3Form />
     </AccordionForm>
   );
 };

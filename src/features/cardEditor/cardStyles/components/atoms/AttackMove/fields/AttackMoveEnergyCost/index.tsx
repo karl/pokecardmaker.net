@@ -4,12 +4,14 @@ import { useCardStyles } from '@cardEditor/cardStyles/hooks';
 import Routes from '@routes';
 import { FC } from 'react';
 import DisplayImg from '../../../DisplayImg';
-import { AttackMoveDisplayProps } from '../../types';
 import { TypeContainer, Wrapper } from './styles';
+import { AttackMovePropsEnergyCostProps } from './types';
 
-const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
+const AttackMoveEnergyCost: FC<AttackMovePropsEnergyCostProps> = ({
+  move,
+  hasAttackCostBorder,
+}) => {
   const {
-    hasAttackCostBorder,
     positions: { moveCostWrapper: placement },
   } = useCardStyles();
   const { baseSet } = useBaseSet();

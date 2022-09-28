@@ -9,6 +9,7 @@ export const Wrapper = styled('div')<{ $typesHaveBorder: boolean }>`
     `}
 `;
 
+// TODO: Align GX cost with move2 cost
 export const TypeContainer = styled('div')<{ $hasBorder: boolean }>`
   position: relative;
   ${({ $hasBorder }) =>

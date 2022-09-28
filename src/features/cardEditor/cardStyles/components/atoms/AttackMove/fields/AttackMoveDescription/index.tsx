@@ -1,19 +1,21 @@
 import { useCardStyles } from '@cardEditor/cardStyles';
 import { FC } from 'react';
-import { AttackMoveDisplayProps } from '../../types';
 import { MoveDescriptionText } from './styles';
+import { AttackMoveDescriptionProps } from './types';
 
-const AttackMoveDescription: FC<AttackMoveDisplayProps> = ({
+const AttackMoveDescription: FC<AttackMoveDescriptionProps> = ({
   move,
   isLastMove,
   isOnlyMove,
+  color,
+  outline,
 }) => {
-  const { movesOutline, movesTextColor, alignMovesBottom } = useCardStyles();
+  const { alignMovesBottom } = useCardStyles();
 
   return (
     <MoveDescriptionText
-      outline={movesOutline}
-      color={movesTextColor}
+      outline={outline}
+      color={color}
       $alignBottom={alignMovesBottom}
       $isLastMove={!!isLastMove}
       $isEmpty={!move?.description}

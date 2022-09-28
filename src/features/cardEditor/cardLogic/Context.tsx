@@ -20,7 +20,7 @@ export const CardLogicContext = createContext<CardLogicContextInterface>({
 export const CardLogicProvider: React.FC = ({ children }) => {
   const { baseSet, supertype, type, subtype, variation, rarity } =
     useCardRelations();
-  const { move1, move2, hasMove2 } = useCardOptions();
+  const { move1, move2, hasMove2, move3 } = useCardOptions();
 
   const state = useMemo<Required<CardLogic>>(
     () =>
@@ -47,16 +47,22 @@ export const CardLogicProvider: React.FC = ({ children }) => {
       (acc, cost) => acc + cost.amount,
       0,
     );
-    if (!hasMove2 || !move2?.name) return move1Cost;
+    if ((!hasMove2 || !move2?.name) && !state.hasMove3) return move1Cost;
 
     const move2Cost = (move2?.energyCost ?? []).reduce(
       (acc, cost) => acc + cost.amount,
       0,
     );
-    if (!move1?.name) return move2Cost;
+    if (!move1?.name && !state.hasMove3) return move2Cost;
+    if (!state.hasMove3) return Math.max(move1Cost, move2Cost);
 
-    return Math.max(move1Cost, move2Cost);
-  }, [move1, move2, hasMove2]);
+    const move3Cost = (move3?.energyCost ?? []).reduce(
+      (acc, cost) => acc + cost.amount,
+      0,
+    );
+
+    return Math.max(move1Cost, move2Cost, move3Cost);
+  }, [move1, move2, move3?.energyCost, hasMove2, state.hasMove3]);
 
   return (
     <CardLogicContext.Provider

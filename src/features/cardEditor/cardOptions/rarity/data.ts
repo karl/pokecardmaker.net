@@ -1,4 +1,5 @@
 import { Rarity } from '@cardEditor/cardOptions/rarity';
+import { sunAndMoon } from '../baseSet';
 
 let id = 1;
 
@@ -46,6 +47,16 @@ export const goldenFullArtPokemon: Rarity = {
     cardInfoOutline: 'white',
     hpOutline: 'black',
     typeBarTextColor: 'black',
+    move3: {
+      background: 'gxGold',
+    },
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      styles: {
+        hpOutline: 'white',
+      },
+    },
   },
 };
 

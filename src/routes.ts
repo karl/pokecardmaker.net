@@ -1,4 +1,8 @@
-import { AbilitySymbol, NameSymbol } from '@cardEditor/cardStyles';
+import {
+  AbilitySymbol,
+  MoveBackground,
+  NameSymbol,
+} from '@cardEditor/cardStyles';
 
 const assets = '/assets';
 const icons = `${assets}/icons`;
@@ -32,6 +36,8 @@ const Routes = {
     Symbols: {
       Name: (slug: NameSymbol) => `${symbols}/name/${slug}.png`,
       Ability: (slug: AbilitySymbol) => `${symbols}/ability/${slug}.png`,
+      MoveBackground: (slug: MoveBackground) =>
+        `${symbols}/moveBackground/${slug}.png`,
     },
   },
 };

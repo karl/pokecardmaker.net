@@ -9,6 +9,8 @@ export type NameSymbol =
   | 'gxUltraBeast';
 export type TextColor = 'white' | 'black' | 'gx' | 'ultraBeast';
 export type Size = 'sm' | 'lg';
+export type Move3Type = 'gx';
+export type MoveBackground = 'gx' | 'gxUltraBeast' | 'gxGold';
 
 export interface Placement {
   top?: string;
@@ -56,6 +58,38 @@ export interface Positions {
   cardNumber?: Placement;
   rarityIcon?: Placement;
   dexEntry?: Placement;
+}
+
+export interface Move3CardLogic
+  extends Pick<CardStyles, 'hasAttackCostBorder'> {
+  /**
+   * @default 'gx'
+   */
+  type: Move3Type;
+  /**
+   * @default none
+   */
+  background?: MoveBackground;
+  /**
+   * @default 'Third move'
+   */
+  displayName: string;
+  /**
+   * @default none
+   */
+  nameOutline?: TextColor;
+  /**
+   * @default black
+   */
+  nameTextColor: TextColor;
+  /**
+   * @default none
+   */
+  descriptionOutline?: TextColor;
+  /**
+   * @default black
+   */
+  descriptionTextColor: TextColor;
 }
 
 export interface CardStyles {
@@ -147,6 +181,7 @@ export interface CardStyles {
    * @default false
    */
   hasSubnameBeforeName?: boolean;
+  move3: Partial<Move3CardLogic>;
   /**
    * Used to change position of items displayed on the card \
    * For example, `Name` is displayed differently on a Pokémon and a Trainer

@@ -1,40 +1,53 @@
 import { useCardLogic } from '@cardEditor/cardLogic';
-import { useCardOptions } from '@cardEditor/cardOptions';
 import { FC } from 'react';
 import AttackMoveDamageAmount from './fields/AttackMoveDamageAmount';
 import AttackMoveDescription from './fields/AttackMoveDescription';
 import AttackMoveEnergyCost from './fields/AttackMoveEnergyCost';
 import AttackMoveName from './fields/AttackMoveName';
 import { TitleBar, Wrapper } from './styles';
-import { AttackMoveDisplayProps } from './types';
+import { AttackMoveProps } from './types';
 
-const AttackMove: FC<AttackMoveDisplayProps> = ({
+const AttackMove: FC<AttackMoveProps> = ({
   move,
   isLastMove,
   isOnlyMove,
+  forceShow,
+  descriptionOutline,
+  descriptionTextColor,
+  nameOutline,
+  nameTextColor,
+  background,
+  hasAttackCostBorder,
   ...props
 }) => {
-  const { hasMoves, bonusMoveRequired } = useCardLogic();
-  const { hasMove2 } = useCardOptions();
+  const { hasMoves } = useCardLogic();
 
-  if (
-    !hasMoves ||
-    // If is 2nd move while bonus move is required, force show even when name is undefined
-    (!(isLastMove && bonusMoveRequired && hasMove2) && !move?.name)
-  )
-    return null;
+  if (!hasMoves || (!forceShow && !move?.name)) return null;
 
   return (
-    <Wrapper {...props}>
-      <TitleBar>
-        <AttackMoveEnergyCost move={move} />
-        <AttackMoveName move={move} />
-        <AttackMoveDamageAmount move={move} />
+    <Wrapper $hasBackground={!!background} {...props}>
+      <TitleBar $background={background}>
+        <AttackMoveEnergyCost
+          move={move}
+          hasAttackCostBorder={hasAttackCostBorder}
+        />
+        <AttackMoveName
+          move={move}
+          outline={nameOutline}
+          color={nameTextColor}
+        />
+        <AttackMoveDamageAmount
+          move={move}
+          outline={nameOutline}
+          color={nameTextColor}
+        />
       </TitleBar>
       <AttackMoveDescription
         move={move}
         isLastMove={isLastMove}
         isOnlyMove={isOnlyMove}
+        outline={descriptionOutline}
+        color={descriptionTextColor}
       />
     </Wrapper>
   );

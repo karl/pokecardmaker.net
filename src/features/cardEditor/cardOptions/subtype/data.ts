@@ -1,3 +1,4 @@
+import { CardLogic } from '@cardEditor/cardLogic';
 import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { CardStyles } from '@cardEditor/cardStyles';
 import { sunAndMoon, swordAndShield } from '../baseSet';
@@ -227,6 +228,7 @@ export const vstar: Subtype = {
         height: 'unset',
         gap: '3em',
       },
+      // TODO: Make VStar Power a Move3
       move2: {
         height: '10.8em',
       },
@@ -289,21 +291,38 @@ const gxStyles: Partial<CardStyles> = {
   nameSymbol: 'gx',
   hpSize: 'lg',
   alignMovesBottom: true,
+  move3: {
+    type: 'gx',
+    background: 'gx',
+    displayName: 'GX Attack',
+    descriptionTextColor: 'gx',
+    descriptionOutline: 'white',
+    nameTextColor: 'white',
+    nameOutline: undefined,
+    hasAttackCostBorder: false,
+  },
   positions: {
     hitpoints: {
       top: '2.5%',
     },
+    movesWrapper: {
+      top: '54.5%',
+      gap: '1.5em',
+    },
   },
+};
+
+const gxLogic: Partial<CardLogic> = {
+  hasVariations: true,
+  isVariationRequired: false,
+  hasMove3: true,
 };
 
 export const gxBasic: Subtype = {
   id: id++,
   slug: 'gxBasic',
   displayName: 'GX (Basic)',
-  logic: {
-    hasVariations: true,
-    isVariationRequired: false,
-  },
+  logic: gxLogic,
   styles: gxStyles,
   baseSetDependencies: {
     [sunAndMoon.id]: [
@@ -319,10 +338,7 @@ export const gxStage1: Subtype = {
   id: id++,
   slug: 'gxStage1',
   displayName: 'GX (Stage 1)',
-  logic: {
-    hasVariations: true,
-    isVariationRequired: false,
-  },
+  logic: gxLogic,
   styles: gxStyles,
   baseSetDependencies: {
     [sunAndMoon.id]: [
@@ -338,10 +354,7 @@ export const gxStage2: Subtype = {
   id: id++,
   slug: 'gxStage2',
   displayName: 'GX (Stage 2)',
-  logic: {
-    hasVariations: true,
-    isVariationRequired: false,
-  },
+  logic: gxLogic,
   styles: gxStyles,
   baseSetDependencies: {
     [sunAndMoon.id]: [

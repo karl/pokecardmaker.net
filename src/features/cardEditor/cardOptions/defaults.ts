@@ -78,7 +78,7 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description: '',
   },
   move1: {
-    name: 'Superpowewred Horns',
+    name: 'Superpowered Horns',
     description: '',
     damageAmount: 110,
     damageModifier: undefined,
@@ -95,6 +95,13 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   },
   hasMove2: true,
   move2: {
+    name: '',
+    description: '',
+    damageAmount: '',
+    damageModifier: undefined,
+    energyCost: [],
+  },
+  move3: {
     name: 'Guillotine',
     description: "_(You can't use more than 1 [X] attack in a game.)_",
     damageAmount: 160,
