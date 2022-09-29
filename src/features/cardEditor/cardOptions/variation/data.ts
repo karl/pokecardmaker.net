@@ -128,9 +128,6 @@ export const ultraBeast: Variation = {
   id: id++,
   slug: 'ultraBeast',
   displayName: 'Ultra Beast',
-  logic: {
-    hasNameSymbol: true,
-  },
   styles: {
     nameSymbol: 'gxUltraBeast',
     move3: {
