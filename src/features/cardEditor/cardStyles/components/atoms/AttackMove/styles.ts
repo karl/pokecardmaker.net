@@ -1,6 +1,4 @@
-import { MoveBackground } from '@cardEditor/cardStyles/types';
 import { css, styled } from '@css';
-import Routes from '@routes';
 import { PlacementBlock } from '../PlacementBlock';
 
 export const Wrapper = styled(PlacementBlock)<{ $hasBackground: boolean }>`
@@ -17,13 +15,13 @@ export const Wrapper = styled(PlacementBlock)<{ $hasBackground: boolean }>`
     `}
 `;
 
-export const TitleBar = styled('div')<{ $background?: MoveBackground }>`
+export const TitleBar = styled('div')<{ $background?: string }>`
   display: flex;
   align-items: flex-end;
   gap: 0.5em;
 
   ${({ $background }) =>
-    $background &&
+    !!$background &&
     css`
       padding: 0.2em 0;
       margin-bottom: 0.2em;
@@ -35,7 +33,7 @@ export const TitleBar = styled('div')<{ $background?: MoveBackground }>`
         left: -2%;
         width: 110.7%;
         height: 3.8em;
-        background: url(${Routes.Assets.Symbols.MoveBackground($background)});
+        background: url(${$background});
         background-size: contain;
         background-repeat: no-repeat;
       }

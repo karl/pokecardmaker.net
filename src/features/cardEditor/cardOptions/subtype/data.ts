@@ -346,7 +346,10 @@ export const gxStage1: Subtype = {
   id: id++,
   slug: 'gxStage1',
   displayName: 'GX (Stage 1)',
-  logic: gxLogic,
+  logic: {
+    ...gxLogic,
+    hasPrevolve: true,
+  },
   styles: gxStyles,
   baseSetDependencies: {
     [sunAndMoon.id]: [
@@ -362,7 +365,10 @@ export const gxStage2: Subtype = {
   id: id++,
   slug: 'gxStage2',
   displayName: 'GX (Stage 2)',
-  logic: gxLogic,
+  logic: {
+    ...gxLogic,
+    hasPrevolve: true,
+  },
   styles: gxStyles,
   baseSetDependencies: {
     [sunAndMoon.id]: [
