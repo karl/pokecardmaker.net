@@ -60,6 +60,7 @@ export interface CardInterface {
   move1?: AttackMove;
   hasMove2: boolean;
   move2?: AttackMove;
+  move3?: AttackMove;
   // Relations
   baseSetId: number;
   supertypeId: number;

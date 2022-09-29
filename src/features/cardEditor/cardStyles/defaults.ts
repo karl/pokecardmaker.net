@@ -12,6 +12,7 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
   nameOutline: undefined,
   hpOutline: undefined,
   movesOutline: undefined,
+  hasAttackCostBorder: true,
   cardInfoOutline: undefined,
   typeBarOutline: undefined,
   dexStatsOutline: undefined,
@@ -21,6 +22,16 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
   alignMovesBottom: false,
   hasTypeImgBorder: true,
   hasSubnameBeforeName: false,
+  move3: {
+    type: 'gx',
+    background: undefined,
+    displayName: 'Third move',
+    descriptionTextColor: 'black',
+    descriptionOutline: undefined,
+    nameTextColor: 'black',
+    nameOutline: undefined,
+    hasAttackCostBorder: true,
+  },
   // TODO: Create default for this
   positions: {},
 };

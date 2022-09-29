@@ -57,6 +57,10 @@ export interface CardLogic {
   /**
    * @default false
    */
+  hasNameSymbol: boolean;
+  /**
+   * @default false
+   */
   hasVariations: boolean;
   /**
    * @default false
@@ -96,4 +100,9 @@ export interface CardLogic {
    * @default true
    */
   hasRotationIcon: boolean;
+  /**
+   * Whether the Pokémon has a third move
+   * @default false
+   */
+  hasMove3?: boolean;
 }

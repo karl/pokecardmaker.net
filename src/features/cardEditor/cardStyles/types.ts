@@ -1,7 +1,21 @@
-export type AbilitySymbol = 'sunAndMoon' | 'swordAndShield' | 'v' | 'vstar';
-export type NameSymbol = 'vmax' | 'v' | 'star' | 'vstar' | 'ex';
-export type TextColor = 'white' | 'black';
+export type AbilitySymbol =
+  | 'sunAndMoon'
+  | 'sunAndMoonGold'
+  | 'swordAndShield'
+  | 'v'
+  | 'vstar';
+export type NameSymbol =
+  | 'vmax'
+  | 'v'
+  | 'star'
+  | 'vstar'
+  | 'ex'
+  | 'gx'
+  | 'gxUltraBeast';
+export type TextColor = 'white' | 'black' | 'gx' | 'ultraBeast';
 export type Size = 'sm' | 'lg';
+export type Move3Type = 'gx';
+export type MoveBackground = 'gx' | 'gxUltraBeast' | 'gxGold';
 
 export interface Placement {
   top?: string;
@@ -50,6 +64,38 @@ export interface Positions {
   dexEntry?: Placement;
 }
 
+export interface Move3CardLogic
+  extends Pick<CardStyles, 'hasAttackCostBorder'> {
+  /**
+   * @default 'gx'
+   */
+  type: Move3Type;
+  /**
+   * @default none
+   */
+  background?: MoveBackground;
+  /**
+   * @default 'Third move'
+   */
+  displayName: string;
+  /**
+   * @default none
+   */
+  nameOutline?: TextColor;
+  /**
+   * @default black
+   */
+  nameTextColor: TextColor;
+  /**
+   * @default none
+   */
+  descriptionOutline?: TextColor;
+  /**
+   * @default black
+   */
+  descriptionTextColor: TextColor;
+}
+
 export interface CardStyles {
   /**
    * @default none
@@ -63,6 +109,11 @@ export interface CardStyles {
    * @default none
    */
   movesOutline?: TextColor;
+  /**
+   * Whether the card's attack cost type images have white borders
+   * @default true
+   */
+  hasAttackCostBorder: boolean;
   /**
    * Illustrator, set icon, rotation icon, card number, rarity icon
    * @default none
@@ -134,6 +185,7 @@ export interface CardStyles {
    * @default false
    */
   hasSubnameBeforeName?: boolean;
+  move3: Partial<Move3CardLogic>;
   /**
    * Used to change position of items displayed on the card \
    * For example, `Name` is displayed differently on a Pokémon and a Trainer

@@ -1,3 +1,4 @@
+import { CardLogic } from '@cardEditor/cardLogic';
 import { Subtype } from '@cardEditor/cardOptions/subtype';
 import { CardStyles } from '@cardEditor/cardStyles';
 import { sunAndMoon, swordAndShield } from '../baseSet';
@@ -8,6 +9,7 @@ import {
   goldStar,
   goldenFullArtPokemon,
   promo,
+  rainbow,
 } from '../rarity';
 import {
   colorless,
@@ -153,6 +155,9 @@ export const v: Subtype = {
   id: id++,
   slug: 'v',
   displayName: 'V',
+  logic: {
+    hasNameSymbol: true,
+  },
   styles: {
     ...vStyles,
     nameSymbol: 'v',
@@ -180,6 +185,7 @@ export const vmax: Subtype = {
   slug: 'vmax',
   displayName: 'VMax',
   logic: {
+    hasNameSymbol: true,
     hasVariations: true,
     hasPrevolve: true,
     hasDexStats: false,
@@ -203,6 +209,7 @@ export const vmax: Subtype = {
   },
 };
 
+// TODO: Make VStar Power a Move3?
 export const vstar: Subtype = {
   id: id++,
   slug: 'vstar',
@@ -238,6 +245,7 @@ export const vstar: Subtype = {
   logic: {
     hasPrevolve: true,
     bonusMoveRequired: true,
+    hasNameSymbol: true,
   },
   baseSetDependencies: {
     [swordAndShield.id]: allPokemonTypes.map(t => ({
@@ -275,6 +283,103 @@ export const tool: Subtype = {
   },
 };
 
+const gxStyles: Partial<CardStyles> = {
+  hasAttackCostBorder: true,
+  hpTextColor: 'black',
+  hpOutline: 'white',
+  nameTextColor: 'black',
+  nameOutline: 'white',
+  movesOutline: 'white',
+  movesTextColor: 'black',
+  typeBarTextColor: 'black',
+  rarityIconColor: 'white',
+  nameSymbol: 'gx',
+  hpSize: 'lg',
+  alignMovesBottom: true,
+  move3: {
+    type: 'gx',
+    background: 'gx',
+    displayName: 'GX Attack',
+    descriptionTextColor: 'gx',
+    descriptionOutline: 'white',
+    nameTextColor: 'white',
+    nameOutline: undefined,
+    hasAttackCostBorder: false,
+  },
+  positions: {
+    hitpoints: {
+      top: '2.5%',
+    },
+    movesWrapper: {
+      top: 'unset',
+      bottom: '15%',
+      height: 'unset',
+      gap: '1.5em',
+    },
+  },
+};
+
+const gxLogic: Partial<CardLogic> = {
+  hasVariations: true,
+  isVariationRequired: false,
+  hasMove3: true,
+  hasNameSymbol: true,
+};
+
+export const gxBasic: Subtype = {
+  id: id++,
+  slug: 'gxBasic',
+  displayName: 'GX (Basic)',
+  logic: gxLogic,
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
+export const gxStage1: Subtype = {
+  id: id++,
+  slug: 'gxStage1',
+  displayName: 'GX (Stage 1)',
+  logic: {
+    ...gxLogic,
+    hasPrevolve: true,
+  },
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
+export const gxStage2: Subtype = {
+  id: id++,
+  slug: 'gxStage2',
+  displayName: 'GX (Stage 2)',
+  logic: {
+    ...gxLogic,
+    hasPrevolve: true,
+  },
+  styles: gxStyles,
+  baseSetDependencies: {
+    [sunAndMoon.id]: [
+      ...allPokemonTypes.map(t => ({
+        type: t,
+        rarities: [fullArt.id, goldenFullArtPokemon.id, rainbow.id],
+      })),
+    ],
+  },
+};
+
 export const subtypes: Subtype[] = [
   basic,
   stage1,
@@ -283,4 +388,7 @@ export const subtypes: Subtype[] = [
   vmax,
   tool,
   vstar,
+  gxBasic,
+  gxStage1,
+  gxStage2,
 ];

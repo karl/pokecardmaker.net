@@ -4,8 +4,11 @@ import { CardTypeHelpers, IdentifierInfo } from '../types';
 export interface Variation extends IdentifierInfo, CardTypeHelpers {
   baseSetDependencies: {
     [id: number]: {
-      subtypes: number[];
-      rarities: number[];
+      subtypes: {
+        [id: number]: {
+          rarities: number[];
+        };
+      };
     };
   };
 }

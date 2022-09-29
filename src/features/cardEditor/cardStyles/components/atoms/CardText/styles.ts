@@ -9,7 +9,18 @@ export const Text = styled(PlacementBlock)<{
 }>`
   position: relative;
   margin: 0;
-  color: ${({ $color }) => $color};
+  color: ${({ $color }) => {
+    switch ($color) {
+      case 'gx':
+        return '#0065B5';
+      case 'ultraBeast':
+        return '#EF1018';
+      case 'white':
+      case 'black':
+      default:
+        return $color;
+    }
+  }};
   white-space: pre;
 
   ${({ $outline }) =>

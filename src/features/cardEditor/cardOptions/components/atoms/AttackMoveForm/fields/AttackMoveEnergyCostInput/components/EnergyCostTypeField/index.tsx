@@ -85,7 +85,7 @@ const EnergyCostTypeField: FC<EnergyCostTypeFieldProps> = ({
           alt={type.displayName}
           layout="fill"
           objectFit="contain"
-          src={Routes.Assets.Icons.TypeBorder(baseSet.slug, type.slug)}
+          src={Routes.Assets.Icons.Type(baseSet.slug, type.slug, true)}
         />
       </TypeContainer>
       <IconButton aria-label="remove" size="small" onClick={remove}>

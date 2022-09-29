@@ -15,6 +15,12 @@ const typeMap = {
   Y: 'fairy',
 };
 
+const rarityMap = {
+  FA: 'fullArt',
+  RB: 'rainbow',
+  FAGold: 'goldenFullArtPokemon',
+};
+
 const organizeType = (typeName) => {
   const DIRECTORY = './scripts/organize';
   const IN_DIRECTORY = `${DIRECTORY}/in/${typeName}`;
@@ -37,22 +43,26 @@ const organizeType = (typeName) => {
     );
 
     files.forEach(file => {
-      if (file.name !== '13_UB Basic' && file.name !== '14_UB Stage 1' && file.name !== '15_UB Stage 2') {
+      if (![
+        '4_GX Basic',
+        '5_GX Stage 1',
+        '6_GX Stage 2',
+      ].includes(file.name)) {
         return;
       }
 
       // Everything in this scope is configurable per file name structure
-      const [_, subtype, subTypeNum] = file.name.split(' ');
+      const [_, __, rarity, subtype, subTypeNum] = file.name.split(' ');
 
-      const finalSubtype = `${subtype.replace(' ', '').toLowerCase()}${subTypeNum || ''}`;
+      const finalSubtype = `gx${subtype.replace(' ', '')}${subTypeNum || ''}`;
 
-      const writeToDir = `${OUT_DIRECTORY}/subtypes/${finalSubtype}/variations`;
+      const writeToDir = `${OUT_DIRECTORY}/subtypes/${finalSubtype}/variations/ultraBeast/rarities`;
 
       if (!fs.existsSync(writeToDir)) {
         fs.mkdirSync(writeToDir, { recursive: true });
       }
 
-      fs.renameSync(file.path, `${writeToDir}/ultraBeast.png`);
+      fs.renameSync(file.path, `${writeToDir}/${rarityMap[rarity]}.png`);
     })
   };
 

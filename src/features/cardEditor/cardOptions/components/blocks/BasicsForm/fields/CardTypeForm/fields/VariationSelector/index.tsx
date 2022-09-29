@@ -60,10 +60,10 @@ const VariationSelector: FC = () => {
       )}
       {variations.map(
         v =>
-          (v.baseSetDependencies[baseSet.id]?.subtypes.includes(subtype.id) ||
-            v.baseSetDependencies[baseSet.id]?.rarities.includes(
-              rarity?.id ?? 0,
-            )) && (
+          (!!v.baseSetDependencies[baseSet.id]?.subtypes[subtype.id] ||
+            v.baseSetDependencies[baseSet.id]?.subtypes[
+              subtype.id
+            ]?.rarities.includes(rarity?.id ?? 0)) && (
             <MenuItem key={v.slug} value={v.id}>
               <ListItemText primary={v.displayName} />
             </MenuItem>
