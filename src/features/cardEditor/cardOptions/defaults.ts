@@ -52,7 +52,7 @@ export const defaultRelations: RelationsInterface = {
 };
 
 export const defaultCardOptions: RequiredIsh<CardInterface> = {
-  name: 'Pinsir',
+  name: '',
   subname: '',
   backgroundImg: undefined,
   imgLayer1: undefined,
@@ -61,13 +61,13 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
   prevolveImgSrc: undefined,
   customTypeImgSrc: undefined,
   typeImgAmount: 1,
-  cardNumber: '6',
-  totalInSet: '69',
-  hitpoints: 180,
-  illustrator: '5ban Graphics',
+  cardNumber: '',
+  totalInSet: '',
+  hitpoints: '',
+  illustrator: '',
   weaknessAmount: 2,
   resistanceAmount: 30,
-  retreatCost: 2,
+  retreatCost: 1,
   prevolveName: undefined,
   dexStats: '',
   dexEntry: '',
@@ -78,20 +78,11 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     description: '',
   },
   move1: {
-    name: 'Superpowered Horns',
+    name: '',
     description: '',
-    damageAmount: 110,
+    damageAmount: '',
     damageModifier: undefined,
-    energyCost: [
-      {
-        typeId: grass.id,
-        amount: 2,
-      },
-      {
-        typeId: colorless.id,
-        amount: 1,
-      },
-    ],
+    energyCost: [],
   },
   hasMove2: true,
   move2: {
@@ -102,26 +93,17 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     energyCost: [],
   },
   move3: {
-    name: 'Guillotine',
-    description: "_(You can't use more than 1 [X] attack in a game.)_",
-    damageAmount: 160,
+    name: '',
+    description: '',
+    damageAmount: '',
     damageModifier: undefined,
-    energyCost: [
-      {
-        typeId: grass.id,
-        amount: 2,
-      },
-      {
-        typeId: colorless.id,
-        amount: 1,
-      },
-    ],
+    energyCost: [],
   },
   // Relations
-  baseSetId: sunAndMoon.id,
+  baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
   typeId: defaultRelations.type.id,
-  subtypeId: gxBasic.id,
+  subtypeId: defaultRelations.subtype?.id,
   rarityId: defaultRelations.rarity?.id,
   variationId: defaultRelations.variation?.id,
   weaknessTypeId: defaultRelations.weaknessType?.id,
