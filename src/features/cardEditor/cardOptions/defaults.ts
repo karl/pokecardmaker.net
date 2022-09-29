@@ -1,5 +1,5 @@
 import { RequiredIsh } from '@interfaces/utils';
-import { sunAndMoon, swordAndShield } from './baseSet';
+import { swordAndShield } from './baseSet';
 import { energy, pokemon, trainer } from './supertype';
 import {
   base,
