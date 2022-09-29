@@ -155,6 +155,9 @@ export const v: Subtype = {
   id: id++,
   slug: 'v',
   displayName: 'V',
+  logic: {
+    hasNameSymbol: true,
+  },
   styles: {
     ...vStyles,
     nameSymbol: 'v',
@@ -182,6 +185,7 @@ export const vmax: Subtype = {
   slug: 'vmax',
   displayName: 'VMax',
   logic: {
+    hasNameSymbol: true,
     hasVariations: true,
     hasPrevolve: true,
     hasDexStats: false,
@@ -205,6 +209,7 @@ export const vmax: Subtype = {
   },
 };
 
+// TODO: Make VStar Power a Move3?
 export const vstar: Subtype = {
   id: id++,
   slug: 'vstar',
@@ -228,7 +233,6 @@ export const vstar: Subtype = {
         height: 'unset',
         gap: '3em',
       },
-      // TODO: Make VStar Power a Move3
       move2: {
         height: '10.8em',
       },
@@ -241,6 +245,7 @@ export const vstar: Subtype = {
   logic: {
     hasPrevolve: true,
     bonusMoveRequired: true,
+    hasNameSymbol: true,
   },
   baseSetDependencies: {
     [swordAndShield.id]: allPokemonTypes.map(t => ({
@@ -306,7 +311,9 @@ const gxStyles: Partial<CardStyles> = {
       top: '2.5%',
     },
     movesWrapper: {
-      top: '54.5%',
+      top: 'unset',
+      bottom: '15%',
+      height: 'unset',
       gap: '1.5em',
     },
   },
@@ -316,6 +323,7 @@ const gxLogic: Partial<CardLogic> = {
   hasVariations: true,
   isVariationRequired: false,
   hasMove3: true,
+  hasNameSymbol: true,
 };
 
 export const gxBasic: Subtype = {

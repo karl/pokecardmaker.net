@@ -1,15 +1,16 @@
 import { css, styled } from '@css';
 
-export const Wrapper = styled('div')<{ $typesHaveBorder: boolean }>`
+export const Wrapper = styled('div')`
   display: flex;
-  ${({ $typesHaveBorder }) =>
-    !$typesHaveBorder &&
-    css`
-      gap: 0.15em;
-    `}
 `;
 
-// TODO: Align GX cost with move2 cost
+export const TypeWrapper = styled('div')`
+  display: flex;
+  justify-content: center;
+  width: 2.75em;
+  height: 2.75em;
+`;
+
 export const TypeContainer = styled('div')<{ $hasBorder: boolean }>`
   position: relative;
   ${({ $hasBorder }) =>

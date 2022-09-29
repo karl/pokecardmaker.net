@@ -1,4 +1,9 @@
-export type AbilitySymbol = 'sunAndMoon' | 'swordAndShield' | 'v' | 'vstar';
+export type AbilitySymbol =
+  | 'sunAndMoon'
+  | 'sunAndMoonGold'
+  | 'swordAndShield'
+  | 'v'
+  | 'vstar';
 export type NameSymbol =
   | 'vmax'
   | 'v'
@@ -46,7 +51,6 @@ export interface Positions {
   abilityTitleBar?: Placement;
   abilitySymbol?: Placement;
   abilityName?: Placement;
-  moveCostWrapper?: Placement;
   move2?: Placement;
   typeBar?: Placement;
   weakness?: Placement;

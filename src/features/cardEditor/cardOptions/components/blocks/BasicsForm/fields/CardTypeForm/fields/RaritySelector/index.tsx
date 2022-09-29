@@ -28,7 +28,7 @@ const RaritySelector: FC = () => {
     !type.baseSetDependencies[baseSet.id]?.rarities.length &&
     (variation && subtype
       ? !variation.baseSetDependencies[baseSet.id]?.subtypes[subtype.id]
-          .rarities.length
+          ?.rarities.length
       : !subtype ||
         !subtype.baseSetDependencies[baseSet.id]?.find(r => r.type === type.id)
           ?.rarities.length)

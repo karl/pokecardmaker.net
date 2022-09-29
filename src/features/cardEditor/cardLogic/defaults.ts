@@ -5,6 +5,7 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasMoves: false,
   hasDescription: false,
   hasName: true,
+  hasNameSymbol: false,
   hasSubname: false,
   hasSubtypes: false,
   hasTypeImage: false,

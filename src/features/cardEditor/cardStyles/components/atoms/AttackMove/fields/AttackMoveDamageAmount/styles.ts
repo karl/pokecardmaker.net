@@ -12,7 +12,7 @@ export const Wrapper = styled('div')`
 `;
 
 export const MoveDamageAmountText = styled(CardText)`
-  line-height: 1em;
+  line-height: 1.1em;
   font-size: 2.2em;
 `;
 

@@ -57,6 +57,10 @@ export interface CardLogic {
   /**
    * @default false
    */
+  hasNameSymbol: boolean;
+  /**
+   * @default false
+   */
   hasVariations: boolean;
   /**
    * @default false

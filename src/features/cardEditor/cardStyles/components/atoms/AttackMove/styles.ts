@@ -13,7 +13,7 @@ export const Wrapper = styled(PlacementBlock)<{ $hasBackground: boolean }>`
   ${({ $hasBackground }) =>
     $hasBackground &&
     css`
-      margin-top: -1.2em;
+      margin-top: -0.8em;
     `}
 `;
 
@@ -31,10 +31,10 @@ export const TitleBar = styled('div')<{ $background?: MoveBackground }>`
       &::before {
         position: absolute;
         content: '';
-        top: -4%;
+        top: -0.35em;
         left: -2%;
         width: 110.7%;
-        height: 100%;
+        height: 3.8em;
         background: url(${Routes.Assets.Symbols.MoveBackground($background)});
         background-size: contain;
         background-repeat: no-repeat;

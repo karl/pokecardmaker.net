@@ -15,8 +15,8 @@ const Move1: FC = () => {
   const { bonusMoveRequired, hasMove3 } = useCardLogic();
 
   const abilityExists = useMemo<boolean>(
-    () => hasAbility && !!ability?.name,
-    [hasAbility, ability?.name],
+    () => (hasAbility && !!ability?.name) || (bonusMoveRequired && hasAbility),
+    [hasAbility, ability?.name, bonusMoveRequired],
   );
 
   const move2Exists = useMemo<boolean>(

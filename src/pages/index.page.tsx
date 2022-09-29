@@ -98,12 +98,16 @@ const Home: FC = () => {
                 <li>Character Rare rarity</li>
                 <li>Promo rarity</li>
                 <li>Pokémon V</li>
-                <li>Full Art Pokémon V</li>
-                <li>Golden Full Art Pokémon V </li>
                 <li>Pokémon V-Max Dynamax</li>
                 <li>Pokémon V-Max Gigantamax</li>
-                <li>Rainbow Pokémon V-Max</li>
                 <li>Pokémon V-Star</li>
+                <li>Pokémon GX (Basic)</li>
+                <li>Pokémon GX (Stage 1)</li>
+                <li>Pokémon GX (Stage 2)</li>
+                <li>Ultra Beast variation</li>
+                <li>Full Art rarity</li>
+                <li>Golden Full Art rarity</li>
+                <li>Rainbow rarity</li>
               </List>
             </div>
           </Box>

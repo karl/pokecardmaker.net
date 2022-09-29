@@ -40,9 +40,6 @@ export const swordAndShield: BaseSet = {
       abilityName: {
         'line-height': '1em',
       },
-      moveCostWrapper: {
-        gap: '0.05em',
-      },
       typeBar: {
         bottom: '11.2%',
         width: '88.8%',

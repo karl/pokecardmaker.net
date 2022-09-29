@@ -55,6 +55,7 @@ export const goldenFullArtPokemon: Rarity = {
     [sunAndMoon.id]: {
       styles: {
         hpOutline: 'white',
+        abilitySymbol: 'sunAndMoonGold',
       },
     },
   },
@@ -83,6 +84,9 @@ export const goldStar: Rarity = {
   id: id++,
   slug: 'goldStar',
   displayName: 'Gold Star',
+  logic: {
+    hasNameSymbol: true,
+  },
   styles: {
     nameSymbol: 'star',
   },
