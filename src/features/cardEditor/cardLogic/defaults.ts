@@ -5,6 +5,7 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasMoves: false,
   hasDescription: false,
   hasName: true,
+  hasNameSymbol: false,
   hasSubname: false,
   hasSubtypes: false,
   hasTypeImage: false,
@@ -22,4 +23,5 @@ export const defaultCardLogic: Required<CardLogic> = {
   hasTypeBar: false,
   bonusMoveRequired: false,
   hasRotationIcon: true,
+  hasMove3: false,
 };

@@ -3,10 +3,13 @@ import { colorless, useType } from '@cardEditor/cardOptions/type';
 import Routes from '@routes';
 import { FC } from 'react';
 import DisplayImg from '../../../DisplayImg';
-import { AttackMoveDisplayProps } from '../../types';
-import { TypeContainer, Wrapper } from './styles';
+import { TypeContainer, TypeWrapper, Wrapper } from './styles';
+import { AttackMovePropsEnergyCostProps } from './types';
 
-const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
+const AttackMoveEnergyCost: FC<AttackMovePropsEnergyCostProps> = ({
+  move,
+  hasAttackCostBorder,
+}) => {
   const { baseSet } = useBaseSet();
   const { getTypeById } = useType();
 
@@ -14,11 +17,17 @@ const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
     <Wrapper>
       {/* If there's no energy cost, display an empty cost symbol */}
       {move?.energyCost.length === 0 && (
-        <TypeContainer>
-          <DisplayImg
-            src={Routes.Assets.Icons.TypeBorder(baseSet.slug, 'empty')}
-          />
-        </TypeContainer>
+        <TypeWrapper>
+          <TypeContainer $hasBorder={hasAttackCostBorder}>
+            <DisplayImg
+              src={Routes.Assets.Icons.Type(
+                baseSet.slug,
+                'empty',
+                hasAttackCostBorder,
+              )}
+            />
+          </TypeContainer>
+        </TypeWrapper>
       )}
       {move?.energyCost.length !== 0 &&
         [...(move?.energyCost ?? [])]
@@ -26,14 +35,17 @@ const AttackMoveEnergyCost: FC<AttackMoveDisplayProps> = ({ move }) => {
           .sort(type => (type.typeId === colorless.id ? 1 : -1))
           .flatMap(energy =>
             new Array(energy.amount).fill(null).map((_, i) => (
-              <TypeContainer key={`${energy.typeId}-${i}`}>
-                <DisplayImg
-                  src={Routes.Assets.Icons.TypeBorder(
-                    baseSet.slug,
-                    getTypeById(energy.typeId)!.slug,
-                  )}
-                />
-              </TypeContainer>
+              <TypeWrapper key={`${energy.typeId}-${i}`}>
+                <TypeContainer $hasBorder={hasAttackCostBorder}>
+                  <DisplayImg
+                    src={Routes.Assets.Icons.Type(
+                      baseSet.slug,
+                      getTypeById(energy.typeId)!.slug,
+                      hasAttackCostBorder,
+                    )}
+                  />
+                </TypeContainer>
+              </TypeWrapper>
             )),
           )}
     </Wrapper>

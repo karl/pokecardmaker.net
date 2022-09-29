@@ -101,6 +101,10 @@ const useCardOptions = () => {
     () => stateSetter<CardInterface['move2']>('move2'),
     [stateSetter],
   );
+  const setMove3 = useMemo(
+    () => stateSetter<CardInterface['move3']>('move3'),
+    [stateSetter],
+  );
 
   return {
     ...state,
@@ -127,6 +131,7 @@ const useCardOptions = () => {
     setMove1,
     setHasMove2,
     setMove2,
+    setMove3,
   };
 };
 

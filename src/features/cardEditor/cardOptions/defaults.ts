@@ -1,5 +1,5 @@
 import { RequiredIsh } from '@interfaces/utils';
-import { swordAndShield } from './baseSet';
+import { sunAndMoon, swordAndShield } from './baseSet';
 import { energy, pokemon, trainer } from './supertype';
 import {
   base,
@@ -18,7 +18,18 @@ import {
   supporter,
   water,
 } from './type';
-import { basic, stage1, stage2, tool, v, vmax, vstar } from './subtype';
+import {
+  basic,
+  gxBasic,
+  gxStage1,
+  gxStage2,
+  stage1,
+  stage2,
+  tool,
+  v,
+  vmax,
+  vstar,
+} from './subtype';
 import { promo } from './setIcon';
 import { d } from './rotationIcon';
 import { common } from './rarityIcon';
@@ -81,6 +92,13 @@ export const defaultCardOptions: RequiredIsh<CardInterface> = {
     damageModifier: undefined,
     energyCost: [],
   },
+  move3: {
+    name: '',
+    description: '',
+    damageAmount: '',
+    damageModifier: undefined,
+    energyCost: [],
+  },
   // Relations
   baseSetId: defaultRelations.baseSet.id,
   supertypeId: defaultRelations.supertype.id,
@@ -135,5 +153,8 @@ export const defaultSubtypeVariations: {
   [v.id]: undefined,
   [vmax.id]: dynamax.id,
   [vstar.id]: undefined,
+  [gxBasic.id]: undefined,
+  [gxStage1.id]: undefined,
+  [gxStage2.id]: undefined,
   [tool.id]: undefined,
 };

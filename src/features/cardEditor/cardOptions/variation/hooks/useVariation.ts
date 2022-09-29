@@ -19,7 +19,7 @@ const useVariation = () => {
   useEffect(() => {
     if (!subtype) setVariation(undefined);
     else if (
-      !variation?.baseSetDependencies[baseSet.id]?.subtypes.includes(subtype.id)
+      !variation?.baseSetDependencies[baseSet.id]?.subtypes[subtype.id]
     ) {
       setVariation(defaultSubtypeVariations[subtype.id]);
     }

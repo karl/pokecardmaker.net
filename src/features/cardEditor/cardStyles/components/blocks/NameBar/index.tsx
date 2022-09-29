@@ -9,13 +9,13 @@ import { Block } from './styles';
 const NameBar: FC = () => {
   const { hasName } = useCardLogic();
   const {
-    positions: { name: namePosition },
+    positions: { name: placement },
   } = useCardStyles();
 
   if (!hasName) return null;
 
   return (
-    <Block {...namePosition}>
+    <Block {...placement}>
       <Name />
       <NameSymbol />
       <Subname />

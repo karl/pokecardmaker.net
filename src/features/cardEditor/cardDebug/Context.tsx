@@ -35,7 +35,7 @@ export const CardDebugProvider: React.FC = ({ children }) => {
   const [showCardOverlay, setShowCardOverlay] = useState<boolean>(false);
   const [overlayOpacity, setOverlayOpacity] = useState<number>(50);
   const [overlayImgSrc, setOverlayImgSrc] = useState<string | undefined>(
-    'https://images.pokemontcg.io/sm10/185_hires.png',
+    'https://images.pokemontcg.io/sm115/6_hires.png',
   );
   const [prevolveImgSrc, setPrevolveImgSrc] = useState<string | undefined>(
     'https://www.formica.com/nl-nl/-/media/formica/emea/products/swatch-images/f2253/f2253-swatch.jpg?rev=1604f0e24cab4299a2a076307dd98ccd',

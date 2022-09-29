@@ -83,10 +83,12 @@ export const sunAndMoon: BaseSet = {
     hasRotationIcon: false,
   },
   styles: {
+    hasAttackCostBorder: false,
     hasTypeImgBorder: false,
     positions: {
       name: {
         height: '6%',
+        gap: '0.5em',
       },
       hitpoints: {
         top: '3.7%',

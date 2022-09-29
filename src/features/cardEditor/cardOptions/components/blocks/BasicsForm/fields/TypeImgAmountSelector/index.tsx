@@ -45,8 +45,8 @@ const TypeImgAmountSelector: FC = () => {
               src={
                 customTypeImgSrc ||
                 (typeImg
-                  ? Routes.Assets.Icons.TypeBorder(baseSet.slug, typeImg.slug)
-                  : Routes.Assets.Icons.TypeBorder(baseSet.slug, 'colorless'))
+                  ? Routes.Assets.Icons.Type(baseSet.slug, typeImg.slug, true)
+                  : Routes.Assets.Icons.Type(baseSet.slug, 'colorless', true))
               }
               style={{ borderRadius: '50%' }}
               objectFit="cover"
