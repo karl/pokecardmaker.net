@@ -1,5 +1,5 @@
 import { NameSymbol } from '@cardEditor/cardStyles';
-import { PlacementBlock } from '@cardEditor/cardStyles/components/atoms/PlacementBlock';
+import PlacementBlock from '@cardEditor/cardStyles/components/atoms/PlacementBlock';
 import { css, styled } from '@css';
 
 export const Wrapper = styled(PlacementBlock)<{ $symbol: NameSymbol }>`

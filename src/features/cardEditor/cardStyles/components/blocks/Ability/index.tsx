@@ -15,8 +15,8 @@ const Ability: FC = () => {
   if (!hasAbility) return null;
 
   return (
-    <Wrapper {...placement}>
-      <TitleBar {...titleBarPlacement}>
+    <Wrapper placement={placement}>
+      <TitleBar placement={titleBarPlacement}>
         <AbilitySymbol />
         <AbilityName />
       </TitleBar>

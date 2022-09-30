@@ -17,8 +17,8 @@ const Subname: FC = () => {
 
   return (
     <SubnameText
-      outline={nameOutline}
-      color={nameTextColor}
+      textOutline={nameOutline}
+      textColor={nameTextColor}
       $beforeName={!!beforeName}
     >
       {subname}

@@ -1,5 +1,5 @@
 import { css, styled } from '@css';
-import { PlacementBlock } from '../../atoms/PlacementBlock';
+import PlacementBlock from '../../atoms/PlacementBlock';
 
 export const Wrapper = styled(PlacementBlock)<{
   $hasMove2: boolean;

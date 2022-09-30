@@ -8,7 +8,7 @@ const WeaknessAmount: FC = () => {
   const { typeBarTextColor, typeBarOutline } = useCardStyles();
 
   return (
-    <Wrapper color={typeBarTextColor} outline={typeBarOutline}>
+    <Wrapper textColor={typeBarTextColor} textOutline={typeBarOutline}>
       <ModifierText>×</ModifierText>
       <WeaknessText>{weaknessAmount}</WeaknessText>
     </Wrapper>

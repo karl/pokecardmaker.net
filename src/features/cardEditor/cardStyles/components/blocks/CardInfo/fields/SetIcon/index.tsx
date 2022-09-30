@@ -16,7 +16,7 @@ const SetIcon: FC = () => {
   if (!imgSrc) return null;
 
   return (
-    <Wrapper {...placement}>
+    <Wrapper placement={placement}>
       <DisplayImg src={imgSrc} />
     </Wrapper>
   );

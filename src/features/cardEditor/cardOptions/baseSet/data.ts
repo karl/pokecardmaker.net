@@ -12,7 +12,7 @@ export const swordAndShield: BaseSet = {
         height: '6%',
       },
       prevolveName: {
-        'letter-spacing': '0.01em',
+        letterSpacing: '0.01em',
         top: '9.7%',
         left: '17.8%',
       },
@@ -21,7 +21,7 @@ export const swordAndShield: BaseSet = {
         left: '4.6%',
         height: '5.2em',
         width: '5.15em',
-        'border-radius': '1.3em 0.45em 1.95em',
+        borderRadius: '1.3em 0.45em 1.95em',
       },
       dexStats: {
         top: '48%',
@@ -35,10 +35,10 @@ export const swordAndShield: BaseSet = {
       abilitySymbol: {
         width: '12.2em',
         height: '2.35em',
-        'margin-left': '-2%',
+        ml: '-2%',
       },
       abilityName: {
-        'line-height': '1em',
+        lineheight: '1em',
       },
       typeBar: {
         bottom: '11.2%',
@@ -55,20 +55,20 @@ export const swordAndShield: BaseSet = {
       },
       cardInfoBar: {
         gap: '0.8em',
-        'align-items': 'flex-end',
+        alignItems: 'flex-end',
       },
       setIcon: {
         height: '2em',
         width: '2em',
       },
       cardNumber: {
-        'font-size': '1.15em',
+        fontSize: '1.15em',
       },
       rarityIcon: {
-        'margin-left': '-0.35em',
+        ml: '-0.35em',
       },
       dexEntry: {
-        'text-align': 'right',
+        textAlign: 'right',
         width: '58%',
       },
     },
@@ -108,11 +108,11 @@ export const sunAndMoon: BaseSet = {
         left: '4.2%',
         height: '5.2em',
         width: '5.2em',
-        'clip-path':
+        clipPath:
           'polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%)',
       },
       prevolveName: {
-        'letter-spacing': '-0.04em',
+        letterSpacing: '-0.04em',
         top: '9.1%',
         left: '17.4%',
       },
@@ -127,7 +127,7 @@ export const sunAndMoon: BaseSet = {
         height: '3em',
       },
       abilityName: {
-        'line-height': '1.2em',
+        lineHeight: '1.2em',
       },
       typeBar: {
         bottom: '10.8%',
@@ -145,24 +145,24 @@ export const sunAndMoon: BaseSet = {
       },
       cardInfoBar: {
         gap: '0.75em',
-        'align-items': 'center',
+        alignItems: 'center',
       },
       illustrator: {
-        'letter-spacing': '-0.04em',
+        letterSpacing: '-0.04em',
       },
       setIcon: {
         height: '1.7em',
         width: '1.7em',
       },
       cardNumber: {
-        'font-size': '1.1em',
-        'min-width': '3.8em',
+        fontSize: '1.1em',
+        minWidth: '3.8em',
       },
       rarityIcon: {
-        'margin-left': '-0.15em',
+        ml: '-0.15em',
       },
       dexEntry: {
-        'text-align': 'left',
+        textAlign: 'left',
         width: '50%',
       },
     },

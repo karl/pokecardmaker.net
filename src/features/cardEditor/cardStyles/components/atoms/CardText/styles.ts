@@ -1,7 +1,7 @@
 import { TextColor } from '@cardEditor/cardStyles';
 import { css, styled } from '@css';
 import { Font } from '@utils/fonts';
-import { PlacementBlock } from '../PlacementBlock';
+import PlacementBlock from '../PlacementBlock';
 
 export const Text = styled(PlacementBlock)<{
   $color: TextColor;

@@ -5,16 +5,16 @@ import { MoveNameText } from './styles';
 
 const AttackMoveName: FC<AttackMoveDisplayProps> = ({
   move,
-  color,
-  outline,
+  textColor: color,
+  textOutline: outline,
 }) => {
   const { greatestEnergyCost } = useCardLogic();
 
   return (
     <MoveNameText
       $energyCost={greatestEnergyCost}
-      outline={outline}
-      color={color}
+      textOutline={outline}
+      textColor={color}
     >
       {move?.name}
     </MoveNameText>

@@ -17,9 +17,9 @@ const DexEntry: FC = () => {
 
   return (
     <DexEntryText
-      color={cardInfoTextColor}
-      outline={cardInfoOutline}
-      {...placement}
+      textColor={cardInfoTextColor}
+      textOutline={cardInfoOutline}
+      placement={placement}
     >
       {dexEntry}
     </DexEntryText>

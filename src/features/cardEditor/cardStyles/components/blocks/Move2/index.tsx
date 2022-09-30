@@ -24,7 +24,7 @@ const Move2: FC = () => {
       nameTextColor={movesTextColor}
       nameOutline={movesOutline}
       hasAttackCostBorder={hasAttackCostBorder}
-      {...placement}
+      placement={placement}
     />
   );
 };

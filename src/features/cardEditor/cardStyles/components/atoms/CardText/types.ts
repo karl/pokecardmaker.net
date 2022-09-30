@@ -1,6 +1,7 @@
-import { Placement, TextColor } from '@cardEditor/cardStyles';
+import { TextColor } from '@cardEditor/cardStyles';
+import { PlacementBlockProps } from '../PlacementBlock/types';
 
-export interface CardTextProps extends Placement {
-  outline?: TextColor;
-  color?: TextColor;
-}
+export type CardTextProps = PlacementBlockProps & {
+  textOutline?: TextColor;
+  textColor?: TextColor;
+};

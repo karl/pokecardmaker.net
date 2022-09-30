@@ -19,9 +19,9 @@ const Hitpoints: FC = () => {
   return (
     <Wrapper
       $size={hpSize}
-      outline={hpOutline}
-      color={hpTextColor}
-      {...placement}
+      textOutline={hpOutline}
+      textColor={hpTextColor}
+      placement={placement}
     >
       <HPText $size={hpSize}>HP</HPText>
       <HPNumbers $size={hpSize}>{hitpoints}</HPNumbers>
