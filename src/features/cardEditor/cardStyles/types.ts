@@ -1,3 +1,5 @@
+import { SxProps } from '@mui/system';
+
 export type AbilitySymbol =
   | 'sunAndMoon'
   | 'sunAndMoonGold'
@@ -17,25 +19,7 @@ export type Size = 'sm' | 'lg';
 export type Move3Type = 'gx';
 export type MoveBackground = 'gx' | 'gxUltraBeast' | 'gxGold';
 
-export interface Placement {
-  top?: string;
-  right?: string;
-  bottom?: string;
-  left?: string;
-  height?: string;
-  width?: string;
-  order?: string;
-  gap?: string;
-  'line-height'?: string;
-  'font-size'?: string;
-  'margin-left'?: string;
-  'align-items'?: string;
-  'text-align'?: string;
-  'min-width'?: string;
-  'letter-spacing'?: string;
-  'border-radius'?: string;
-  'clip-path'?: string;
-}
+export type Placement = SxProps;
 
 export interface Positions {
   name?: Placement;

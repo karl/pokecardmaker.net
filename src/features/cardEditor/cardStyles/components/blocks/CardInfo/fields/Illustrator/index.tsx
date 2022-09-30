@@ -17,9 +17,9 @@ const Illustrator: FC = () => {
 
   return (
     <IllustratorText
-      color={cardInfoTextColor}
-      outline={cardInfoOutline}
-      {...placement}
+      textColor={cardInfoTextColor}
+      textOutline={cardInfoOutline}
+      placement={placement}
     >
       Illus. {illustrator}
     </IllustratorText>

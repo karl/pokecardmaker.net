@@ -32,6 +32,5 @@ export const defaultCardStyles: RequiredIsh<CardStyles> = {
     nameOutline: undefined,
     hasAttackCostBorder: true,
   },
-  // TODO: Create default for this
   positions: {},
 };

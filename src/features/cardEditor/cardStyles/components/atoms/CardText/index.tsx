@@ -31,8 +31,8 @@ const parseOptions: HTMLReactParserOptions = {
 };
 
 const CardText: FC<CardTextProps> = ({
-  outline,
-  color = 'black',
+  textOutline,
+  textColor = 'black',
   children,
   ...props
 }) => {
@@ -58,7 +58,12 @@ const CardText: FC<CardTextProps> = ({
   );
 
   return (
-    <Text $outline={outline} $color={color} {...props}>
+    <Text
+      $outline={textOutline}
+      $color={textColor}
+      {...props}
+      position="relative"
+    >
       {content}
     </Text>
   );

@@ -8,7 +8,7 @@ const ResistanceAmount: FC = () => {
   const { typeBarTextColor, typeBarOutline } = useCardStyles();
 
   return (
-    <Wrapper color={typeBarTextColor} outline={typeBarOutline}>
+    <Wrapper textColor={typeBarTextColor} textOutline={typeBarOutline}>
       <ModifierText>-</ModifierText>
       <ResistanceText>{resistanceAmount}</ResistanceText>
     </Wrapper>

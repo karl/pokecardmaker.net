@@ -8,17 +8,17 @@ import {
 
 const AttackMoveDamageAmount: FC<AttackMoveDisplayProps> = ({
   move,
-  outline,
-  color,
+  textOutline,
+  textColor,
 }) => {
   if (move?.damageAmount === '') return null;
 
   return (
     <Wrapper>
-      <MoveDamageAmountText outline={outline} color={color}>
+      <MoveDamageAmountText textOutline={textOutline} textColor={textColor}>
         {move?.damageAmount}
       </MoveDamageAmountText>
-      <MoveDamageModifierText outline={outline} color={color}>
+      <MoveDamageModifierText textOutline={textOutline} textColor={textColor}>
         {move?.damageModifier}
       </MoveDamageModifierText>
     </Wrapper>
