@@ -22,7 +22,7 @@ const Moves: FC = () => {
     <Wrapper
       $hasMove2={hasMove2 && !!move2?.name}
       $alignBottom={alignMovesBottom}
-      {...placement}
+      placement={placement}
     >
       <Ability />
       <Move1 />

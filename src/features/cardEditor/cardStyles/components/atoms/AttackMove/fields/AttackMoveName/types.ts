@@ -1,5 +1,5 @@
 import { AttackMoveDisplayProps } from '../../types';
 
-export interface AttackMoveNameProps extends AttackMoveDisplayProps {
+export type AttackMoveNameProps = AttackMoveDisplayProps & {
   greatestEnergyCost: number;
-}
+};

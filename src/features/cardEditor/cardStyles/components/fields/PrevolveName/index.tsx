@@ -13,7 +13,9 @@ const PrevolveName: FC = () => {
 
   if (!hasPrevolve || !prevolveName) return null;
 
-  return <StyledText {...placement}>Evolves from {prevolveName}</StyledText>;
+  return (
+    <StyledText placement={placement}>Evolves from {prevolveName}</StyledText>
+  );
 };
 
 export default PrevolveName;

@@ -1,5 +1,5 @@
 import { css, styled } from '@css';
-import { PlacementBlock } from '../PlacementBlock';
+import PlacementBlock from '../PlacementBlock';
 
 export const Wrapper = styled(PlacementBlock)<{ $hasBackground: boolean }>`
   position: relative;

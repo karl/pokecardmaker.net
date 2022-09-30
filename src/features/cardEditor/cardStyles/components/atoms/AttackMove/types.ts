@@ -1,8 +1,9 @@
 import { MoveBackground, TextColor } from '@cardEditor/cardStyles/types';
 import { AttackMove } from '@cardEditor/types';
 import { CardTextProps } from '../CardText/types';
+import { PlacementBlockProps } from '../PlacementBlock/types';
 
-export interface AttackMoveProps {
+export type AttackMoveProps = PlacementBlockProps & {
   move: AttackMove | undefined;
   isLastMove?: boolean;
   isOnlyMove?: boolean;
@@ -13,8 +14,8 @@ export interface AttackMoveProps {
   nameTextColor?: TextColor;
   nameOutline?: TextColor;
   hasAttackCostBorder: boolean;
-}
+};
 
-export interface AttackMoveDisplayProps extends CardTextProps {
+export type AttackMoveDisplayProps = CardTextProps & {
   move: AttackMoveProps['move'];
-}
+};

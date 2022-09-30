@@ -15,7 +15,7 @@ const NameBar: FC = () => {
   if (!hasName) return null;
 
   return (
-    <Block {...placement}>
+    <Block placement={placement}>
       <Name />
       <NameSymbol />
       <Subname />

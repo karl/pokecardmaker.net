@@ -17,9 +17,9 @@ const DexStats: FC = () => {
 
   return (
     <DexStatsText
-      color={dexStatsTextColor}
-      outline={dexStatsOutline}
-      {...placement}
+      textColor={dexStatsTextColor}
+      textOutline={dexStatsOutline}
+      placement={placement}
     >
       {dexStats}
     </DexStatsText>

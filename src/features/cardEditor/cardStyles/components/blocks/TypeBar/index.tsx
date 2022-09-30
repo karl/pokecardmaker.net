@@ -24,15 +24,15 @@ const TypeBar: FC = () => {
   if (!hasTypeBar) return null;
 
   return (
-    <Block {...placement}>
+    <Block placement={placement}>
       {!!weaknessAmount && !!weaknessTypeId && (
-        <TypeWrapper {...weaknessPlacement}>
+        <TypeWrapper placement={weaknessPlacement}>
           <WeaknessType />
           <WeaknessAmount />
         </TypeWrapper>
       )}
       {!!resistanceAmount && !!resistanceTypeId && (
-        <TypeWrapper {...resistancePlacement}>
+        <TypeWrapper placement={resistancePlacement}>
           <ResistanceType />
           <ResistanceAmount />
         </TypeWrapper>

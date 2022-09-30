@@ -144,7 +144,7 @@ export const pokemonGO: SetIcon = {
 export const lostOrigin: SetIcon = {
   id: id++,
   slug: 'lostOrigin',
-  displayName: 'Lost Origins',
+  displayName: 'Lost Origin',
   baseSet: ssBaseSet.id,
   shape: 'square',
 };

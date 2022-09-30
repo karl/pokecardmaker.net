@@ -16,8 +16,8 @@ const Description: FC = () => {
   if (!hasDescription || !description) return null;
 
   return (
-    <Wrapper {...descriptionPosition}>
-      <DescriptionText outline={movesOutline} color={movesTextColor}>
+    <Wrapper placement={descriptionPosition}>
+      <DescriptionText textOutline={movesOutline} textColor={movesTextColor}>
         {description}
       </DescriptionText>
     </Wrapper>

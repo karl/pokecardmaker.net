@@ -38,21 +38,21 @@ const AttackMove: FC<AttackMoveProps> = ({
         />
         <AttackMoveName
           move={move}
-          outline={nameOutline}
-          color={nameTextColor}
+          textOutline={nameOutline}
+          textColor={nameTextColor}
         />
         <AttackMoveDamageAmount
           move={move}
-          outline={nameOutline}
-          color={nameTextColor}
+          textOutline={nameOutline}
+          textColor={nameTextColor}
         />
       </TitleBar>
       <AttackMoveDescription
         move={move}
         isLastMove={isLastMove}
         isOnlyMove={isOnlyMove}
-        outline={descriptionOutline}
-        color={descriptionTextColor}
+        textOutline={descriptionOutline}
+        textColor={descriptionTextColor}
       />
     </Wrapper>
   );

@@ -15,9 +15,9 @@ const CardNumber: FC = () => {
 
   return (
     <CardNumberText
-      color={cardInfoTextColor}
-      outline={cardInfoOutline}
-      {...placement}
+      textColor={cardInfoTextColor}
+      textOutline={cardInfoOutline}
+      placement={placement}
     >
       {cardNumber && <span>{cardNumber}</span>}
       {cardNumber && totalInSet && <span>/</span>}

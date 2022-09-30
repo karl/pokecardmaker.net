@@ -1,6 +1,6 @@
 import { styled } from '@css';
 import { Font } from '@utils/fonts';
-import { PlacementBlock } from '../../atoms/PlacementBlock';
+import PlacementBlock from '../../atoms/PlacementBlock';
 
 export const Block = styled(PlacementBlock)`
   display: flex;

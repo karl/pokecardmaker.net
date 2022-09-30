@@ -22,9 +22,9 @@ const CardInfo: FC = () => {
 
   return (
     <>
-      <Wrapper {...containerPlacement}>
+      <Wrapper placement={containerPlacement}>
         <Illustrator />
-        <CardInfoBar {...infoBarPlacement}>
+        <CardInfoBar placement={infoBarPlacement}>
           <SetIcon />
           <RotationIcon />
           <CardNumber />

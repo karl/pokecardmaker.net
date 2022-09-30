@@ -30,7 +30,7 @@ const TypeImg: FC = () => {
     <Wrapper
       $multiple={hasMultipleTypeImages}
       $custom={!!customTypeImgSrc}
-      {...containerPlacement}
+      placement={containerPlacement}
     >
       {new Array(hasMultipleTypeImages ? typeImgAmount : 1)
         .fill(undefined)
@@ -40,9 +40,11 @@ const TypeImg: FC = () => {
             $multiple={hasMultipleTypeImages}
             $custom={!!customTypeImgSrc}
             $hasBorder={!!hasTypeImgBorder}
-            style={imgPlacement}
+            as="img"
+            // @ts-expect-error `as="img"` allows for the `src` prop
             src={imgSrc}
             alt=""
+            placement={imgPlacement}
           />
         ))}
     </Wrapper>

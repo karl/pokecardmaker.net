@@ -20,7 +20,7 @@ const PrevolveImg: FC = () => {
 
   if (!hasPrevolve || !imgSrc) return null;
 
-  return <Img $url={imgSrc} {...placement} />;
+  return <Img $url={imgSrc} placement={placement} />;
 };
 
 export default PrevolveImg;

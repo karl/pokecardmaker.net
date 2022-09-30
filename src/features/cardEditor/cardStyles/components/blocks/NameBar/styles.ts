@@ -1,5 +1,5 @@
 import { styled } from '@css';
-import { PlacementBlock } from '../../atoms/PlacementBlock';
+import PlacementBlock from '../../atoms/PlacementBlock';
 
 export const Block = styled(PlacementBlock)`
   display: flex;

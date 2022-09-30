@@ -1,5 +1,5 @@
 import { css, styled } from '@css';
-import { PlacementBlock } from '../../atoms/PlacementBlock';
+import PlacementBlock from '../../atoms/PlacementBlock';
 
 export const Wrapper = styled(PlacementBlock)<{
   $multiple: boolean;
@@ -35,7 +35,7 @@ export const Wrapper = styled(PlacementBlock)<{
         `}
 `;
 
-export const StyledImg = styled('img')<{
+export const StyledImg = styled(PlacementBlock)<{
   $multiple: boolean;
   $custom: boolean;
   $hasBorder: boolean;

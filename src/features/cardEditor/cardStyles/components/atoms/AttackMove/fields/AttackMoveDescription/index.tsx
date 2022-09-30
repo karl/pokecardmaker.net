@@ -7,15 +7,15 @@ const AttackMoveDescription: FC<AttackMoveDescriptionProps> = ({
   move,
   isLastMove,
   isOnlyMove,
-  color,
-  outline,
+  textColor: color,
+  textOutline: outline,
 }) => {
   const { alignMovesBottom } = useCardStyles();
 
   return (
     <MoveDescriptionText
-      outline={outline}
-      color={color}
+      textOutline={outline}
+      textColor={color}
       $alignBottom={alignMovesBottom}
       $isLastMove={!!isLastMove}
       $isEmpty={!move?.description}

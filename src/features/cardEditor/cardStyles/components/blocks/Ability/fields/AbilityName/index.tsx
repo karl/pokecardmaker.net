@@ -14,9 +14,9 @@ const AbilityName: FC = () => {
 
   return (
     <AbilityNameText
-      outline={movesOutline}
+      textOutline={movesOutline}
       $energyCost={greatestEnergyCost}
-      {...placement}
+      placement={placement}
     >
       {ability?.name}
     </AbilityNameText>
