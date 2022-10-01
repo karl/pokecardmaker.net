@@ -162,12 +162,12 @@ export const ultraBeast: Variation = {
   },
 };
 
-export const prism: Variation = {
+export const prismStar: Variation = {
   id: id++,
-  slug: 'prism',
-  displayName: 'Prism',
+  slug: 'prismStar',
+  displayName: 'Prism Star',
   styles: {
-    nameSymbol: 'prism',
+    nameSymbol: 'prismStar',
   },
   logic: {
     hasNameSymbol: true,
@@ -191,5 +191,5 @@ export const variations: Variation[] = [
   dark,
   ex,
   ultraBeast,
-  prism,
+  prismStar,
 ];

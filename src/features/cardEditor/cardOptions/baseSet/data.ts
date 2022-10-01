@@ -80,7 +80,7 @@ export const sunAndMoon: BaseSet = {
   id: id++,
   slug: 'sunAndMoon',
   displayName: 'Sun & Moon',
-  subText: 'GX, Ultra Beast and Prism',
+  subText: 'GX, Ultra Beast and Prism Star',
   logic: {
     hasRotationIcon: false,
   },

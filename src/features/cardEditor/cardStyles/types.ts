@@ -14,7 +14,7 @@ export type NameSymbol =
   | 'ex'
   | 'gx'
   | 'gxUltraBeast'
-  | 'prism';
+  | 'prismStar';
 export type TextColor = 'white' | 'black' | 'gx' | 'ultraBeast';
 export type Size = 'sm' | 'lg';
 export type Move3Type = 'gx';

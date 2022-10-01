@@ -3,7 +3,7 @@ import { sunAndMoon, useBaseSet } from '@cardEditor/cardOptions/baseSet';
 import NewFeatureHelpText from '@cardEditor/cardOptions/components/atoms/NewFeatureHelpText';
 import { basic, useSubtype } from '@cardEditor/cardOptions/subtype';
 import { useType } from '@cardEditor/cardOptions/type';
-import { prism, useVariation } from '@cardEditor/cardOptions/variation';
+import { prismStar, useVariation } from '@cardEditor/cardOptions/variation';
 import ControlledSelector from '@components/inputs/ControlledSelector';
 import { AnalyticsEvent, useAnalytics } from '@features/analytics';
 import { ListItemText, MenuItem, SelectChangeEvent } from '@mui/material';
@@ -37,11 +37,13 @@ const VariationSelector: FC = () => {
       helpText={
         baseSet.id === sunAndMoon.id &&
         (subtype?.id === basic.id ||
-          prism.baseSetDependencies[sunAndMoon.id].types?.includes(type.id)) ? (
+          prismStar.baseSetDependencies[sunAndMoon.id].types?.includes(
+            type.id,
+          )) ? (
           <NewFeatureHelpText>
             Try the new{' '}
             <b>
-              <i>Prism</i>
+              <i>Prism Star</i>
             </b>{' '}
             variation!
           </NewFeatureHelpText>

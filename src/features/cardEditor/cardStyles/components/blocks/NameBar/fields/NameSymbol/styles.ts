@@ -39,7 +39,7 @@ export const Wrapper = styled(PlacementBlock)<{ $symbol: NameSymbol }>`
           width: 6.8em;
           top: 4%;
         `;
-      case 'prism':
+      case 'prismStar':
         return css`
           height: 3em;
           width: 2.3em;

@@ -43,7 +43,7 @@ const BaseSetSelector: FC = () => {
           </b>{' '}
           and{' '}
           <b>
-            <i>Prism</i>
+            <i>Prism Star</i>
           </b>{' '}
           cards!
         </NewFeatureHelpText>
