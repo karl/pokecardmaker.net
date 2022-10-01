@@ -48,12 +48,12 @@ const useRarity = () => {
 
       if (
         variation && subtype
-          ? !variationSubtypeIncludesRarity
-          : !subtypeIncludesRarity
+          ? variationSubtypeIncludesRarity
+          : subtype && subtypeIncludesRarity
       )
-        return false;
-      if (!variation && !subtype && !typeIncludesRarity) return false;
-      return true;
+        return true;
+      if (!variation && !subtype && typeIncludesRarity) return true;
+      return false;
     },
     [
       typeRarities,
@@ -71,12 +71,14 @@ const useRarity = () => {
     const subtypeHasRarities = !!subtypeRarities?.length;
 
     if (typeHasVariation) return false;
-    if (typeHasRarities) return true;
+    if (!variation && !subtype && typeHasRarities) return true;
     if (
-      variation && subtype ? !variationSubtypeHasRarities : !subtypeHasRarities
+      variation && subtype
+        ? variationSubtypeHasRarities
+        : subtype && subtypeHasRarities
     )
-      return false;
-    return true;
+      return true;
+    return false;
   }, [
     typeRarities,
     variation,

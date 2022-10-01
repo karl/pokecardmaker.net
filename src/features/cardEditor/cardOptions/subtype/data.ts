@@ -267,6 +267,9 @@ export const tool: Subtype = {
       },
     },
   },
+  logic: {
+    hasVariations: false,
+  },
   baseSetDependencies: {
     [swordAndShield.id]: [
       {

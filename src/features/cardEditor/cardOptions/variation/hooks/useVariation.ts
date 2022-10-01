@@ -1,15 +1,17 @@
 import { CardInterface } from '@cardEditor';
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import {
   defaultSubtypeVariations,
+  defaultTypeVariations,
   useCardOptions,
   useCardRelations,
 } from '@cardEditor/cardOptions';
 import { variations } from '../data';
+import { Variation } from '../types';
 
 const useVariation = () => {
   const { stateSetter } = useCardOptions();
-  const { baseSet, variation, subtype } = useCardRelations();
+  const { baseSet, type, subtype, variation } = useCardRelations();
 
   const setVariation = useMemo(
     () => stateSetter<CardInterface['variationId']>('variationId'),
@@ -17,19 +19,32 @@ const useVariation = () => {
   );
 
   useEffect(() => {
-    if (!subtype) setVariation(undefined);
-    else if (
-      !variation?.baseSetDependencies[baseSet.id]?.subtypes[subtype.id]
-    ) {
-      setVariation(defaultSubtypeVariations[subtype.id]);
+    if (!variationIsAvailable(variation)) {
+      setVariation(
+        subtype
+          ? defaultSubtypeVariations[subtype.id]
+          : defaultTypeVariations[type.id],
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setVariation, subtype, baseSet]);
+  }, [setVariation, type, subtype, baseSet]);
+
+  const variationIsAvailable = useCallback(
+    (v?: Variation) => {
+      const baseSetVariation = v?.baseSetDependencies[baseSet.id];
+      if (!baseSetVariation) return false;
+      return subtype
+        ? !!baseSetVariation.subtypes[subtype.id]
+        : !!baseSetVariation.types?.includes(type.id);
+    },
+    [baseSet, type, subtype],
+  );
 
   return {
     variations,
     variation,
     setVariation,
+    variationIsAvailable,
   };
 };
 
