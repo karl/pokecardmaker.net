@@ -2,10 +2,13 @@ import { CardInterface } from '@cardEditor';
 import { useCallback, useEffect, useMemo } from 'react';
 import {
   defaultSubtypeVariations,
+  defaultTypeSubtypes,
   defaultTypeVariations,
   useCardOptions,
   useCardRelations,
 } from '@cardEditor/cardOptions';
+import { subtypes } from '@cardEditor/cardOptions/subtype';
+import findById from '@utils/findById';
 import { variations } from '../data';
 import { Variation } from '../types';
 
@@ -31,10 +34,18 @@ const useVariation = () => {
 
   const variationIsAvailable = useCallback(
     (v?: Variation) => {
+      /**
+       * Changing supertype from Trainer to Pokemon causes subtype to be `undefined` for 1 render,
+       * because it hasn't updated the hook yet, while it should be the default subtype. This logic counters that inconsistency
+       */
+      const tempSubtype =
+        type.logic?.isSubtypeRequired && !subtype
+          ? findById(subtypes, defaultTypeSubtypes[type.id])
+          : subtype;
       const baseSetVariation = v?.baseSetDependencies[baseSet.id];
       if (!baseSetVariation) return false;
-      return subtype
-        ? !!baseSetVariation.subtypes[subtype.id]
+      return tempSubtype
+        ? !!baseSetVariation.subtypes[tempSubtype.id]
         : !!baseSetVariation.types?.includes(type.id);
     },
     [baseSet, type, subtype],

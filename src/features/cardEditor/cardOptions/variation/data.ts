@@ -166,7 +166,12 @@ export const prism: Variation = {
   id: id++,
   slug: 'prism',
   displayName: 'Prism',
-  styles: {},
+  styles: {
+    nameSymbol: 'prism',
+  },
+  logic: {
+    hasNameSymbol: true,
+  },
   baseSetDependencies: {
     [sunAndMoon.id]: {
       types: [special.id, item.id, stadium.id, supporter.id],
