@@ -6,5 +6,9 @@ export const StyledSelect = styled(Select)<{ $gap: number }>`
     display: flex;
     align-items: center;
     gap: ${({ theme, $gap }) => theme.spacing($gap)};
+
+    .MuiListItemText-secondary {
+      display: none;
+    }
   }
 `;

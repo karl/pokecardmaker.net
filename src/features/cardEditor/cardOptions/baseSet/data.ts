@@ -6,6 +6,7 @@ export const swordAndShield: BaseSet = {
   id: id++,
   slug: 'swordAndShield',
   displayName: 'Sword & Shield',
+  subText: 'V, VMAX and VSTAR',
   styles: {
     positions: {
       name: {
@@ -79,6 +80,7 @@ export const sunAndMoon: BaseSet = {
   id: id++,
   slug: 'sunAndMoon',
   displayName: 'Sun & Moon',
+  subText: 'GX, Ultra Beast and Prism',
   logic: {
     hasRotationIcon: false,
   },

@@ -35,7 +35,7 @@ const RotationIconSelector: FC = () => {
               alt=""
             />
           </SelectorListItemIcon>
-          <ListItemText primary={ri.displayName} />
+          <ListItemText primary={ri.displayName} secondary={ri.subText} />
         </SelectorMenuItem>
       ))}
     </ControlledSelector>

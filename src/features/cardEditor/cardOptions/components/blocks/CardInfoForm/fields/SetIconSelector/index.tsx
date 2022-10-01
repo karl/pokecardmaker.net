@@ -106,7 +106,7 @@ const SetIconSelector: FC = () => {
                     alt=""
                   />
                 </SelectorListItemIcon>
-                <ListItemText primary={si.displayName} />
+                <ListItemText primary={si.displayName} secondary={si.subText} />
               </SelectorMenuItem>
             )),
           ];

@@ -33,7 +33,7 @@ const RaritySelector: FC = () => {
         r =>
           rarityIsAvailable(r.id) && (
             <MenuItem key={r.slug} value={r.id}>
-              <ListItemText primary={r.displayName} />
+              <ListItemText primary={r.displayName} secondary={r.subText} />
             </MenuItem>
           ),
       )}

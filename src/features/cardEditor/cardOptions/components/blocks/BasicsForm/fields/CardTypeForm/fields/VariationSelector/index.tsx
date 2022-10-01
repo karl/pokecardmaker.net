@@ -57,7 +57,7 @@ const VariationSelector: FC = () => {
         v =>
           variationIsAvailable(v) && (
             <MenuItem key={v.slug} value={v.id}>
-              <ListItemText primary={v.displayName} />
+              <ListItemText primary={v.displayName} secondary={v.subText} />
             </MenuItem>
           ),
       )}
