@@ -171,6 +171,7 @@ export const prismStar: Variation = {
   },
   logic: {
     hasNameSymbol: true,
+    hasDexStats: false,
   },
   baseSetDependencies: {
     [sunAndMoon.id]: {
