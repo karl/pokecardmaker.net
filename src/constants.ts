@@ -10,4 +10,4 @@ export const cropperHeight = (cropperWidth / cardImgWidth) * cardImgHeight;
 export const maxFileSize = 5_242_880;
 
 export const siteDescription =
-  'Pokécardmaker.net lets you create your own custom Pokémon cards in the modern Sword and Shield format, including Pokémon-V, V-Max and Full Art Trainers!';
+  'Make your own custom Pokémon cards! Including Sword & Shield Full Art V, VMAX, VSTAR and Sun & Moon GX, Ultra Beast, Prism Star templates!';
