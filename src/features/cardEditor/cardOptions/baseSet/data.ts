@@ -163,7 +163,7 @@ export const sunAndMoon: BaseSet = {
       },
       dexEntry: {
         textAlign: 'left',
-        width: '50%',
+        width: '48%',
       },
     },
   },

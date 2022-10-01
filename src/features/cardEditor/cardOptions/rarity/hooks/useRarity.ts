@@ -1,7 +1,7 @@
 import { useCardOptions, useCardRelations } from '@cardEditor/cardOptions';
-import { rarities } from '@cardEditor/cardOptions/rarity';
 import { CardInterface } from '@cardEditor';
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
+import { rarities } from '../data';
 
 const useRarity = () => {
   const { rarityId, stateSetter } = useCardOptions();
@@ -12,28 +12,94 @@ const useRarity = () => {
     [stateSetter],
   );
 
+  const typeRarities = useMemo(
+    () => type.baseSetDependencies[baseSet.id]?.rarities,
+    [type, baseSet],
+  );
+
+  const variationSubtypeRarities = useMemo(
+    () =>
+      subtype
+        ? variation?.baseSetDependencies[baseSet.id]?.subtypes[subtype.id]
+            ?.rarities
+        : undefined,
+    [variation, subtype, baseSet],
+  );
+
+  const subtypeRarities = useMemo(
+    () =>
+      subtype?.baseSetDependencies[baseSet.id]?.find(r => r.type === type.id)
+        ?.rarities,
+    [subtype, baseSet, type],
+  );
+
+  const typeHasVariation = useMemo(
+    () =>
+      !!variation?.baseSetDependencies[baseSet.id]?.types?.includes(type.id),
+    [baseSet, type, variation],
+  );
+
+  const rarityIsAvailable = useCallback(
+    (id: number) => {
+      const typeIncludesRarity = typeRarities.includes(id);
+      const variationSubtypeIncludesRarity =
+        variation && subtype && variationSubtypeRarities?.includes(id);
+      const subtypeIncludesRarity = subtypeRarities?.includes(id);
+
+      if (
+        variation && subtype
+          ? !variationSubtypeIncludesRarity
+          : !subtypeIncludesRarity
+      )
+        return false;
+      if (!variation && !subtype && !typeIncludesRarity) return false;
+      return true;
+    },
+    [
+      typeRarities,
+      variationSubtypeRarities,
+      subtypeRarities,
+      variation,
+      subtype,
+    ],
+  );
+
+  const anyRarityAvailable = useMemo<boolean>(() => {
+    const typeHasRarities = !!typeRarities.length;
+    const variationSubtypeHasRarities =
+      variation && subtype && variationSubtypeRarities?.length;
+    const subtypeHasRarities = !!subtypeRarities?.length;
+
+    if (typeHasVariation) return false;
+    if (typeHasRarities) return true;
+    if (
+      variation && subtype ? !variationSubtypeHasRarities : !subtypeHasRarities
+    )
+      return false;
+    return true;
+  }, [
+    typeRarities,
+    variation,
+    subtype,
+    variationSubtypeRarities,
+    subtypeRarities,
+    typeHasVariation,
+  ]);
+
   useEffect(() => {
     if (!rarityId) return;
-    if (
-      !type.baseSetDependencies[baseSet.id]?.rarities.includes(rarityId) &&
-      (variation && subtype
-        ? !variation.baseSetDependencies[baseSet.id]?.subtypes[
-            subtype.id
-          ]?.rarities.includes(rarityId)
-        : !subtype ||
-          !subtype.baseSetDependencies[baseSet.id]
-            ?.find(r => r.type === type.id)
-            ?.rarities.includes(rarityId))
-    ) {
+    if (!rarityIsAvailable(rarityId)) {
       setRarity(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setRarity, subtype, type, variation, baseSet]);
+  }, [subtype, type, variation, baseSet, setRarity, rarityIsAvailable]);
 
   return {
     rarities,
     rarity,
+    anyRarityAvailable,
     setRarity,
+    rarityIsAvailable,
   };
 };
 
