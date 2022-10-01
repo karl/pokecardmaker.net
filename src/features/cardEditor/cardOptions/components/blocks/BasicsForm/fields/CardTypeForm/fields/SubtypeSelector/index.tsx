@@ -42,7 +42,7 @@ const SubtypeSelector: FC = () => {
             r => r.type === type.id,
           ) && (
             <MenuItem key={st.slug} value={st.id}>
-              <ListItemText primary={st.displayName} />
+              <ListItemText primary={st.displayName} secondary={st.subText} />
             </MenuItem>
           ),
       )}

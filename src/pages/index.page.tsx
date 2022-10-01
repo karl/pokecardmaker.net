@@ -58,15 +58,17 @@ const Home: FC = () => {
                 <List>
                   <li>Base Energy</li>
                   <li>Special Energy</li>
+                  <li>Prism Star variation</li>
+                  <li>Golden Full Art rarity</li>
                 </List>
               </div>
               <div>
                 <Typography variant="h4">Trainer cards</Typography>
                 <List>
                   <li>Supporter</li>
-                  <li>Full Art Supporter</li>
                   <li>Item</li>
                   <li>Tool Item</li>
+                  <li>Full Art rarity</li>
                 </List>
               </div>
             </Box>
@@ -105,6 +107,7 @@ const Home: FC = () => {
                 <li>Pokémon GX (Stage 1)</li>
                 <li>Pokémon GX (Stage 2)</li>
                 <li>Ultra Beast variation</li>
+                <li>Prism Star variation</li>
                 <li>Full Art rarity</li>
                 <li>Golden Full Art rarity</li>
                 <li>Rainbow rarity</li>

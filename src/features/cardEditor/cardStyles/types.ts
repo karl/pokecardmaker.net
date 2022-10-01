@@ -13,7 +13,8 @@ export type NameSymbol =
   | 'vstar'
   | 'ex'
   | 'gx'
-  | 'gxUltraBeast';
+  | 'gxUltraBeast'
+  | 'prismStar';
 export type TextColor = 'white' | 'black' | 'gx' | 'ultraBeast';
 export type Size = 'sm' | 'lg';
 export type Move3Type = 'gx';

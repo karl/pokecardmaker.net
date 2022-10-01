@@ -15,6 +15,7 @@ import {
   metal,
   psychic,
   special,
+  stadium,
   supporter,
   water,
 } from './type';
@@ -142,6 +143,15 @@ export const defaultTypeSubtypes: {
   [supporter.id]: undefined,
   [base.id]: undefined,
   [special.id]: undefined,
+};
+
+export const defaultTypeVariations: {
+  [typeId: number]: number | undefined;
+} = {
+  [special.id]: undefined,
+  [supporter.id]: undefined,
+  [item.id]: undefined,
+  [stadium.id]: undefined,
 };
 
 export const defaultSubtypeVariations: {

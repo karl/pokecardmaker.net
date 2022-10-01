@@ -45,7 +45,7 @@ const TypeSelector: FC = () => {
       }
       return (
         <MenuItem value={item.id} key={item.slug}>
-          <ListItemText primary={item.displayName} />
+          <ListItemText primary={item.displayName} secondary={item.subText} />
         </MenuItem>
       );
     },

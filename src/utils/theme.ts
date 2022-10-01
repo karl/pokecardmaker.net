@@ -167,6 +167,7 @@ theme = createTheme(theme, {
         root: {
           zIndex: 110,
           fontWeight: 'bold',
+          background: theme.palette.background.default,
         },
       },
     },

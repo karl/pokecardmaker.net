@@ -10,6 +10,7 @@ import {
   stage2,
   vmax,
 } from '../subtype';
+import { item, special, stadium, supporter } from '../type';
 
 let id = 1;
 
@@ -161,6 +162,29 @@ export const ultraBeast: Variation = {
   },
 };
 
+export const prismStar: Variation = {
+  id: id++,
+  slug: 'prismStar',
+  displayName: 'Prism Star',
+  styles: {
+    nameSymbol: 'prismStar',
+  },
+  logic: {
+    hasNameSymbol: true,
+    hasDexStats: false,
+  },
+  baseSetDependencies: {
+    [sunAndMoon.id]: {
+      types: [special.id, item.id, stadium.id, supporter.id],
+      subtypes: {
+        [basic.id]: {
+          rarities: [],
+        },
+      },
+    },
+  },
+};
+
 export const variations: Variation[] = [
   dynamax,
   gigantamax,
@@ -168,4 +192,5 @@ export const variations: Variation[] = [
   dark,
   ex,
   ultraBeast,
+  prismStar,
 ];

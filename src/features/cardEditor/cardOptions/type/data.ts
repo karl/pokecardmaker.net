@@ -161,6 +161,14 @@ export const item: Type = {
       rarities: [],
     },
   },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: true,
+        isVariationRequired: false,
+      },
+    },
+  },
 };
 
 export const supporter: Type = {
@@ -181,6 +189,14 @@ export const supporter: Type = {
       rarities: [],
     },
   },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: true,
+        isVariationRequired: false,
+      },
+    },
+  },
 };
 
 export const stadium: Type = {
@@ -198,6 +214,14 @@ export const stadium: Type = {
     [sunAndMoon.id]: {
       supertypes: [trainer.id],
       rarities: [],
+    },
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: true,
+        isVariationRequired: false,
+      },
     },
   },
 };
@@ -241,6 +265,14 @@ export const special: Type = {
     [sunAndMoon.id]: {
       supertypes: [energy.id],
       rarities: [goldenFullArtEnergy.id],
+    },
+  },
+  baseSetOverwrites: {
+    [sunAndMoon.id]: {
+      logic: {
+        hasVariations: true,
+        isVariationRequired: false,
+      },
     },
   },
 };

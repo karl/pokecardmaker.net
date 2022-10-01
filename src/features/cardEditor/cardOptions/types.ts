@@ -35,6 +35,10 @@ export interface IdentifierInfo {
    * Used to display to the user
    */
   displayName: string;
+  /**
+   * Used for secondary text in the Selector
+   */
+  subText?: string;
 }
 
 export interface CardOptions {

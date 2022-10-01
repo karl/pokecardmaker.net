@@ -25,7 +25,7 @@ const SupertypeSelector: FC = () => {
     >
       {supertypes.map(st => (
         <MenuItem key={st.slug} value={st.id}>
-          <ListItemText primary={st.displayName} />
+          <ListItemText primary={st.displayName} secondary={st.subText} />
         </MenuItem>
       ))}
     </ControlledSelector>
