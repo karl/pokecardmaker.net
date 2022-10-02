@@ -64,6 +64,8 @@ export const CardLogicProvider: React.FC = ({ children }) => {
     return Math.max(move1Cost, move2Cost, move3Cost);
   }, [move1, move2, move3?.energyCost, hasMove2, state.hasMove3]);
 
+  console.log({ state });
+
   return (
     <CardLogicContext.Provider
       value={{

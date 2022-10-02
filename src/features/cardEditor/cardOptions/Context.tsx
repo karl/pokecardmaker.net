@@ -64,6 +64,16 @@ export const CardOptionsProvider: React.FC = ({ children }) => {
     [state.rarityId],
   );
 
+  console.log('CardOptions', {
+    state,
+    baseSet,
+    supertype,
+    type,
+    subtype,
+    variation,
+    rarity,
+  });
+
   return (
     <CardOptionsContext.Provider
       value={{
